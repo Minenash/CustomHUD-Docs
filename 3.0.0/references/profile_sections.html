@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<head>
+    <meta charset=utf-8>
+    <title>Profile Sections - CustomHud</title>
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name=viewport>
+    <meta content="The Home of Terrible Projects" name=description>
+    <link rel="icon" type="image/png" href="../../favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+    <style>html {background-color:#f4f5f7} body {display:none}</style>
+</head>
+<body>
+
+<ul class="nav" style="position: sticky; top: 0; z-index: 1;">
+    <li><a class="logo"><b>CustomHud Docs</b></a></li>
+    <li><div class="separator"></div></li>
+    <li><a href="#top">Getting Started</a></li>
+    <li><a href="../variables.html">Variables</a></li>
+    <li><a href="../conditionals.html">Conditionals</a></li>
+    <li><a href="../references.html" class="active">References</a></li>
+</ul>
+
+<div class="version">Written for v3.0.0</div>
+
+<ul class="nav side_nav">
+    <li><a class="side_nav_header">General</a></li>
+    <li><a href="#">Profile Sections</a></li>
+    <li><a href="theming.html">Theming</a></li>
+    <li><a href="variable_flags.html">Variable Flags</a></li>
+    <li><a href="colors.html">Colors</a></li>
+    <li><a style="height:8px; width: 0"></a></li>
+    <li><a class="side_nav_header">Special Variables</a></li>
+    <li><a href="stats.html">Stats</a></li>
+    <li><a href="real_time.html">Real Time</a></li>
+    <li><a href="item_slots.html">Item Slots</a></li>
+    <li><a href="icons.html">Icons</a></li>
+    <li><a href="settings.html">MC Settings</a></li>
+</ul>
+
+<div id="top" class="content">
+    <br>
+
+    <h2>Profile Sections</h2>
+    <p>
+        Profile sections allow you to put stuff in the four corners of the hud.
+    </p>
+    <h3>Template</h3>
+    <p>
+        Each section is <b>optional</b>, and <b>order doesn't matter</b>.<br>
+        If you only want stuff in the top left corner, no section headers are needed.
+    </p>
+    <div class="code_block" style="aspect-ratio: revert; width: 75%">
+        <code>
+            <i>&nbsp;&nbsp;Place <a href="#">Profile-Wide Theming</a> above all Section Headers</i><br>
+            <br>
+            ==Section:TopLeft==<br>
+            <i>&nbsp;&nbsp;Whatever you want to show in the <b>top left</b> corner</i><br>
+            <br>
+            ==Section:TopRight==<br>
+            <i>&nbsp;&nbsp;Whatever you want to show in the <b>top right</b> corner</i><br>
+            <br>
+            ==Section:BottomLeft==<br>
+            <i>&nbsp;&nbsp;Whatever you want to show in the <b>bottom left</b> corner</i><br>
+            <br>
+            ==Section:BottomRight==<br>
+            <i>&nbsp;&nbsp;Whatever you want to show in the <b>bottom right</b> corner</i><br><br>
+        </code>
+    </div>
+    <br>
+    <h3>Section Options</h3>
+    <div class="code_block" style="aspect-ratio: revert; width: 75%">
+        <code>
+            ==Section: &lt;corner&gt;==<br>
+            ==Section: &lt;corner&gt;, &lt;x_offset&gt;==<br>
+            ==Section: &lt;corner&gt;, &lt;x_offset&gt;, &lt;y_offset&gt;==<br>
+            ==Section: &lt;corner&gt;, &lt;x_offset&gt;, &lt;y_offset&gt;, &lt;hide_on_chat&gt;==<br>
+            ==Section: &lt;corner&gt;, &lt;x_offset&gt;, &lt;y_offset&gt;, &lt;hide_on_chat&gt;, &lt;width&gt;==
+        </code>
+    </div>
+    <br>
+
+    <table style="width: 77%">
+        <thead>
+        <tr> <th>Option</th> <th>Description</th> <th>Value Type</th> <th>Default Value</th> </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>corner</td>
+            <td>Which corner this section appears in</td>
+            <td>TopLeft / BottomLeft<br>TopRight / BottomRight</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <td>x_offset</td>
+            <td>Left/Right offset</td>
+            <td>Integer</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>y_offset</td>
+            <td>Up/Down offset</td>
+            <td>Integer</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>hide_on_chat</td>
+            <td>Whether this section should hide when the chat screen is open</td>
+            <td>true / false</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>width</td>
+            <td>How wide the background is. -1 means it fits to the content of the line</td>
+            <td>Integer</td>
+            <td>-1</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>

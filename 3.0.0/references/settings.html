@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<head>
+    <meta charset=utf-8>
+    <title>Stats - CustomHud</title>
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name=viewport>
+    <meta content="The Home of Terrible Projects" name=description>
+    <link rel="icon" type="image/png" href="../../favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+    <style>html {background-color:#f4f5f7} body {display:none}</style>
+</head>
+<body>
+
+<ul class="nav" style="position: sticky; top: 0; z-index: 1;">
+    <li><a class="logo"><b>CustomHud Docs</b></a></li>
+    <li><div class="separator"></div></li>
+    <li><a href="../getting_started.html">Getting Started</a></li>
+    <li><a href="../variables.html">Variables</a></li>
+    <li><a href="../conditionals.html">Conditionals</a></li>
+    <li><a href="../references.html" class="active">References</a></li>
+</ul>
+
+<div class="version">Written for v3.0.0</div>
+
+<ul class="nav side_nav">
+    <li><a class="side_nav_header">General</a></li>
+    <li><a href="profile_sections.html">Profile Sections</a></li>
+    <li><a href="theming.html">Theming</a></li>
+    <li><a href="variable_flags.html">Variable Flags</a></li>
+    <li><a href="colors.html">Colors</a></li>
+    <li><a style="height:8px; width: 0"></a></li>
+    <li><a class="side_nav_header">Special Variables</a></li>
+    <li><a href="stats.html">Stats</a></li>
+    <li><a href="real_time.html">Real Time</a></li>
+    <li><a href="item_slots.html">Item Slots</a></li>
+    <li><a href="icons.html">Icons</a></li>
+    <li><a href="#">MC Settings</a></li>
+</ul>
+
+<div id="top" class="content">
+    <br>
+
+    <h2>Settings Variable</h2>
+
+    <b>Syntax: <code class="code_inline">{setting:&lt;setting&gt;}</code></b>
+
+    <h3>All Available (Vanilla) Settings:</h3>
+
+
+    <details>
+        <summary><b>Miscellaneous</b></summary>
+        <table class="left_cells">
+            <thead>
+            <tr>
+                <th>In-Game Name</th>
+                <th>Setting</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>FOV</td>
+                <td style="text-align: center">fov</td>
+                <td>How large the field of view is, in degrees (30° - 110°)</td>
+                <td>the fov (-1.0 - 1.0) <b>CHECK</b></td>
+                <td>fov > 0 <b>CHECK</b></td>
+                <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>Realms Notifications<br><i>(Online)</i></td>
+                <td style="text-align: center">realmsNotifications</td>
+                <td>Whether Realms invites are alerted on the main menu </td>
+                <td>1 (on)<br>0 (off)</td>
+                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td style="text-align: center">None <b>CHECK</b></td>
+            </tr>
+            <tr>
+                <td>Allow Server Listings<br><i>(Online)</i></td>
+                <td style="text-align: center">allowServerListing</td>
+                <td>Whether to allow the player to be shown in the player list shown by severs in the multiplayer screen </td>
+                <td>1 (on)<br>0 (off)</td>
+                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td style="text-align: center">None</td>
+            </tr>
+            <tr>
+                <td>Skin Customizations</td>
+                <td style="text-align: center">modelPart_&lt;part&gt;</td>
+                <td>
+                    If the player's &lt;part&gt; is visible.<br><i>The following are avaliable &lt;part&gt;s:</i><br>
+                    <table style="margin: 0 auto; width: 0">
+                        <tbody>
+                        <tr> <td>hat</td>  <td>left_sleeve</td> <td>left_pants_leg</td> </tr>
+                        <tr> <td>jacket</td> <td>right_sleeve</td> <td>right_pants_leg</td> </tr>
+                        <tr> <td>cape</td> <td>---</td> <td class="last_cell">---</td></tr>
+
+                        </tbody>
+                    </table>
+                </td>
+                <td>1 (&lt;part&gt; is visible)<br>0 (&lt;part&gt; is not visible)</td>
+                <td><code>true</code> (&lt;part&gt; is visible)<br><code>false</code> (&lt;part&gt; is not visible)</td>
+                <td style="text-align: center">None</td>
+            </tr>
+            <tr>
+                <td>Main Hand<br><i>(Skin Customization)</i></td>
+                <td style="text-align: center">mainHand</td>
+                <td>Whether the main hand appears as left or right </td>
+                <td>1 (right)<br>0 (left)</td>
+                <td><code>true</code> (right)<br><code>false</code> (left)</td>
+                <td style="text-align: center">None</td>
+            </tr>
+            <tr>
+                <td>Text Background<br><i>(Accessibility Settings)</i></td>
+                <td style="text-align: center">backgroundForChatOnly</td>
+                <td>Toggles if the background is only in chat or if it's everywhere (Chat, Everywhere)</td>
+                <td>1 (chat)<br>0 (everywhere)</td>
+                <td><code>true</code> (chat)<br><code>false</code> (everywhere)</td>
+                <td style="text-align: center">None</td>
+            </tr>
+            <tr>
+                <td>Narrator<br><i>(Accessibility Settings)</i></td>
+                <td style="text-align: center">narrator</td>
+                <td>The mode the narrator is in</td>
+                <td>0 (off)<br>1 (all)<br>2 (chat)<br>3 (system)</td>
+                <td><code>true</code> (all, chat, system)<br><code>false</code> (off)</td>
+                <td style="text-align: center">None</td>
+            </tr>
+            <tr>
+                <td>Monochrome Logo<br><i>(Accessibility Settings)</i></td>
+                <td style="text-align: center; font-size: 12px">darkMojangStudiosBackground</td>
+                <td>Whether the Mojang Studios loading screen will appear monochrome </td>
+                <td>1 (on)<br>0 (off)</td>
+                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td style="text-align: center" class="last_cell">None</td>
+            </tr>
+            </tbody>
+        </table>
+    </details>
+
+    <details>
+        <summary><b>Music & Sounds</b></summary>
+        <table style="margin-bottom: 24px">
+            <thead>
+            <tr>
+                <th>In-Game Name</th>
+                <th>Setting</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><i>All the Sliders</i></td>
+                <td>soundCategory_&lt;sound_category&gt;</td>
+                <td>The volume of the category</td>
+                <td>Decimal (0-1)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Device</td>
+                <td>soundDevice</td>
+                <td>The Sound device to output the audio to </td>
+                <td>String</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Show Subtitles</td>
+                <td>showSubtitles</td>
+                <td>Whether to show subtitles</td>
+                <td>Boolean</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Directional Audio</td>
+                <td>directionalAudio</td>
+                <td>Whether Directional Audio is enabled </td>
+                <td>Boolean</td>
+                <td></td>
+                <td class="last_cell"></td>
+            </tr>
+            </tbody>
+        </table>
+        <b>Sound Categories</b>
+        <table class="left_cells" style="width: 30%; ">
+            <thead> <tr> <th>Category</th> <th>Description</th> </tr> </thead>
+            <tbody>
+            <tr> <td>master</td> <td>The volume of all sounds </td> </tr>
+            <tr> <td>music</td> <td>The volume of gameplay music </td> </tr>
+            <tr> <td>record</td> <td>The volume of music/sounds from Jukeboxes and Note Blocks </td> </tr>
+            <tr> <td>weather</td> <td>The volume of rain and thunder </td> </tr>
+            <tr> <td>block</td> <td>The volume of blocks </td> </tr>
+            <tr> <td>hostile</td> <td>The volume of hostile and neutral mobs </td> </tr>
+            <tr> <td>neutral</td> <td>The volume of passive mobs </td> </tr>
+            <tr> <td>player</td> <td>The volume of players </td> </tr>
+            <tr> <td>ambient</td> <td>The volume of cave sounds and fireworks </td> </tr>
+            <tr> <td>voice</td> <td>The volume of voices </td> </tr>
+            </tbody>
+        </table>
+    </details>
+
+    <details>
+        <summary><b>Video Settings</b></summary>
+        <table>
+            <thead>
+            <tr>
+                <th>In-Game Name</th>
+                <th>Setting</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Fullscreen Resolution</td>
+                <td>fullscreenResolution</td>
+                <td>The resolution of the game when in fullscreen mode</td>
+                <td>String (&lt;width&gt;x&lt;height&gt;@&lt;refresh rate&gt;:&lt;color bits&gt;)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Biome Blend</td>
+                <td>biomeBlendRadius</td>
+                <td>Radius for which biome blending should happen </td>
+                <td>Integer</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Graphics</td>
+                <td>graphicsMode</td>
+                <td>Which graphics mode is selected</td>
+                <td>Integer (Fast, Fancy, Fabulous)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Render Distance</td>
+                <td>renderDistance</td>
+                <td>The render distance in the chunk radius from the player </td>
+                <td>Integer</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Chunk Builder</td>
+                <td>prioritizeChunkUpdates</td>
+                <td>Chunk section update strategy </td>
+                <td>Integer (Threaded, Semi Blocking, Full Blocking)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Simulation Distance</td>
+                <td>simulationDistance</td>
+                <td>The simulation distance in the chunk radius from the player </td>
+                <td>Integer</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Smooth Lighting</td>
+                <td>ao</td>
+                <td>Smooth lighting</td>
+                <td>Integer (Off, Minimum, Maximum)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Max Framerate</td>
+                <td>maxFps</td>
+                <td>The maximum framerate </td>
+                <td>Integer</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>VSync</td>
+                <td>enableVsync</td>
+                <td>Whether v-sync (vertical synchronization) is enabled </td>
+                <td>Boolean</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>View Bobbing</td>
+                <td>bobView</td>
+                <td>Whether or not the camera bobs up and down as the player walks </td>
+                <td>Boolean</td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+            <tr>
+                <td>GUI Scale</td>
+                <td>guiScale</td>
+                <td>Size of interfaces </td>
+                <td>Integer</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Attack Indicator</td>
+                <td>attackIndicator</td>
+                <td>When hitting, how the attack indicator is shown on screen </td>
+                <td>Integer (Off, Crosshair, Hotbar)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Brightness</td>
+                <td>gamma</td>
+                <td>Brightness</td>
+                <td>Decimal (0-1)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Clouds</td>
+                <td>renderClouds</td>
+                <td>Whether to display clouds</td>
+                <td>String (true/false/fast)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Fullscreen</td>
+                <td>fullscreen</td>
+                <td>Whether the game attempts to go fullscreen at startup </td>
+                <td>Boolean</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Particles</td>
+                <td>particles</td>
+                <td>Amount of particles (such as rain, potion effects, etc.) </td>
+                <td>Integer (All, Decreased, Minimal)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Mipmap Levels</td>
+                <td>mipmapLevels</td>
+                <td>Amount by which distant textures are smoothed </td>
+                <td>Integer</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Entity Shadows</td>
+                <td>entityShadows</td>
+                <td>Whether to display entity shadows </td>
+                <td>Boolean</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Entity Distance</td>
+                <td>entityDistanceScaling</td>
+                <td>The maximum distance from the player that entities render </td>
+                <td>Decimal (0.5-5.0)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Autosave Indicator</td>
+                <td>showAutosaveIndicator</td>
+                <td>Whether to show autosave indicator on the right-bottom of the screen <b>Check mc</b></td>
+                <td>Boolean</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Distortion Effects</td>
+                <td>screenEffectScale</td>
+                <td>How intense the distortion effects of Nausea and nether portals are</td>
+                <td>Decimal (0-1)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>FOV Effects</td>
+                <td>fovEffectScale</td>
+                <td>How much the field of view changes when sprinting, having Speed or Slowness etc.</td>
+                <td>Decimal (0-1)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Darkness Pulsing<br><i>(Accessibility Settings)</i></td>
+                <td>darknessEffectScale</td>
+                <td>How much the Darkness effect pulses</td>
+                <td>Decimal (0-1)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Hide Lighting Flashes<br><i>(Accessibility Settings)</i></td>
+                <td>hideLightningFlashes</td>
+                <td>Hide lightning flashes (visual effect) </td>
+                <td>Boolean</td>
+                <td></td>
+                <td class="last_cell"></td>
+            </tr>
+
+        </table>
+    </details>
+
+    <details>
+        <summary><b>Controls</b></summary>
+        <table>
+            <thead>
+            <tr>
+                <th>In-Game Name</th>
+                <th>Setting</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Key Binds</td>
+                <td>key_key.&lt;keybind&gt;</td>
+                <td>The key bound for &lt;keybind&gt;</td>
+                <td>String</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Auto-Jump</td>
+                <td>autoJump</td>
+                <td>Whether auto-jump is enabled</td>
+                <td>Boolean</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Sneak</td>
+                <td>toggleCrouch</td>
+                <td><b>TODO</b></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Sprint</td>
+                <td>toggleSprint</td>
+                <td><b>TODO</b></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th colspan="6" style="border-radius: 0">Mouse Settings</th>
+            </tr>
+            <tr>
+                <td>Sensitivity</td>
+                <td>mouseSensitivity</td>
+                <td>How much a mouse movement changes the position of the camera </td>
+                <td>Decimal (0-1?)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Invert Mouse</td>
+                <td>invertYMouse</td>
+                <td>Whether mouse is inverted or not </td>
+                <td>Boolean</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Scroll Sensitivity</td>
+                <td>mouseWheelSensitivity</td>
+                <td>The sensitivity of the mouse wheel</td>
+                <td>Decimal (1-10)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Discrete Scrolling</td>
+                <td>discrete_mouse_scroll</td>
+                <td>Whether to ignore scrolling set by operating system </td>
+                <td>Boolean</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Touchscreen Mode</td>
+                <td>touchscreen</td>
+                <td>If Directional Audio is enabled </td>
+                <td>Boolean</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Raw Input</td>
+                <td>rawMouseInput</td>
+                <td>Whether to ignore the mouse acceleration set by the operating system</td>
+                <td>Boolean</td>
+                <td></td>
+                <td class="last_cell"></td>
+            </tr>
+            </tbody>
+        </table>
+    </details>
+
+    <details>
+        <summary><b>Language</b></summary>
+        <table>
+            <thead>
+            <tr>
+                <th>In-Game Name</th>
+                <th>Setting</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Language</td>
+                <td>lang</td>
+                <td><b>To break out</b></td>
+                <td>Strings</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Force Unicode Font</td>
+                <td>forceUnicodeFont</td>
+                <td>Whether the Unicode font should be instead of the normal font </td>
+                <td>Boolean</td>
+                <td></td>
+                <td class="last_cell"></td>
+            </tr>
+            </tbody>
+        </table>
+    </details>
+
+    <details>
+        <summary><b>Chat Settings</b></summary>
+        <table class="left_cells">
+            <thead>
+            <tr>
+                <th>In-Game Name</th>
+                <th>Setting</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Chat</td>
+                <td style="text-align: center">chatVisibility</td>
+                <td>What is seen in chat (All, Commands Only, Hidden)</td>
+                <td>0 (shown)<br>1 (commands only)<br>2 (hidden)</td>
+                <td><code>true</code> (shown / commands only)<br><code>false</code> (hidden)</td>
+                <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#string">String</a></td>
+            </tr>
+            <tr>
+                <td>Colors</td>
+                <td style="text-align: center">chatColors</td>
+                <td>Whether colors in chat are allowed </td>
+                <td>1 (on)<br>0 (off)</td>
+                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td style="text-align: center">None</td>
+            </tr>
+            <tr>
+                <td>Web Links</td>
+                <td style="text-align: center">chatLinks</td>
+                <td>Whether links show as links or just text in the chat</td>
+                <td>1 (on)<br>0 (off)</td>
+                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td style="text-align: center">None</td>
+            </tr>
+            <tr>
+                <td>Prompt on Links</td>
+                <td style="text-align: center">chatLinksPrompt</td>
+                <td>Whether clicking on links in chat needs confirmation before opening them </td>
+                <td>1 (on)<br>0 (off)</td>
+                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td style="text-align: center">None</td>
+            </tr>
+            <tr>
+                <td>Chat Text Opacity</td>
+                <td style="text-align: center">chatOpacity</td>
+                <td>Opacity of the chat (0.0 - 1.0)</td>
+                <td>the opacity</td>
+                <td>opacity > 0</td>
+                <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>Text Background Opacity</td>
+                <td style="text-align: center">textBackgroundOpacity</td>
+                <td>Opacity of text background (0.0 - 1.0)</td>
+                <td>the opacity</td>
+                <td>opacity > 0</td>
+                <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>Chat Text Size</td>
+                <td style="text-align: center">chatScale</td>
+                <td>The scale/size of the text in the chat (0.0 - 1.0)</td>
+                <td>the scale</td>
+                <td>scale > 0</td>
+                <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>Line Spacing</td>
+                <td style="text-align: center">chatLineSpacing</td>
+                <td>Spacing between text in chat (0.0 - 1.0)</td>
+                <td>the spacing</td>
+                <td>spacing > 0</td>
+                <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>Chat Delay</td>
+                <td style="text-align: center">chatDelay</td>
+                <td>How much delay there is between text (0.0 - 6.0)</td>
+                <td>the delay</td>
+                <td>delay > 0</td>
+                <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>Width</td>
+                <td style="text-align: center">chatWidth</td>
+                <td>How wide chat is (40px - 320px)</td>
+                <td>the width</td>
+                <td><code>true</code></td>
+                <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>Focused Height</td>
+                <td style="text-align: center">chatHeightFocused</td>
+                <td>How tall chat is when it's open (20px - 180px / 0.0 - 1.0)</td>
+                <td>the height</td>
+                <td><code>true</code></td>
+                <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>Unfocused Height</td>
+                <td style="text-align: center">chatHeightUnfocused</td>
+                <td>How tall chat is when it's not open (20px - 180px / 0.0 - 1.0)</td>
+                <td>the height</td>
+                <td><code>true</code></td>
+                <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>Command Suggestions</td>
+                <td style="text-align: center">autoSuggestions</td>
+                <td>Whether brigadier's command suggestion UI should always be shown, instead of just when pressing tab </td>
+                <td>1 (on)<br>0 (off)</td>
+                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td style="text-align: center">None</td>
+            </tr>
+            <tr>
+                <td>Hide Matched Names</td>
+                <td style="text-align: center">hideMatchedNames</td>
+                <td>Some servers send chat messages in non-standard formats. With this option on, the game will attempt to apply chat hiding anyway by matching the text in messages</td>
+                <td>1 (on)<br>0 (off)</td>
+                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td style="text-align: center">None</td>
+            </tr>
+            <tr>
+                <td>Reduced Debug Info</td>
+                <td style="text-align: center">reducedDebugInfo</td>
+                <td>Whether to reduce the information shown on the Debug screen</td>
+                <td>1 (on)<br>0 (off)</td>
+                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td style="text-align: center">None</td>
+            </tr>
+            <tr>
+                <td>Chat Preview</td>
+                <td style="text-align: center">chatPreview</td>
+                <td>If chat preview is enabled, and when it shows (Off, While Typing, When Sending)</td>
+                <td>0 (off)<br>1 (while typing)<br>2 (when sending)</td>
+                <td><code>true</code> (while typing / sending)<br><code>false</code> (off)</td>
+                <td style="text-align: center">None</td>
+            </tr>
+            <tr>
+                <td>Only Show Secure Chat</td>
+                <td style="text-align: center">onlyShowSecureChat</td>
+                <td>Whether to only show chat messages that are properly signed</td>
+                <td>1 (on)<br>0 (off)</td>
+                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td style="text-align: center">None</td>
+            </tr>
+            </tbody>
+        </table>
+    </details>
+
+    <details>
+        <summary><b>Not Visible in the Settings</b></summary>
+        <table>
+            <thead>
+            <tr>
+                <th>Setting</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>lastServer</td>
+                <td>Address of last server used with Direct Connection </td>
+                <td>String</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>advancedItemTooltips</td>
+                <td>Whether hovering over items in the inventory shows its ID and durability; toggled by pressing <kbd>F3</kbd> + <kbd>H</kbd></td>
+                <td>Boolean</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>pauseOnLostFocus</td>
+                <td>Whether switching out of Minecraft without pressing Esc or opening an in-game interface automatically pauses the game; toggled by pressing <kbd>F3</kbd> + <kbd>P</kbd></td>
+                <td>Boolean</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>overrideWidth</td>
+                <td>Width to open Minecraft with in pixels (0 means default to the Minecraft settings) </td>
+                <td>Integer</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>overrideHeight</td>
+                <td>Height to open Minecraft with in pixels (0 means default to the Minecraft settings) </td>
+                <td>Integer</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>heldItemTooltips</td>
+                <td>Whether switching between items shows the name of the item </td>
+                <td>Boolean</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>useNativeTransport</td>
+                <td>Whether to use a Netty EpollSocketChannel for connections to servers instead of a NioSocketChannel (only applies if EPOLL is available on the user's system)</td>
+                <td>Boolean</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>tutorialStep</td>
+                <td>Next stage of tutorial hints to display </td>
+                <td>String</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>glDebugVerbosity</td>
+                <td>LWJGL log info level (only on some machines)</td>
+                <td>Integer (none, high, medium, low, notification)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>skipMultiplayerWarning</td>
+                <td>Whether to skip the legal disclaimer when entering the multiplayer screen </td>
+                <td>Boolean</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>skipRealms32bitWarning</td>
+                <td>Whether to skip the 32-bit environment warning when entering the Realms screen</td>
+                <td>Boolean</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>joinedFirstServer</td>
+                <td>Whether the player has joined a server before. If false, the Social Interactions tutorial hint will appear when joining a server</td>
+                <td>Boolean</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>hideBundleTutorial</td>
+                <td>Whether the player has seen the bundle tutorial hint when trying to use a bundle</td>
+                <td>Boolean</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>syncChunkWrites</td>
+                <td>Whether to open region files in synchronous mode</td>
+                <td>Boolean (T: Windows, F: Other)</td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </details>
+
+
+
+</div>
+</body>

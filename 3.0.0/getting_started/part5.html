@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<head>
+    <meta charset=utf-8>
+    <title>Colors - Getting Started - CustomHud</title>
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name=viewport>
+    <meta content="The Home of Terrible Projects" name=description>
+    <link rel="icon" type="image/png" href="../../favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+    <style>html {background-color:#f4f5f7} body {display:none}</style>
+<!--    f4f5f7-->
+</head>
+<body>
+
+<ul class="nav" style="position: sticky; top: 0; z-index: 1;">
+    <li><a class="logo"><b>CustomHud Docs</b></a></li>
+    <li><div class="separator"></div></li>
+    <li><a href="../getting_started.html" class="active">Getting Started</a></li>
+    <li><a href="../variables.html">Variables</a></li>
+    <li><a href="../conditionals.html">Conditionals</a></li>
+    <li><a href="../references.html">References</a></li>
+</ul>
+
+<div class="version">Written for v3.0.0</div>
+
+<ul class="nav side_nav side_nav_getting_started">
+    <li><a class="side_nav_header">Parts</a></li>
+    <li><a href="../getting_started.html">1. Accessing Files</a></li>
+    <li><a href="part2.html">2. First Text</a></li>
+    <li><a href="part3.html">3. Variables</a></li>
+    <li><a href="part4.html">4. Variable Flags</a></li>
+    <li><a href="#top">5. Colors</a></li>
+    <li><a href="part6.html">6. Profile Sections</a></li>
+    <li><a href="part7.html">7. Theming</a></li>
+    <li><a href="part8.html">8. Conditionals</a></li>
+</ul>
+
+<a class="next" href="part6.html">Next →</a>
+<a class="prev" href="part4.html">← Back</a>
+
+<div id="top" class="content">
+    <br>
+
+    <h2>5. <a class="rainbow-text">Adding Colors</a></h2>
+    <p>Let's add color to the profile we made in <b>2b</b>!</p>
+
+    <div>
+        <div style="float: left; width: 45%; margin-right: 5%">
+            <h3>Bukkit Color Codes</h3>
+            <p>CustomHud supports Bukkit Color codes</p>
+            <div class="note">
+                <b>Reference:</b> Bukkit Color Codes<br>
+                <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1807/example2-1518839184.png" width="100%" alt="bukkit colors reference">
+            </div>
+        </div>
+
+        <div style="float: right; width: 50%">
+            <h3>Custom Colors</h3>
+            <p>Use this if you want a specific color and you have the <b>hex code</b> for it. Just don't forget the first
+                two digits is the opaqueness of the text.</p>
+
+            <table style="margin-bottom: 24px">
+                <thead>
+                    <tr> <th>Syntax</th> <th colspan="2">Example</th> </tr>
+                </thead>
+                <tbody>
+                    <tr> <td><code>&{AARRGGBB}</code></td> <td>&{77FF4040}</td> <td>Coral Red (50% transparency)</td> </tr>
+                    <tr> <td><code>&{RRGGBB}</code></td>   <td>&{FF4040}</td>   <td>Coral Red (no transparency)</td>  </tr>
+                    <tr> <td><code>&{ARGB}</code></td>     <td>&{BF50}</td>     <td>Orange-ish Red (75% Opacity)</td> </tr>
+                    <tr> <td><code>&{RGB}</code></td>      <td>&{F50}</td>      <td class="last_cell">Orange-ish Red (no transparency)</td> </tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr> <th>Letters</th> <th>Meaning</th> <th>Range</th> </tr>
+                </thead>
+                <tbody>
+                    <tr> <td><code>AA or A</code></td> <td>Alpha (Translucency)</td> <td>00-FF or 0-F</td> </tr>
+                    <tr> <td><code>RR or R</code></td> <td>Red</td>   <td>00-FF or 0-F</td> </tr>
+                    <tr> <td><code>GG or G</code></td> <td>Green</td> <td>00-FF or 0-F</td> </tr>
+                    <tr> <td><code>BB or B</code></td> <td>Blue</td>  <td class="last_cell">00-FF or 0-F</td> </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div style="height: 500px"></div>
+    <h3>Instructions</h3>
+    <p>
+        Let's add some color to the profile we had in part 3 and 4.<br>We're going to be using the bukkit
+        color codes for this.
+    </p>
+
+    <div>
+        <div style="float: left; width: 45%; margin-right: 5%">
+            <h3>Profile File</h3>
+            <div class="code_block">
+                <b style="text-decoration: underline">profile1.txt</b><br>
+                <code>
+                    fps: <b>&a</b>{fps} <br>
+                    xyz: <b>&c</b>{bx} <b>&a</b>{by} <b>&b</b>{bz} <br>
+                    biome: <b>&e</b>{biome} <br>
+                </code>
+            </div>
+        </div>
+
+        <div style="float:right; width: 45%;">
+            <h3>Result In-Game</h3>
+            <div class="result" style='background-image: url("../references/imgs/colors.png")'></div>
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+</div>
+</body>

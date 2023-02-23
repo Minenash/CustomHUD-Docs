@@ -6,7 +6,21 @@
     <meta content="The Home of Terrible Projects" name=description>
     <link rel="icon" type="image/png" href="favicon.png"/>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <style>html {background-color:#f4f5f7} body {display:none}</style>
+    <style>
+        html {background-color:#f4f5f7} body {display:none}
+
+        details summary::-webkit-details-marker {
+            display:none;
+        }
+        details > summary {
+            list-style: none;
+        }
+
+        .shadow {
+            filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.2))
+        }
+
+    </style>
 </head>
 <body>
 
@@ -14,44 +28,97 @@
     <li><a class="logo"><b>CustomHud</b></a></li>
     <li><div class="separator"></div></li>
     <li><a href="#top" class="active">Home</a></li>
-    <li><a href="#top">v3.0 Docs</a></li>
-    <li><a href="#top">v2.1 Docs</a></li>
-    <li><a href="#top">v1.2 Docs</a></li>
+    <li><a href="#docs">Docs / Wiki</a></li>
+    <li><a href="">Snippets</a></li>
 </ul>
-
-<!--<ul class="nav side_nav">-->
-<!--    <li><a class="side_nav_header">Resources</a></li>-->
-<!--    <li><a href="">v3.0.0</a></li>-->
-<!--    <li><a href="">v2.1.0</a></li>-->
-<!--    <li><a href="">v1.2.3</a></li>-->
-
-<!--    <li><a style="height:8px; width: 0"></a></li>-->
-<!--</ul>-->
 
 <div id="top">
     <br>
-    <center style="width: 60%; padding-left: 20%">
-        <h2>🛠️ Page Work in Progress 🛠️</h2>
+    <center>
+    <div style="width: 50%; max-width: 640px">
         <br>
-        <img src="https://cdn-raw.modrinth.com/data/6jis0UTI/icon.png" alt="custom hud icon" width="85" style="vertical-align:middle"> <b style="font-size: 32px; text-decoration: underline; padding-left: 16px">Custom Hud</b>
-        <br>
+
+        <div class="shadow">
+            <img src="https://cdn-raw.modrinth.com/data/6jis0UTI/icon.png" alt="custom hud icon" width="85" style="vertical-align:middle;">
+            <b style="font-size: 32px; margin-left: 16px; vertical-align: sub;border-bottom: solid 3px black; padding-bottom: 3px;">CustomHud</b>
+        </div>
         <br>
         <p style="font-size: 16px">
             <b>CustomHUD</b> is a <b><i>highly</i></b> configurable variable-based text (and icon) HUD!
         </p>
-        <a href="https://modrinth.com/mod/customhud"><img alt="modrinth" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_vector.svg"></a>
-        <a href="https://www.curseforge.com/minecraft/mc-mods/customhud"><img alt="curseforge" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/curseforge_vector.svg"></a>
-        <a href="https://github.com/Minenash/CustomHUD"><img alt="github" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_vector.svg"></a>
+        <div class="shadow">
+            <a href="https://modrinth.com/mod/customhud"><img alt="modrinth" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_vector.svg"></a>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/customhud"><img alt="curseforge" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/curseforge_vector.svg"></a>
+            <a href="https://github.com/Minenash/CustomHUD"><img alt="github" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_vector.svg"></a>
+            <br>
+            <a href="https://ko-fi.com/minenash"><img alt="kofi-plural-alt" height="53.5" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/donate/kofi-plural-alt_vector.svg"></a>
+        </div>
         <br>
-        <a href="https://ko-fi.com/minenash"><img alt="kofi-plural-alt" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/donate/kofi-plural-alt_vector.svg"></a>
 
-        <br>
         <h3>What makes this mod different?</h3>
         <p>
             While other HUD mods tend to offer <i>some</i> customization when it comes to which lines to display and sometimes
             where on the screen, <b>CustomHUD</b> allows you to customize <b><i>how</i></b> it's displayed.
         </p>
         <br>
+
+        <h3>Examples</h3>
+        <h2>🛠️ Work in Progress 🛠️</h2>
+        <br>
+
+        <h3>How do I use this mod?</h3>
+        <p>
+            You can learn how to use the mod, see a reference for all the variable available, or just reference the more
+            complex features of this mod though the <b>very extensive documentation!</b>
+        </p>
+        <p>
+            Still need help? Don't be afraid to ask for help on my Discord server!
+        </p>
+
+        <details>
+            <summary>
+                <div style="display: flex; justify-content: space-evenly;">
+                    <div style="flex: 100"></div>
+                        <img class="shadow" alt="ghpages" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/documentation/ghpages_vector.svg">
+                        <a href="https://discord.gg/eYf7DDHhvN" target="_blank"><img style="padding:0 10px" class="shadow" alt="ghpages" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/discord-plural_vector.svg"></a>
+                    <div style="flex: 100"></div>
+                </div>
+
+            </summary>
+            <br>
+            <table style="width: 1%" >
+                <thead>
+                <tr>
+                    <th style="white-space: nowrap">Mod Version</th>
+                    <th style="white-space: nowrap">Version Range</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><a href="">v3.0.0</a></td>
+                    <td>1.19.2 - 1.19.4</td>
+                </tr>
+                <tr>
+                    <td><a href="">v2.1.0</a></td>
+                    <td>1.19.0 - 1.19.2</td>
+                </tr>
+                <tr>
+                    <td><a href="">v1.2.3</a></td>
+                    <td>1.16.5 - 1.18.2</td>
+                </tr>
+                </tbody>
+            </table>
+        </details>
+
+
+
+
+
+        <br id="docs">
+
+
+
+    </div>
     </center>
 
 

@@ -141,7 +141,7 @@ a:hover {
     padding: 8px;
     aspect-ratio: 854 / 480;
 
-    background-size: cover;
+    background-size: contain;
 }
 
 @supports not (aspect-ratio: auto) {

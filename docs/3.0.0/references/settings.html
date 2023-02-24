@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset=utf-8>
-    <title>Stats - CustomHud</title>
+    <title>Settings - CustomHud</title>
     <meta content="width=device-width,initial-scale=1,user-scalable=no" name=viewport>
     <meta content="The Home of Terrible Projects" name=description>
     <link rel="icon" type="image/png" href="../../favicon.png"/>
@@ -48,45 +48,36 @@
 
     <details>
         <summary><b>Miscellaneous</b></summary>
-        <table class="left_cells">
+        <table class="left_cells" style="overflow-x:scroll">
             <thead>
             <tr>
-                <th>In-Game Name</th>
-                <th>Setting</th>
+                <th>In-Game Name<br><i>Setting</i></th>
                 <th>Description</th>
-                <th>Number Value</th>
-                <th>Boolean Value</th>
+                <th>Number & Boolean Value</th>
                 <th>Flags</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>FOV</td>
-                <td style="text-align: center">fov</td>
+                <td>FOV<br><i>fov</i></td>
                 <td>How large the field of view is, in degrees (30° - 110°)</td>
-                <td>the fov (-1.0 - 1.0) <b>CHECK</b></td>
-                <td>fov > 0 <b>CHECK</b></td>
+                <td><b>CHECK </b><b>Num: </b>the fov (-1.0 - 1.0)<br><b>Bool: </b>fov > 0</td>
                 <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Realms Notifications<br><i>(Online)</i></td>
-                <td style="text-align: center">realmsNotifications</td>
+                <td>Realms Notifications<br><i>realmsNotifications</i><br><i>(Online)</i></td>
                 <td>Whether Realms invites are alerted on the main menu </td>
-                <td>1 (on)<br>0 (off)</td>
-                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
                 <td style="text-align: center">None <b>CHECK</b></td>
             </tr>
             <tr>
-                <td>Allow Server Listings<br><i>(Online)</i></td>
-                <td style="text-align: center">allowServerListing</td>
+                <td>Allow Server Listings<br><i>allowServerListing</i><br><i>(Online)</i></td>
                 <td>Whether to allow the player to be shown in the player list shown by severs in the multiplayer screen </td>
-                <td>1 (on)<br>0 (off)</td>
-                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Skin Customizations</td>
-                <td style="text-align: center">modelPart_&lt;part&gt;</td>
+                <td>Skin Customizations<br><i>modelPart_&lt;part&gt;</i></td>
                 <td>
                     If the player's &lt;part&gt; is visible.<br><i>The following are avaliable &lt;part&gt;s:</i><br>
                     <table style="margin: 0 auto; width: 0">
@@ -98,40 +89,31 @@
                         </tbody>
                     </table>
                 </td>
-                <td>1 (&lt;part&gt; is visible)<br>0 (&lt;part&gt; is not visible)</td>
-                <td><code>true</code> (&lt;part&gt; is visible)<br><code>false</code> (&lt;part&gt; is not visible)</td>
+                <td>1 [<code>true</code>] (visible)<br>0 [<code>false</code>] (not visible)</td>
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Main Hand<br><i>(Skin Customization)</i></td>
-                <td style="text-align: center">mainHand</td>
+                <td>Main Hand<br><i>mainHand</i><br><i>(Skin Customization)</i></td>
                 <td>Whether the main hand appears as left or right </td>
-                <td>1 (right)<br>0 (left)</td>
-                <td><code>true</code> (right)<br><code>false</code> (left)</td>
+                <td>1 [<code>true</code>] (right)<br>0 [<code>false</code>] (left)</td>
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Text Background<br><i>(Accessibility Settings)</i></td>
-                <td style="text-align: center">backgroundForChatOnly</td>
+                <td>Text Background<br><i>backgroundForChatOnly</i><br><i>(Accessibility Settings)</i></td>
                 <td>Toggles if the background is only in chat or if it's everywhere (Chat, Everywhere)</td>
-                <td>1 (chat)<br>0 (everywhere)</td>
-                <td><code>true</code> (chat)<br><code>false</code> (everywhere)</td>
+                <td>1 [<code>true</code>] (chat)<br>0 [<code>false</code>] (everywhere)</td>
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Narrator<br><i>(Accessibility Settings)</i></td>
-                <td style="text-align: center">narrator</td>
+                <td>Narrator<br><i>narrator</i><br><i>(Accessibility Settings)</i></td>
                 <td>The mode the narrator is in</td>
-                <td>0 (off)<br>1 (all)<br>2 (chat)<br>3 (system)</td>
-                <td><code>true</code> (all, chat, system)<br><code>false</code> (off)</td>
+                <td>0 [<code>false</code>] (off)<br>1 [<code>true</code>] (all)<br>2 (chat)<br>3 [<code>true</code>] (system)</td>
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Monochrome Logo<br><i>(Accessibility Settings)</i></td>
-                <td style="text-align: center; font-size: 12px">darkMojangStudiosBackground</td>
+                <td>Monochrome Logo<br><i>darkMojangStudiosBackground</i><br><i>(Accessibility Settings)</i></td>
                 <td>Whether the Mojang Studios loading screen will appear monochrome </td>
-                <td>1 (on)<br>0 (off)</td>
-                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
                 <td style="text-align: center" class="last_cell">None</td>
             </tr>
             </tbody>
@@ -555,149 +537,113 @@
         <table class="left_cells">
             <thead>
             <tr>
-                <th>In-Game Name</th>
-                <th>Setting</th>
+                <th>In-Game Name<br><i>Setting</i></th>
                 <th>Description</th>
-                <th>Number Value</th>
-                <th>Boolean Value</th>
+                <th>Number & Boolean Value</th>
                 <th>Flags</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>Chat</td>
-                <td style="text-align: center">chatVisibility</td>
+                <td>Chat<br><i>chatVisibility</i></td>
                 <td>What is seen in chat (All, Commands Only, Hidden)</td>
-                <td>0 (shown)<br>1 (commands only)<br>2 (hidden)</td>
-                <td><code>true</code> (shown / commands only)<br><code>false</code> (hidden)</td>
+                <td>0 [<code>false</code>] (shown)<br>1 [<code>true</code>] (commands only)<br>2 [<code>true</code>] (hidden)</td>
                 <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#string">String</a></td>
             </tr>
             <tr>
-                <td>Colors</td>
-                <td style="text-align: center">chatColors</td>
+                <td>Colors<br><i>chatColors</i></td>
                 <td>Whether colors in chat are allowed </td>
-                <td>1 (on)<br>0 (off)</td>
-                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Web Links</td>
-                <td style="text-align: center">chatLinks</td>
+                <td>Web Links<br><i>chatLinks</i></td>
                 <td>Whether links show as links or just text in the chat</td>
-                <td>1 (on)<br>0 (off)</td>
-                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Prompt on Links</td>
-                <td style="text-align: center">chatLinksPrompt</td>
+                <td>Prompt on Links<br><i></i>chatLinksPrompt</td>
                 <td>Whether clicking on links in chat needs confirmation before opening them </td>
-                <td>1 (on)<br>0 (off)</td>
-                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Chat Text Opacity</td>
-                <td style="text-align: center">chatOpacity</td>
+                <td>Chat Text Opacity<br><i>chatOpacity</i></td>
                 <td>Opacity of the chat (0.0 - 1.0)</td>
-                <td>the opacity</td>
-                <td>opacity > 0</td>
+                <td><b>Num: </b>the opacity<br><b>Bool: </b>opacity > 0</td>
                 <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Text Background Opacity</td>
-                <td style="text-align: center">textBackgroundOpacity</td>
+                <td>Text Background Opacity<br><i>textBackgroundOpacity</i></td>
                 <td>Opacity of text background (0.0 - 1.0)</td>
-                <td>the opacity</td>
-                <td>opacity > 0</td>
+                <td><b>Num: </b>the opacity<br><b>Bool: </b>opacity > 0</td>
                 <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Chat Text Size</td>
-                <td style="text-align: center">chatScale</td>
+                <td>Chat Text Size<br><i>chatScale</i></td>
                 <td>The scale/size of the text in the chat (0.0 - 1.0)</td>
-                <td>the scale</td>
-                <td>scale > 0</td>
+                <td><b>Num: </b>the scale<br><b>Bool: </b>scale > 0</td>
                 <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Line Spacing</td>
-                <td style="text-align: center">chatLineSpacing</td>
+                <td>Line Spacing<br><i>chatLineSpacing</i></td>
                 <td>Spacing between text in chat (0.0 - 1.0)</td>
-                <td>the spacing</td>
-                <td>spacing > 0</td>
+                <td><b>Num: </b>the spacing<br><b>Bool: </b>spacing > 0</td>
                 <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Chat Delay</td>
-                <td style="text-align: center">chatDelay</td>
+                <td>Chat Delay<br><i>chatDelay</i></td>
                 <td>How much delay there is between text (0.0 - 6.0)</td>
-                <td>the delay</td>
-                <td>delay > 0</td>
+                <td><b>Num: </b>the delay<br><b>Bool: </b>delay > 0</td>
                 <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Width</td>
-                <td style="text-align: center">chatWidth</td>
+                <td>Width<br><i>chatWidth</i></td>
                 <td>How wide chat is (40px - 320px)</td>
-                <td>the width</td>
-                <td><code>true</code></td>
+                <td><b>Num: </b>the width<br><b>Bool: </b><code>true</code></td>
                 <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Focused Height</td>
-                <td style="text-align: center">chatHeightFocused</td>
+                <td>Focused Height<br><i>chatHeightFocused</i></td>
                 <td>How tall chat is when it's open (20px - 180px / 0.0 - 1.0)</td>
-                <td>the height</td>
-                <td><code>true</code></td>
+                <td><b>Num: </b>the height<br><b>Bool: </b><code>true</code></td>
                 <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Unfocused Height</td>
-                <td style="text-align: center">chatHeightUnfocused</td>
+                <td>Unfocused Height<br><i>chatHeightUnfocused</i></td>
                 <td>How tall chat is when it's not open (20px - 180px / 0.0 - 1.0)</td>
-                <td>the height</td>
-                <td><code>true</code></td>
+                <td><b>Num: </b>the height<br><b>Bool: </b><code>true</code></td>
                 <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Command Suggestions</td>
-                <td style="text-align: center">autoSuggestions</td>
+                <td>Command Suggestions<br><i>autoSuggestions</i></td>
                 <td>Whether brigadier's command suggestion UI should always be shown, instead of just when pressing tab </td>
-                <td>1 (on)<br>0 (off)</td>
-                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Hide Matched Names</td>
-                <td style="text-align: center">hideMatchedNames</td>
-                <td>Some servers send chat messages in non-standard formats. With this option on, the game will attempt to apply chat hiding anyway by matching the text in messages</td>
-                <td>1 (on)<br>0 (off)</td>
-                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td>Hide Matched Names<br><i>hideMatchedNames</i></td>
+                <td>Whether the game will attempt to apply chat hiding to non-standard messages</td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Reduced Debug Info</td>
-                <td style="text-align: center">reducedDebugInfo</td>
+                <td>Reduced Debug Info<br><i>reducedDebugInfo</i></td>
                 <td>Whether to reduce the information shown on the Debug screen</td>
-                <td>1 (on)<br>0 (off)</td>
-                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Chat Preview</td>
-                <td style="text-align: center">chatPreview</td>
+                <td>Chat Preview<br><i>chatPreview</i></td>
                 <td>If chat preview is enabled, and when it shows (Off, While Typing, When Sending)</td>
-                <td>0 (off)<br>1 (while typing)<br>2 (when sending)</td>
-                <td><code>true</code> (while typing / sending)<br><code>false</code> (off)</td>
+                <td>0 [<code>false</code>] (off)<br>1 [<code>true</code>] (while typing)<br>2 [<code>true</code>] (when sending)</td>
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Only Show Secure Chat</td>
-                <td style="text-align: center">onlyShowSecureChat</td>
+                <td>Only Show Secure Chat<br><i>onlyShowSecureChat</i></td>
                 <td>Whether to only show chat messages that are properly signed</td>
-                <td>1 (on)<br>0 (off)</td>
-                <td><code>true</code> (on)<br><code>false</code> (off)</td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
                 <td style="text-align: center">None</td>
             </tr>
             </tbody>
@@ -820,8 +766,6 @@
             </tbody>
         </table>
     </details>
-
-
 
 </div>
 </body>

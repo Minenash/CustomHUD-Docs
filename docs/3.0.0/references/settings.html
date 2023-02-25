@@ -61,17 +61,17 @@
             <tr>
                 <td>FOV<br><i>fov</i></td>
                 <td>How large the field of view is, in degrees (30° - 110°)</td>
-                <td><b>CHECK </b><b>Num: </b>the fov (-1.0 - 1.0)<br><b>Bool: </b>fov > 0</td>
-                <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
+                <td><b>Num: </b>30 - 110<br><b>Bool: </b>fov > 0</td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Realms Notifications<br><i>realmsNotifications</i><br><i>(Online)</i></td>
+                <td>Realms Notifications<br><i>(Online)</i><br><i>realmsNotifications</i></td>
                 <td>Whether Realms invites are alerted on the main menu </td>
                 <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
-                <td style="text-align: center">None <b>CHECK</b></td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Allow Server Listings<br><i>allowServerListing</i><br><i>(Online)</i></td>
+                <td>Allow Server Listings<br><i>(Online)</i><br><i>allowServerListing</i></td>
                 <td>Whether to allow the player to be shown in the player list shown by severs in the multiplayer screen </td>
                 <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
                 <td style="text-align: center">None</td>
@@ -93,25 +93,25 @@
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Main Hand<br><i>mainHand</i><br><i>(Skin Customization)</i></td>
+                <td>Main Hand<br><i>(Skin Customization)</i><br><i>mainHand</i></td>
                 <td>Whether the main hand appears as left or right </td>
                 <td>1 [<code>true</code>] (right)<br>0 [<code>false</code>] (left)</td>
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Text Background<br><i>backgroundForChatOnly</i><br><i>(Accessibility Settings)</i></td>
+                <td>Text Background<br><i>(Accessibility Settings)</i><br><i>backgroundForChatOnly</i></td>
                 <td>Toggles if the background is only in chat or if it's everywhere (Chat, Everywhere)</td>
                 <td>1 [<code>true</code>] (chat)<br>0 [<code>false</code>] (everywhere)</td>
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Narrator<br><i>narrator</i><br><i>(Accessibility Settings)</i></td>
+                <td>Narrator<br><i>(Accessibility Settings)</i><br><i>narrator</i></td>
                 <td>The mode the narrator is in</td>
                 <td>0 [<code>false</code>] (off)<br>1 [<code>true</code>] (all)<br>2 (chat)<br>3 [<code>true</code>] (system)</td>
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Monochrome Logo<br><i>darkMojangStudiosBackground</i><br><i>(Accessibility Settings)</i></td>
+                <td>Monochrome Logo<br><i>(Accessibility Settings)</i><br><i>darkMojangStudiosBackground</i></td>
                 <td>Whether the Mojang Studios loading screen will appear monochrome </td>
                 <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
                 <td style="text-align: center" class="last_cell">None</td>
@@ -122,50 +122,42 @@
 
     <details>
         <summary><b>Music & Sounds</b></summary>
-        <table style="margin-bottom: 24px">
+        <table class="left_cells">
             <thead>
             <tr>
-                <th>In-Game Name</th>
-                <th>Setting</th>
+                <th>In-Game Name<br><i>Setting</i></th>
                 <th>Description</th>
-                <th>Number Value</th>
-                <th>Boolean Value</th>
+                <th>Number & Boolean Value</th>
                 <th>Flags</th>
             </tr>
             </thead>
             <tbody>
+            <tbody>
             <tr>
-                <td><i>All the Sliders</i></td>
-                <td>soundCategory_&lt;sound_category&gt;</td>
+                <td>The Sliders<br><i>soundCategory_&lt;category&gt;</i></td>
                 <td>The volume of the category</td>
-                <td>Decimal (0-1)</td>
-                <td></td>
-                <td></td>
+                <td><b>Num: </b>volume (0.0 - 1.0)<br><b>Bool: </b> volume > 0</td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Device</td>
-                <td>soundDevice</td>
+                <td>Device<br><i>soundDevice</i></td>
                 <td>The Sound device to output the audio to </td>
-                <td>String</td>
-                <td></td>
-                <td></td>
+                <td><b>Num: </b>length of name<br><b>Bool: </b> length of name > 0</td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">String</a></td>
             </tr>
             <tr>
-                <td>Show Subtitles</td>
-                <td>showSubtitles</td>
+                <td>Show Subtitles<br><i>showSubtitles</i></td>
                 <td>Whether to show subtitles</td>
-                <td>Boolean</td>
-                <td></td>
-                <td></td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Directional Audio</td>
-                <td>directionalAudio</td>
+                <td>Directional Audio<br><i>directionalAudio</i></td>
                 <td>Whether Directional Audio is enabled </td>
-                <td>Boolean</td>
-                <td></td>
-                <td class="last_cell"></td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
+                <td style="text-align: center" class="last_cell">None</td>
             </tr>
+            </tbody>
             </tbody>
         </table>
         <b>Sound Categories</b>
@@ -191,207 +183,157 @@
         <table>
             <thead>
             <tr>
-                <th>In-Game Name</th>
-                <th>Setting</th>
+                <th>In-Game Name<br><i>Setting</i></th>
                 <th>Description</th>
-                <th>Number Value</th>
-                <th>Boolean Value</th>
+                <th>Number & Boolean Value</th>
                 <th>Flags</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>Fullscreen Resolution</td>
-                <td>fullscreenResolution</td>
+                <td>Fullscreen Resolution<br><i>fullscreenResolution</i></td>
                 <td>The resolution of the game when in fullscreen mode</td>
                 <td>String (&lt;width&gt;x&lt;height&gt;@&lt;refresh rate&gt;:&lt;color bits&gt;)</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">String</a></td>
             </tr>
             <tr>
-                <td>Biome Blend</td>
-                <td>biomeBlendRadius</td>
+                <td>Biome Blend<br><i>biomeBlendRadius</i></td>
                 <td>Radius for which biome blending should happen </td>
                 <td>Integer</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Graphics</td>
-                <td>graphicsMode</td>
+                <td>Graphics<br><i>graphicsMode</i></td>
                 <td>Which graphics mode is selected</td>
                 <td>Integer (Fast, Fancy, Fabulous)</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Render Distance</td>
-                <td>renderDistance</td>
+                <td>Render Distance<br><i>renderDistance</i></td>
                 <td>The render distance in the chunk radius from the player </td>
                 <td>Integer</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Chunk Builder</td>
-                <td>prioritizeChunkUpdates</td>
+                <td>Chunk Builder<br><i>prioritizeChunkUpdates</i></td>
                 <td>Chunk section update strategy </td>
                 <td>Integer (Threaded, Semi Blocking, Full Blocking)</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Simulation Distance</td>
-                <td>simulationDistance</td>
+                <td>Simulation Distance<br><i>simulationDistance</i></td>
                 <td>The simulation distance in the chunk radius from the player </td>
                 <td>Integer</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Smooth Lighting</td>
-                <td>ao</td>
+                <td>Smooth Lighting<br><i>ao</i></td>
                 <td>Smooth lighting</td>
                 <td>Integer (Off, Minimum, Maximum)</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Max Framerate</td>
-                <td>maxFps</td>
+                <td>Max Framerate<br><i>maxFps</i></td>
                 <td>The maximum framerate </td>
                 <td>Integer</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>VSync</td>
-                <td>enableVsync</td>
+                <td>VSync<br><i>enableVsync</i></td>
                 <td>Whether v-sync (vertical synchronization) is enabled </td>
                 <td>Boolean</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>View Bobbing</td>
-                <td>bobView</td>
+                <td>View Bobbing<br><i>bobView</i></td>
                 <td>Whether or not the camera bobs up and down as the player walks </td>
                 <td>Boolean</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center">None</td>
             </tr>
             </tbody>
             <tr>
-                <td>GUI Scale</td>
-                <td>guiScale</td>
+                <td>GUI Scale<br><i>guiScale</i></td>
                 <td>Size of interfaces </td>
                 <td>Integer</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Attack Indicator</td>
-                <td>attackIndicator</td>
+                <td>Attack Indicator<br><i>attackIndicator</i></td>
                 <td>When hitting, how the attack indicator is shown on screen </td>
                 <td>Integer (Off, Crosshair, Hotbar)</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Brightness</td>
-                <td>gamma</td>
+                <td>Brightness<br><i>gamma</i></td>
                 <td>Brightness</td>
                 <td>Decimal (0-1)</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Clouds</td>
-                <td>renderClouds</td>
+                <td>Clouds<br><i>renderClouds</i></td>
                 <td>Whether to display clouds</td>
                 <td>String (true/false/fast)</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">String</a></td>
             </tr>
             <tr>
-                <td>Fullscreen</td>
-                <td>fullscreen</td>
+                <td>Fullscreen<br><i>fullscreen</i></td>
                 <td>Whether the game attempts to go fullscreen at startup </td>
                 <td>Boolean</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Particles</td>
-                <td>particles</td>
+                <td>Particles<br><i>particles</i></td>
                 <td>Amount of particles (such as rain, potion effects, etc.) </td>
                 <td>Integer (All, Decreased, Minimal)</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Mipmap Levels</td>
-                <td>mipmapLevels</td>
+                <td>Mipmap Levels<br><i>mipmapLevels</i></td>
                 <td>Amount by which distant textures are smoothed </td>
                 <td>Integer</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Entity Shadows</td>
-                <td>entityShadows</td>
+                <td>Entity Shadows<br><i>entityShadows</i></td>
                 <td>Whether to display entity shadows </td>
                 <td>Boolean</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Entity Distance</td>
-                <td>entityDistanceScaling</td>
+                <td>Entity Distance<br><i>entityDistanceScaling</i></td>
                 <td>The maximum distance from the player that entities render </td>
                 <td>Decimal (0.5-5.0)</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Autosave Indicator</td>
-                <td>showAutosaveIndicator</td>
+                <td>Autosave Indicator<br><i>showAutosaveIndicator</i></td>
                 <td>Whether to show autosave indicator on the right-bottom of the screen <b>Check mc</b></td>
                 <td>Boolean</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Distortion Effects</td>
-                <td>screenEffectScale</td>
+                <td>Distortion Effects<br><i>screenEffectScale</i></td>
                 <td>How intense the distortion effects of Nausea and nether portals are</td>
                 <td>Decimal (0-1)</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>FOV Effects</td>
-                <td>fovEffectScale</td>
+                <td>FOV Effects<br><i>fovEffectScale</i></td>
                 <td>How much the field of view changes when sprinting, having Speed or Slowness etc.</td>
                 <td>Decimal (0-1)</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Darkness Pulsing<br><i>(Accessibility Settings)</i></td>
-                <td>darknessEffectScale</td>
+                <td>Darkness Pulsing<br><i>(Accessibility Settings)</i><br><i>darknessEffectScale</i></td>
                 <td>How much the Darkness effect pulses</td>
                 <td>Decimal (0-1)</td>
-                <td></td>
-                <td></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
-                <td>Hide Lighting Flashes<br><i>(Accessibility Settings)</i></td>
-                <td>hideLightningFlashes</td>
+                <td>Hide Lighting Flashes<br><i>(Accessibility Settings)</i><br><i>hideLightningFlashes</i></td>
                 <td>Hide lightning flashes (visual effect) </td>
                 <td>Boolean</td>
-                <td></td>
-                <td class="last_cell"></td>
+                <td style="text-align: center" class="last_cell">None</td>
             </tr>
 
         </table>
@@ -572,49 +514,49 @@
                 <td>Chat Text Opacity<br><i>chatOpacity</i></td>
                 <td>Opacity of the chat (0.0 - 1.0)</td>
                 <td><b>Num: </b>the opacity<br><b>Bool: </b>opacity > 0</td>
-                <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>Text Background Opacity<br><i>textBackgroundOpacity</i></td>
                 <td>Opacity of text background (0.0 - 1.0)</td>
                 <td><b>Num: </b>the opacity<br><b>Bool: </b>opacity > 0</td>
-                <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>Chat Text Size<br><i>chatScale</i></td>
                 <td>The scale/size of the text in the chat (0.0 - 1.0)</td>
                 <td><b>Num: </b>the scale<br><b>Bool: </b>scale > 0</td>
-                <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>Line Spacing<br><i>chatLineSpacing</i></td>
                 <td>Spacing between text in chat (0.0 - 1.0)</td>
                 <td><b>Num: </b>the spacing<br><b>Bool: </b>spacing > 0</td>
-                <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>Chat Delay<br><i>chatDelay</i></td>
                 <td>How much delay there is between text (0.0 - 6.0)</td>
                 <td><b>Num: </b>the delay<br><b>Bool: </b>delay > 0</td>
-                <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>Width<br><i>chatWidth</i></td>
                 <td>How wide chat is (40px - 320px)</td>
                 <td><b>Num: </b>the width<br><b>Bool: </b><code>true</code></td>
-                <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>Focused Height<br><i>chatHeightFocused</i></td>
                 <td>How tall chat is when it's open (20px - 180px / 0.0 - 1.0)</td>
                 <td><b>Num: </b>the height<br><b>Bool: </b><code>true</code></td>
-                <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>Unfocused Height<br><i>chatHeightUnfocused</i></td>
                 <td>How tall chat is when it's not open (20px - 180px / 0.0 - 1.0)</td>
                 <td><b>Num: </b>the height<br><b>Bool: </b><code>true</code></td>
-                <td style="text-align: center"><a href="https://github.com/Minenash/CustomHUD/wiki/Variable-Flags#precision--scale">Precision &amp; Scale</a></td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>Command Suggestions<br><i>autoSuggestions</i></td>

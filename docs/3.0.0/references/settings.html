@@ -39,7 +39,6 @@
 <div id="top" class="content">
     <br>
 
-    <b>🛠️ Work In Progress 🛠️</b>
     <h2>Settings Variable</h2>
 
     <b>Syntax: <code class="code_inline">{setting:&lt;setting&gt;}</code></b>
@@ -180,7 +179,7 @@
 
     <details>
         <summary><b>Video Settings</b></summary>
-        <table>
+        <table class="left_cells">
             <thead>
             <tr>
                 <th>In-Game Name<br><i>Setting</i></th>
@@ -192,147 +191,146 @@
             <tbody>
             <tr>
                 <td>Fullscreen Resolution<br><i>fullscreenResolution</i></td>
-                <td>The resolution of the game when in fullscreen mode</td>
-                <td>String (&lt;width&gt;x&lt;height&gt;@&lt;refresh rate&gt;:&lt;color bits&gt;)</td>
+                <td>The resolution of the game when in fullscreen mode<br>(&lt;width&gt;x&lt;height&gt;@&lt;refresh rate&gt;:&lt;color bits&gt;)</td>
+                <td><b>Num: </b>length of output<br><b>Bool: </b>length of output > 0</td>
                 <td style="text-align: center"><a href="../references/variable_flags.html">String</a></td>
             </tr>
             <tr>
                 <td>Biome Blend<br><i>biomeBlendRadius</i></td>
                 <td>Radius for which biome blending should happen </td>
-                <td>Integer</td>
+                <td><b>Num: </b>radius (0 - 7)<br><b>Bool: </b>radius > 0</td>
                 <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>Graphics<br><i>graphicsMode</i></td>
-                <td>Which graphics mode is selected</td>
-                <td>Integer (Fast, Fancy, Fabulous)</td>
-                <td style="text-align: center">None</td>
+                <td>Which graphics mode is selected<br>(Fast, Fancy, Fabulous)</td>
+                <td>0 [<code>false</code>] (Fast)<br>1 [<code>true</code>] (Fancy)<br>2 [<code>true</code>] (Fabulous)</td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">String</a></td>
             </tr>
             <tr>
                 <td>Render Distance<br><i>renderDistance</i></td>
                 <td>The render distance in the chunk radius from the player </td>
-                <td>Integer</td>
+                <td><b>Num: </b>distance (2 - 32)<br><b>Bool: </b>true</td>
                 <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>Chunk Builder<br><i>prioritizeChunkUpdates</i></td>
-                <td>Chunk section update strategy </td>
-                <td>Integer (Threaded, Semi Blocking, Full Blocking)</td>
-                <td style="text-align: center">None</td>
+                <td>Chunk section update strategy<br>(Threaded, Semi Blocking, Full Blocking)</td>
+                <td>0 [<code>false</code>] (Threaded)<br>1 [<code>true</code>] (Semi Blocking)<br>2 [<code>true</code>] (Full Blocking)</td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">String</a></td>
             </tr>
             <tr>
                 <td>Simulation Distance<br><i>simulationDistance</i></td>
                 <td>The simulation distance in the chunk radius from the player </td>
-                <td>Integer</td>
+                <td><b>Num: </b>distance (5 - 32)<br><b>Bool: </b>true</td>
                 <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>Smooth Lighting<br><i>ao</i></td>
-                <td>Smooth lighting</td>
-                <td>Integer (Off, Minimum, Maximum)</td>
-                <td style="text-align: center">None</td>
+                <td>Smooth lighting<br>(Off, Minimum, Maximum)</td>
+                <td>0 [<code>false</code>] (Off)<br>1 [<code>true</code>] (Minimum)<br>2 [<code>true</code>] (Maximum)</td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">String</a></td>
             </tr>
             <tr>
                 <td>Max Framerate<br><i>maxFps</i></td>
                 <td>The maximum framerate </td>
-                <td>Integer</td>
+                <td><b>Num: </b>maximum framerate (10 - 260)<br><b>Bool: </b>true</td>
                 <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>VSync<br><i>enableVsync</i></td>
                 <td>Whether v-sync (vertical synchronization) is enabled </td>
-                <td>Boolean</td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
                 <td>View Bobbing<br><i>bobView</i></td>
                 <td>Whether or not the camera bobs up and down as the player walks </td>
-                <td>Boolean</td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
                 <td style="text-align: center">None</td>
             </tr>
-            </tbody>
             <tr>
                 <td>GUI Scale<br><i>guiScale</i></td>
                 <td>Size of interfaces </td>
-                <td>Integer</td>
+                <td><b>Num: </b>the scale<br><b>Bool: </b>true</td>
                 <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>Attack Indicator<br><i>attackIndicator</i></td>
-                <td>When hitting, how the attack indicator is shown on screen </td>
-                <td>Integer (Off, Crosshair, Hotbar)</td>
-                <td style="text-align: center">None</td>
+                <td>When hitting, how the attack indicator is shown on screen<br>(Off, Crosshair, Hotbar)</td>
+                <td>0 [<code>false</code>] (Off)<br>1 [<code>true</code>] (Crosshair)<br>2 [<code>true</code>] (Hotbar)</td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">String</a></td>
             </tr>
             <tr>
                 <td>Brightness<br><i>gamma</i></td>
                 <td>Brightness</td>
-                <td>Decimal (0-1)</td>
+                <td><b>Num: </b>brightness (0.0 - 1.0)<br><b>Bool: </b>brightness > 0</td>
                 <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>Clouds<br><i>renderClouds</i></td>
-                <td>Whether to display clouds</td>
-                <td>String (true/false/fast)</td>
+                <td>Whether to display clouds<br>(true/false/fast)</td>
+                <td>0 [<code>false</code>] (Off)<br>1 [<code>true</code>] (Fast)<br>2 [<code>true</code>] (Fancy)</td>
                 <td style="text-align: center"><a href="../references/variable_flags.html">String</a></td>
             </tr>
             <tr>
                 <td>Fullscreen<br><i>fullscreen</i></td>
                 <td>Whether the game attempts to go fullscreen at startup </td>
-                <td>Boolean</td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
                 <td>Particles<br><i>particles</i></td>
-                <td>Amount of particles (such as rain, potion effects, etc.) </td>
-                <td>Integer (All, Decreased, Minimal)</td>
-                <td style="text-align: center">None</td>
+                <td>Amount of particles (such as rain, potion effects, etc.)<br>(All, Decreased, Minimal)</td>
+                <td>0 [<code>true</code>] (All)<br>1 [<code>true</code>] (Decreased)<br>2 [<code>false</code>] (Minimal)</td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">String</a></td>
             </tr>
             <tr>
                 <td>Mipmap Levels<br><i>mipmapLevels</i></td>
-                <td>Amount by which distant textures are smoothed </td>
-                <td>Integer</td>
+                <td>Amount by which distant textures are smoothed</td>
+                <td><b>Num: </b>level (0 - 4)<br><b>Bool: </b>mipmap is enabled</td>
                 <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>Entity Shadows<br><i>entityShadows</i></td>
                 <td>Whether to display entity shadows </td>
-                <td>Boolean</td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
                 <td>Entity Distance<br><i>entityDistanceScaling</i></td>
                 <td>The maximum distance from the player that entities render </td>
-                <td>Decimal (0.5-5.0)</td>
+                <td><b>Num: </b>distance (0.5 - 5.0)<br><b>Bool: </b>true</td>
                 <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>Autosave Indicator<br><i>showAutosaveIndicator</i></td>
                 <td>Whether to show autosave indicator on the right-bottom of the screen <b>Check mc</b></td>
-                <td>Boolean</td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
                 <td style="text-align: center">None</td>
             </tr>
             <tr>
                 <td>Distortion Effects<br><i>screenEffectScale</i></td>
                 <td>How intense the distortion effects of Nausea and nether portals are</td>
-                <td>Decimal (0-1)</td>
+                <td><b>Num: </b>effect strength (0.0 - 1.0)<br><b>Bool: </b>distortion effect is enabled</td>
                 <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>FOV Effects<br><i>fovEffectScale</i></td>
                 <td>How much the field of view changes when sprinting, having Speed or Slowness etc.</td>
-                <td>Decimal (0-1)</td>
+                <td><b>Num: </b>effect strength  (0.0 - 1.0)<br><b>Bool: </b>pov effect is enabled</td>
                 <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>Darkness Pulsing<br><i>(Accessibility Settings)</i><br><i>darknessEffectScale</i></td>
                 <td>How much the Darkness effect pulses</td>
-                <td>Decimal (0-1)</td>
+                <td><b>Num: </b>effect strength (0.0 - 1.0)<br><b>Bool: </b>pulsing effect is enabled</td>
                 <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>Hide Lighting Flashes<br><i>(Accessibility Settings)</i><br><i>hideLightningFlashes</i></td>
                 <td>Hide lightning flashes (visual effect) </td>
-                <td>Boolean</td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
                 <td style="text-align: center" class="last_cell">None</td>
             </tr>
 
@@ -341,100 +339,78 @@
 
     <details>
         <summary><b>Controls</b></summary>
-        <table>
+        <table class="left_cells">
             <thead>
             <tr>
-                <th>In-Game Name</th>
-                <th>Setting</th>
+                <th>In-Game Name<br><i>Setting</i></th>
                 <th>Description</th>
-                <th>Number Value</th>
-                <th>Boolean Value</th>
+                <th>Number & Boolean Value</th>
                 <th>Flags</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>Key Binds</td>
-                <td>key_key.&lt;keybind&gt;</td>
+                <td>Key Binds<br><i>key_key.&lt;keybind&gt;</i></td>
                 <td>The key bound for &lt;keybind&gt;</td>
-                <td>String</td>
-                <td></td>
-                <td></td>
+                <td><b>Num: </b>length of keybind<br><b>Bool: </b> length of keybind > 0</td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">String</a></td>
             </tr>
             <tr>
-                <td>Auto-Jump</td>
-                <td>autoJump</td>
+                <td>Auto-Jump<br><i>autoJump</i></td>
                 <td>Whether auto-jump is enabled</td>
-                <td>Boolean</td>
-                <td></td>
-                <td></td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Sneak</td>
-                <td>toggleCrouch</td>
-                <td><b>TODO</b></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>Sneak<br><i>toggleCrouch</i></td>
+                <td>Whether Sneak/Crouch is set to toggle instead of hold</td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Sprint</td>
-                <td>toggleSprint</td>
-                <td><b>TODO</b></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>Sprint<br><i>toggleSprint</i></td>
+                <td>Whether Sprint is set to toggle instead of hold</td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
                 <th colspan="6" style="border-radius: 0">Mouse Settings</th>
             </tr>
             <tr>
-                <td>Sensitivity</td>
-                <td>mouseSensitivity</td>
+                <td>Sensitivity<br><i>mouseSensitivity</i></td>
                 <td>How much a mouse movement changes the position of the camera </td>
-                <td>Decimal (0-1?)</td>
-                <td></td>
-                <td></td>
+                <td><b>Num: </b>sensitivity (0.0 - 1.0)<br><b>Bool: </b> sensitivity > 0</td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision & Scale</a></td>
             </tr>
             <tr>
-                <td>Invert Mouse</td>
-                <td>invertYMouse</td>
+                <td>Invert Mouse<br><i>invertYMouse</i></td>
                 <td>Whether mouse is inverted or not </td>
-                <td>Boolean</td>
-                <td></td>
-                <td></td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Scroll Sensitivity</td>
-                <td>mouseWheelSensitivity</td>
+                <td>Scroll Sensitivity<br><i>mouseWheelSensitivity</i></td>
                 <td>The sensitivity of the mouse wheel</td>
-                <td>Decimal (1-10)</td>
-                <td></td>
-                <td></td>
+                <td><b>Num: </b>sensitivity (0.0 - 10.0)<br><b>Bool: </b> sensitivity > 0</td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision & Scale</a></td>
             </tr>
             <tr>
-                <td>Discrete Scrolling</td>
-                <td>discrete_mouse_scroll</td>
+                <td>Discrete Scrolling<br><i>discrete_mouse_scroll</i></td>
                 <td>Whether to ignore scrolling set by operating system </td>
-                <td>Boolean</td>
-                <td></td>
-                <td></td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Touchscreen Mode</td>
-                <td>touchscreen</td>
+                <td>Touchscreen Mode<br><i>touchscreen</i></td>
                 <td>If Directional Audio is enabled </td>
-                <td>Boolean</td>
-                <td></td>
-                <td></td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
-                <td>Raw Input</td>
-                <td>rawMouseInput</td>
+                <td>Raw Input<br><i>rawMouseInput</i></td>
                 <td>Whether to ignore the mouse acceleration set by the operating system</td>
-                <td>Boolean</td>
-                <td></td>
-                <td class="last_cell"></td>
+                <td>1 [<code>true</code>] (on)<br>0 [<code>false</code>] (off)</td>
+                <td style="text-align: center" class="last_cell">None</td>
             </tr>
             </tbody>
         </table>
@@ -442,33 +418,39 @@
 
     <details>
         <summary><b>Language</b></summary>
-        <table>
+        <table class="left_cells">
             <thead>
             <tr>
-                <th>In-Game Name</th>
-                <th>Setting</th>
+                <th>In-Game Name<br><i>Setting</i></th>
                 <th>Description</th>
-                <th>Number Value</th>
-                <th>Boolean Value</th>
+                <th>Number & Boolean Value</th>
                 <th>Flags</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>Language</td>
-                <td>lang</td>
-                <td><b>To break out</b></td>
-                <td>Strings</td>
-                <td></td>
-                <td></td>
+                <td>Language<br><i>lang</i></td>
+                <td>Selected language name</td>
+                <td><b>Num: </b>length of lang name<br><b>Bool: </b>length of lang name > 0</td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">String</a></td>
             </tr>
             <tr>
-                <td>Force Unicode Font</td>
-                <td>forceUnicodeFont</td>
+                <td>Language Region<br><i>lang_region</i></td>
+                <td>Selected language region</td>
+                <td><b>Num: </b>length of lang region<br><b>Bool: </b>length of lang region > 0</td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">String</a></td>
+            </tr>
+            <tr>
+                <td>Language Code<br><i>lang_code</i></td>
+                <td>Selected language code</td>
+                <td><b>Num: </b>length of lang code<br><b>Bool: </b> length of lang code > 0</td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">String</a></td>
+            </tr>
+            <tr>
+                <td>Force Unicode Font<br><i>forceUnicodeFont</i></td>
                 <td>Whether the Unicode font should be instead of the normal font </td>
-                <td>Boolean</td>
-                <td></td>
-                <td class="last_cell"></td>
+                <td>1 [<code>true</code>]<br>0 [<code>false</code>]</td>
+                <td style="text-align: center" class="last_cell">None</td>
             </tr>
             </tbody>
         </table>
@@ -594,13 +576,12 @@
 
     <details>
         <summary><b>Not Visible in the Settings</b></summary>
-        <table>
+        <table class="left_cells">
             <thead>
             <tr>
                 <th>Setting</th>
                 <th>Description</th>
-                <th>Number Value</th>
-                <th>Boolean Value</th>
+                <th>Number & Boolean Value</th>
                 <th>Flags</th>
             </tr>
             </thead>
@@ -608,102 +589,88 @@
             <tr>
                 <td>lastServer</td>
                 <td>Address of last server used with Direct Connection </td>
-                <td>String</td>
-                <td></td>
-                <td></td>
+                <td><b>Num: </b>length of address<br><b>Bool: </b>length of address > 0</td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">String</a></td>
             </tr>
             <tr>
                 <td>advancedItemTooltips</td>
                 <td>Whether hovering over items in the inventory shows its ID and durability; toggled by pressing <kbd>F3</kbd> + <kbd>H</kbd></td>
-                <td>Boolean</td>
-                <td></td>
-                <td></td>
+                <td>1 [<code>true</code>]<br>0 [<code>false</code>]</td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
                 <td>pauseOnLostFocus</td>
                 <td>Whether switching out of Minecraft without pressing Esc or opening an in-game interface automatically pauses the game; toggled by pressing <kbd>F3</kbd> + <kbd>P</kbd></td>
-                <td>Boolean</td>
-                <td></td>
-                <td></td>
+                <td>1 [<code>true</code>]<br>0 [<code>false</code>]</td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
                 <td>overrideWidth</td>
                 <td>Width to open Minecraft with in pixels (0 means default to the Minecraft settings) </td>
-                <td>Integer</td>
-                <td></td>
-                <td></td>
+                <td><b>Num:&nbsp;</b>0&nbsp;(default)&nbsp;or&nbsp;set&nbsp;opening&nbsp;width <br><b>Bool: </b>not default</td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>overrideHeight</td>
                 <td>Height to open Minecraft with in pixels (0 means default to the Minecraft settings) </td>
-                <td>Integer</td>
-                <td></td>
-                <td></td>
+                <td><b>Num:&nbsp;</b>0&nbsp;(default)&nbsp;or&nbsp;set&nbsp;opening&nbsp;height <br><b>Bool: </b>not default</td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>heldItemTooltips</td>
                 <td>Whether switching between items shows the name of the item </td>
-                <td>Boolean</td>
-                <td></td>
-                <td></td>
+                <td>1 [<code>true</code>]<br>0 [<code>false</code>]</td>
+                <td style="text-align: center">None</td>
             </tr>
 
             <tr>
                 <td>useNativeTransport</td>
                 <td>Whether to use a Netty EpollSocketChannel for connections to servers instead of a NioSocketChannel (only applies if EPOLL is available on the user's system)</td>
-                <td>Boolean</td>
-                <td></td>
-                <td></td>
+                <td>1 [<code>true</code>]<br>0 [<code>false</code>]</td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
                 <td>tutorialStep</td>
                 <td>Next stage of tutorial hints to display </td>
-                <td>String</td>
-                <td></td>
-                <td></td>
+                <td><b>Num: </b>length of step text<br><b>Bool: </b>length of step text > 0</td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">String</a></td>
             </tr>
             <tr>
                 <td>glDebugVerbosity</td>
-                <td>LWJGL log info level (only on some machines)</td>
-                <td>Integer (none, high, medium, low, notification)</td>
-                <td></td>
-                <td></td>
+                <td>LWJGL log info level (only on some machines)<br>(none, high, medium, low, notification)</td>
+                <td><b>Num: </b>level (0 - 4)<br><b>Bool: </b>level > 0</td>
+                <td style="text-align: center"><a href="../references/variable_flags.html">Precision &amp; Scale</a></td>
             </tr>
             <tr>
                 <td>skipMultiplayerWarning</td>
                 <td>Whether to skip the legal disclaimer when entering the multiplayer screen </td>
-                <td>Boolean</td>
-                <td></td>
-                <td></td>
+                <td>1 [<code>true</code>]<br>0 [<code>false</code>]</td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
                 <td>skipRealms32bitWarning</td>
                 <td>Whether to skip the 32-bit environment warning when entering the Realms screen</td>
-                <td>Boolean</td>
-                <td></td>
-                <td></td>
+                <td>1 [<code>true</code>]<br>0 [<code>false</code>]</td>
+                <td style="text-align: center">None</td>
             </tr>
 
             <tr>
                 <td>joinedFirstServer</td>
                 <td>Whether the player has joined a server before. If false, the Social Interactions tutorial hint will appear when joining a server</td>
-                <td>Boolean</td>
-                <td></td>
-                <td></td>
+                <td>1 [<code>true</code>]<br>0 [<code>false</code>]</td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
                 <td>hideBundleTutorial</td>
                 <td>Whether the player has seen the bundle tutorial hint when trying to use a bundle</td>
-                <td>Boolean</td>
-                <td></td>
-                <td></td>
+                <td>1 [<code>true</code>]<br>0 [<code>false</code>]</td>
+                <td style="text-align: center">None</td>
             </tr>
             <tr>
                 <td>syncChunkWrites</td>
                 <td>Whether to open region files in synchronous mode</td>
-                <td>Boolean (T: Windows, F: Other)</td>
-                <td></td>
-                <td></td>
+                <td>1 [<code>true</code>] (Windows)<br>0 [<code>false</code>] (MacOS or Linux)</td>
+                <td style="text-align: center">None</td>
             </tr>
             </tbody>
         </table>

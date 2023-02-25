@@ -1,0 +1,16 @@
+{
+  "1.19.4": {"version": "3.0.0", "link": "https://modrinth.com/mod/customhud/version/v2.1.0+1.19", "msg": "CPS, icons variables, better item variables, local theming, improved conditionals, a more generic mc settings variable, and way more!!!"},
+  "1.19.3": {"version": "3.0.0", "link": "https://modrinth.com/mod/customhud/version/v2.1.0+1.19", "msg": "CPS, icons variables, better item variables, local theming, improved conditionals, a more generic mc settings variable, and way more!!!"},
+  "1.19.2": {"version": "3.0.0", "link": "https://modrinth.com/mod/customhud/version/v2.1.0+1.19", "msg": "CPS, icons variables, better item variables, local theming, improved conditionals, a more generic mc settings variable, and way more!!!"},
+  "1.19.1": {"version": "2.1.0", "link": "https://modrinth.com/mod/customhud/version/v2.1.0+1.19", "msg": "Added moon phases, cpu info, refresh rate, the ability to use \\n to split lines, and Bug Fixes"},
+  "1.19":   {"version": "2.1.0", "link": "https://modrinth.com/mod/customhud/version/v2.1.0+1.19", "msg": "Added moon phases, cpu info, refresh rate, the ability to use \\n to split lines, and Bug Fixes"},
+  "1.18.2": {"version": "2.1.0", "link": "https://modrinth.com/mod/customhud/version/v1.2.3+1.18", "msg": "Bug fixes"},
+  "1.18.1": {"version": "1.2.3", "link": "https://modrinth.com/mod/customhud/version/v1.2.3+1.18", "msg": "Bug fixes"},
+  "1.18":   {"version": "1.2.3", "link": "https://modrinth.com/mod/customhud/version/v1.2.3+1.18", "msg": "Bug fixes"},
+  "1.17.1": {"version": "1.2.3", "link": "https://modrinth.com/mod/customhud/version/v1.2.3+1.17", "msg": "Bug fixes"},
+  "1.17":   {"version": "1.2.3", "link": "https://modrinth.com/mod/customhud/version/v1.2.3+1.17", "msg": "Bug fixes"},
+  "1.16.5": {"version": "1.2.3", "link": "https://modrinth.com/mod/customhud/version/v1.2.3+1.16", "msg": "Bug fixes"},
+  "1.16.4": {"version": "1.2.3", "link": "https://modrinth.com/mod/customhud/version/v1.2.3+1.16", "msg": "Bug fixes"},
+  "1.16.3": {"version": "1.2.3", "link": "https://modrinth.com/mod/customhud/version/v1.2.3+1.16", "msg": "Bug fixes"},
+  "1.16.2": {"version": "1.2.3", "link": "https://modrinth.com/mod/customhud/version/v1.2.3+1.16", "msg": "Bug fixes"}
+}

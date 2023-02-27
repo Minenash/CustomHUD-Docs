@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset=utf-8>
-    <title>Variable Flags - Getting Started - CustomHud</title>
+    <title>Profile Sections - Getting Started - CustomHud</title>
     <meta content="width=device-width,initial-scale=1,user-scalable=no" name=viewport>
     <meta content="The Home of Terrible Projects" name=description>
     <link rel="icon" type="image/png" href="../../favicon.png"/>
@@ -20,45 +20,53 @@
     <li><a href="../references.html">References</a></li>
 </ul>
 
-<div class="version">Written for v3.0.0</div>
+<div class="version">Written for v2.1.0</div>
 
 <ul class="nav side_nav side_nav_getting_started">
     <li><a class="side_nav_header">Parts</a></li>
     <li><a href="../getting_started.html">1. Accessing Files</a></li>
     <li><a href="part2.html">2. First Text</a></li>
     <li><a href="part3.html">3. Variables</a></li>
-    <li><a href="#top">4. Variable Flags</a></li>
+    <li><a href="part4.html">4. Variable Flags</a></li>
     <li><a href="part5.html">5. Colors</a></li>
-    <li><a href="part6.html">6. Profile Sections</a></li>
+    <li><a href="#top">6. Profile Sections</a></li>
     <li><a href="part7.html">7. Theming</a></li>
     <li><a href="part8.html">8. Conditionals</a></li>
 </ul>
 
-<a class="next" href="part5.html">Next →</a>
-<a class="prev" href="part3.html">← Back</a>
+<a class="next" href="part3.html">Next →</a>
+<a class="prev" href="part5.html">← Back</a>
 
 <div id="top" class="content">
     <br>
 
-    <h2>4. Variable Flags</h2>
+    <h2>6. Profile Sections</h2>
     <p>
-        Variable Flags allow you to customize the output of certain variables.<br>
+        Currently the profile is only displaying info at the top right, but what if we want to put info in the other
+        corners? That's what Profile Sections are for!
+    </p>
+
+    <h3>Profile Section Options</h3>
+    <p>
+        Profile Section's x/y can be shifted, hidden when chat is open, or can be set to have the background a specific width
     </p>
     <div class="note" style="width: 43%;">
-        <b>Reference:</b> <a href="../references/variable_flags.html">All the variable flags available.</a>
-    </div>
-    <div style="height: 12px"></div>
-    <div class="note"  style="width: 43%">
-        <b>Reference:</b> <a href="../variables">Variables table</a> (see the flags column)
+        <b>Reference:</b> <a href="../references/profile_sections.html">All the Options for Profile Section</a>
     </div>
 
     <h3>Instructions</h3>
-    <p> For this example, let's use the String variable flags. </p>
-    <ul style="line-height: 2.25em">
-        <li><code class="code_inline"><b>-uc</b></code> &nbsp;Uppercase</li>
-        <li><code class="code_inline"><b>-lc</b></code> &nbsp;Lowercase</li>
-        <li><code class="code_inline"><b>-tc</b></code> &nbsp;Titlecase</li>
-        <li><code class="code_inline"><b>-sc</b></code> &nbsp;Small Caps (replaces lowercase letters with small capital letters)</li>
+    <p>
+        Let's add cpu, gpu, and ram usage percentages info to the TopRight corner.
+    </p>
+    <ul>
+        <li>Type <code class="code_inline">==Section:TopLeft==</code> above what we had in part 5.
+            <ul>
+                <li>This isn't strictly necessary, but it makes it more obvious what's going on</li>
+            </ul>
+        </li>
+        <li>Type <code class="code_inline">==Section:TopRight==</code> underneath what we had in part 5.</li>
+        <li>Add the cpu, gpu, and memory usage variable underneath</li>
+
     </ul>
 
     <div style="display: flex">
@@ -67,19 +75,22 @@
             <div class="code_block">
                 <b style="text-decoration: underline">profile1.txt</b><br>
                 <code>
-                    {facing} - Default <br>
-                    {facing -uc} - Uppercase <br>
-                    {facing -lc} - Lowercase <br>
-                    {facing -tc} - Titlecase <br>
-                    {facing -sc} - Small Caps <br>
-                    {facing -tc -sc} - Titlecase + Small Caps
+                    ==Section:TopLeft== <br>
+                    fps: &a{fps} <br>
+                    xyz: &c{bx} &a{by} &b{bz} <br>
+                    biome: &e{biome} <br>
+                    <br>
+                    ==Section:TopRight==<br>
+                    &e{cpu}% &fcpu<br>
+                    &e{gpu}% &fgpu<br>
+                    &e{memory_used_percentage}% &fram
                 </code>
             </div>
         </div>
         <div style="flex: 5"></div>
         <div style="flex: 45">
             <h3>Result In-Game</h3>
-            <div class="result" style='background-image: url("imgs/part4.png")'></div>
+            <div class="result" style='background-image: url("imgs/part6.png")'></div>
         </div>
     </div>
 

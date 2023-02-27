@@ -20,27 +20,24 @@
     <li><a href="../references.html" class="active">References</a></li>
 </ul>
 
-<div class="version">Written for v3.0.0</div>
+<div class="version">Written for v2.1.0</div>
 
 <ul class="nav side_nav">
-    <li><a class="side_nav_header">General</a></li>
+    <li><a class="side_nav_header">Page</a></li>
     <li><a href="profile_sections.html">Profile Sections</a></li>
     <li><a href="theming.html">Theming</a></li>
     <li><a href="variable_flags.html">Variable Flags</a></li>
     <li><a href="#top">Colors</a></li>
     <li><a style="height:8px; width: 0"></a></li>
-    <li><a class="side_nav_header">Special Variables</a></li>
-    <li><a href="stats.html">Stats</a></li>
-    <li><a href="real_time.html">Real Time</a></li>
-    <li><a href="item_slots.html">Item Slots</a></li>
-    <li><a href="icons.html">Icons</a></li>
-    <li><a href="settings.html">MC Settings</a></li>
+    <li><a href="stats.html">Stats Variable</a></li>
+    <li><a href="real_time.html">Real Time Variable</a></li>
 </ul>
 
 <div id="top" class="content">
     <br>
 
     <h2><a class="rainbow-text">Colors</a></h2>
+
     <div style="display: flex">
         <div style="flex: 45">
             <h3>Bukkit Color Codes</h3>
@@ -55,13 +52,7 @@
             <h3>Custom Colors</h3>
             <p>Use this if you want a specific color and you have the <b>hex code</b> for it. Just don't forget the first
                 two digits is the opaqueness of the text.</p>
-            <p style="line-height: 2em">
-                To turn a normal hex color like <code class="code_inline">#aa00aa</code>, remove the
-                <code class="code_inline">#</code>, add <code class="code_inline">ff</code> to the beginning, then
-                surround it with <code class="code_inline">&{}</code> and you should have
-                <code class="code_inline">&{ffaa00aa}</code>. You can make it transparency be replacing the
-                <code class="code_inline">ff</code> with a smaller value like <code class="code_inline">88</code>
-            </p>
+
             <table style="margin-bottom: 24px">
                 <thead>
                 <tr>
@@ -73,64 +64,25 @@
                 <tr>
                     <td><code>&{AARRGGBB}</code></td>
                     <td>&{77FF4040}</td>
-                    <td>Coral Red (50% transparency)</td>
-                </tr>
-                <tr>
-                    <td><code>&{RRGGBB}</code></td>
-                    <td>&{FF4040}</td>
-                    <td>Coral Red (no transparency)</td>
-                </tr>
-                <tr>
-                    <td>&{ARGB}</td>
-                    <td>&{BF50}</td>
-                    <td>Orange-ish Red (75% Opacity)</td>
-                </tr><tr>
-                    <td>&{RGB}</td>
-                    <td>&{F50}</td>
-                    <td class="last_cell">Orange-ish Red (no transparency)</td>
-                </tr>
-
-                </tbody>
-            </table>
-            <table>
-                <thead>
-                <tr>
-                    <th>Letters</th>
-                    <th>Meaning</th>
-                    <th>Range</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td><code>AA or A</code></td>
-                    <td>Alpha (Translucency)</td>
-                    <td>00-FF or 0-F</td>
-                </tr>
-                <tr>
-                    <td><code>RR or R</code></td>
-                    <td>Red</td>
-                    <td>00-FF or 0-F</td>
-                </tr>
-                <tr>
-                    <td><code>GG or G</code></td>
-                    <td>Green</td>
-                    <td>00-FF or 0-F</td>
-                </tr>
-                <tr>
-                    <td><code>BB or B</code></td>
-                    <td>Blue</td>
-                    <td class="last_cell">00-FF or 0-F</td>
+                    <td class="last_cell">Coral Red (50% transparency)</td>
                 </tr>
                 </tbody>
             </table>
+            <p style="line-height: 2.25em">
+                To turn a normal hex color like <code class="code_inline">#aa00aa</code>, remove the
+                <code class="code_inline">#</code>, add <code class="code_inline">ff</code> to the beginning, then
+                surround it with <code class="code_inline">&{}</code> and you should have
+                <code class="code_inline">&{ffaa00aa}</code>. You can make it transparency be replacing the
+                <code class="code_inline">ff</code> with a smaller value like <code class="code_inline">88</code>
+            </p>
         </div>
     </div>
     <br>
-    <h3>Examples</h3>
 
+    <h3>Examples</h3>
     <div style="display: flex">
         <div style="flex: 45">
-            <h3>Profile File</h3>
+            <h4>Profile File</h4>
             <div class="code_block">
                 <b style="text-decoration: underline">profile1.txt</b><br>
                 <code>
@@ -142,7 +94,7 @@
         </div>
         <div style="flex: 5"></div>
         <div style="flex: 45">
-            <h3>Result In-Game</h3>
+            <h4>Result In-Game</h4>
             <div class="result" style='background-image: url("imgs/colors.png")'></div>
         </div>
     </div>

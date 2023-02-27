@@ -41,15 +41,13 @@
     <br>
 
     <h2>3. Variables</h2>
-    <p>
-        Variables produce a value, like fps, xyz, biome, etc <br>
-        <b>Syntax:</b> <code class="code_inline">{&lt;variable_name&gt; [flags]}</code> <br>
-        <b>Examples:</b> <code class="code_inline">{fps}</code> , <code class="code_inline">{x}</code> , <code class="code_inline">{biome}</code> , <code class="code_inline">{ping}</code> <br>
-        <i>We're saving flags for the next part</i>
-    </p>
+    <p>Variables produce a value, like fps, xyz, biome, etc <br></p>
+    <p><b>Syntax:</b> <code class="code_inline">{&lt;variable_name&gt; [flags]}</code> <br></p>
+    <p><b>Examples:</b> <code class="code_inline">{fps}</code> , <code class="code_inline">{x}</code> , <code class="code_inline">{biome}</code> , <code class="code_inline">{ping}</code> <br></p>
+    <p><i>We're saving flags for the next part</i></p>
 
     <div class="note">
-        <b>Reference:</b> <a href="variables">All the variables available.</a> (You can safely ignore the
+        <b>Reference:</b> <a href="../variables">All the variables available.</a> (You can safely ignore the
         <i>Number Value</i> and <i>Boolean Value</i> columns for now)<br>
     </div>
 
@@ -59,8 +57,8 @@
         Let's create a profile that shows our fps, coordinates, and biome.
         <code class="code_inline">{bx}</code> , <code class="code_inline">{by}</code> , <code class="code_inline">{bz}</code> are the player's block coordinates.
     </p>
-    <div>
-        <div style="float: left; width: 45%; margin-right: 5%">
+    <div style="display: flex">
+        <div style="flex: 45">
             <h3>Profile File</h3>
             <div class="code_block">
                 <b style="text-decoration: underline">profile1.txt</b><br>
@@ -71,8 +69,8 @@
                 </code>
             </div>
         </div>
-
-        <div style="float:right; width: 45%;">
+        <div style="flex: 5"></div>
+        <div style="flex: 45">
             <h3>Result In-Game</h3>
             <div class="result" style='background-image: url("imgs/part3.png")'></div>
         </div>

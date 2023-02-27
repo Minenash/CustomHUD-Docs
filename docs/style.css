@@ -131,6 +131,14 @@ a:hover {
     aspect-ratio: 854 / 480;
 }
 
+.conditional_example_block {
+    border-radius: 6px;
+    border: solid 1px black;
+    background-color: #ddd;
+    box-shadow: #444 4px 4px 2px;
+    padding: 12px 15px;
+}
+
 .spacer {
     height: 100px;
 }

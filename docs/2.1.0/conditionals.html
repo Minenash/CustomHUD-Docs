@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset=utf-8>
-    <title>References - CustomHud</title>
+    <title>Conditionals - CustomHud</title>
     <meta content="width=device-width,initial-scale=1,user-scalable=no" name=viewport>
     <meta content="The Home of Terrible Projects" name=description>
     <link rel="icon" type="image/png" href="../favicon.png"/>
@@ -23,22 +23,155 @@
 
 <ul class="nav side_nav">
     <li><a class="side_nav_header">General</a></li>
+    <li><a href="#top">Syntax</a></li>
+    <li><a href="#conditional_part"><i>Conditional</i> Part</a></li>
+    <li><a href="#comparisons">Comparisons</a></li>
 
     <li><a style="height:8px; width: 0"></a></li>
+    <li><a class="side_nav_header">Examples</a></li>
+    <li><a href="#example_1">Example 1</a></li>
+    <li><a href="#example_2">Example 2</a></li>
 </ul>
 
 <div id="top" class="content">
     <br>
-    <b>🛠️ Work In Progress 🛠️</b>
-    <h2>References</h2>
-    <table class="left_cells" style="width: 75%">
-        <thead>
-        <tr> <th>A</th> <th>B</th> </tr>
-        </thead>
-        <tbody>
+    <h2>Conditionals</h2>
+    <p>
+        Conditionals allow you to change what is displayed depending on the result of some variables.
+    </p>
+    <p style="line-height: 2.25em">
+        <b>Syntax:</b> <code class="code_inline">{{<i>conditional</i>, <i>"what to display if true"</i>}}</code><br> <b style="margin-left: 39px">or</b>
+        <code class="code_inline">{{<i>conditional</i>, <i>"what to display if true"</i>, <i>"what to display if false"</i>}}</code><br>
+        <i>You can nest conditionals <b>one deep</b> by using <code class="code_inline">'</code> s instead of <code class="code_inline">"</code> s for the inner one</i>
+    </p>
 
-        </tbody>
-    </table>
+    <h3 id="conditional_part">What do I put in the <i>conditional</i> spot?</h3>
+    <p>Basically anything that produces a true / false value. There's two main ways to do this:</p>
+    <ul>
+        <li>Variable's Boolean Value (the <i>Boolean Value</i> column in the <a href="variables.html">Variables</a> page)</li>
+        <li>A comparison like <code class="code_inline">pitch > 0</code> or <code class="code_inline">version = "1.16.2"</code></li>
+    </ul>
+    <p>
+        Notice the lack of <code class="code_inline">{}</code> s next to <code class="code_inline">pitch</code> and <code class="code_inline">version</code>.
+        In the <i>conditional</i> section, you <b>don't</b> put <code class="code_inline">{}</code> s around variables.
+    </p>
+    <br>
+    <div id="example_1" class="conditional_example_block">
+        <details>
+            <summary><h4 style="display: inline">Example 1:</h4></summary>
+
+            <p>
+                <code class="code_inline">{nx}</code> and <code class="code_inline">{nz}</code> show the Nether equivalent coordinates
+                when you're in the Overworld or end, but show the Overworld equivalent coordinates when you're in the Nether.
+                What if you wanted the label to reflex that?
+            </p>
+            <ul><li><code class="code_inline">{{nether, "Overworld", "Nether"}}: {nx} {y} {nz}</code></li></ul>
+            <p>
+                Okay, let's break that down:
+            </p>
+            <ul style="line-height: 2.25em">
+                <li><code class="code_inline">nether</code> is a variable, that according to the <i>Boolean Value</i> column in the
+                    <a href="variables.html">Variables</a> page, is true if you're in the nether, and false otherwise.
+                </li>
+                <li><code class="code_inline">"Overworld"</code> will display if <b>are</b> in the nether</li>
+                <li><code class="code_inline">"Nether"</code> will display if <b>aren't</b> in the nether</li>
+                <li><code class="code_inline">: {nx} {y} {nz}</code> Since this isn't in the conditional, it will always display</li>
+
+            </ul>
+            <p>
+                If you only want to show the line if you're not in the nether, then you can do:
+            </p>
+            <ul>
+                <li style="line-height: 2.25em"><code class="code_inline">{{nether, "", "Nether: &a{nx} {y} {nz}"}}</code></li>
+                <li>Note: The true section is just an empty "". If this is the only thing on the line in the profile file,
+                    and you're not in the nether, then this line will be ignored instead of having a blank line</li>
+            </ul>
+        </details>
+    </div>
+    <br>
+    <h3 id="comparisons">Comparisons</h3>
+    <p>
+        As mentioned in the previous section, you can do comparisons like <code class="code_inline">pitch > 0</code> or
+        <code class="code_inline">version = "1.16.2"</code> , let's expand on that.
+    </p>
+    <p>
+        Variables can produce 3 values: String, Number, and Boolean. We already used the boolean value in Example 1.
+    </p>
+    <p>
+        Which value is used in the conditional depends on which operator you use, here's a list:
+    </p>
+
+    <div style="display: flex">
+        <div style="flex: 35">
+            <center><h4>Operators</h4></center>
+            <table>
+                <thead>
+                <tr> <th>Symbol</th> <th>Name</th> <th>What It Compares</th></tr>
+                </thead>
+                <tbody>
+                <tr> <td>|</td> <td>Or</td> <td>Boolean Values</td> </tr>
+                <tr> <td>&</td> <td>And</td> <td>Boolean Values</td> </tr>
+                <tr> <td>&lt;</td> <td>Less Than</td> <td>Number Values</td> </tr>
+                <tr> <td>&gt;</td> <td>Greater Than</td> <td>Number Values</td> </tr>
+                <tr> <td>&lt;=</td> <td>Less Than or Equal To</td> <td>Number Values</td> </tr>
+                <tr> <td>&gt;=</td> <td>Greater Than or Equal To</td> <td>Number Values</td> </tr>
+                <tr> <td>=</td> <td>Equal</td> <td><i>It Depends*</i></td> </tr>
+                <tr> <td>!=</td> <td>Not Equal</td> <td class="last_cell"><i>It Depends*</i></td> </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="flex: 2"></div>
+        <div style="flex: 55">
+            <center><h4>It Depends*</h4></center>
+            <ul style="line-height: 2.25em">
+                <li><code class="code_inline">x = 5</code> will compare Number Values, because <b>5</b> is a number</li>
+                <li><code class="code_inline">nether = false</code> will compare Boolean Values, because <b>false</b> is a boolean</li>
+                <li><code class="code_inline">version = "1.19.2"</code> will compare String Values, because <b>"1.19.2"</b> is a string</li>
+                <li><code class="code_inline">client_version = modded_name</code> will compare String Values, because both are variables</li>
+            </ul>
+            <center><h4>Grouping</h4></center>
+            <div style="padding-left: 32px">
+                <p>
+                    If you're using multiple conditions in 1 conditional, and want group them to ensure the order, you can
+                    group them with <code class="code_inline">()</code> s.
+                </p>
+                <p><b>Example:</b> <code class="code_inline">{{y > 60 & (z > 0 | x > 0), "Yes", "No"}}</code></p>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="example_2" class="conditional_example_block">
+        <details>
+            <summary><h4 style="display: inline">Example 2:</h4></summary>
+
+            <p>
+                What if we want to change the color of our fps depending on its value?
+            </p>
+            <ul><li><code class="code_inline">{{fps >= 60, "&a"}}{{fps < 60 & fps >= 30, "&e"}}{{fps < 30, "&c"}}{fps} fps</code></li></ul>
+            <p>
+                Okay, let's break that down:
+            </p>
+            <ul style="line-height: 2.25em">
+                <li>
+                    <code class="code_inline">{{fps >= 60, "&a"}}</code> checks if the fps is greater than or equal to 60
+                    <ul><li>If so, it puts the green color code <code class="code_inline">&a</code></li></ul>
+                </li>
+                <li>
+                    <code class="code_inline">{{fps < 60 & fps >= 30, "&e"}}</code> checks if the fps is between 30 and 60
+                    <ul><li>If so, it puts the yellow color code <code class="code_inline">&e</code></li></ul>
+                </li>
+                <li>
+                    <code class="code_inline">{{fps < 30, "&c"}}</code> checks if the fps is below 30
+                    <ul><li>If so, it puts the red color code <code class="code_inline">&c</code></li></ul>
+                </li>
+                <li>
+                    <code class="code_inline">{fps} fps</code> being outside the conditional, always shows. But now it shows in the <a class="rainbow-text">color</a> we want!
+                </li>
+            </ul>
+        </details>
+    </div>
+
 
     <div class="spacer"></div>
 

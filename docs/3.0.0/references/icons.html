@@ -32,18 +32,188 @@
     <li><a href="stats.html">Stats</a></li>
     <li><a href="real_time.html">Real Time</a></li>
     <li><a href="item_slots.html">Item Slots</a></li>
-    <li><a href="#">Icons</a></li>
+    <li><a href="#top">Icons</a></li>
     <li><a href="settings.html">MC Settings</a></li>
 </ul>
 
 <div id="top" class="content">
     <br>
     <b>🛠️ Work In Progress 🛠️</b>
-    <h2>Theming</h2>
+    <h2>Icons</h2>
     <p>
-        Theming allows you to customize the style of your profiles, like foreground and background color, font, scale,
-        text shadow, and line spacing
+        Icons are non-text variables that display (usually a texture)
     </p>
+
+    <div style="display: flex;">
+        <div style="flex: 1; margin: 0 12px 0 0">
+            <h4 style="text-align: center">Table of Contents</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>Section</th>
+                    <th>Variable</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><a href="#item_icon">Item Icon</a></td>
+                    <td>{icon:&lt;item_id&gt;}</td>
+                    <td>Shows the given item</td>
+                </tr>
+                <tr>
+                    <td><a href="#texture_icon">Texture Icon</a></td>
+                    <td>{icon:&lt;texture_path&gt;}<br>{﻿icon﻿:﻿&lt;﻿path﻿&gt;﻿,﻿&lt;﻿u﻿&gt;﻿,﻿&lt;﻿v﻿&gt;﻿,﻿&lt;﻿w﻿&gt;﻿,﻿&lt;﻿h﻿&gt;﻿}</td>
+                    <td>Shows the given texture</td>
+                </tr>
+                <tr>
+                    <td><a href="#item_slot_icon">Item Slot Icon</a></td>
+                    <td style="white-space: nowrap">{item:<a href="">&lt;slot&gt;</a>:icon}</td>
+                    <td>Show the item in <a href="">&lt;slot&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#gizmo">Gizmo</a></td>
+                    <td>{gizmo}</td>
+                    <td class="last_cell">Shows the F3 Crosshair/Gizmo</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="flex: 1; margin: 0 12px 0 0">
+            <h4 style="text-align: center">Flags</h4>
+            <table style="flex:1; margin: 0 6px 0 6px">
+                <thead>
+                <tr> <th colspan="2">Icon Flags</th> <th>Description</th> </tr>
+                </thead>
+                <tbody>
+                <tr> <td>-﻿dvc</td> <td>---</td> <td>Disable the vertical centering of the icon</td> </tr>
+                <tr> <td>-﻿s&lt;scale&gt;</td>     <td>-﻿scale</td>     <td>How much to scale the value by</td> </tr>
+                <tr>
+                    <td>-﻿w&lt;width&gt;</td>
+                    <td>-﻿width</td>
+                    <td>
+                        Changes how much space of the line the icon takes<br>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>-﻿sh&lt;x&gt;<br>-﻿sh&lt;x&gt;,﻿&lt;y&gt;</td>
+                    <td>-﻿shift</td>
+                    <td class="last_cell">Shifts the icon</td> </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <h3 id="item_icon">Item Icon: <code class="code_inline">{icon:&lt;item_id&gt;}</code></h3>
+    <p>
+        Shows the given item using its item-id like <code class="code_inline">minecraft:diamond_pickaxe</code>
+    </p>
+    <div>
+        <div style="float: left; width: 45%; margin-right: 5%">
+            <h4>Examples</h4>
+            <div class="code_block">
+                <b style="text-decoration: underline">profile1.txt</b><br>
+                <code>
+
+                </code>
+            </div>
+        </div>
+
+        <div style="float:right; width: 45%;">
+            <h4>Result In-Game</h4>
+            <div class="result" style='background-color: #04AA6D'></div> <!-- background-image: url("imgs/real_time.png") -->
+        </div>
+    </div>
+    <br><br><br>
+    <div class="spacer"></div>
+
+
+
+    <h3 id="texture_icon">Texture Icon: <code class="code_inline">{icon:&lt;texture_path&gt;}</code>, <code class="code_inline">{﻿icon﻿:﻿&lt;﻿path﻿&gt;﻿,﻿&lt;﻿u﻿&gt;﻿,﻿&lt;﻿v﻿&gt;﻿,﻿&lt;﻿w﻿&gt;﻿,﻿&lt;﻿h﻿&gt;﻿}</code></h3>
+    <p>
+        Shows the given texture like <code class="code_inline">block/glass</code> and optionally only part of the texture
+        in cases where the texture file includes multiple things. You can also make a resource pack to use your own
+        textures instead of just the one minecraft provides.
+    </p>
+    <div>
+        <div style="float: left; width: 45%; margin-right: 5%">
+            <h4>Examples</h4>
+            <div class="code_block">
+                <b style="text-decoration: underline">profile1.txt</b><br>
+                <code>
+
+                </code>
+            </div>
+        </div>
+
+        <div style="float:right; width: 45%;">
+            <h4>Result In-Game</h4>
+            <div class="result" style='background-color: #04AA6D'></div> <!-- background-image: url("imgs/real_time.png") -->
+        </div>
+    </div>
+    <br><br><br>
+    <div class="spacer"></div>
+
+    <h3 id="item_slot_icon">Item Slot Icon: <code class="code_inline">{item:<a href="">&lt;slot&gt;</a>:icon}</code></h3>
+    <p>
+        Show the item that is in <a href="">&lt;slot&gt;</a> like <code class="code_inline">hotbar.0</code>
+    </p>
+    <p>
+        This icon variable has a few extra flags that you can use to add additional information to the icon:
+    </p>
+    <table style="width: 45%">
+        <thead>
+        <tr> <th>Item Slot Flags</th> <th>Description</th> </tr>
+        </thead>
+        <tbody>
+        <tr> <td>-﻿rich</td>     <td>The next 3 flags combined</td> </tr>
+        <tr> <td>-﻿count</td>    <td>Shows the item's stack count</td> </tr>
+        <tr> <td>-﻿dur</td>      <td>Shows the item's durability</td> </tr>
+        <tr> <td>-﻿cooldown</td> <td class="last_cell">Shows the cooldown for that item</td> </tr>
+        </tbody>
+    </table>
+    <div>
+        <div style="float: left; width: 45%; margin-right: 5%">
+            <h4>Examples</h4>
+            <div class="code_block">
+                <b style="text-decoration: underline">profile1.txt</b><br>
+                <code>
+
+                </code>
+            </div>
+        </div>
+
+        <div style="float:right; width: 45%;">
+            <h4>Result In-Game</h4>
+            <div class="result" style='background-color: #04AA6D'></div> <!-- background-image: url("imgs/real_time.png") -->
+        </div>
+    </div>
+    <br><br><br>
+    <div class="spacer"></div>
+
+    <h3 id="gizmo">Gizmo: <code class="code_inline">{gizmo}</code></h3>
+    <p>
+        Shows the F3 Crosshair/Gizmo
+    </p>
+    <div>
+        <div style="float: left; width: 45%; margin-right: 5%">
+            <h4>Examples</h4>
+            <div class="code_block">
+                <b style="text-decoration: underline">profile1.txt</b><br>
+                <code>
+
+                </code>
+            </div>
+        </div>
+
+        <div style="float:right; width: 45%;">
+            <h4>Result In-Game</h4>
+            <div class="result" style='background-color: #04AA6D'></div> <!-- background-image: url("imgs/real_time.png") -->
+        </div>
+    </div>
+    <br><br><br>
+    <div class="spacer"></div>
 
 </div>
 </body>

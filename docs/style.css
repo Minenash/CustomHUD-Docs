@@ -158,7 +158,6 @@ a:hover {
     }
 }
 
-
 table {
     width: 100%;
     margin-bottom: 50px;
@@ -166,7 +165,6 @@ table {
     border-spacing: 0;
     border-radius: 12px;
     background-color: #f4f5f7;
-    overflow: scroll;
     box-shadow: #444 4px 4px 2px;
 }
 
@@ -273,6 +271,16 @@ tr:last-child td:first-child { border-radius: 0 0 0 10px; }
     }
     .side_nav_header {
         font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .side_nav {
+        display: none;
+    }
+    .content {
+        margin-left: 5%;
+        width: 90%;
     }
 }
 

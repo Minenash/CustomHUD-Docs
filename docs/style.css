@@ -274,12 +274,14 @@ tr:last-child td:first-child { border-radius: 0 0 0 10px; }
     }
 }
 
-.side_nav {
-    display: none;
-}
-.content {
-    margin-left: 5%;
-    width: 90%;
+@media screen and (max-width: 900px){
+    .side_nav {
+        display: none;
+    }
+    .content {
+        margin-left: 5%;
+        width: 90%;
+    }
 }
 
 .next { left: 80px }

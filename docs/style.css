@@ -280,6 +280,7 @@ tr:last-child td:first-child { border-radius: 0 0 0 10px; }
     }
     .content {
         overflow-x: scroll;
+        margin: 0 5%;
     }
 }
 

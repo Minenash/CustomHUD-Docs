@@ -274,14 +274,9 @@ tr:last-child td:first-child { border-radius: 0 0 0 10px; }
     }
 }
 
-@media screen and (max-width: 900px){
-    .side_nav {
-        display: none;
-    }
+@media screen and (max-width: 481px){
     .content {
-        margin-left: 5%;
-        width: 90%;
-        background-color: #04AA6D;
+        overflow-x: scroll;
     }
 }
 

@@ -38,7 +38,6 @@
 
 <div id="top" class="content">
     <br>
-    <b>🛠️ Work In Progress 🛠️</b>
     <h2>Icons</h2>
     <p>
         Icons are non-text variables that display (usually a texture)
@@ -115,41 +114,46 @@
             <div class="code_block">
                 <b style="text-decoration: underline">profile1.txt</b><br>
                 <code>
-
+                    ==Scale: 2==
+                    <br>{icon:wooden_sword} {icon:iron_sword} {icon:golden_sword}
+                    <br>
+                    <br>{icon:diamond_sword -sh3,0} {icon:netherite_sword -sh3,0}
+                    <br>
+                    <br>{icon:ender_pearl -s1.75 -sh10,0}
                 </code>
             </div>
         </div>
         <div style="flex: 5"></div>
         <div style="flex: 45">
             <h3>Result In-Game</h3>
-            <div class="result" style='background-color: forestgreen'></div>
+            <div class="result" style='background-image: url("imgs/icon_examples/item.png")'></div>
         </div>
     </div>
     <br><br>
 
-    <h3 id="texture_icon">Texture Icon: <code class="code_inline">{icon:&lt;texture_path&gt;}</code>, <code class="code_inline">{﻿icon﻿:﻿&lt;﻿path﻿&gt;﻿,﻿&lt;﻿u﻿&gt;﻿,﻿&lt;﻿v﻿&gt;﻿,﻿&lt;﻿w﻿&gt;﻿,﻿&lt;﻿h﻿&gt;﻿}</code></h3>
-    <p>
-        Shows the given texture like <code class="code_inline">block/glass</code> and optionally only part of the texture
-        in cases where the texture file includes multiple things. You can also make a resource pack to use your own
-        textures instead of just the one minecraft provides.
-    </p>
-    <div style="display: flex">
-        <div style="flex: 45">
-            <h3>Profile File</h3>
-            <div class="code_block">
-                <b style="text-decoration: underline">profile1.txt</b><br>
-                <code>
+<!--    <h3 id="texture_icon">Texture Icon: <code class="code_inline">{icon:&lt;texture_path&gt;}</code>, <code class="code_inline">{﻿icon﻿:﻿&lt;﻿path﻿&gt;﻿,﻿&lt;﻿u﻿&gt;﻿,﻿&lt;﻿v﻿&gt;﻿,﻿&lt;﻿w﻿&gt;﻿,﻿&lt;﻿h﻿&gt;﻿}</code></h3>-->
+<!--    <p>-->
+<!--        Shows the given texture like <code class="code_inline">block/glass</code> and optionally only part of the texture-->
+<!--        in cases where the texture file includes multiple things. You can also make a resource pack to use your own-->
+<!--        textures instead of just the one minecraft provides.-->
+<!--    </p>-->
+<!--    <div style="display: flex">-->
+<!--        <div style="flex: 45">-->
+<!--            <h3>Profile File</h3>-->
+<!--            <div class="code_block">-->
+<!--                <b style="text-decoration: underline">profile1.txt</b><br>-->
+<!--                <code>-->
 
-                </code>
-            </div>
-        </div>
-        <div style="flex: 5"></div>
-        <div style="flex: 45">
-            <h3>Result In-Game</h3>
-            <div class="result" style='background-color: forestgreen'></div>
-        </div>
-    </div>
-    <br><br>
+<!--                </code>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div style="flex: 5"></div>-->
+<!--        <div style="flex: 45">-->
+<!--            <h3>Result In-Game</h3>-->
+<!--            <div class="result" style='background-color: forestgreen'></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <br><br>-->
 
     <h3 id="item_slot_icon">Item Slot Icon: <code class="code_inline">{item:<a href="item_slots.html">&lt;slot&gt;</a>:icon}</code></h3>
     <p>
@@ -175,14 +179,17 @@
             <div class="code_block">
                 <b style="text-decoration: underline">profile1.txt</b><br>
                 <code>
-
+                    ==Scale: 2==
+                    <br>{item:mainhand:icon} {item:offhand:icon}
+                    <br>
+                    <br>{item:main:icon -dur} {item:off:icon -count}
                 </code>
             </div>
         </div>
         <div style="flex: 5"></div>
         <div style="flex: 45">
             <h3>Result In-Game</h3>
-            <div class="result" style='background-color: forestgreen'></div>
+            <div class="result" style='background-image: url("imgs/icon_examples/item_slot.png")'></div>
         </div>
     </div>
     <br><br>
@@ -197,17 +204,18 @@
             <div class="code_block">
                 <b style="text-decoration: underline">profile1.txt</b><br>
                 <code>
-                    <b>1| </b><br><b>2| </b>Facing: |{gizmo}|
-                    <br><b>3| </b>
-                    <br><b>4| </b>&2Facing&f | {gizmo -s1.5 -sh0,3} | &e({yaw},{pitch -p0})
-                    <br><b>5| </b>&a  {facing_towards_pn_sign}{facing_towards_xz}&f    |      | &a{facing -tc}
+                    <b style="user-select: none; -webkit-user-select: none">1| </b><br><b style="user-select: none; -webkit-user-select: none">2| </b>Facing: |{gizmo}|
+                    <br><b style="user-select: none; -webkit-user-select: none">3| </b>
+                    <br><b style="user-select: none; -webkit-user-select: none">4| </b>&2Facing&f | {gizmo -s1.5 -sh0,3} | &e({yaw},{pitch })
+                    <br><b style="user-select: none; -webkit-user-select: none">5| </b>&a&nbsp;&nbsp;{facing_towards_pn_sign}{facing_towards_xz}&f&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &a{facing -tc}
+                    <br><b style="user-select: none; -webkit-user-select: none">6| </b>
                 </code>
             </div>
         </div>
         <div style="flex: 5"></div>
         <div style="flex: 45">
             <h3>Result In-Game</h3>
-            <div class="result" style='background-color: forestgreen'></div>
+            <div class="result" style='background-image: url("imgs/icon_examples/gizmo.png")'></div>
         </div>
     </div>
 

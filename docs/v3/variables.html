@@ -568,7 +568,7 @@
         <tr>
             <td>{swimming}</td>
             <td>Is the player swimming?</td>
-            <td>1 (swimming)<br>0 (not sprinting)</td>
+            <td>1 (swimming)<br>0 (not swimming)</td>
             <td><code>true</code> (swimming)<br><code>false</code> (not swimming)</td>
             <td>None</td>
         </tr>
@@ -1371,21 +1371,28 @@
         </tr>
         <tr><td></td><td></td><td></td><td></td><td></td></tr>
         <tr>
-            <td>{sneaking}</td>
+            <td id="sprinting">{sprinting}</td>
+            <td>Is the player sprinting?</td>
+            <td>1 (sprinting)<br>0 (not sprinting)</td>
+            <td><code>true</code> (sprinting)<br><code>false</code> (not sprinting)</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td id="sneaking">{sneaking}</td>
             <td>Is the player sneaking?</td>
             <td>1 (sneaking)<br>0 (not sneaking)</td>
             <td><code>true</code> (sneaking)<br><code>false</code> (not sneaking)</td>
             <td>None</td>
         </tr>
         <tr>
-            <td>{swimming}</td>
+            <td id="swimming">{swimming}</td>
             <td>Is the player swimming?</td>
-            <td>1 (swimming)<br>0 (not sprinting)</td>
+            <td>1 (swimming)<br>0 (not swimming)</td>
             <td><code>true</code> (swimming)<br><code>false</code> (not swimming)</td>
             <td>None</td>
         </tr>
         <tr>
-            <td>{on_ground}</td>
+            <td id="on_ground">{on_ground}</td>
             <td>Is the player on the ground?</td>
             <td>1 (on the ground)<br>0 (not on the ground)</td>
             <td><code>true</code> (on the ground)<br><code>false</code> (not on the ground)</td>

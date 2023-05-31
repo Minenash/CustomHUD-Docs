@@ -40,54 +40,102 @@
 <div id="top" class="content">
     <br>
 
-    <h2>5. <a class="rainbow-text">Adding Colors</a></h2>
-    <p>Let's add color to the profile we made in <b>2b</b>!</p>
-
+    <h2>5. <a class="rainbow-text">Colors</a></h2>
+    <p>
+        Examples with pictures are at the bottom of the page
+    </p>
     <div style="display: flex">
         <div style="flex: 45">
             <h3>Bukkit Color Codes</h3>
-            <p>CustomHud supports Bukkit Color codes</p>
+            <p>CustomHud supports Bukkit Color codes<br><u><b>Important: </b>Formatting (bold, italics, etc) must be placed <i>after</i> the color</u></p>
             <div class="note">
                 <b>Reference:</b> Bukkit Color Codes<br>
-                <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1807/example2-1518839184.png" width="100%" alt="bukkit colors reference">
+                <img class="color_img" src="https://static.planetminecraft.com/files/resource_media/screenshot/1807/example2-1518839184.png" width="100%" alt="bukkit color reference">
+            </div>
+            <br>
+            <h3>Named Colors <u>[Added in v3.1]</u></h3>
+            <p>In v3.1, you can now write the color's name instead of the single letter code</p>
+            <div class="note">
+                <b>Reference:</b> Named Colors<br>
+                <img class="color_img" src="../references/imgs/colors/named_colors.png" width="100%" alt="named colors reference">
             </div>
         </div>
         <div style="flex: 5"></div>
         <div style="flex: 45">
             <h3>Custom Colors</h3>
-            <p>Use this if you want a specific color and you have the <b>hex code</b> for it. Just don't forget the first
-                two digits is the opaqueness of the text.</p>
-
+            <p style="line-height: 2em">
+                To turn a normal hex color like <code class="code_inline">#aa00aa</code>, remove the
+                <code class="code_inline">#</code>, add <code class="code_inline">ff</code> to the beginning, then
+                surround it with <code class="code_inline">&{}</code> and you should have
+                <code class="code_inline">&{ffaa00aa}</code>. You can make it translucent by replacing the
+                <code class="code_inline">ff</code> with a smaller value like <code class="code_inline">88</code>
+                or fully transparent with <code class="code_inline">00</code>
+            </p>
             <table style="margin-bottom: 24px">
                 <thead>
-                <tr> <th>Syntax</th> <th colspan="2">Example</th> </tr>
+                <tr>
+                    <th>Syntax</th>
+                    <th colspan="2">Example</th>
+                </tr>
                 </thead>
                 <tbody>
-                <tr> <td><code>&{AARRGGBB}</code></td> <td>&{77FF4040}</td> <td>Coral Red (50% transparency)</td> </tr>
-                <tr> <td><code>&{RRGGBB}</code></td>   <td>&{FF4040}</td>   <td>Coral Red (no transparency)</td>  </tr>
-                <tr> <td><code>&{ARGB}</code></td>     <td>&{BF50}</td>     <td>Orange-ish Red (75% Opacity)</td> </tr>
-                <tr> <td><code>&{RGB}</code></td>      <td>&{F50}</td>      <td class="last_cell">Orange-ish Red (no transparency)</td> </tr>
+                <tr>
+                    <td><code>&{AARRGGBB}</code></td>
+                    <td>&{77FF4040}</td>
+                    <td>Coral Red (50% transparency)</td>
+                </tr>
+                <tr>
+                    <td><code>&{RRGGBB}</code></td>
+                    <td>&{FF4040}</td>
+                    <td>Coral Red (no transparency)</td>
+                </tr>
+                <tr>
+                    <td>&{ARGB}</td>
+                    <td>&{BF50}</td>
+                    <td>Orange-ish Red (75% Opacity)</td>
+                </tr><tr>
+                    <td>&{RGB}</td>
+                    <td>&{F50}</td>
+                    <td class="last_cell">Orange-ish Red (no transparency)</td>
+                </tr>
+
                 </tbody>
             </table>
             <table>
                 <thead>
-                <tr> <th>Letters</th> <th>Meaning</th> <th>Range</th> </tr>
+                <tr>
+                    <th>Letters</th>
+                    <th>Meaning</th>
+                    <th>Range</th>
+                </tr>
                 </thead>
                 <tbody>
-                <tr> <td><code>AA or A</code></td> <td>Alpha (Translucency)</td> <td>00-FF or 0-F</td> </tr>
-                <tr> <td><code>RR or R</code></td> <td>Red</td>   <td>00-FF or 0-F</td> </tr>
-                <tr> <td><code>GG or G</code></td> <td>Green</td> <td>00-FF or 0-F</td> </tr>
-                <tr> <td><code>BB or B</code></td> <td>Blue</td>  <td class="last_cell">00-FF or 0-F</td> </tr>
+                <tr>
+                    <td><code>AA or A</code></td>
+                    <td>Alpha (Translucency)</td>
+                    <td>00-FF or 0-F</td>
+                </tr>
+                <tr>
+                    <td><code>RR or R</code></td>
+                    <td>Red</td>
+                    <td>00-FF or 0-F</td>
+                </tr>
+                <tr>
+                    <td><code>GG or G</code></td>
+                    <td>Green</td>
+                    <td>00-FF or 0-F</td>
+                </tr>
+                <tr>
+                    <td><code>BB or B</code></td>
+                    <td>Blue</td>
+                    <td class="last_cell">00-FF or 0-F</td>
+                </tr>
                 </tbody>
             </table>
         </div>
     </div>
-
-    <h3>Instructions</h3>
-    <p>
-        Let's add some color to the profile we had in part 3 and 4.<br>We're going to be using the bukkit
-        color codes for this.
-    </p>
+    <br>
+    <h3>Examples</h3>
 
     <div style="display: flex">
         <div style="flex: 45">
@@ -104,7 +152,7 @@
         <div style="flex: 5"></div>
         <div style="flex: 45">
             <h3>Result In-Game</h3>
-            <div class="result" style='background-image: url("../references/imgs/colors.png")'></div>
+            <div class="result" style='background-image: url("../references/imgs/colors/example.png")'></div>
         </div>
     </div>
 

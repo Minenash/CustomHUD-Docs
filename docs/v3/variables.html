@@ -26,6 +26,7 @@
     <li><a href="#f3">ꜰʀᴏᴍ ꜰ<b class="small_num">3</b></a></li>
     <li><a href="#new" style="color: gold">✨ ɴᴇᴡ ✨</a></li>
     <li><a href="#performance">ᴘᴇʀꜰᴏʀᴍᴀɴᴄᴇ</a></li>
+    <li><a href="#server_and_world">sᴇʀᴠᴇʀ, ᴡᴏʀʟᴅ</a></li>
     <li><a href="#misc">ᴍɪsᴄ</a></li>
     <li><a href="#position">ᴘᴏsɪᴛɪᴏɴ</a></li>
     <li><a href="#direction">ᴅɪʀᴇᴄᴛɪᴏɴ</a></li>
@@ -38,6 +39,7 @@
     <li><a href="#sounds">sᴏᴜɴᴅs</a></li>
     <li><a href="#targets">ᴛᴀʀɢᴇᴛ</a></li>
     <li><a href="#items">ɪᴛᴇᴍs</a></li>
+    <li><a href="#fishing_rod">ꜰɪsʜɪɴɢ ʀᴏᴅ</a></li>
     <li><a href="#pc_utilization">ᴘᴄ ɪɴꜰᴏ, ᴜsᴀɢᴇ</a></li>
     <li><a href="#technical_misc">ᴛᴇᴄʜɴɪᴄᴀʟ ᴍɪsᴄ</a></li>
     <li><a href="#sodium">ᴍᴏᴅs</a></li>
@@ -48,7 +50,7 @@
     <h1>Variables</h1>
 
     <p>
-        <b>CustomHud Version: <code>3.0.0</code></b><br>
+        <b>CustomHud Version: <code>v3.0 & v3.1</code></b><br>
         This is a list of every variable you can use in the profiles. There are over a hundred variables you can use.
         For easy searching, the list has been broken down into related categories that you can see on the left sidebar.
     </p>
@@ -316,7 +318,7 @@
         </text>
 
         <text id="r14v1-test" y="900">
-            <tspan x="24" font-size="48">Light Level (Client)</tspan>
+            <tspan x="24" font-size="48">Light Level</tspan>
             <tspan x="24" dy="1.2em">Variable: {light}</tspan>
         </text>
         <text id="r14v2-test" y="900">
@@ -507,9 +509,351 @@
         </tbody>
     </table>
 
-    <h3 id="new">What New and Depreciated 3.0.0</h3>
+    <h3 id="new">What New and Depreciated v3.1</h3>
     <details>
-        <summary>Variables added in 3.0.0</summary>
+        <summary>[33] Variables added in v3.1</summary>
+        <hr>
+
+        <h4>Miscellaneous</h4>
+        <table>
+            <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{space:&lt;pixels&gt;}</td>
+                <td>Can be used to add space without spamming space</td>
+                <td>0</td>
+                <td>false</td>
+                <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{name} / {display_name}</td>
+                <td>The name of the player as seen in chat and tab</td>
+                <td>length of name</td>
+                <td>length of name &gt; 0</td>
+                <td><a href="references/variable_flags.html">String</a></td>
+            </tr>
+            <tr>
+                <td>{username}</td>
+                <td>The username of the player</td>
+                <td>length of name</td>
+                <td>length of name &gt; 0</td>
+                <td><a href="references/variable_flags.html">String</a></td>
+            </tr>
+            <tr>
+                <td>{uuid}</td>
+                <td>The uuid of the player</td>
+                <td>36</td>
+                <td>true</td>
+                <td><a href="references/variable_flags.html">String</a></td>
+            </tr>
+            <tr>
+                <td>{reach} / {reach_distance}</td>
+                <td>How far the player can reach</td>
+                <td>how far in blocks</td>
+                <td>true</td>
+                <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h4>Server / World</h4>
+        <table>
+            <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>{world} / {world_name}</td>
+                <td>The name of the singleplayer world the player is in</td>
+                <td>the length of the name</td>
+                <td>length of the name &gt; 0</td>
+                <td><a href="references/variable_flags.html">String</a></td>
+            </tr>
+            <tr>
+                <td>{server_name}</td>
+                <td>The name of the server (as written in the server entry) the player is in</td>
+                <td>the length of the name</td>
+                <td>length of the name &gt; 0</td>
+                <td><a href="references/variable_flags.html">String</a></td>
+            </tr>
+            <tr>
+                <td>{server_address} / {ip}</td>
+                <td >New aliases for <a href="#address">{address}</a><br><i>The address (as written in the address field) of the server</i></td>
+                <td >length of the address</td>
+                <td >length of the address &gt; 0</td>
+                <td ><a href="references/variable_flags.html">String</a></td>
+            </tr>
+            <tbody>
+            </tbody>
+        </table>
+
+        <h4>Items</h4>
+        <table>
+            <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="white-space: nowrap">{item:<a href="references/item_slots.html">&lt;slot&gt;</a>:count}</td>
+                <td>Show the amount of the item in <a href="references/item_slots.html">&lt;slot&gt;</a></td>
+                <td>the count</td>
+                <td>if the durability is greater than 0</td>
+                <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td style="white-space: nowrap">{item:<a href="references/item_slots.html">&lt;slot&gt;</a>:max_count}</td>
+                <td>Show the max stack size of the item in <a href="references/item_slots.html">&lt;slot&gt;</a></td>
+                <td>the maximum stack size</td>
+                <td>if the item is stackable</td>
+                <td class="last_cell"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h4>Light, Time, and Environment</h4>
+        <table>
+            <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{light_sun}</td>
+                <td colspan="2">The light level from the sky, taking into account time and weather</td>
+                <td>if can get info</td>
+                <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{time} / {solar_time}</td>
+                <td>Time in ticks between 0 - 24000 (1 mc day)</td>
+                <td>the time in ticks</td>
+                <td>if not exactly 0</td>
+                <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{lunar_time}</td>
+                <td>Time in ticks between 0 - 192000 (8 mc days)</td>
+                <td>the time in ticks</td>
+                <td>if not exactly 0</td>
+                <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{snowing}</td>
+                <td>If it's snowing</td>
+                <td>1 (snowing)<br>0 (not snowing)</td>
+                <td><code>true</code> (snowing)<br><code>false</code> (not snowing)</td>
+                <td>None</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h4>Target Block/Fluid/Entity</h4>
+        <table>
+            <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{tbd} / {target_distance}<br>{target_block_distance}</td>
+                <td>How many blocks away is<br>the block the player's looking at<br></td>
+                <td>z coordinate</td>
+                <td>if the player is looking at a block</td>
+                <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{tfd} / {target_fluid_distance}</td>
+                <td>How many blocks away is<br>the fluid the player's looking at<br></td>
+                <td>z coordinate</td>
+                <td>if the player is looking at a fluid</td>
+                <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{ted} / {target_entity_distance}</td>
+                <td>How many blocks away is<br>the block the player's looking at<br></td>
+                <td>z coordinate</td>
+                <td class="rowspan" rowspan="3">if the player is looking at an entity</td>
+                <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{ten} / {target_entity_name}</td>
+                <td>The name of the entity the player&#39;s looking at<br>(Ex: Notch, Fluffy)<br><b>[Added in v3.1]</b></td>
+                <td class="rowspan_fix_right">length of output</td>
+                <td><a href="references/variable_flags.html">String</a></td>
+            </tr>
+            <tr>
+                <td>{teu} / {target_entity_uuid}</td>
+                <td>The uuid of the entity the player&#39;s looking at<br><b>[Added in v3.1]</b></td>
+                <td class="rowspan_fix_right">length of output</td>
+                <td><a href="references/variable_flags.html">String</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h4>Fishing Rod</h4>
+        <table>
+            <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{fishing_is_cast}</td>
+                <td>If the fishing rod is cast</td>
+                <td>1 (is cast)<br>0 (isn't cast)</td>
+                <td><code>true</code> (is cast)<br><code>false</code> (isn't cast)</td>
+                <td rowspan="4">None</td>
+            </tr>
+            <tr>
+                <td>{fishing_is_hooked}</td>
+                <td>If the fishing rod is hooked into an entity</td>
+                <td>1 (is hooked)<br>0 (isn't hooked)</td>
+                <td class="rowspan_fix_right"><code>true</code> (is hooked)<br><code>false</code> (isn't hooked)</td>
+            </tr>
+            <tr>
+                <td>{fishing_has_caught}</td>
+                <td>If a fish, treasure, or junk is currently hooked and the bobber is bobbing</td>
+                <td>1 (has caught)<br>0 (hasn't caught)</td>
+                <td class="rowspan_fix_right"><code>true</code> (has caught)<br><code>false</code> (hasn't caught)</td>
+            </tr>
+            <tr>
+                <td>{fishing_in_open_water}</td>
+                <td>If the bobber is in open water<br>(a 5x4x5 area of water/air/lilly, needed to get treasure)</td>
+                <td>1 (has caught)<br>0 (hasn't caught)</td>
+                <td class="rowspan_fix_right"><code>true</code> (has caught)<br><code>false</code> (hasn't caught)</td>
+            </tr>
+            <tr>
+                <td>{fishing_hook_distance}</td>
+                <td>How far away the bobber is from you</td>
+                <td>distance away</td>
+                <td class="rowspan_fix_right">if cast</td>
+                <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            <tr>
+                <td ></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>{he} / {hooked_entity}</td>
+                <td>The type of the entity hooked by the fishing rod<br>(Ex: Pig, Player)</td>
+                <td>length of output</td>
+                <td rowspan="8" class="rowspan">if the rod is hooked into an entity</td>
+                <td><a href="references/variable_flags.html">String</a></td>
+            </tr>
+            <tr>
+                <td>{hei} / {hooked_entity_id}</td>
+                <td>The id of the entity hooked by the fishing rod</td>
+                <td>length of output</td>
+                <td><a href="references/variable_flags.html">String</a></td>
+            </tr>
+            <tr>
+                <td>{hen} / {hooked_entity_name}</td>
+                <td>The name of the entity hooked by the fishing rod<br>(Ex: Notch, Fluffy)</td>
+                <td>length of output</td>
+                <td><a href="references/variable_flags.html">String</a></td>
+            </tr>
+            <tr>
+                <td>{heu} / {hooked_entity_uuid}</td>
+                <td>The uuid of the entity hooked by the fishing rod</td>
+                <td>length of output</td>
+                <td><a href="references/variable_flags.html">String</a></td>
+            </tr>
+            <tr>
+                <td>{hex} / {hooked_entity_x}</td>
+                <td>The x coordinate of the entity hooked by the fishing rod</td>
+                <td>x coordinate</td>
+                <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{hey} / {hooked_entity_y}</td>
+                <td>The y coordinate of the entity hooked by the fishing rod</td>
+                <td>y coordinate</td>
+                <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{hez} / {hooked_entity_z}</td>
+                <td>The z coordinate of the entity hooked by the fishing rod</td>
+                <td>z coordinate</td>
+                <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{hed}&nbsp;/&nbsp;{hooked_entity_distance}</td>
+                <td>How many blocks away the entity hooked by the fishing rod is</td>
+                <td>distance in blocks</td>
+                <td class="last_cell"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <hr>
+    </details>
+
+    <details>
+        <summary>[2] Variables depreciated v3.1 (will be removed in a later version)</summary>
+        <hr>
+        <h4>Light Variables</h4>
+        <table>
+            <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Description</th>
+                <th>Reason</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td id="server_light_sky">{server_light_sky}</td>
+                <td>The light level from the sky, <b>doesn't</b> take into account time and weather</td>
+                <td class="rowspan last_cell" rowspan="2">Since the client can only get the server light level in singleplayer,<br>the chances that the server and client light levels don't agree are pretty much none</td>
+            </tr>
+            <tr>
+                <td id="server_light_block">{server_light_block}</td>
+                <td class="rowspan_fix_right">The light level from blocks<br>(reported by the server)</td>
+            </tr>
+            </tbody>
+        </table>
+        <hr>
+    </details>
+
+    <h3>What New and Depreciated v3.0</h3>
+    <details>
+        <summary>[27] Variables added in v3.0</summary>
         <hr>
         <h4>Miscellaneous</h4>
         <table>
@@ -755,7 +1099,7 @@
     </details>
 
     <details>
-        <summary>Variables depreciated 3.0.0 (will be removed in a later version)</summary>
+        <summary>[19] Variables depreciated v3.0 (will be removed in a later version)</summary>
         <hr>
         <h4>Item Variables</h4>
         <table>
@@ -763,102 +1107,64 @@
             <tr>
                 <th>Variable</th>
                 <th>Description</th>
-                <th>Number Value</th>
-                <th>Boolean Value</th>
-                <th>Flags</th>
+                <th>Reason</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td>{item}</td>
                 <td>Name of item in player&#39;s main hand</td>
-                <td>raw numeric id</td>
-                <td>if there's an item in your hand</td>
-                <td><a href="references/variable_flags.html">String</a></td>
+                <td rowspan="6">Replaced by the new <a href="#items">Item Variables</a></td>
             </tr>
             <tr>
                 <td>{item_id}</td>
-                <td>Id of item in player&#39;s main hand</td>
-                <td>raw numeric id</td>
-                <td>if there's an item in your hand</td>
-                <td><a href="references/variable_flags.html">String</a></td>
+                <td class="rowspan_fix_right">Id of item in player&#39;s main hand</td>
             </tr>
             <tr>
                 <td>{item_dur}<br>{item_durability}</td>
-                <td>Durability of item in player&#39;s main hand</td>
-                <td>durability</td>
-                <td>if greater than 0</td>
-                <td>None</td>
+                <td class="rowspan_fix_right">Durability of item in player&#39;s main hand</td>
             </tr>
             <tr>
                 <td>{item_max_dur}<br>{item_max_durability}</td>
-                <td>Max durability of item in player&#39;s main hand</td>
-                <td>max durability</td>
-                <td>if greater than 0</td>
-                <td>None</td>
+                <td class="rowspan_fix_right">Max durability of item in player&#39;s main hand</td>
             </tr>
             <tr>
                 <td>{item_dur_per}<br>{item_durability_percent}</td>
-                <td>Percentage of durability left of item in player&#39;s main hand</td>
-                <td>durability %</td>
-                <td>if greater than 0</td>
-                <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+                <td class="rowspan_fix_right">Percentage of durability left of item in player&#39;s main hand</td>
             </tr>
             <tr>
                 <td id="item_has_dur">{item_has_dur}<br>{item_has_durability}</td>
-                <td>If the item in the player&#39;s main hand can have durability</td>
-                <td>0 (false)<br>1 (true)</td>
-                <td>can have durability</td>
-                <td>None</td>
+                <td class="rowspan_fix_right">If the item in the player&#39;s main hand can have durability</td>
             </tr>
             <tr>
                 <td ></td>
-                <td></td>
-                <td></td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
                 <td id="oitem">{oitem}<br>{offhand_item}</td>
                 <td>Name of item in player&#39;s offhand</td>
-                <td>raw numeric id</td>
-                <td>if there's an item in your hand</td>
-                <td><a href="references/variable_flags.html">String</a></td>
+                <td class="rowspan" rowspan="6">Replaced by the new <a href="#items">Item Variables</a></td>
             </tr>
             <tr>
                 <td id="oitem_id">{oitem_id}<br>{offhand_item_id}</td>
-                <td>Id of item in player&#39;s offhand</td>
-                <td>raw numeric id</td>
-                <td>if there's an item in your hand</td>
-                <td><a href="references/variable_flags.html">String</a></td>
+                <td class="rowspan_fix_right">Id of item in player&#39;s offhand</td>
             </tr>
             <tr>
                 <td id="oitem_dur">{oitem_dur}<br>{offhand_item_durability}</td>
-                <td>Durability of item in player&#39;s offhand</td>
-                <td>durability</td>
-                <td>if greater than 0</td>
-                <td>None</td>
+                <td class="rowspan_fix_right">Durability of item in player&#39;s offhand</td>
             </tr>
             <tr>
                 <td id="oitem_max_dur">{oitem_max_dur}<br>{offhand_item_max_durability}</td>
-                <td>Max durability of item in player&#39;s offhand</td>
-                <td>max durability</td>
-                <td>if greater than 0</td>
-                <td>None</td>
+                <td class="rowspan_fix_right">Max durability of item in player&#39;s offhand</td>
             </tr>
             <tr>
                 <td id="oitem_dur_per">{oitem_dur_per}<br>{offhand_item_durability_percent}</td>
-                <td>Percentage of durability left of item in player&#39;s offhand</td>
-                <td>durability %</td>
-                <td>if greater than 0</td>
-                <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+                <td class="rowspan_fix_right">Percentage of durability left of item in player&#39;s offhand</td>
             </tr>
             <tr>
                 <td id="oitem_has_dur">{oitem_has_dur}<br>{offhand_item_has_durability}</td>
-                <td>If the item in the player&#39;s offhand can have durability</td>
-                <td>0 (false)<br>1 (true)</td>
-                <td>can have durability</td>
-                <td class="last_cell">None</td>
+                <td class="rowspan_fix_right">If the item in the player&#39;s offhand can have durability</td>
             </tbody>
         </table>
 
@@ -868,60 +1174,38 @@
             <tr>
                 <th>Variable</th>
                 <th>Description</th>
-                <th>Number Value</th>
-                <th>Boolean Value</th>
-                <th>Flags</th>
+                <th>Reason</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td id="max_fps">{max_fps}</td>
                 <td>Fps Limit set in the settings.<br>"<code>-</code>" if set to max</td>
-                <td>the max fps</td>
-                <td><code>false</code> if the limit is set to max<br><code>true</code> otherwise</td>
-                <td>None</td>
+                <td class="rowspan" rowspan="7">Replaced by the new <a href="references/settings.html">Settings Variable</a></td>
             </tr>
             <tr>
                 <td id="vsync">{vsync}</td>
-                <td>If vsync is enabled or not</td>
-                <td>0 (off)<br>1 (on)</td>
-                <td>if vsync is enabled</td>
-                <td>None</td>
+                <td class="rowspan_fix_right">If vsync is enabled or not</td>
             </tr>
             <tr>
                 <td id="graphics_mode">{graphics_mode}</td>
-                <td>Graphics Quality (Fast, Fancy, or Fabulous)</td>
-                <td>0 (fast)<br>1 (fancy)<br>2 (fabulous)</td>
-                <td><code>true</code></td>
-                <td><a href="references/variable_flags.html">String</a></td>
+                <td class="rowspan_fix_right">Graphics Quality (Fast, Fancy, or Fabulous)</td>
             </tr>
             <tr>
                 <td id="clouds">{clouds}</td>
-                <td>Cloud Quality (Off, Fast, Fancy)</td>
-                <td>0 (off)<br>1 (fast)<br>2 (fancy)</td>
-                <td>if clouds are on</td>
-                <td><a href="references/variable_flags.html">String</a></td>
+                <td class="rowspan_fix_right">Cloud Quality (Off, Fast, Fancy)</td>
             </tr>
             <tr>
                 <td id="biome_blend">{biome_blend}</td>
-                <td>The player&#39;s biome blend setting</td>
-                <td>the biome blend</td>
-                <td>if biome blend is enabled</td>
-                <td>None</td>
+                <td class="rowspan_fix_right">The player&#39;s biome blend setting</td>
             </tr>
             <tr>
                 <td id="render_distance">{render_distance}</td>
-                <td>The player’s render distance setting</td>
-                <td>render distance</td>
-                <td>if more than 0</td>
-                <td>None</td>
+                <td class="rowspan_fix_right">The player’s render distance setting</td>
             </tr>
             <tr>
                 <td id="simulation_distance">{sd} / {simulation_distance}</td>
-                <td>Simulation Distance set in the settings</td>
-                <td>simulation distance</td>
-                <td><code>true</code></td>
-                <td class="last_cell">None</td>
+                <td class="rowspan_fix_right">Simulation Distance set in the settings</td>
             </tr>
             </tbody>
         </table>
@@ -987,6 +1271,75 @@
         </tbody>
     </table>
 
+    <h3 id="server_and_world">Server / World</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Description</th>
+            <th>Number Value</th>
+            <th>Boolean Value</th>
+            <th>Flags</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td id="world_name">{world} / {world_name}</td>
+            <td>The name of the singleplayer world the player is in<br><b>- Singleplayer Only</b><br><b>[Added in v3.1]</b></td>
+            <td>the length of the name</td>
+            <td>length of the name &gt; 0</td>
+            <td><a href="references/variable_flags.html">String</a></td>
+        </tr>
+        <tr>
+            <td id="server_name">{server_name}</td>
+            <td>The name of the server (as written in the server entry) the player is in<br><b>- Multiplayer Only</b><br><b>[Added in v3.1]</b></td>
+            <td>the length of the name</td>
+            <td>length of the name &gt; 0</td>
+            <td><a href="references/variable_flags.html">String</a></td>
+        </tr>
+        <tr>
+            <td id="address">{address}</td>
+            <td rowspan="2">The address (as written in the address field) of the server<br><b>- Multiplayer Only</b></td>
+            <td rowspan="2">length of the address</td>
+            <td rowspan="2">length of the address &gt; 0</td>
+            <td rowspan="2"><a href="references/variable_flags.html">String</a></td>
+        </tr>
+        <tr>
+            <td id="server_address" class="rowspan_fix_right">{server_address} / {ip}<br><b>[Added in v3.1]</b></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="ping">{ping}</td>
+            <td>The ping to the server</td>
+            <td>the ping</td>
+            <td>if greater than 0</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
+            <td id="tx">{tx}<br>{packets_sent}</td>
+            <td>Number of packets sent by the client to the server</td>
+            <td>number of packets</td>
+            <td><code>true</code></td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
+            <td id="rx">{rx}<br>{packets_received}</td>
+            <td>Number of packets received by the client from the server</td>
+            <td>number of packets</td>
+            <td><code>true</code></td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+
+
+        </tbody>
+    </table>
+
     <h3 id="misc">Miscellaneous</h3>
     <table>
         <thead>
@@ -1028,6 +1381,13 @@
             <td><a href="references/variable_flags.html">String</a></td>
         </tr>
         <tr>
+            <td id="space">{space:&lt;pixels&gt;}</td>
+            <td>Can be used to add space without spamming space<br><b>[Added in v3.1]</b></td>
+            <td>0</td>
+            <td>false</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
             <td id="lcps">{lcps}<br>{left_click_per_second}</td>
             <td colspan>How many times you left‑clicked in the previous second</td>
             <td>number of left‑clicks</td>
@@ -1042,11 +1402,39 @@
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         <tr>
+            <td id="reach">{reach} / {reach_distance}</td>
+            <td>How far the player can reach<br><b>[Added in v3.1]</b></td>
+            <td>how far in blocks</td>
+            <td>true</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
             <td id="gizmo">{gizmo}</td>
             <td>Shows the F3 Crosshair/Gizmo</td>
             <td>0</td>
-            <td>true</td>
+            <td>false</td>
             <td><a href="references/variable_flags.html">Icon &amp; Scale</a></td>
+        </tr>
+        <tr>
+            <td id="display_name">{name} / {display_name}</td>
+            <td>The name of the player as seen in chat and tab<br><b>[Added in v3.1]</b></td>
+            <td>length of name</td>
+            <td>length of name &gt; 0</td>
+            <td><a href="references/variable_flags.html">String</a></td>
+        </tr>
+        <tr>
+            <td id="username">{username}</td>
+            <td>The username of the player<br><b>[Added in v3.1]</b></td>
+            <td>length of name</td>
+            <td>length of name &gt; 0</td>
+            <td><a href="references/variable_flags.html">String</a></td>
+        </tr>
+        <tr>
+            <td id="uuid">{uuid}</td>
+            <td>The uuid of the player<br><b>[Added in v3.1]</b></td>
+            <td>36</td>
+            <td>true</td>
+            <td><a href="references/variable_flags.html">String</a></td>
         </tr>
         <tr>
             <td id="version">{version}</td>
@@ -1077,21 +1465,6 @@
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         <tr>
-            <td id="tx">{tx}<br>{packets_sent}</td>
-            <td>Number of packets sent by the client to the server</td>
-            <td>number of packets</td>
-            <td><code>true</code></td>
-            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
-        </tr>
-        <tr>
-            <td id="rx">{rx}<br>{packets_received}</td>
-            <td>Number of packets received by the client from the server</td>
-            <td>number of packets</td>
-            <td><code>true</code></td>
-            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
-        </tr>
-
-        <tr>
             <td id="moon_phase">{moon_phase}</td>
             <td>The phase of the moon (1-8)</td>
             <td>the moon phase</td>
@@ -1112,20 +1485,6 @@
             <td>mods installed</td>
             <td><code>true</code></td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
-        </tr>
-        <tr>
-            <td id="ping">{ping}</td>
-            <td>The ping to the server</td>
-            <td>the ping</td>
-            <td>if greater than 0</td>
-            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
-        </tr>
-        <tr>
-            <td id="address">{address}</td>
-            <td>The address (as written in the address field) of the server</td>
-            <td>length of output</td>
-            <td>length of output &gt; 0</td>
-            <td class="last_cell"><a href="references/variable_flags.html">String</a></td>
         </tr>
 
         </tbody>
@@ -1447,6 +1806,13 @@
             <td>None</td>
         </tr>
         <tr>
+            <td id="snowing">{snowing}</td>
+            <td>If it's snowing<br><b>[Added in v3.1]</b></td>
+            <td>1 (snowing)<br>0 (not snowing)</td>
+            <td><code>true</code> (snowing)<br><code>false</code> (not snowing)</td>
+            <td>None</td>
+        </tr>
+        <tr>
             <td id="singleplayer">{singleplayer}</td>
             <td>If the player is in a singleplayer world</td>
             <td>1 (in singleplayer)<br>0 (in multiplayer)</td>
@@ -1576,6 +1942,20 @@
             <td><a href="references/variable_flags.html">String</a></td>
         </tr>
         <tr>
+            <td id="solar_time">{time} / {solar_time}</td>
+            <td>Time in ticks between 0 - 24000 (1 mc day)<br><b>[Added in v3.1]</b></td>
+            <td>the time in ticks</td>
+            <td>if not exactly 0</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
+            <td id="lunar_time">{lunar_time}</td>
+            <td>Time in ticks between 0 - 192000 (8 mc days)<br><b>[Added in v3.1]</b></td>
+            <td>the time in ticks</td>
+            <td>if not exactly 0</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
             <td style="white-space: nowrap">{real_time:&lt;time_format&gt;}</td>
             <td>Displays the irl time, based on the format given. <br>For formatting look  here</td>
             <td>length of output</td>
@@ -1609,35 +1989,30 @@
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         <tr>
-            <td id="light">{light}<br>{client_light}</td>
+            <td id="light">{light}</td>
             <td>The total light level of where the player is.</td>
             <td>if can get info</td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         <tr>
-            <td id="light_sky">{light_sky}<br>{client_light_sky}</td>
-            <td>The light level from the sky<br>(reported by the client)</td>
+            <td id="light_sky">{light_sky}</td>
+            <td>The light level from the sky, <b>doesn't</b> take into account time and weather</td>
             <td>if can get info</td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         <tr>
-            <td id="light_block">{light_block}<br>{client_light_block}</td>
-            <td>The light level from blocks<br>(reported by the client)</td>
+            <td id="light_sun">{light_sun}</td>
+            <td>The light level from the sky, taking into account time and weather</td>
             <td>if can get info</td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         <tr>
-            <td id="server_light_sky">{server_light_sky}</td>
-            <td>The light level from the sky<br>(reported by the server)</td>
+            <td id="light_block">{light_block}</td>
+            <td>The light level from blocks</td>
             <td>if can get info</td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
-        <tr>
-            <td id="server_light_block">{server_light_block}</td>
-            <td>The light level from blocks<br>(reported by the server)</td>
-            <td>if can get info</td>
-            <td class="last_cell"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
-        </tr>
+
         </tbody>
     </table>
 
@@ -1745,7 +2120,7 @@
             <td id="target_block">{target_block}</td>
             <td>The name of the block the player&#39;s looking at</td>
             <td>length of output</td>
-            <td rowspan="5">if the player is looking at a block</td>
+            <td rowspan="6">if the player is looking at a block</td>
             <td><a href="references/variable_flags.html">String</a></td>
         </tr>
         <tr>
@@ -1773,6 +2148,12 @@
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         <tr>
+            <td id="tbd">{tbd} / {target_distance} / {target_block_distance}</td>
+            <td>How many blocks away is<br>the block the player's looking at<br><b>[Added in v3.1]</b></td>
+            <td>distance in blocks</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
             <td ></td>
             <td></td>
             <td></td>
@@ -1783,7 +2164,7 @@
             <td id="target_fluid">{target_fluid}</td>
             <td>The name of the fluid the player&#39;s looking at</td>
             <td>length of output</td>
-            <td rowspan="5">if the player is looking at a fluid</td>
+            <td rowspan="6">if the player is looking at a fluid</td>
             <td><a href="references/variable_flags.html">String</a></td>
         </tr>
         <tr>
@@ -1811,6 +2192,12 @@
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         <tr>
+            <td id="tfd">{tfd} / {target_fluid_distance}</td>
+            <td>How many blocks away is<br>the fluid the player's looking at<br><b>[Added in v3.1]</b></td>
+            <td>distance in blocks</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
             <td ></td>
             <td></td>
             <td></td>
@@ -1818,15 +2205,27 @@
             <td></td>
         </tr>
         <tr>
-            <td id="target_entity">{target_entity}</td>
-            <td>The name of the entity the player&#39;s looking at</td>
+            <td id="target_entity">{te} / {target_entity}</td>
+            <td>The type of the entity the player&#39;s looking at<br>(Ex: Pig, Player)</td>
             <td>length of output</td>
-            <td rowspan="5" class="rowspan">if the player is looking at a entity</td>
+            <td rowspan="8" class="rowspan">if the player is looking at a entity</td>
             <td><a href="references/variable_flags.html">String</a></td>
         </tr>
         <tr>
-            <td id="target_entity_id">{target_entity_id}</td>
+            <td id="target_entity_id">{tei} / {target_entity_id}</td>
             <td>The id of the entity the player&#39;s looking at</td>
+            <td>length of output</td>
+            <td><a href="references/variable_flags.html">String</a></td>
+        </tr>
+        <tr>
+            <td id="target_entity_name">{ten} / {target_entity_name}</td>
+            <td>The name of the entity the player&#39;s looking at<br>(Ex: Notch, Fluffy)<br><b>[Added in v3.1]</b></td>
+            <td>length of output</td>
+            <td><a href="references/variable_flags.html">String</a></td>
+        </tr>
+        <tr>
+            <td id="target_entity_uuid">{teu} / {target_entity_uuid}</td>
+            <td>The uuid of the entity the player&#39;s looking at<br><b>[Added in v3.1]</b></td>
             <td>length of output</td>
             <td><a href="references/variable_flags.html">String</a></td>
         </tr>
@@ -1846,6 +2245,12 @@
             <td id="tez">{tez} / {target_entity_z}</td>
             <td>The z coordinate of<br>the entity the player’s looking at</td>
             <td>z coordinate</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
+            <td id="ted">{ted} / {target_entity_distance}</td>
+            <td>How many blocks away is<br>the block the player's looking at<br><b>[Added in v3.1]</b></td>
+            <td>distance in blocks</td>
             <td class="last_cell"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         </tbody>
@@ -1918,6 +2323,122 @@
             <td>the durability as a percentage</td>
             <td>if the item can have durability</td>
             <td><a href="references/variable_flags.html">Precision</a></td>
+        </tr>
+        <tr>
+            <td id="item_count" style="white-space: nowrap">{item:<a href="references/item_slots.html">&lt;slot&gt;</a>:count}</td>
+            <td>Show the amount of the item in <a href="references/item_slots.html">&lt;slot&gt;</a><br><b>[Added in v3.1]</b></td>
+            <td>the count</td>
+            <td>if the durability is greater than 0</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
+            <td id="item_max_count" style="white-space: nowrap">{item:<a href="references/item_slots.html">&lt;slot&gt;</a>:max_count}</td>
+            <td>Show the max stack size of the item in <a href="references/item_slots.html">&lt;slot&gt;</a><br><b>[Added in v3.1]</b></td>
+            <td>the maximum stack size</td>
+            <td>if the item is stackable</td>
+            <td class="last_cell"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="fishing_rod">Fishing Rod <b style="text-decoration: underline">[Added in v3.1]</b></h3>
+    <table>
+        <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Description</th>
+            <th>Number Value</th>
+            <th>Boolean Value</th>
+            <th>Flags</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td id="fishing_is_cast">{fishing_is_cast}</td>
+            <td>If the fishing rod is cast</td>
+            <td>1 (is cast)<br>0 (isn't cast)</td>
+            <td><code>true</code> (is cast)<br><code>false</code> (isn't cast)</td>
+            <td rowspan="4">None</td>
+        </tr>
+        <tr>
+            <td id="fishing_is_hooked">{fishing_is_hooked}</td>
+            <td>If the fishing rod is hooked into an entity</td>
+            <td>1 (is hooked)<br>0 (isn't hooked)</td>
+            <td class="rowspan_fix_right"><code>true</code> (is hooked)<br><code>false</code> (isn't hooked)</td>
+        </tr>
+        <tr>
+            <td id="fishing_has_caught">{fishing_has_caught}</td>
+            <td>If a fish, treasure, or junk is currently hooked and the bobber is bobbing</td>
+            <td>1 (has caught)<br>0 (hasn't caught)</td>
+            <td class="rowspan_fix_right"><code>true</code> (has caught)<br><code>false</code> (hasn't caught)</td>
+        </tr>
+        <tr>
+            <td id="fishing_in_open_water">{fishing_in_open_water}</td>
+            <td>If the bobber is in open water<br>(a 5x4x5 area of water/air/lilly, needed to get treasure)</td>
+            <td>1 (has caught)<br>0 (hasn't caught)</td>
+            <td class="rowspan_fix_right"><code>true</code> (has caught)<br><code>false</code> (hasn't caught)</td>
+        </tr>
+        <tr>
+            <td id="fishing_hook_distance">{fishing_hook_distance}</td>
+            <td>How far away the bobber is from you</td>
+            <td>distance away</td>
+            <td class="rowspan_fix_right">if cast</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        <tr>
+            <td ></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="hooked_entity">{he} / {hooked_entity}</td>
+            <td>The type of the entity hooked by the fishing rod<br>(Ex: Pig, Player)</td>
+            <td>length of output</td>
+            <td rowspan="8" class="rowspan">if the rod is hooked into an entity</td>
+            <td><a href="references/variable_flags.html">String</a></td>
+        </tr>
+        <tr>
+            <td id="hooked_entity_id">{hei} / {hooked_entity_id}</td>
+            <td>The id of the entity hooked by the fishing rod</td>
+            <td>length of output</td>
+            <td><a href="references/variable_flags.html">String</a></td>
+        </tr>
+        <tr>
+            <td id="hooked_entity_name">{hen} / {hooked_entity_name}</td>
+            <td>The name of the entity hooked by the fishing rod<br>(Ex: Notch, Fluffy)</td>
+            <td>length of output</td>
+            <td><a href="references/variable_flags.html">String</a></td>
+        </tr>
+        <tr>
+            <td id="hooked_entity_uuid">{heu} / {hooked_entity_uuid}</td>
+            <td>The uuid of the entity hooked by the fishing rod</td>
+            <td>length of output</td>
+            <td><a href="references/variable_flags.html">String</a></td>
+        </tr>
+        <tr>
+            <td id="hooked_entity_x">{hex} / {hooked_entity_x}</td>
+            <td>The x coordinate of the entity hooked by the fishing rod</td>
+            <td>x coordinate</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
+            <td id="hooked_entity_y">{hey} / {hooked_entity_y}</td>
+            <td>The y coordinate of the entity hooked by the fishing rod</td>
+            <td>y coordinate</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
+            <td id="hooked_entity_z">{hez} / {hooked_entity_z}</td>
+            <td>The z coordinate of the entity hooked by the fishing rod</td>
+            <td>z coordinate</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
+            <td id="hooked_entity_distance">{hed} / {hooked_entity_distance}</td>
+            <td>How many blocks away the entity hooked by the fishing rod is</td>
+            <td>distance in blocks</td>
+            <td class="last_cell"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         </tbody>
     </table>

@@ -160,6 +160,11 @@ a:hover {
     margin-right: -4px;
 }
 
+.color_img {
+    border-radius: 9px;
+    border: solid 2px black;
+}
+
 @supports not (aspect-ratio: auto) {
     .code_block, .result {
         height: 240px;

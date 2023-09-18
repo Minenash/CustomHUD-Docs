@@ -306,6 +306,37 @@ text {
     font-weight: bold;
     font-size: 36px;
 }
+
+/* Color Generator */
+.gen_input {
+    width: 96%; height: 4rem;
+    resize: none;
+}
+
+.gen_mctext {
+    min-height: 4rem;
+    padding: 4px 8px;
+
+    font-size: 18px;
+    border: 1px solid;
+
+    background-color: #405480;
+    color: white;
+}
+
+.gen_output {
+    width: 98%;
+    height: 4rem;
+
+    white-space: pre;
+    overflow-x: scroll;
+    overflow-wrap: normal;
+
+    resize: none;
+}
+
+
+
 #r1v1:hover ~ #r1v1-test,
 #r1v2:hover ~ #r1v2-test,
 #r1v3:hover ~ #r1v3-test,

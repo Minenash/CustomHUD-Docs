@@ -6,8 +6,18 @@
     <meta content="The Home of Terrible Projects" name=description>
     <link rel="icon" type="image/png" href="../../favicon.png"/>
     <link rel="stylesheet" type="text/css" href="../../style.css" />
-    <style>html {background-color:#f4f5f7} body {display:none}</style>
-<!--    f4f5f7-->
+    <style>
+        html {background-color:#f4f5f7} body {display:none}
+        @font-face {
+            font-family: "minecraft";
+            src: url("../references/imgs/MinecraftRegular-Bmg3.otf") format("opentype");
+        }
+        .gen_mctext {
+            font-family: minecraft, Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+        }
+
+    </style>
+    <script type="text/javascript" src="../scripts/gradient.js" defer></script>
 </head>
 <body>
 
@@ -80,6 +90,42 @@
                 <tr> <td><code>BB or B</code></td> <td>Blue</td>  <td class="last_cell">00-FF or 0-F</td> </tr>
                 </tbody>
             </table>
+            <h3 id="gradients">Color Gradient Generator</h3>
+            <form class="note">
+                <div style="display: flex">
+                    <div style="flex: 1; padding: 0 10px 0 10px; text-align: center">
+                        Colors
+                        <input id="fromColor" type="color" value="#FF5555"><br>
+                        <input id="toColor" type="color" value="#55FFFF">
+                    </div>
+                    <div style="flex: 8">
+                        <label for="input">Text</label><br>
+                        <textarea id="input" class="gen_input" onkeyup="updateWithInput(this.value)">Example Text</textarea>
+                    </div>
+
+                </div>
+                <div style="margin-left: 6px; display: flex; justify-content: space-between">
+                    <div style="flex: 1">
+                        <input id="perLine" type="checkbox"><label for="perLine">Gradiant per line</label>
+                    </div>
+                    <div style="flex: 1; text-align: right; margin-right: 2%">
+                        Type:
+                        <select id="type">
+                            <option value="rgb">Normal (RGB)</option>
+                            <option value="hsl">Hue (HSL)</option>
+                        </select>
+                    </div>
+                    <br>
+                </div>
+                <div style="width: 95%; margin: 3%;">
+                    Preview
+                    <div id="preview" class="gen_mctext">Enable Javascript to use the generator</div>
+                    <br>
+                    <label for="output">Output</label>
+                    <br>
+                    <textarea id="output" class="gen_output" readonly>Enable Javascript to use the generator</textarea>
+                </div>
+            </form>
         </div>
     </div>
 

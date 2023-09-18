@@ -152,6 +152,19 @@ a:hover {
     background-size: contain;
 }
 
+.crosshair_img {
+    border-radius: 12px;
+    border: solid 2px black;
+    box-shadow: #444 4px 4px 2px;
+    width: 54px;
+    margin-right: -4px;
+}
+
+.color_img {
+    border-radius: 9px;
+    border: solid 2px black;
+}
+
 @supports not (aspect-ratio: auto) {
     .code_block, .result {
         height: 240px;

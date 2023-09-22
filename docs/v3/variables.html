@@ -509,7 +509,130 @@
         </tbody>
     </table>
 
-    <h3 id="new">What New and Depreciated v3.1</h3>
+    <h3 id="new">What New v3.2</h3>
+    <details>
+        <summary>[13] Variables added in v3.1</summary>
+        <hr>
+
+        <h4>Performance (All Singleplayer Only)</h4>
+        <table>
+            <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{tick_ms_avg}</td>
+                <td>Average tick time in milliseconds</td>
+                <td>avg tick time</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+                <td class="last_cell rowspan" rowspan="4"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{tick_ms_min}</td>
+                <td>Minimum tick time in milliseconds</td>
+                <td>min tick time</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+            </tr>
+            <tr>
+                <td>{tick_ms_max}</td>
+                <td>Maximum tick time in milliseconds</td>
+                <td>max tick time</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+            </tr>
+            <tr>
+                <td>{tick_ms_samples}</td>
+                <td>Number of samples used for the above 3 variables</td>
+                <td>number of samples</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+            </tr>
+
+            </tbody>
+        </table>
+
+        <h4>Server / World (Packet Size: Multiplayer Only)</h4>
+        <table>
+            <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>{latency}</td>
+                <td>The latency of your connection to the server</td>
+                <td>the latency</td>
+                <td>if greater than 0</td>
+                <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr><td colspan="5"></td></tr>
+            <tr>
+                <td>{ping_avg}</td>
+                <td>Average ping in milliseconds</td>
+                <td>avg ping</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+                <td class="" rowspan="4"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{ping_min}</td>
+                <td>Minimum ping milliseconds</td>
+                <td>min ping</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+            </tr>
+            <tr>
+                <td>{ping_max}</td>
+                <td>Maximum ping in milliseconds</td>
+                <td>max ping</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+            </tr>
+            <tr>
+                <td>{ping_samples}</td>
+                <td>Number of samples used for the above 3 variables</td>
+                <td>number of samples</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+            </tr>
+            <tr><td colspan="5"></td></tr>
+            <tr>
+                <td>{packet_size_avg}</td>
+                <td>Average packet size in milliseconds</td>
+                <td>avg packet size</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+                <td class="rowspan last_cell" rowspan="4"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{packet_size_min}</td>
+                <td>Minimum packet size milliseconds</td>
+                <td>min packet size</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+            </tr>
+            <tr>
+                <td>{packet_size_max}</td>
+                <td>Maximum packet size in milliseconds</td>
+                <td>max packet size</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+            </tr>
+            <tr>
+                <td>{packet_size_samples}</td>
+                <td>Number of samples used for the above 3 variables</td>
+                <td>number of samples</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+            </tr>
+            <tbody>
+            </tbody>
+        </table>
+
+        <hr>
+    </details>
+
+    <h3>What New and Depreciated v3.1</h3>
     <details>
         <summary>[33] Variables added in v3.1</summary>
         <hr>
@@ -1229,7 +1352,7 @@
             <td>Frames per Second</td>
             <td>the fps</td>
             <td><code>true</code></td>
-            <td class="rowspan last_cell" rowspan="7"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            <td class="" rowspan="3"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         <tr>
             <td id="tps">{tps}</td>
@@ -1244,30 +1367,91 @@
             <td class="rowspan_fix_right">if it can get the value<br>(aka you&#39;re in singleplayer)</td>
         </tr>
         <tr>
-            <td id="frame_ms_avg">{frame_ms_avg}</td>
-            <td>Average frame time in milliseconds</td>
-            <td>avg frame time</td>
-            <td class="rowspan_fix_right"><code>true</code></td>
-        </tr>
-        <tr id="frame_ms_min">
-            <td>{frame_ms_min}</td>
-            <td>Minimum frame time in milliseconds</td>
-            <td>min frame time</td>
-            <td class="rowspan_fix_right"><code>true</code></td>
-        </tr>
-        <tr id="frame_ms_max">
-            <td>{frame_ms_max}</td>
-            <td>Maximum frame time in milliseconds</td>
-            <td>max frame time</td>
-            <td class="rowspan_fix_right"><code>true</code></td>
-        </tr>
-        <tr id="frame_ms_samples">
-            <td>{frame_ms_samples}</td>
-            <td>Number of samples used for the above 3 variables</td>
-            <td>number of samples</td>
-            <td class="rowspan_fix_right"><code>true</code></td>
-        </tr>
+            <td colspan="5" style="border-radius: 0 0 10px 0; background-color: #f4f5f7">
+                <details>
+                    <summary>Frame Time (ms) and Tick Time (ms)</summary>
+                    <h3 style="text-align: left">Frame Time</h3>
+                    <table style="margin-bottom: 32px">
+                        <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Description</th>
+                            <th>Number Value</th>
+                            <th>Boolean Value</th>
+                            <th>Flags</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td id="frame_ms_avg">{frame_ms_avg}</td>
+                            <td>Average frame time in milliseconds</td>
+                            <td>avg frame time</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                            <td class="rowspan last_cell" rowspan="4"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+                        </tr>
+                        <tr id="frame_ms_min">
+                            <td>{frame_ms_min}</td>
+                            <td>Minimum frame time in milliseconds</td>
+                            <td>min frame time</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                        </tr>
+                        <tr id="frame_ms_max">
+                            <td>{frame_ms_max}</td>
+                            <td>Maximum frame time in milliseconds</td>
+                            <td>max frame time</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                        </tr>
+                        <tr id="frame_ms_samples">
+                            <td>{frame_ms_samples}</td>
+                            <td>Number of samples used for the above 3 variables</td>
+                            <td>number of samples</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <h3 style="text-align: left">Tick Time (Singleplayer Only, Added in v3.2)</h3>
+                    <table style="margin-bottom: 8px">
+                        <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Description</th>
+                            <th>Number Value</th>
+                            <th>Boolean Value</th>
+                            <th>Flags</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td id="tick_ms_avg">{tick_ms_avg}</td>
+                            <td>Average tick time in milliseconds</td>
+                            <td>avg tick time</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                            <td class="last_cell rowspan" rowspan="4"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+                        </tr>
+                        <tr id="tick_ms_min">
+                            <td>{tick_ms_min}</td>
+                            <td>Minimum tick time in milliseconds</td>
+                            <td>min tick time</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                        </tr>
+                        <tr id="tic_ms_max">
+                            <td>{tick_ms_max}</td>
+                            <td>Maximum tick time in milliseconds</td>
+                            <td>max tick time</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                        </tr>
+                        <tr id="tick_ms_samples">
+                            <td>{tick_ms_samples}</td>
+                            <td>Number of samples used for the above 3 variables</td>
+                            <td>number of samples</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                        </tr>
 
+                        </tbody>
+                    </table>
+                </details>
+            </td>
+        </tr>
         </tbody>
     </table>
 
@@ -1322,6 +1506,13 @@
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         <tr>
+            <td id="latency">{latency}<br><b>[Added in v3.2]</b></td>
+            <td>The latency of your connection to the server</td>
+            <td>the latency</td>
+            <td>if greater than 0</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
             <td id="tx">{tx}<br>{packets_sent}</td>
             <td>Number of packets sent by the client to the server</td>
             <td>number of packets</td>
@@ -1335,6 +1526,90 @@
             <td><code>true</code></td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
+        <tr>
+            <td colspan="5" style="border-radius: 0 0 10px 0; background-color: #f4f5f7">
+                <details>
+                    <summary>Min/Max/Avg Ping and Packet Size</summary>
+                    <h3 style="text-align: left">Ping (Added in v3.2)</h3>
+                    <table style="margin-bottom: 32px">
+                        <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Description</th>
+                            <th>Number Value</th>
+                            <th>Boolean Value</th>
+                            <th>Flags</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td id="ping_avg">{ping_avg}</td>
+                            <td>Average ping in milliseconds</td>
+                            <td>avg ping</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                            <td class="rowspan last_cell" rowspan="4"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+                        </tr>
+                        <tr id="ping_min">
+                            <td>{ping_min}</td>
+                            <td>Minimum ping milliseconds</td>
+                            <td>min ping</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                        </tr>
+                        <tr id="ping_max">
+                            <td>{ping_max}</td>
+                            <td>Maximum ping in milliseconds</td>
+                            <td>max ping</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                        </tr>
+                        <tr id="ping_samples">
+                            <td>{ping_samples}</td>
+                            <td>Number of samples used for the above 3 variables</td>
+                            <td>number of samples</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <h3 style="text-align: left">Packet Size (Multiplayer Only, Added in v3.2)</h3>
+                    <table style="margin-bottom: 8px">
+                        <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Description</th>
+                            <th>Number Value</th>
+                            <th>Boolean Value</th>
+                            <th>Flags</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td id="packet_size_avg">{packet_size_avg}</td>
+                            <td>Average packet size in milliseconds</td>
+                            <td>avg packet size</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                            <td class="rowspan last_cell" rowspan="4"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+                        </tr>
+                        <tr id="packet_size_min">
+                            <td>{packet_size_min}</td>
+                            <td>Minimum packet size milliseconds</td>
+                            <td>min packet size</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                        </tr>
+                        <tr id="packet_size_max">
+                            <td>{packet_size_max}</td>
+                            <td>Maximum packet size in milliseconds</td>
+                            <td>max packet size</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                        </tr>
+                        <tr id="packet_size_samples">
+                            <td>{packet_size_samples}</td>
+                            <td>Number of samples used for the above 3 variables</td>
+                            <td>number of samples</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </details>
+            </td>
 
 
         </tbody>

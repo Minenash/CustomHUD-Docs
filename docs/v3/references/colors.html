@@ -73,74 +73,98 @@
         <div style="flex: 45">
             <h3 id="custom_colors">Custom Colors</h3>
             <p style="line-height: 2em">
-                To turn a normal hex color like <code class="code_inline">#aa00aa</code>, remove the
-                <code class="code_inline">#</code>, add <code class="code_inline">ff</code> to the beginning, then
+                To turn a hex normal color like <code class="code_inline">#aa00aa</code> , remove the
+                <code class="code_inline">#</code>, then
                 surround it with <code class="code_inline">&{}</code> and you should have
-                <code class="code_inline">&{ffaa00aa}</code>. You can make it translucent by replacing the
+                <code class="code_inline">&{aa00aa}</code> .<br>You can make it translucent by a number between
+                <code class="code_inline">00</code> and <code class="code_inline">ff</code> in front
                 <code class="code_inline">ff</code> with a smaller value like <code class="code_inline">88</code>
                 or fully transparent with <code class="code_inline">00</code> 
             </p>
-            <table style="margin-bottom: 24px">
-                <thead>
-                <tr>
-                    <th>Syntax</th>
-                    <th colspan="2">Example</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td><code>&{AARRGGBB}</code></td>
-                    <td>&{77FF4040}</td>
-                    <td>Coral Red (50% transparency)</td>
-                </tr>
-                <tr>
-                    <td><code>&{RRGGBB}</code></td>
-                    <td>&{FF4040}</td>
-                    <td>Coral Red (no transparency)</td>
-                </tr>
-                <tr>
-                    <td>&{ARGB}</td>
-                    <td>&{BF50}</td>
-                    <td>Orange-ish Red (75% Opacity)</td>
-                </tr><tr>
-                    <td>&{RGB}</td>
-                    <td>&{F50}</td>
-                    <td class="last_cell">Orange-ish Red (no transparency)</td>
-                </tr>
+            <div class="note">
+                <div style="display: flex">
+<!--                    <div style="flex: 3"></div>-->
+                    <div style="flex: 1; padding: 0 10px 0 10px; text-align: center">
+                        Color
+                        <input id="hexColor" type="color" value="#FF5555">
+                    </div>
+                    <div style="flex: 4">
+                        <label for="input">Hex</label><br>
+                        <input style="margin-top: 3px; width: 80%" id="hexColorHex" type="text">
+                    </div>
+                    <div style="flex: 4">
+                        <label for="input">CustomHud</label><br>
+                        <input style="margin-top: 3px; width: 80%" id="hexColorOutput2" type="text" readonly>
+                    </div>
+                    <div style="flex: 6"></div>
+                </div>
+            </div>
+            <br>
+            <details>
+                <summary><b>Syntax</b></summary>
+                <table style="margin-bottom: 24px">
+                    <thead>
+                    <tr>
+                        <th>Syntax</th>
+                        <th colspan="2">Example</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><code>&{AARRGGBB}</code></td>
+                        <td>&{77FF4040}</td>
+                        <td>Coral Red (50% transparency)</td>
+                    </tr>
+                    <tr>
+                        <td><code>&{RRGGBB}</code></td>
+                        <td>&{FF4040}</td>
+                        <td>Coral Red (no transparency)</td>
+                    </tr>
+                    <tr>
+                        <td>&{ARGB}</td>
+                        <td>&{BF50}</td>
+                        <td>Orange-ish Red (75% Opacity)</td>
+                    </tr><tr>
+                        <td>&{RGB}</td>
+                        <td>&{F50}</td>
+                        <td class="last_cell">Orange-ish Red (no transparency)</td>
+                    </tr>
 
-                </tbody>
-            </table>
-            <table>
-                <thead>
-                <tr>
-                    <th>Letters</th>
-                    <th>Meaning</th>
-                    <th>Range</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td><code>AA or A</code></td>
-                    <td>Alpha (Translucency)</td>
-                    <td>00-FF or 0-F</td>
-                </tr>
-                <tr>
-                    <td><code>RR or R</code></td>
-                    <td>Red</td>
-                    <td>00-FF or 0-F</td>
-                </tr>
-                <tr>
-                    <td><code>GG or G</code></td>
-                    <td>Green</td>
-                    <td>00-FF or 0-F</td>
-                </tr>
-                <tr>
-                    <td><code>BB or B</code></td>
-                    <td>Blue</td>
-                    <td class="last_cell">00-FF or 0-F</td>
-                </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Letters</th>
+                        <th>Meaning</th>
+                        <th>Range</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><code>AA or A</code></td>
+                        <td>Alpha (Translucency)</td>
+                        <td>00-FF or 0-F</td>
+                    </tr>
+                    <tr>
+                        <td><code>RR or R</code></td>
+                        <td>Red</td>
+                        <td>00-FF or 0-F</td>
+                    </tr>
+                    <tr>
+                        <td><code>GG or G</code></td>
+                        <td>Green</td>
+                        <td>00-FF or 0-F</td>
+                    </tr>
+                    <tr>
+                        <td><code>BB or B</code></td>
+                        <td>Blue</td>
+                        <td class="last_cell">00-FF or 0-F</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </details>
+
             <h3 id="gradients">Color Gradient Generator</h3>
             <form class="note">
                 <div style="display: flex">
@@ -153,7 +177,6 @@
                         <label for="input">Text</label><br>
                         <textarea id="input" class="gen_input" onkeyup="updateWithInput(this.value)">Example Text</textarea>
                     </div>
-
                 </div>
                 <div style="margin-left: 6px; display: flex; justify-content: space-between">
                     <div style="flex: 1">

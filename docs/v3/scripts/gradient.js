@@ -2,9 +2,32 @@ document.getElementById("perLine").addEventListener('change', update);
 document.getElementById("fromColor").addEventListener('change', update);
 document.getElementById("toColor").addEventListener('change', update);
 document.getElementById("type").addEventListener('change', update);
-
+document.getElementById("hexColor").addEventListener('change', updateCustomColor);
+document.getElementById("hexColorHex").addEventListener('keyup', updateCustomColorFromHex);
 
 update();
+updateCustomColor()
+
+function updateCustomColor() {
+    document.getElementById("hexColorHex").value = document.getElementById("hexColor").value;
+    document.getElementById("hexColorOutput2").value = "&{" + document.getElementById("hexColor").value.substring(1) + "}";
+}
+function updateCustomColorFromHex() {
+    let color = document.getElementById("hexColorHex").value;
+    if (color.startsWith("#"))
+        color = color.substring(1);
+    let out = color;
+
+    if      (color.length === 3) color = color[0] + color[0] + color[1] + color[1] + color[2] + color[2];
+    else if (color.length === 4) color = color[1] + color[1] + color[2] + color[2] + color[3] + color[3];
+    else if (color.length === 8) color = color.substring(2);
+    else if (color.length !== 6) {color = "000000"; out = "000000"}
+
+    color = "#" + color;
+    document.getElementById("hexColor").value = color;
+    document.getElementById("hexColorOutput2").value = "&{" + out + "}";
+}
+
 function update() {
     updateWithInput(document.getElementById("input").value);
 }

@@ -10,18 +10,23 @@ updateCustomColor()
 
 function updateCustomColor() {
     document.getElementById("hexColorHex").value = document.getElementById("hexColor").value;
-    document.getElementById("hexColorOutput2").value = "&{" + document.getElementById("hexColor").value.substring(1) + "}";
+    let out = document.getElementById("hexColor").value.substring(1);
+    if (out[0] === out[1] && out[2] === out[3] && out[4] === out[5])
+        out = out[0] + out[2] + out[4];
+    document.getElementById("hexColorOutput2").value = "&{" + out + "}";
 }
 function updateCustomColorFromHex() {
     let color = document.getElementById("hexColorHex").value;
     if (color.startsWith("#"))
         color = color.substring(1);
     let out = color;
+    if (color.length === 6 && out[0] === out[1] && out[2] === out[3] && out[4] === out[5])
+        out = out[0] + out[2] + out[4];
 
     if      (color.length === 3) color = color[0] + color[0] + color[1] + color[1] + color[2] + color[2];
     else if (color.length === 4) color = color[1] + color[1] + color[2] + color[2] + color[3] + color[3];
     else if (color.length === 8) color = color.substring(2);
-    else if (color.length !== 6) {color = "000000"; out = "000000"}
+    else if (color.length !== 6) {color = "000000"; out = "000"}
 
     color = "#" + color;
     document.getElementById("hexColor").value = color;

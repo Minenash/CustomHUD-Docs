@@ -203,7 +203,9 @@ td {
     padding: 8px;
 }
 
+
 tr:nth-child(even) td{ background-color: #ddd; }
+tr:nth-child(2n - 1) td{ background-color: #f4f5f7; }
 th:last-child, td:last-child { border-right: none; }
 .rowspan_fix_right { border-right: 2px solid !important; }
 tr:last-child td, .rowspan { border-bottom: none; }
@@ -212,17 +214,14 @@ th:last-child { border-radius: 0 10px 0 0; }
 tr:last-child td:first-child { border-radius: 0 0 0 10px; }
 .last_cell { border-radius: 0 0 10px 0; }
 
-.all_left_cells td {
-    text-align: left;
-}
 
-.left_cells td:not(:first-child){
-    text-align: left;
-}
-
+.all_left_cells td,
+.left_cells td:not(:first-child),
+.second_left_cells td:nth-child(2),
 .item tr td:first-child {
     text-align: left;
 }
+
 
 .real_time_table {
     flex: 1;
@@ -415,6 +414,22 @@ text {
 
 #r18v1:hover ~ #r18v1-test,
 #r18v2:hover ~ #r18v2-test,
+
+#r19v1:hover ~ #r19v1-test,
+#r19v2:hover ~ #r19v2-test,
+#r19v3:hover ~ #r19v3-test,
+#r19v4:hover ~ #r19v4-test,
+#r19v5:hover ~ #r19v5-test,
+#r19v6:hover ~ #r19v6-test,
+#r19v7:hover ~ #r19v7-test,
+#r19v8:hover ~ #r19v8-test,
+#r19v9:hover ~ #r19v9-test,
+
+#r20v1:hover ~ #r20v1-test,
+#r20v2:hover ~ #r20v2-test,
+#r20v3:hover ~ #r20v3-test,
+#r20v4:hover ~ #r20v4-test,
+#r20v5:hover ~ #r20v5-test,
 
 #r21v1:hover ~ #r21v1-test,
 #r21v2:hover ~ #r21v2-test,

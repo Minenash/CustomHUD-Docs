@@ -36,8 +36,9 @@
     <li><a href="#day_and_time">ᴅᴀʏ, ᴛɪᴍᴇ</a></li>
     <li><a href="#difficulty_and_light_levels">ᴅɪꜰꜰɪᴄᴜʟᴛʏ, ʟɪɢʜᴛ</a></li>
     <li><a href="#chunks">ᴄʜᴜɴᴋs</a></li>
-    <li><a href="#sounds">sᴏᴜɴᴅs</a></li>
+    <li><a href="#sounds">ᴍᴜsɪᴄ, sᴏᴜɴᴅs</a></li>
     <li><a href="#targets">ᴛᴀʀɢᴇᴛ</a></li>
+    <li><a href="#status_bars">sᴛᴀᴛᴜs ʙᴀʀs</a></li>
     <li><a href="#items">ɪᴛᴇᴍs</a></li>
     <li><a href="#fishing_rod">ꜰɪsʜɪɴɢ ʀᴏᴅ</a></li>
     <li><a href="#pc_utilization">ᴘᴄ ɪɴꜰᴏ, ᴜsᴀɢᴇ</a></li>
@@ -50,7 +51,7 @@
     <h1>Variables</h1>
 
     <p>
-        <b>CustomHud Version: <code>v3.0 & v3.1</code></b><br>
+        <b>CustomHud Version: <code>v3.0 - v3.3</code></b><br>
         This is a list of every variable you can use in the profiles. There are over a hundred variables you can use.
         For easy searching, the list has been broken down into related categories that you can see on the left sidebar.
     </p>
@@ -128,6 +129,22 @@
 
         <a  id="r18v1" href="#local_difficulty"><rect x="332" y="652" width="244" height="36"/></a>
         <a  id="r18v2" href="#day"><rect x="588" y="652" width="148" height="36"/></a>
+
+        <a  id="r19v1" href="#nr_temp"><rect x="260" y="688" width="179" height="36"/></a>
+        <a  id="r19v2" href="#nr_veg"><rect x="452" y="688" width="155" height="36"/></a>
+        <a  id="r19v3" href="#nr_cont"><rect x="620" y="688" width="155" height="36"/></a>
+        <a  id="r19v4" href="#nr_erosion"><rect x="788" y="688" width="155" height="36"/></a>
+        <a  id="r19v5" href="#nr_depth"><rect x="956" y="688" width="179" height="36"/></a>
+        <a  id="r19v6" href="#nr_ridges"><rect x="1148" y="688" width="179" height="36"/></a>
+        <a  id="r19v7" href="#nr_peaks"><rect x="1340" y="688" width="203" height="36"/></a>
+        <a  id="r19v8" href="#nr_init"><rect x="1556" y="688" width="203" height="36"/></a>
+        <a  id="r19v9" href="#nr_final"><rect x="1772" y="688" width="146" height="36"/></a>
+
+        <a  id="r20v1" href="#bb_peaks"><rect x="280" y="724" width="131" height="36"/></a>
+        <a  id="r20v2" href="#bb_cont"><rect x="424" y="724" width="239" height="36"/></a>
+        <a  id="r20v3" href="#bb_erosion"><rect x="676" y="724" width="78" height="36"/></a>
+        <a  id="r20v4" href="#bb_temp"><rect x="764" y="724" width="75" height="36"/></a>
+        <a  id="r20v5" href="#bb_veg"><rect x="852" y="724" width="75" height="36"/></a>
 
         <a  id="r21v1" href="#sc"><rect x="4" y="760" width="148" height="36"/></a>
         <a  id="r21v2" href="#monsters"><rect x="172" y="760" width="100" height="36"/></a>
@@ -371,6 +388,78 @@
             <tspan x="24" dy="1.2em">Variable: {day}</tspan>
         </text>
 
+        <text id="r19v1-test" y="900">
+            <tspan x="24" font-size="48">Noise Router: Temperature</tspan>
+            <tspan x="24" dy="1.2em">Variable: {nr_temp}, {noise_temperature}</tspan>
+            <tspan x="24" dy="1.2em">Related: {nr_has_noise}</tspan>
+        </text>
+        <text id="r19v2-test" y="900">
+            <tspan x="24" font-size="48">Noise Router: Vegetation</tspan>
+            <tspan x="24" dy="1.2em">Variable: {nr_veg}, {noise_vegetation}</tspan>
+            <tspan x="24" dy="1.2em">Related: {nr_has_noise}</tspan>
+        </text>
+        <text id="r19v3-test" y="900">
+            <tspan x="24" font-size="48">Noise Router: Continents</tspan>
+            <tspan x="24" dy="1.2em">Variable: {nr_cont}, {noise_continents}</tspan>
+            <tspan x="24" dy="1.2em">Related: {nr_has_noise}</tspan>
+        </text>
+        <text id="r19v4-test" y="900">
+            <tspan x="24" font-size="48">Noise Router: Erosion</tspan>
+            <tspan x="24" dy="1.2em">Variable: {nr_erosion}, {noise_erosion}</tspan>
+            <tspan x="24" dy="1.2em">Related: {nr_has_noise}</tspan>
+        </text>
+        <text id="r19v5-test" y="900">
+            <tspan x="24" font-size="48">Noise Router: Depth</tspan>
+            <tspan x="24" dy="1.2em">Variable: {nr_depth}, {noise_depth}</tspan>
+            <tspan x="24" dy="1.2em">Related: {nr_has_noise}</tspan>
+        </text>
+        <text id="r19v6-test" y="900">
+            <tspan x="24" font-size="48">Noise Router: Ridges</tspan>
+            <tspan x="24" dy="1.2em">Variable: {nr_ridges}, {noise_ridges}</tspan>
+            <tspan x="24" dy="1.2em">Related: {nr_has_noise}</tspan>
+        </text>
+        <text id="r19v7-test" y="900">
+            <tspan x="24" font-size="48">Noise Router: Peaks and Valleys</tspan>
+            <tspan x="24" dy="1.2em">Variable: {nr_peaks}, {noise_peaks}</tspan>
+            <tspan x="24" dy="1.2em">Related: {nr_has_noise}</tspan>
+        </text>
+        <text id="r19v8-test" y="900">
+            <tspan x="24" font-size="48">Noise Router: Initial Density</tspan>
+            <tspan x="24" dy="1.2em">Variable: {nr_init}, {noise_init_density}</tspan>
+            <tspan x="24" dy="1.2em">Related: {nr_has_noise}</tspan>
+        </text>
+        <text id="r19v9-test" y="900">
+            <tspan x="24" font-size="48">Noise Router: Final Density</tspan>
+            <tspan x="24" dy="1.2em">Variable: {nr_final}, {noise_final_density}</tspan>
+            <tspan x="24" dy="1.2em">Related: {nr_has_noise}</tspan>
+        </text>
+
+        <text id="r20v1-test" y="900">
+            <tspan x="24" font-size="48">Biome Builder: Peaks</tspan>
+            <tspan x="24" dy="1.2em">Variable: {bb_peaks}, {biome_builder_peaks}</tspan>
+            <tspan x="24" dy="1.2em">Related: {nr_has_noise}</tspan>
+        </text>
+        <text id="r20v2-test" y="900">
+            <tspan x="24" font-size="48">Biome Builder: Continents</tspan>
+            <tspan x="24" dy="1.2em">Variable: {bb_cont}, {biome_builder_continents}</tspan>
+            <tspan x="24" dy="1.2em">Related: {nr_has_noise}</tspan>
+        </text>
+        <text id="r20v3-test" y="900">
+            <tspan x="24" font-size="48">Biome Builder: Erosion</tspan>
+            <tspan x="24" dy="1.2em">Variable: {bb_erosion}, {biome_builder_erosion}</tspan>
+            <tspan x="24" dy="1.2em">Related: {nr_has_noise}</tspan>
+        </text>
+        <text id="r20v4-test" y="900">
+            <tspan x="24" font-size="48">Biome Builder: Temperature</tspan>
+            <tspan x="24" dy="1.2em">Variable: {bb_temp}, {biome_builder_temperature}</tspan>
+            <tspan x="24" dy="1.2em">Related: {nr_has_noise}</tspan>
+        </text>
+        <text id="r20v5-test" y="900">
+            <tspan x="24" font-size="48">Biome Builder: Vegetation</tspan>
+            <tspan x="24" dy="1.2em">Variable: {bb_veg}, {biome_builder_vegetation}</tspan>
+            <tspan x="24" dy="1.2em">Related: {nr_has_noise}</tspan>
+        </text>
+
         <text id="r21v1-test" y="900">
             <tspan x="24" font-size="48">Spawn Chunks</tspan>
             <tspan x="24" dy="1.2em">Variable: {sc}</tspan>
@@ -492,6 +581,7 @@
     </svg>
     </details>
 
+
     <h3>What Each Column Means</h3>
     <table>
         <thead>
@@ -509,9 +599,458 @@
         </tbody>
     </table>
 
-    <h3 id="new">What New v3.2</h3>
+    <h3 id="new">What New v3.3</h3>
     <details>
-        <summary>[13] Variables added in v3.1</summary>
+        <summary>[58] Variables added in v3.3</summary>
+        <hr>
+
+        <h4>Performance (TPS Singleplayer Only)</h4>
+        <table>
+            <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{fps_avg}</td>
+                <td>Average fps</td>
+                <td>avg fps</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+                <td rowspan="4"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{fps_min}</td>
+                <td>Minimum fps</td>
+                <td>min fps</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+            </tr>
+            <tr>
+                <td>{fps_max}</td>
+                <td>Maximum fps</td>
+                <td>max fps</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+            </tr>
+            <tr>
+                <td>{fps_samples}</td>
+                <td>Number of samples used for the above 3 variables<br><i>Same as {frame_samples}</i></td>
+                <td>number of samples</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+            </tr>
+            <tr>
+                <td colspan="5"></td>
+            </tr>
+            <tr>
+                <td>{tps_avg}</td>
+                <td>Average tps</td>
+                <td>avg tps</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+                <td class="last_cell rowspan" rowspan="4"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{tps_min}</td>
+                <td>Minimum tps</td>
+                <td>min tps</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+            </tr>
+            <tr>
+                <td>{tps_max}</td>
+                <td>Maximum tps</td>
+                <td>max tps</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+            </tr>
+            <tr>
+                <td>{tps_samples}</td>
+                <td>Number of samples used for the above 3 variables</td>
+                <td>number of samples</td>
+                <td class="rowspan_fix_right"><code>true</code></td>
+            </tr>
+
+            </tbody>
+        </table>
+
+        <h4>Movement</h4>
+        <table>
+            <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{sprint_held}</td>
+                <td>Is the player is holding the sprint key or if sprint is toggled?</td>
+                <td>1 (key down)<br>0 (key not down)</td>
+                <td><code>true</code> (key down)<br><code>false</code> (key not down)</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>{flying}</td>
+                <td>Is the player flying?</td>
+                <td>1 (flying)<br>0 (not flying)</td>
+                <td><code>true</code> (flying)<br><code>false</code> (not flying)</td>
+                <td>None</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h4>Miscellaneous</h4>
+        <table>
+            <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{tab_open} / {player_list_open}</td>
+                <td>Is the player list open?</td>
+                <td>1&nbsp;(player list open)<br>0&nbsp;(not open)</td>
+                <td><code>true</code>&nbsp;(player list open)<br><code>false</code>&nbsp;(not open)</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>{chat_open}</td>
+                <td>Is the chat open?</td>
+                <td>1&nbsp;(chat open)<br>0&nbsp;(not open)</td>
+                <td><code>true</code>&nbsp;(chat open)<br><code>false</code>&nbsp;(not open)</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>{screen_open}</td>
+                <td>Is there a screen open?</td>
+                <td>1&nbsp;(a screen is open)<br>0&nbsp;(no screen open)</td>
+                <td><code>true</code>&nbsp;(a screen is open)<br><code>false</code>&nbsp;(no screen open)</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>{gamemode}</td>
+                <td>Which gamemode the player is in:<br><i>survival, creative, adventure, spectator</i></td>
+                <td>0&nbsp;(survival)<br>1&nbsp;(creative)<br>2&nbsp;(adventure)<br>3&nbsp;(spectator)</td>
+                <td><code>true</code></td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>{survival}</td>
+                <td>If the player is in survival mode</td>
+                <td class="rowspan" rowspan="4">0&nbsp;(in gamemode)<br>1&nbsp;(not in gamemode)</td>
+                <td class="rowspan" rowspan="4"><code>true</code>&nbsp;(in gamemode)<br><code>false</code>&nbsp;(not in gamemode)</td>
+                <td class="rowspan" rowspan="4">None</td>
+            </tr>
+            <tr>
+                <td>{creative}</td>
+                <td class="rowspan_fix_right">If the player is in creative mode</td>
+            </tr>
+            <tr>
+                <td>{adventure}</td>
+                <td class="rowspan_fix_right">If the player is in adventure mode</td>
+            </tr>
+            <tr>
+                <td>{spectator}</td>
+                <td class="rowspan_fix_right">If the player is in spectator mode</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h4>Music / Sound</h4>
+        <table>
+            <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{music_id}</td>
+                <td>The ID of the background music</td>
+                <td>length of output</td>
+                <td>if there's background music playing</td>
+                <td><a href="references/variable_flags.html">String</a></td>
+            </tr>
+            <tr>
+                <td>{music_name}</td>
+                <td>The name of the background music</td>
+                <td>length of output</td>
+                <td>if there's background music playing</td>
+                <td><a href="references/variable_flags.html">String</a></td>
+            </tr>
+            <tr>
+                <td>{music_playing}</td>
+                <td>If there's background music playing</td>
+                <td>1 (playing)<br>0 (not playing)</td>
+                <td><code>true</code> (playing)<br><code>false</code> (not playing)</td>
+                <td>None</td>
+            </tr>
+            <tr><td colspan="5"></td></tr>
+            <tr>
+                <td>{record_icon}</td>
+                <td>Display's the item texture for the record playing</td>
+                <td>the record's item's raw ID</td>
+                <td>if there is an item for the current<br>record playing</td>
+                <td><a href="references/variable_flags.html">Icon &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{record_id}</td>
+                <td>The ID of the current record playing</td>
+                <td>length of output</td>
+                <td>if there's a record playing</td>
+                <td><a href="references/variable_flags.html">String</a></td>
+            </tr>
+            <tr>
+                <td>{record_name}</td>
+                <td>The name of the current record playing</td>
+                <td>length of output</td>
+                <td>if there's a record playing</td>
+                <td><a href="references/variable_flags.html">String</a></td>
+            </tr>
+            <tr>
+                <td>{record_playing}</td>
+                <td>If there's a record playing</td>
+                <td>1 (playing)<br>0 (not playing)</td>
+                <td><code>true</code> (playing)<br><code>false</code> (not playing)</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>{record_length}</td>
+                <td>How long the current playing record is, in seconds</td>
+                <td>the length</td>
+                <td>if there's a record playing</td>
+                <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{record_elapsed_per}<br>{record_elapsed_percentage}</td>
+                <td>How far into the current playing<br>record the playback of it is, as a percentage</td>
+                <td>the percentage</td>
+                <td>if percentage > 0</td>
+                <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{record_elapsed}</td>
+                <td>How many seconds into the record the playback of it is</td>
+                <td>the time elapsed</td>
+                <td>id time elapsed > 0</td>
+                <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{record_remaining}</td>
+                <td>How many seconds left until the record's playback is finished</td>
+                <td>the time remaining</td>
+                <td>if time remaining > 0</td>
+                <td class="last_cell"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h4>Status Bars</h4>
+        <table class="second_left_cells">
+            <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Description / Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{health} / {hp}</td>
+                <td>How much health the player has (including absorption)</td>
+                <td class="rowspan_fix_right">health > 0</td>
+                <td class="rowspan last_cell" rowspan="15"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{max_health} / {max_hp}</td>
+                <td>The maximum health the player can have (not including absorption)</td>
+                <td class="rowspan_fix_right">max health > 0</td>
+            </tr>
+            <tr>
+                <td>{health_per} / {hp_per}<br>{health_percentage}</td>
+                <td>How much health the player has, as a percentage (can go over 100% with absolution)</td>
+                <td class="rowspan_fix_right">health > 0</td>
+            </tr>
+            <tr>
+                <td>{food} / {hunger}</td>
+                <td>How much hunger/food the player has</td>
+                <td class="rowspan_fix_right">food/hunger > 0</td>
+            </tr>
+            <tr>
+                <td>{food_per} / {hunger_per}</td>
+                <td>How much hunger/food the player has, as a percentage</td>
+                <td class="rowspan_fix_right">food/hunger > 0</td>
+            </tr>
+            <tr>
+                <td>{saturation}</td>
+                <td>How much saturation the player has</td>
+                <td class="rowspan_fix_right">saturation > 0</td>
+            </tr>
+            <tr>
+                <td>{saturation_per}<br>{saturation_percentage}</td>
+                <td>How much saturation the player has, as a percentage</td>
+                <td class="rowspan_fix_right">saturation > 0</td>
+            </tr>
+            <tr>
+                <td>{armor}</td>
+                <td>How much armor the player has</td>
+                <td class="rowspan_fix_right">armor > 0</td>
+            </tr>
+            <tr>
+                <td>{armor_per} / {armor_percentage}</td>
+                <td>How much armor the player has, as a percentage</td>
+                <td class="rowspan_fix_right">armor > 0</td>
+            </tr>
+            <tr>
+                <td>{air}</td>
+                <td>How much air the player has</td>
+                <td class="rowspan_fix_right">air > 0</td>
+            </tr>
+            <tr>
+                <td>{air_per} / {air_percentage}</td>
+                <td>How much air the player has, as a percentage</td>
+                <td class="rowspan_fix_right">air > 0</td>
+            </tr>
+            <tr>
+                <td>{xp_level}</td>
+                <td>How many XP levels the player has</td>
+                <td class="rowspan_fix_right">xp level > 0</td>
+            </tr>
+            <tr>
+                <td>{xp}</td>
+                <td>How many XP points the player has</td>
+                <td class="rowspan_fix_right">xp points > 0</td>
+            </tr>
+            <tr>
+                <td>{xp_needed}</td>
+                <td>How much XP points the player needs to get to the next XP level</td>
+                <td class="rowspan_fix_right">true</td>
+            </tr>
+            <tr>
+                <td>{xp_per} / {xp_percentage}</td>
+                <td>The progress of XP points to get to the next level</td>
+                <td class="rowspan_fix_right">xp points > 0</td>
+            </tr>
+        </table>
+
+        <h4 style="text-align: left">Noise Router (in Environment)</h4>
+        <table style="margin-bottom: 32px">
+            <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{has_noise}</td>
+                <td>If the world generation uses noise for generation</td>
+                <td>1 (has noise)<br>0 (doesn't)</td>
+                <td class="rowspan_fix_right"><code>true</code> (has noise)<br><code>false</code> (doesn't)</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>{nr_temp} / {noise_temperature}</td>
+                <td colspan="2">The <a href="https://minecraft.wiki/w/Biome#Temperature_2">temperature</a> valuesampled at the player's location</td>
+                <td class="rowspan_fix_right rowspan" rowspan="9">has noise</td>
+                <td class="rowspan last_cell" rowspan="9"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{nr_veg} / {noise_vegetation}</td>
+                <td class="rowspan_fix_right" colspan="2">The <a href="https://minecraft.wiki/w/Biome#Humidity">vegetation/humidity</a> value sampled at the player's location</td>
+            </tr>
+            <tr>
+                <td>{nr_cont} / {noise_continents}</td>
+                <td class="rowspan_fix_right" colspan="2">The <a href="https://minecraft.wiki/w/Biome#Continentalness">continentalness</a> value sampled at the player's location</td>
+            </tr>
+            <tr>
+                <td>{nr_erosion} / {noise_erosion}</td>
+                <td class="rowspan_fix_right" colspan="2">The <a href="https://minecraft.wiki/w/Erosion#">erosion</a> value sampled at the player's location</td>
+            </tr>
+            <tr>
+                <td>{nr_depth} / {noise_depth}</td>
+                <td class="rowspan_fix_right" colspan="2">The <a href="https://minecraft.wiki/w/Biome#Depth">depth</a> value sampled at the player's location</td>
+            </tr>
+            <tr>
+                <td>{nr_ridges} / {noise_ridges}</td>
+                <td class="rowspan_fix_right" colspan="2">The <a href="https://minecraft.wiki/w/Biome#Weirdness">ridges/weirdness</a> value sampled at the player's location</td>
+            </tr>
+            <tr>
+                <td>{nr_peaks} / {noise_peaks}</td>
+                <td class="rowspan_fix_right" colspan="2">The <a href="https://minecraft.wiki/w/Biome#Weirdness">peaks and valleys</a> value calculated at the player's location</td>
+            </tr>
+            <tr>
+                <td>{nr_init} / {noise_init_density}</td>
+                <td class="rowspan_fix_right" colspan="2">The <a href="https://minecraft.fandom.com/wiki/Custom_world_generation/noise_settings">initial density without jaggedness</a> value sampled at the player's location</td>
+            </tr>
+            <tr>
+                <td>{nr_final} / {noise_final_density}</td>
+                <td class="rowspan_fix_right" colspan="2">The <a href="https://minecraft.fandom.com/wiki/Custom_world_generation/noise_settings">final density</a> value sampled at the player's location</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h4 style="text-align: left">Biome Builder (in Environment)</h4>
+        <table style="margin-bottom: 32px">
+            <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Description</th>
+                <th>Number Value</th>
+                <th>Boolean Value</th>
+                <th>Flags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{bb_peaks} / {biome_builder_peaks}</td>
+                <td class="rowspan_fix_right"colspan="2">The <a href="https://minecraft.wiki/w/Debug_screen#biome_builder">categorized value</a> of the <a href="https://minecraft.wiki/w/Biome#Weirdness">peaks and valleys</a> value<br>calculated at the player's location</td>
+                <td class="rowspan_fix_right" rowspan="2">has noise</td>
+                <td rowspan="2"><a href="references/variable_flags.html">String</a></td>
+            </tr>
+            <tr>
+                <td>{bb_cont} / {biome_builder_continents}</td>
+                <td class="rowspan_fix_right"colspan="2">The <a href="https://minecraft.wiki/w/Debug_screen#biome_builder">categorized value</a> of the <a href="https://minecraft.wiki/w/Biome#Continentalness">continentalness</a> value<br>sampled at the player's location</td>
+            </tr>
+            <tr>
+                <td>{bb_erosion} / {biome_builder_erosion}</td>
+                <td colspan="2">The <a href="https://minecraft.wiki/w/Debug_screen#biome_builder">categorized value</a> of the <a href="https://minecraft.wiki/w/Erosion#">erosion</a> value<br>sampled at the player's location</td>
+                <td class="rowspan_fix_right rowspan" rowspan="3">has noise</td>
+                <td class="rowspan last_cell" rowspan="3"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            </tr>
+            <tr>
+                <td>{bb_temp} / {biome_builder_temperature}</td>
+                <td class="rowspan_fix_right"colspan="2">The <a href="https://minecraft.wiki/w/Debug_screen#biome_builder">categorized value</a> of the <a href="https://minecraft.wiki/w/Biome#Temperature_2">temperature</a> value<br>sampled at the player's location</td>
+            </tr>
+            <tr>
+                <td>{bb_veg} / {biome_builder_vegetation}</td>
+                <td class="rowspan_fix_right"colspan="2">The <a href="https://minecraft.wiki/w/Debug_screen#biome_builder">categorized value</a> of the <a href="https://minecraft.wiki/w/Biome#Humidity">vegetation/humidity</a> value<br>sampled at the player's location</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <hr>
+    </details>
+
+    <h3>What New v3.2</h3>
+    <details>
+        <summary>[13] Variables added in v3.2</summary>
         <hr>
 
         <h4>Performance (All Singleplayer Only)</h4>
@@ -1369,9 +1908,9 @@
         <tr>
             <td colspan="5" style="border-radius: 0 0 10px 0; background-color: #f4f5f7">
                 <details>
-                    <summary>Frame Time (ms) and Tick Time (ms)</summary>
+                    <summary>Avg/Min/Max: FPS, Frame Time (ms), TPS, and Tick Time (ms)</summary>
                     <h3 style="text-align: left">Frame Time</h3>
-                    <table style="margin-bottom: 32px">
+                    <table class="inner-table" style="margin-bottom: 32px">
                         <thead>
                         <tr>
                             <th>Variable</th>
@@ -1409,6 +1948,47 @@
                         </tr>
                         </tbody>
                     </table>
+
+                    <h3 style="text-align: left">FPS (Added in v3.3)</h3>
+                    <table style="margin-bottom: 32px">
+                        <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Description</th>
+                            <th>Number Value</th>
+                            <th>Boolean Value</th>
+                            <th>Flags</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td id="fps_avg">{fps_avg}</td>
+                            <td>Average fps</td>
+                            <td>avg fps</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                            <td rowspan="4"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+                        </tr>
+                        <tr>
+                            <td id="fps_min">{fps_min}</td>
+                            <td>Minimum fps</td>
+                            <td>min fps</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                        </tr>
+                        <tr>
+                            <td id="fps_max">{fps_max}</td>
+                            <td>Maximum fps</td>
+                            <td>max fps</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                        </tr>
+                        <tr>
+                            <td id="fps_samples">{fps_samples}</td>
+                            <td>Number of samples used for the above 3 variables<br><i>Same as {frame_samples}</i></td>
+                            <td>number of samples</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
                     <h3 style="text-align: left">Tick Time (Singleplayer Only, Added in v3.2)</h3>
                     <table style="margin-bottom: 8px">
                         <thead>
@@ -1449,9 +2029,50 @@
 
                         </tbody>
                     </table>
+
+                    <h3 style="text-align: left">TPS (Singleplayer Only, Added in v3.3)</h3>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Description</th>
+                            <th>Number Value</th>
+                            <th>Boolean Value</th>
+                            <th>Flags</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td id="tps_avg">{tps_avg}</td>
+                            <td>Average tps</td>
+                            <td>avg tps</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                            <td class="last_cell rowspan" rowspan="4"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+                        </tr>
+                        <tr>
+                            <td id="tps_min">{tps_min}</td>
+                            <td>Minimum tps</td>
+                            <td>min tps</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                        </tr>
+                        <tr>
+                            <td id="tps_max">{tps_max}</td>
+                            <td>Maximum tps</td>
+                            <td>max tps</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                        </tr>
+                        <tr>
+                            <td id="tps_samples">{tps_samples}</td>
+                            <td>Number of samples used for the above 3 variables</td>
+                            <td>number of samples</td>
+                            <td class="rowspan_fix_right"><code>true</code></td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </details>
             </td>
         </tr>
+        <tr></tr>
         </tbody>
     </table>
 
@@ -1646,7 +2267,7 @@
             <td>Shows the given texture</td>
             <td>0</td>
             <td><code>true</code></td>
-            <td><<a href="references/variable_flags.html">Icon &amp; Scale</a></td>
+            <td><a href="references/variable_flags.html">Icon &amp; Scale</a></td>
         </tr>
         <tr>
             <td id="setting"><a href="references/settings.html">{setting:&lt;setting&gt;}<br>{s:&lt;setting&gt;}</a></td>
@@ -1739,6 +2360,56 @@
             <td>if more than 0 particles</td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
+        <tr><td colspan="5"></td></tr>
+        <tr>
+            <td id="player_list_open">{tab_open} / {player_list_open}</td>
+            <td>Is the player list open?<br><b>[Added in v3.3]</b></td>
+            <td>1&nbsp;(player list open)<br>0&nbsp;(not open)</td>
+            <td><code>true</code>&nbsp;(player list open)<br><code>false</code>&nbsp;(not open)</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td id="chat_open">{chat_open}</td>
+            <td>Is the chat open?<br><b>[Added in v3.3]</b></td>
+            <td>1&nbsp;(chat open)<br>0&nbsp;(not open)</td>
+            <td><code>true</code>&nbsp;(chat open)<br><code>false</code>&nbsp;(not open)</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td id="screen_open">{screen_open}</td>
+            <td>Is there a screen open?<br><b>[Added in v3.3]</b></td>
+            <td>1&nbsp;(a screen is open)<br>0&nbsp;(no screen open)</td>
+            <td><code>true</code>&nbsp;(a screen is open)<br><code>false</code>&nbsp;(no screen open)</td>
+            <td>None</td>
+        </tr>
+        <tr><td colspan="5">Gamemode Variables <b>[Added in v3.3]</b></td></tr>
+        <tr>
+            <td id="gamemode">{gamemode}</td>
+            <td>Which gamemode the player is in:<br><i>survival, creative, adventure, spectator</i></td>
+            <td>0&nbsp;(survival)<br>1&nbsp;(creative)<br>2&nbsp;(adventure)<br>3&nbsp;(spectator)</td>
+            <td><code>true</code></td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td id="survival">{survival}</td>
+            <td>If the player is in survival mode</td>
+            <td rowspan="4">0&nbsp;(in gamemode)<br>1&nbsp;(not in gamemode)</td>
+            <td rowspan="4"><code>true</code>&nbsp;(in gamemode)<br><code>false</code>&nbsp;(not in gamemode)</td>
+            <td rowspan="4">None</td>
+        </tr>
+        <tr>
+            <td id="creative">{creative}</td>
+            <td class="rowspan_fix_right">If the player is in creative mode</td>
+        </tr>
+        <tr>
+            <td id="adventure">{adventure}</td>
+            <td class="rowspan_fix_right">If the player is in adventure mode</td>
+        </tr>
+        <tr>
+            <td id="spectator">{spectator}</td>
+            <td class="rowspan_fix_right">If the player is in spectator mode</td>
+        </tr>
+        <tr><td colspan="5"></td></tr>
         <tr>
             <td id="moon_phase">{moon_phase}</td>
             <td>The phase of the moon (1-8)</td>
@@ -2019,6 +2690,13 @@
         </tr>
         <tr><td></td><td></td><td></td><td></td><td></td></tr>
         <tr>
+            <td id="sprint_held">{sprint_held}</td>
+            <td>Is the player is holding the sprint key or if sprint is toggled?<br><b>[Added in v3.3]</b></td>
+            <td>1 (key down)<br>0 (key not down)</td>
+            <td><code>true</code> (key down)<br><code>false</code> (key not down)</td>
+            <td>None</td>
+        </tr>
+        <tr>
             <td id="sprinting">{sprinting}</td>
             <td>Is the player sprinting?</td>
             <td>1 (sprinting)<br>0 (not sprinting)</td>
@@ -2037,6 +2715,13 @@
             <td>Is the player swimming?</td>
             <td>1 (swimming)<br>0 (not swimming)</td>
             <td><code>true</code> (swimming)<br><code>false</code> (not swimming)</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td id="flying">{flying}</td>
+            <td>Is the player flying?<br><b>[Added in v3.3]</b></td>
+            <td>1 (flying)<br>0 (not flying)</td>
+            <td><code>true</code> (flying)<br><code>false</code> (not flying)</td>
             <td>None</td>
         </tr>
         <tr>
@@ -2137,6 +2822,110 @@
             <td><code>true</code> (in multiplayer)<br><code>false</code> (in singleplayer)</td>
             <td class="last_cell">None</td>
         </tr>
+        <tr><td class="rowspan last_cell" colspan="5" style="background-color: #f4f5f7">
+            <details>
+                <summary>Noise Router & Biome builder</summary>
+                <h3 style="text-align: left">Noise Router (Added in v3.3)</h3>
+                <table style="margin-bottom: 32px">
+                    <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Description</th>
+                        <th>Number Value</th>
+                        <th>Boolean Value</th>
+                        <th>Flags</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td id="has_noise">{has_noise}</td>
+                        <td>If the world generation uses noise for generation</td>
+                        <td>1 (has noise)<br>0 (doesn't)</td>
+                        <td class="rowspan_fix_right"><code>true</code> (has noise)<br><code>false</code> (doesn't)</td>
+                        <td>None</td>
+                    </tr>
+                    <tr>
+                        <td id="nr_temp">{nr_temp} / {noise_temperature}</td>
+                        <td colspan="2">The <a href="https://minecraft.wiki/w/Biome#Temperature_2">temperature</a> valuesampled at the player's location</td>
+                        <td class="rowspan_fix_right rowspan" rowspan="9">has noise</td>
+                        <td class="rowspan last_cell" rowspan="9"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+                    </tr>
+                    <tr>
+                        <td id="nr_veg">{nr_veg} / {noise_vegetation}</td>
+                        <td class="rowspan_fix_right" colspan="2">The <a href="https://minecraft.wiki/w/Biome#Humidity">vegetation/humidity</a> value sampled at the player's location</td>
+                    </tr>
+                    <tr>
+                        <td id="nr_cont">{nr_cont} / {noise_continents}</td>
+                        <td class="rowspan_fix_right" colspan="2">The <a href="https://minecraft.wiki/w/Biome#Continentalness">continentalness</a> value sampled at the player's location</td>
+                    </tr>
+                    <tr>
+                        <td id="nr_erosion">{nr_erosion} / {noise_erosion}</td>
+                        <td class="rowspan_fix_right" colspan="2">The <a href="https://minecraft.wiki/w/Erosion#">erosion</a> value sampled at the player's location</td>
+                    </tr>
+                    <tr>
+                        <td id="nr_depth">{nr_depth} / {noise_depth}</td>
+                        <td class="rowspan_fix_right" colspan="2">The <a href="https://minecraft.wiki/w/Biome#Depth">depth</a> value sampled at the player's location</td>
+                    </tr>
+                    <tr>
+                        <td id="nr_ridges">{nr_ridges} / {noise_ridges}</td>
+                        <td class="rowspan_fix_right" colspan="2">The <a href="https://minecraft.wiki/w/Biome#Weirdness">ridges/weirdness</a> value sampled at the player's location</td>
+                    </tr>
+                    <tr>
+                        <td id="nr_peaks">{nr_peaks} / {noise_peaks}</td>
+                        <td class="rowspan_fix_right" colspan="2">The <a href="https://minecraft.wiki/w/Biome#Weirdness">peaks and valleys</a> value calculated at the player's location</td>
+                    </tr>
+                    <tr>
+                        <td id="nr_init">{nr_init} / {noise_init_density}</td>
+                        <td class="rowspan_fix_right" colspan="2">The <a href="https://minecraft.fandom.com/wiki/Custom_world_generation/noise_settings">initial density without jaggedness</a> value sampled at the player's location</td>
+                    </tr>
+                    <tr>
+                        <td id="nr_final">{nr_final} / {noise_final_density}</td>
+                        <td class="rowspan_fix_right" colspan="2">The <a href="https://minecraft.fandom.com/wiki/Custom_world_generation/noise_settings">final density</a> value sampled at the player's location</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="text-align: left">Biome Builder (Added in v3.3)</h3>
+                <table style="margin-bottom: 32px">
+                    <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Description</th>
+                        <th>Number Value</th>
+                        <th>Boolean Value</th>
+                        <th>Flags</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td id="bb_peaks">{bb_peaks} / {biome_builder_peaks}</td>
+                        <td class="rowspan_fix_right"colspan="2">The <a href="https://minecraft.wiki/w/Debug_screen#biome_builder">categorized value</a> of the <a href="https://minecraft.wiki/w/Biome#Weirdness">peaks and valleys</a> value<br>calculated at the player's location</td>
+                        <td class="rowspan_fix_right" rowspan="2">has noise</td>
+                        <td rowspan="2"><a href="references/variable_flags.html">String</a></td>
+                    </tr>
+                    <tr>
+                        <td id="bb_cont">{bb_cont} / {biome_builder_continents}</td>
+                        <td class="rowspan_fix_right"colspan="2">The <a href="https://minecraft.wiki/w/Debug_screen#biome_builder">categorized value</a> of the <a href="https://minecraft.wiki/w/Biome#Continentalness">continentalness</a> value<br>sampled at the player's location</td>
+                    </tr>
+                    <tr>
+                        <td id="bb_erosion">{bb_erosion} / {biome_builder_erosion}</td>
+                        <td colspan="2">The <a href="https://minecraft.wiki/w/Debug_screen#biome_builder">categorized value</a> of the <a href="https://minecraft.wiki/w/Erosion#">erosion</a> value<br>sampled at the player's location</td>
+                        <td class="rowspan_fix_right rowspan" rowspan="3">has noise</td>
+                        <td class="rowspan last_cell" rowspan="3"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+                    </tr>
+                    <tr>
+                        <td id="bb_temp">{bb_temp} / {biome_builder_temperature}</td>
+                        <td class="rowspan_fix_right"colspan="2">The <a href="https://minecraft.wiki/w/Debug_screen#biome_builder">categorized value</a> of the <a href="https://minecraft.wiki/w/Biome#Temperature_2">temperature</a> value<br>sampled at the player's location</td>
+                    </tr>
+                    <tr>
+                        <td id="bb_veg">{bb_veg} / {biome_builder_vegetation}</td>
+                        <td class="rowspan_fix_right"colspan="2">The <a href="https://minecraft.wiki/w/Debug_screen#biome_builder">categorized value</a> of the <a href="https://minecraft.wiki/w/Biome#Humidity">vegetation/humidity</a> value<br>sampled at the player's location</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </details>
+        </td></tr>
+        <tr></tr>
         </tbody>
     </table>
 
@@ -2271,7 +3060,7 @@
             <td>Displays the irl time, based on the format given. <br>For formatting look  here</td>
             <td>length of output</td>
             <td>length of output &gt; 0</td>
-            <td class="last_cell"><a href="references/variable_flags.html">String</a></td>
+            <td class="last_cell">v3.0-v3.2: <a href="references/variable_flags.html">String</a><br>v3.3: None</td>
         </tr>
         </tbody>
     </table>
@@ -2379,7 +3168,7 @@
         </tbody>
     </table>
 
-    <h3 id="sounds">Sounds</h3>
+    <h3 id="sounds">Music / Sounds</h3>
     <table>
         <thead>
         <tr>
@@ -2393,7 +3182,7 @@
         <tr>
             <td id="streaming_sounds">{sounds} / {streaming_sounds}</td>
             <td>The number of streaming sounds currently playing (like breaking/placing blocks)</td>
-            <td rowspan="5" class="rowspan">if greater than 0</td>
+            <td rowspan="5" class="rowspan"> if greater than 0</td>
             <td rowspan="5" class="rowspan last_cell"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         <tr>
@@ -2411,6 +3200,98 @@
         <tr>
             <td id="mood">{mood}</td>
             <td class="rowspan_fix_right">How close the player is to the next mood ambience sound being played</td>
+        </tr>
+        </tbody>
+    </table>
+    <h4>Music and Record Variables Added in v3.3</h4>
+    <table>
+        <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Description</th>
+            <th>Number Value</th>
+            <th>Boolean Value</th>
+            <th>Flags</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td id="music_id">{music_id}</td>
+            <td>The ID of the background music</td>
+            <td>length of output</td>
+            <td>if there's background music playing</td>
+            <td><a href="references/variable_flags.html">String</a></td>
+        </tr>
+        <tr>
+            <td id="music_name">{music_name}</td>
+            <td>The name of the background music</td>
+            <td>length of output</td>
+            <td>if there's background music playing</td>
+            <td><a href="references/variable_flags.html">String</a></td>
+        </tr>
+        <tr>
+            <td id="music_playing">{music_playing}</td>
+            <td>If there's background music playing</td>
+            <td>1 (playing)<br>0 (not playing)</td>
+            <td><code>true</code> (playing)<br><code>false</code> (not playing)</td>
+            <td>None</td>
+        </tr>
+        <tr><td colspan="5"></td></tr>
+        <tr>
+            <td id="record_icon">{record_icon}</td>
+            <td>Display's the item texture for the record playing</td>
+            <td>the record's item's raw ID</td>
+            <td>if there is an item for the current<br>record playing</td>
+            <td><a href="references/variable_flags.html">Icon &amp; Scale</a></td>
+        </tr>
+        <tr>
+            <td id="record_id">{record_id}</td>
+            <td>The ID of the current record playing</td>
+            <td>length of output</td>
+            <td>if there's a record playing</td>
+            <td><a href="references/variable_flags.html">String</a></td>
+        </tr>
+        <tr>
+            <td id="record_name">{record_name}</td>
+            <td>The name of the current record playing</td>
+            <td>length of output</td>
+            <td>if there's a record playing</td>
+            <td><a href="references/variable_flags.html">String</a></td>
+        </tr>
+        <tr>
+            <td id="record_playing">{record_playing}</td>
+            <td>If there's a record playing</td>
+            <td>1 (playing)<br>0 (not playing)</td>
+            <td><code>true</code> (playing)<br><code>false</code> (not playing)</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td id="record_length">{record_length}</td>
+            <td>How long the current playing record is, in seconds</td>
+            <td>the length</td>
+            <td>if there's a record playing</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
+            <td id="record_elapsed_per">{record_elapsed_per}<br>{record_elapsed_percentage}</td>
+            <td>How far into the current playing<br>record the playback of it is, as a percentage</td>
+            <td>the percentage</td>
+            <td>if percentage > 0</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
+            <td id="record_elapsed">{record_elapsed}</td>
+            <td>How many seconds into the record the playback of it is</td>
+            <td>the time elapsed</td>
+            <td>id time elapsed > 0</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
+            <td id="record_remaining">{record_remaining}</td>
+            <td>How many seconds left until the record's playback is finished</td>
+            <td>the time remaining</td>
+            <td>if time remaining > 0</td>
+            <td class="last_cell"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         </tbody>
     </table>
@@ -2567,6 +3448,95 @@
         </tbody>
     </table>
 
+    <h3 id="status_bars">Status Bars <b style="text-decoration: underline">[Added in v3.3]</b></h3>
+    <table class="second_left_cells">
+        <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Description / Number Value</th>
+            <th>Boolean Value</th>
+            <th>Flags</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td id="health">{health} / {hp}</td>
+            <td>How much health the player has (including absorption)</td>
+            <td class="rowspan_fix_right">health > 0</td>
+            <td class="rowspan last_cell" rowspan="15"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
+            <td id="max_health">{max_health} / {max_hp}</td>
+            <td>The maximum health the player can have (not including absorption)</td>
+            <td class="rowspan_fix_right">max health > 0</td>
+        </tr>
+        <tr>
+            <td id="health_per">{health_per} / {hp_per}<br>{health_percentage}</td>
+            <td>How much health the player has, as a percentage (can go over 100% with absolution)</td>
+            <td class="rowspan_fix_right">health > 0</td>
+        </tr>
+        <tr>
+            <td id="food">{food} / {hunger}</td>
+            <td>How much hunger/food the player has</td>
+            <td class="rowspan_fix_right">food/hunger > 0</td>
+        </tr>
+        <tr>
+            <td id="food_per">{food_per} / {hunger_per}</td>
+            <td>How much hunger/food the player has, as a percentage</td>
+            <td class="rowspan_fix_right">food/hunger > 0</td>
+        </tr>
+        <tr>
+            <td id="saturation">{saturation}</td>
+            <td>How much saturation the player has</td>
+            <td class="rowspan_fix_right">saturation > 0</td>
+        </tr>
+        <tr>
+            <td id="saturation_per">{saturation_per}<br>{saturation_percentage}</td>
+            <td>How much saturation the player has, as a percentage</td>
+            <td class="rowspan_fix_right">saturation > 0</td>
+        </tr>
+        <tr>
+            <td id="armor">{armor}</td>
+            <td>How much armor the player has</td>
+            <td class="rowspan_fix_right">armor > 0</td>
+        </tr>
+        <tr>
+            <td id="armor_per">{armor_per} / {armor_percentage}</td>
+            <td>How much armor the player has, as a percentage</td>
+            <td class="rowspan_fix_right">armor > 0</td>
+        </tr>
+        <tr>
+            <td id="air">{air}</td>
+            <td>How much air the player has</td>
+            <td class="rowspan_fix_right">air > 0</td>
+        </tr>
+        <tr>
+            <td id="air_per">{air_per} / {air_percentage}</td>
+            <td>How much air the player has, as a percentage</td>
+            <td class="rowspan_fix_right">air > 0</td>
+        </tr>
+        <tr>
+            <td id="xp_level">{xp_level}</td>
+            <td>How many XP levels the player has</td>
+            <td class="rowspan_fix_right">xp level > 0</td>
+        </tr>
+        <tr>
+            <td id="xp">{xp}</td>
+            <td>How many XP points the player has</td>
+            <td class="rowspan_fix_right">xp points > 0</td>
+        </tr>
+        <tr>
+            <td id="xp_needed">{xp_needed}</td>
+            <td>How much XP points the player needs to get to the next XP level</td>
+            <td class="rowspan_fix_right">true</td>
+        </tr>
+        <tr>
+            <td id="xp_per">{xp_per} / {xp_percentage}</td>
+            <td>The progress of XP points to get to the next level</td>
+            <td class="rowspan_fix_right">xp points > 0</td>
+        </tr>
+    </table>
+
     <h3 id="items">Items</h3>
     <table>
         <thead>
@@ -2647,7 +3617,31 @@
             <td>Show the max stack size of the item in <a href="references/item_slots.html">&lt;slot&gt;</a><br><b>[Added in v3.1]</b></td>
             <td>the maximum stack size</td>
             <td>if the item is stackable</td>
-            <td class="last_cell"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
+            <td colspan="5"></td>
+        </tr>
+        <tr>
+            <td id="slots_used">{slots_used}</td>
+            <td>The amount of slots in the player inventory with items in it<br><b>[Added in v3.3]</b></td>
+            <td>number of slots</td>
+            <td>if there's at least 1 slot</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
+            <td id="slots_empty">{slots_empty}</td>
+            <td>The amount of slots in the player inventory without items in it<br><b>[Added in v3.3]</b></td>
+            <td>number of slots</td>
+            <td>if there's at least 1 slot</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+        </tr>
+        <tr>
+            <td id="slots_per">{slots_per} / {slots_percentage}</td>
+            <td>The amount of slots in the player inventory with items in it as a percentage<br><b>[Added in v3.3]</b></td>
+            <td>number of slots</td>
+            <td>if there's at least 1 slot</td>
+            <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         </tbody>
     </table>
@@ -2696,7 +3690,7 @@
             <td class="rowspan_fix_right">if cast</td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         <tr>
-            <td ></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>

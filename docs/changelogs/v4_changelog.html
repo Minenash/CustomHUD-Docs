@@ -1,0 +1,1279 @@
+<html>
+
+<head>
+<title>CustomHud v4 Changelog</title>
+<style>
+  * {
+    font-family: "Liberation Sans", sans-serif;
+    line-height: 22px;
+  }
+  body {
+    display: flex;
+    justify-content: space-between;
+  }
+  h2 {
+    text-decoration: underline;
+  }
+  code {
+    background-color: #eef;
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-family: revert;
+  }
+  li ul {
+    padding-left: 28px;
+  }
+  img {
+    margin: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  .list summary > div {
+    display: inline-block;
+    width: fit-content;
+    /*width: calc(100% - 50px);*/
+    vertical-align: middle;
+    margin-left: 4px;
+  }
+  .list summary > div ul {
+    padding-left: 8px;
+    margin: 4px;
+  }
+  .list {
+    width: 60%;
+    /*background-color: #eee;*/
+    /*border: 2px solid black;*/
+    /*border-radius: 5px;*/
+    padding-left: 4px;
+    padding-right: 32px;
+    margin-bottom: 8px;
+  }
+  .list ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .child_vars {
+    margin-top: 8px;
+    border-left: 2px solid black;
+    margin-bottom: 32px;
+  }
+  details[open] summary .hide_on_open {
+    display: none;
+  }
+
+  .sidebar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 8px;
+    min-width: 200px;
+    height: 280px;
+    color: #555;
+    padding-left: 16px;
+  }
+
+  @media (max-width: 1000px) {
+    .sidebar {
+      display: none;
+    }
+  }
+
+  .sidebar a {
+    color: #555;
+    text-decoration: none;
+  }
+  .sidebar a:hover, .sidebar a:active {
+    color: #333;
+    text-decoration: underline;
+  }
+
+</style>
+</head>
+<body>
+<div>
+
+<h2 id="customhud-v4-changelog">CustomHud v4 Changelog</h2>
+<h3 id="new-config-screen">New Config Screen</h3>
+<ul>
+  <li>Unlimited Profiles</li>
+  <li>Each profile has a name, keybind to switch to it, and the ability to bind its <a href="link_here">toggles</a></li>
+  <li>Ability to reorder profiles</li>
+  <li>Decide which profiles are used when using the cycle profiles keybind</li>
+  <li>Buttons to go to the docs and discord</li>
+</ul>
+<h3 id="new-language-features">New Language Features</h3>
+<ul>
+  <li><details><summary>Added List Variable Support</summary><ul>
+    <li><code>{&lt;list&gt;}</code> alone will just show how many there are <ul>
+      <li>Example: <code>{effects}</code> &rightarrow; 3 (assuming the player has 3 status effects)</li>
+    </ul></li>
+    <li><b>Separators</b> all you to set text to be put between entries, but not at the end</li>
+    <li><b>Filters</b> allow you to filter the entries before looping</li>
+    <li><details><summary> Inline Syntax </summary><ul>
+      <li> Syntax: <code>{&lt;list&gt;, &quot;stuff here&quot;}</code></li>
+      <li> Example: <code>{effects, &quot;{index} - {icon} {name}\n&quot;}</code></li>
+      <li> With Filter: <code>{effects, &quot;{e:name}&quot;, e:level &gt; 2}</code></li>
+      <li> With Separator: <code>{effects, &quot;{e:name}&quot;, &quot;, &quot;}</code></li>
+      <li> With Both: <code>{effects, &quot;{e:name}&quot;, &quot;, &quot;, e:level &gt; 2}</code></li>
+    </ul></details></li>
+    <li><details><summary> Multiline Syntax </summary><ul>
+      <li> Syntax: <code>=for:&lt;list&gt;=</code> ends with <code>=endfor=</code></li>
+      <li> With Filter: <code>=for: effects, e:level &gt; 2=</code></li>
+      <li> Separator: everything after the <code>=separator=</code> will be the separator</li>
+      <li> Example:  <code>{effects, &quot;{index} - {icon} {name}\n&quot;}</code></li>
+    </ul></details></li>
+    <li>Each list will have a set of child variables that only work within the list<ul>
+      <li>Available to all lists: <ul>
+        <li><code>{i}</code> / <code>{index}</code> , <code>{raw}</code> , <code>{size}</code></li>
+        <li><code>{exit}</code> (exits the list prematurely), <code>{continue}</code> (skips to the next iteration)</li>
+      </ul></li>
+      <li>The <code>e:</code> and likewise can be changed with the <code>-pre:&lt;prefix&gt;</code> list flag.<ul>
+        <li>Ex: <code>{effects -pre:eff, &quot;{eff:name}&quot;}</code></li>
+      </ul></li>
+    </ul></li>
+  </ul></details></li>
+
+  <li id="expressions"><details><summary>Added a lot of operators to conditionals (now called expressions) </summary><ul>
+    <li>Equals (<code>=</code> / <code>==</code>) are no longer case-sensitive</li>
+    <li><b>Math Operators:</b> <code>+</code> , <code>-</code> , <code>*</code> , <code>/</code> , <code>%</code> <em>(modulus)</em>, and <code>^</code> <em>(exponential)</em><ul>
+      <li>Ex: <code>{{x &gt; (8+2 *2, &quot;X is greater than 10&quot;}}</code></li>
+    </ul></li>
+    <li><b>Ternary Operator:</b> <code>condition ? valueA ; valueB</code><ul>
+      <li>Ex: <code>{setsleep_time, raining ? 12542 ; 12010}</code></li>
+    </ul>
+    </li>
+    <li><b>Not (<code>!</code>) Operator</b><ul>
+      <li>Ex: <code>{{ !raining, &quot;not raining&quot;,&quot;raining&quot;}}</code></li>
+    </ul></li>
+    <li><b><code>has</code> Operator</b><ul>
+      <li>Checks to see if a string has a string in it<ul>
+        <li>Ex: <code>{{item:main:name has &quot;wool&quot;, &quot;This has wool in the name&quot;}}</code></li>
+      </ul></li>
+      <li>Or checks to see if a list contains an entry<ul>
+        <li>Example: <code>{{items has &quot;Stone&quot;, &quot;I have Stone&quot;}}</code></li>
+        <li>Can use child var to test for a specific value<ul>
+          <li><code>&lt;list&gt;.&lt;child&gt; has &lt;value&gt;</code></li>
+          <li>Ex: <code>{{all_items.count has 64, &quot;I have at least 1 full stack&quot;}}</code></li>
+        </ul></li>
+      </ul></li>
+    </ul></li>
+    <li><b>Functions (all trig uses degrees)</b><ul>
+      <li>Ex: <code>{set:test, sin(30+60)}</code></li>
+      <li>Functions added:<ul>
+        <li><code>round</code> , <code>ceil</code> , <code>floor</code></li>
+        <li><code>sqrt</code> , <code>abs</code></li>
+        <li><code>sin</code> , <code>cos</code> , <code>tan</code> , <code>csc</code> , <code>sec</code> , <code>cot</code></li>
+        <li><code>asin</code> , <code>acos</code> , <code>atan</code> , <code>acsc</code> , <code>asec</code> , <code>acot</code></li>
+        <li><code>log</code> / <code>log10</code> , <code>log2</code> , <code>log_e</code> / <code>ln</code> , <code>log_e1p</code> / <code>ln1p</code></li>
+      </ul></li>
+    </ul></li>
+    <li><details><summary><b>If no value (<code>??</code>) Operator</b></summary><ul>
+      <li>Sometimes a variable doesn't have a usable number value. For example, <code>{target_block_x}</code> when not
+        looking at a block. It can't use 0 or -1 as those are valid coordinates. So it instead gives the value of NaN
+        (Not a Number).
+      </li>
+      <li>When you do math with NaN value, the result will always be NaN</li>
+      <li>The <code>??</code> allows you to give a "default" value</li>
+      <li>Example: <ul>
+        <li><code>Sharpness: {$ item:main:enchant:sharpness:lvl + 10}</code></li>
+        <li>If the item doesn't have sharpness it'll show as "Sharpness: -", but what if we wanted to treat not having the enchantment as having it at level 0</li>
+        <li><code>Sharpness: {$ (item:main:enchant:sharpness:lvl ?? 0) + 10}</code></li>
+      </ul></li>
+    </ul></details></li>
+    <li><details><summary> <b>Math symbol aliases for operators.</b> For the lols, not really useful </summary><ul>
+      <li>And: <code>&Wedge;</code> , <code>&wedge;</code></li>
+      <li>Or: <code>&xvee;</code> , <code>&vee;</code></li>
+      <li>Sqrt: <code>&Sqrt;(&lt;expression&gt;)</code></li>
+      <li>Has:<code>&ReverseElement;</code> , <code>&#x220D;</code> , <code>&NotReverseElement;</code> (<code>list &ReverseElement; element</code>), and
+              <code>&isinv;</code> , <code>&#x220A;</code> , <code>&NotElement;</code> (<code>element &isinv; list</code>)
+      </li>
+    </ul></details></li>
+  </ul></details></li>
+  <li><details><summary>Expanded Profile Section with <code>max</code> Width and Text Align </summary><ul>
+    <li><b>Width</b><ul>
+      <li>Width can now be set to <code>max</code> or <code>-2</code>. The background for every line will be as wide as the longest line</li>
+      <li>The default behavior can now be written as <code>fit</code> or <code>-1</code></li>
+    </ul></li>
+    <li><b>Text Align</b><ul>
+      <li><code>==Section:TopLeft,0,0,false,fit,&lt;align&gt;==</code></li>
+      <li><code>left</code> , <code>right</code> , <code>center</code></li>
+    </ul></li>
+  </ul></details></li>
+  <li><details><summary>Ability to disable vanilla hud elements (like hotbar or effects)</summary><ul>
+    <li><code>==Disable: &lt;VanillaHudElements&gt;==</code></li>
+    <li>Elements:<ul>
+      <li><code>health</code> , <code>hunger</code> , <code>armor</code> , <code>air</code>, (<code>status_bars</code> for all 4 + <code>horse_health</code>)</li>
+      <li><code>hotbar</code>, <code>item_tooltip</code> , <code>xp</code> , (<code>lower</code> for both and everything in <code>status_bars</code>)</li>
+      <li><code>horse_health</code> , <code>horse_jump</code> (<code>horse</code> for both)</li>
+      <li><code>chat</code> , <code>scoreboard</code> , <code>bossbar</code> , <code>subtitles</code> , <code>effects</code> / <code>status_effects</code></li>
+      <li><code>titles</code> , <code>actionbar</code></li>
+    </ul></li>
+  </ul></details></li>
+  <li id="new_color_feature"><details><summary>Ability to set the color based on the number value of a variable</summary><ul>
+    <li>Putting <code>&amp;</code> in-front of any variable will now use its number value for color<ul>
+      <li>Ex: <code>&amp;{target_block_color}</code></li>
+      <li>Various variables have been added to take advantage of this</li>
+      <li>Word colors like <code>{red}</code> are now proper variables and can be used in expressions</li>
+      <li>Can use expressions, Ex: <code>&amp;{target_block_color * -1}</code></li>
+    </ul></li>
+  </ul></details></li>
+  <li><details><summary>Text Variables: These can have their own color/formatting. Like if the player's name is red, it&#39;ll show it in red</summary>
+    &emsp;A lot of these already existed, but were stripped of their formatting <ul>
+    <li> <code>{name}</code> / <code>{display_name}</code></li>
+    <li> <code>{ten}</code> / <code>{target_entity_name}</code></li>
+    <li> <code>{lhn}</code> / <code>{last_hit_name}</code></li>
+    <li> <code>{hen}</code> / <code>{hooked_entity_name}</code></li>
+    <li> <code>{ven}</code> / <code>{vehicle_name}</code> / <code>{vehicle_entity_name}</code></li>
+    <li> <code>{vha}</code> / <code>{horse_armor}</code> / <code>{vehicle_horse_armor}</code></li>
+    <li> <code>{team}</code> , <code>{team_name}</code></li>
+    <li> <code>{record_name}</code></li>
+    <li> <code>{title}</code> / <code>{title_msg}</code></li>
+    <li> <code>{subtitle}</code> / <code>{subtitle_msg}</code></li>
+    <li> <code>{actionbar}</code> / <code>{actionbar_msg}</code></li>
+    <li> All the list's child var marked as such </li>
+  </ul><br></details></li>
+  <li> <details><summary>Identifier variables allows easier comparison and colorization of ids</summary>
+    <ul>
+      <li>When compared, if the id has minecraft as the namespace and you leave out the namespace, it&#39;ll still return true<ul>
+        <li>Example: <code>{{target_block_id = &quot;stone&quot;, &quot;Is Stone&quot;, &quot;Not Stone&quot;}}</code> now works</li>
+      </ul></li>
+      <li>There are two new variable flag for Identifier variables: <code>-ns</code> / <code>-namespace</code> and <code>-path</code><ul>
+        <li>Example: <code>&8{target_block_id -ns}:&2{target_block_id -path}</code> looks like <span style="color: #555">minecraft:</span><span style="color: #00AA00">stone</span></li>
+      </ul></li>
+    </ul><br>
+    &emsp;A lot of these already existed, but now work like above <ul>
+    <li> <code>{tei}</code> / <code>{target_entity_id}</code></li>
+    <li> <code>{lhi}</code> / <code>{last_hit_id}</code></li>
+    <li> <code>{hei}</code> / <code>{hooked_entity_id}</code></li>
+    <li> <code>{vei}</code> / <code>{vehicle_id}</code> / <code>{vehicle_entity_id}</code></li>
+    <li> <code>{dimension_id}</code> , <code>{biome_id}</code></li>
+    <li> <code>{music_id}</code> , <code>{record_id}</code></li>
+    <li> All the list's child var marked as such </li>
+  </ul></details></li>
+</ul>
+<h3 id="new-colors-and-formatting">New Colors and Formatting</h3>
+<ul>
+  <li><details><summary>Added Bedrock color code/names</summary><ul>
+    <li><code>#DDD605</code> &rightarrow; <code>&amp;g</code> , <code>&amp;{minecoin_gold}</code> , <code>&amp;{minecoin}</code></li>
+    <li><code>#E3D4D1</code> &rightarrow; <code>&amp;h</code> , <code>&amp;{material_quartz}</code> , <code>&amp;{quartz}</code></li>
+    <li><code>#CECACA</code> &rightarrow; <code>&amp;i</code> , <code>&amp;{material_iron}</code> , <code>&amp;{iron}</code></li>
+    <li><code>#443A3B</code> &rightarrow; <code>&amp;j</code> , <code>&amp;{material_netherite}</code> , <code>&amp;{netherite}</code></li>
+    <li><code>#971607</code> &rightarrow; <code>&amp;zm</code> , <code>&amp;{material_redstone}</code> , <code>&amp;{redstone}</code></li>
+    <li><code>#B4684D</code> &rightarrow; <code>&amp;zn</code> , <code>&amp;{material_copper}</code> , <code>&amp;{copper}</code></li>
+    <li><code>#DEB12D</code> &rightarrow; <code>&amp;p</code> , <code>&amp;{material_gold}</code> , <code>&amp;{mgold}</code></li>
+    <li><code>#47A036</code> &rightarrow; <code>&amp;q</code> , <code>&amp;{material_emerald}</code> , <code>&amp;{emerald}</code></li>
+    <li><code>#2CBAA8</code> &rightarrow; <code>&amp;s</code> , <code>&amp;{material_diamond}</code> , <code>&amp;{diamond}</code></li>
+    <li><code>#21497B</code> &rightarrow; <code>&amp;t</code> , <code>&amp;{material_lapis}</code> , <code>&amp;{lapis}</code></li>
+    <li><code>#9A5CC6</code> &rightarrow; <code>&amp;u</code> , <code>&amp;{material_amethyst}</code> , <code>&amp;{amethyst}</code></li>
+  </ul></details></li>
+  <li>Word versions of formatting now exists<ul>
+    <li><code>&amp;{bold}</code> , <code>&amp;{italics}</code> , <code>&amp;{underline}</code> , <code>&amp;{obfuscated}</code></li>
+    <li><code>&amp;{strike}</code> / <code>&amp;{strikethrough}</code> , <code>&amp;{reset}</code></li>
+  </ul></li>
+</ul>
+<h3 id="new-variable-flags">New Variable Flags</h3>
+<ul>
+  <li><code>-r&lt;degrees&gt;</code> / <code>-rotate&lt;degrees&gt;</code>: Rotates Icons<ul>
+    <li>Ex: <code>{item:main:icon -r45}</code> will rotate the icon 45 degrees</li>
+  </ul>
+  </li>
+  <li><code>-zf#</code> / <code>-zerofill#</code>: Pad the left with zeros when needed<ul>
+    <li>Ex: <code>{x -zf3}</code> (5 would be 005)</li>
+  </ul>
+  </li>
+  <li><code>-v#</code> / <code>-freq#</code> / <code>-frequency#</code><ul>
+    <li>Sets how often the variable updates in seconds. Doesn&#39;t work on lists</li>
+    <li>Ex: <code>-v2</code> , <code>-v0.5</code> , <code>-v1/20</code></li>
+  </ul>
+  </li>
+  <li>For Identifier Variables<ul>
+    <li><code>-ns</code> / <code>-namespace</code>: Only shows the namespace</li>
+    <li><code>-path</code>: Only shows the path</li>
+  </ul>
+  </li>
+  <li><code>-sub</code> / <code>-subscript</code>: Numbers are replaced with their subscript counterpart</li>
+  <li><code>-sup</code> / <code>-superscript</code>: Numbers are replaced with their subscript counterpart</li>
+  <li><details><summary>Flags that changes the number&#39;s base</summary><ul>
+    <li><code>-hex</code>: Numbers are shown in hexadecimal</li>
+    <li><code>-oct</code>: Numbers are shown in octal</li>
+    <li><code>-bin</code>: Numbers are shown in binary</li>
+    <li><code>-base#</code>: Numbers are show in the base specified, up to 36<ul>
+      <li>Ex: <code>{x -base7}</code></li>
+    </ul></li>
+  </ul></details></li>
+  <li><code>-rn</code> / <code>-roman</code>: Displays the number in Roman Numerals
+    <br>&emsp;<img src="imgs/roman_numerals.png" alt="Screenshot of a large number being displayed in roman numerals">
+  </li>
+</ul>
+
+<h3 id="new-themeing">New Theming</h3>
+  <p><i>Reminder that the local variant has 1 less = on both sides</i></p>
+  <b style="font-size: 14px">&nbsp;&nbsp;Scaling (Global only)</b>
+<ul>
+  <li><code>==NiceScale: &lt;(+/-) GUI Scale&gt;==</code><ul>
+    <li>Sets the scale of the CustomHud hud to as if it was a specific gui scale.<br>This avoids weirdness that can happen when using <code>==Scale: &lt;scale&gt;==</code></li>
+    <li><code>==NiceScale: 2==</code> will render as if the GUI Scale in Minecraft&#39;s settings was set to 2.</li>
+    <li><code>==NiceScale: +1==</code> with your GUI Scale set to 3, the profile will render as if it was set to 4.</li>
+  </ul></li>
+
+  <li><code>==HudScale: &lt;(+/-) GUI Scale&gt;==</code><ul>
+    <li>Same as NiceScale, but for minecraft&#39;s vanilla hud (hotbar, scoreboard, bossbar, etc)</li>
+  </ul></li>
+</ul>
+  <b style="font-size: 14px">&nbsp;&nbsp;Visual (Works Globally and Locally)</b>
+  <ul>
+    <li><code>==Padding: &lt;top&gt;, &lt;bottom&gt;, &lt;left&gt;, &lt;right&gt;==</code><ul>
+      <li>Default: 2,1,2,2</li>
+      <li>Can also be written as <code>==Padding: &lt;verticle&gt;, &lt;horizontal&gt;==</code> or <code>==Padding: &lt;all&gt;==</code></li>
+
+      <li>Sets how much padding is around the text. 0 all around will be just big enough to fit the text and its shadow</li>
+    </ul></li>
+
+    <li><code>==PersistentFormatting: &lt;true|false&gt;==</code><ul>
+      <li>Default: false</li>
+      <li>If true, color codes (like <code>&a</code> or <code>&{green}</code>) won't reset formatting (like bold)</li>
+    </ul></li>
+
+    <li><code>==ItemIconSize: &lt;line|full&gt;==</code><ul>
+      <li>Default: line</li>
+      <li>If line, item icons will be scaled to fit the line (like all other icons). If full, it'll render at full size</li>
+    </ul></li>
+
+    <li><code>==LeftGraph: &lt;graph&gt;==</code> and <code>==RightGraph: &lt;graph&gt;==</code><ul>
+      <li>Default: None</li>
+      <li>Graphs: Profiler, Fps, Tick, Ping, PacketSize, None</li>
+    </ul></li>
+
+    <li><code>==WhenHudHidden: &lt;Show|ShowIfScreen|Hide&gt;==</code> (global only)<ul>
+      <li>Default: ShowIfScreen</li>
+      <li>Determines if the profile should show ehn the hud is hidden via F1</li>
+      <li>You can use <code>{hud_hidden}</code> in a conditional to limit what info is shown when the hud is hidden</li>
+    </ul></li>
+  </ul>
+  <b style="font-size: 14px">&nbsp;&nbsp;Change how the profile is read (Works Globally and Locally)</b>
+<ul>
+  <li><code>==IgnoreBlankLines: &lt;true|false&gt;==</code> <ul>
+    <li>Default: false</li>
+    <li>Blank lines in the profile file are ignored. If true and you want to add blank lines, use <cod>\n</cod></li>
+  </ul></li>
+
+  <li><code>==IgnoreLeadingSpace: &lt;true|false&gt;==</code> <ul>
+    <li>Default: false</li>
+    <li>Removes leading spaces on lines. This is useful for nested if/fors</li>
+  </ul></li>
+
+  <li><details><summary><code>==ConvertLineBreaks: &lt;true|false&gt;==</code></summary><ul>
+    <li>If true it treats line breaks in the profile file as NewLines in the hud</li>
+    <li>If false, only <code>\n</code> in the profiles will add NewLines to the hud </li>
+    <li>This means that you can also change theming part way through a line. </li>
+    <li>Quirks when using <code>=BackgroundColor:&lt;color&gt;=</code> part way through a line<ul>
+      <li>If the section&#39;s <code>width</code> is set to <code>fit</code> (default), it won&#39;t apply until after the next NewLine</li>
+      <li>If the section&#39;s <code>width</code> is set to <code>max</code> or a specific amount, it&#39;ll apply to the entire line</li>
+    </ul></li>
+    <li>In a future release, there will be a local version of this</li>
+  </ul></details></li>
+  <ul style="padding-left: 28px"><li>Default: <code>true</code> (same behavior as before)</li></ul>
+</ul>
+
+<h3 id="new-list-variables">New List Variables</h3>
+<p>List variables will be shown without the <code>{}</code> around them, as they are intended to be used in the syntax laid out in <a href="#new-language-features">Language Features</a></p>
+<p>The <code>e:</code> and likewise can be changed with the <code>-pre:&lt;prefix&gt;</code> list flag.<br>Example: <code>{effects -pre:eff, &quot;{eff:name}&quot;}</code></p>
+
+<details class="list">
+  <summary><div>
+    <code>effects</code><br>
+    <code>pos_effects</code> / <code>positive_effects</code><br>
+    <code>neg_effects</code> / <code>negative_effects</code><br>
+    <code>neu_effects</code> / <code>neutral_effects</code><br>
+  </div></summary>
+  <div class="child_vars">
+      &emsp;Child Vars:<ul>
+        <li><code>{e:name}</code> , <code>{e:id}</code> (see <a>ID variables</a>)</li>
+        <li><code>{e:amp}</code> / <code>{e:amplification}</code> (how it&#39;s stored, 0 to 127 then -128 to -1)</li>
+        <li><code>{e:lvl}</code> / <code>{e:level}</code> (1 to 256)</li>
+        <li><code>{e:dur}</code> / <code>{e:duration}</code> , <code>{e:inf}</code> / <code>{e:infinite}</code></li>
+        <li><code>{e:ambient}</code> , <code>{e:show_particles}</code> / <code>{e:particles}</code> , <code>{e:show_icon}</code></li>
+        <li><code>{e:category}</code> / <code>{e:cat}</code></li>
+        <li><code>{e:color}</code> (see <a href="#new_color_feature">new color feature</a>)</li>
+        <li><code>{e:icon}</code> , <code>{e:icon_no_bg}</code></li>
+      </ul>
+    </div>
+</details>
+
+<details class="list">
+  <summary><div> <code>players</code> </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{p:name}</code> / <code>{p:display_name}</code> , <code>{p:username}</code></li>
+    <li><code>{p:id}</code> / <code>{p:uuid}</code></li>
+    <li><code>{p:latency}</code> , <code>{p:list_score}</code></li>
+    <li><code>{p:gamemode}</code> , <code>{p:survival}</code> , <code>{p:creative}</code> , <code>{p:adventure}</code> , <code>{p:spectator}</code></li>
+    <li><code>{p:head}</code> (icon)</li>
+    <li><code>{p:team}</code> , <code>{p:team:&lt;team method&gt;}</code> (see <code>{team:&lt;team&gt;:&lt;method&gt;}</code>)<ul>
+      <li>Example <code>{p:team:id}</code></li>
+    </ul></li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div> <code>subtitles</code> </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{s:id}</code> , <code>{s:name}</code></li>
+    <li><code>{s:age}</code> , <code>{s:time}</code></li>
+    <li><code>{s:x}</code> , <code>{s:y}</code> , <code>{s:z}</code> , <code>{s:dist}</code> / <code>{s:distance}</code></li>
+    <li><code>{s:dir}</code> / <code>{s:direction}</code> , <code>{s:left}</code> , <code>{s:right}</code></li>
+    <li><code>{s:dir_yaw}</code> / <code>{s:direction_yaw}</code>,<code>{s:dir_pitch}</code> , <code>{s:direction_pitch}</code></li>
+    <li><code>{s:alpha}</code> (allows you to control the fade, see new color feature)</li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div>
+    <code>target_block_properties</code> / <code>target_block_props</code> / <code>tbprops</code><br>
+    <code>target_fluid_properties</code> / <code>target_fluid_props</code> / <code>tfprops</code>
+  </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{p:name}</code> , <code>{p:value}</code> , <code>{p:type}</code> , <code>{p:full_type}</code></li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div>
+    <code>target_block_tags</code> / <code>tbt</code><br>
+    <code>target_fluid_tags</code> / <code>tft</code>
+  </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{t:name}</code> , <code>{t:id}</code></li>
+  </ul>
+  </div>
+</details>
+
+  <details class="list">
+    <summary><div>
+      <code>target_block_powers</code> / <code>tbpowers</code>
+    </div></summary>
+    <div class="child_vars">
+      &emsp;Child Vars:<ul>
+      <li><code>{r:dir}</code> / <code>{r:direction}</code></li>
+      <li><code>{r:odir}</code> / <code>{r:opposite_direction}</code></li>
+      <li><code>{r:power}</code></li>
+      <li><code>{r:strong}</code> / <code>{r:strong_power}</code></li>
+    </ul>
+    </div>
+  </details>
+
+<details class="list" id="villager_offers">
+  <summary><div> <code>target_villager_offers</code> , <code>tvo</code> </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{o:uses}</code>,<code>{o:max_uses}</code></li>
+    <li><code>{o:special_price}</code>,<code>{o:demand_bonus}</code>,<code>{o:price_multiplier}</code></li>
+    <li><p><code>{o:disabled}</code>,<code>{o:can_afford}</code> (will also look into shulker boxes)</p>
+    </li>
+    <li><p><code>{o:first:&lt;method&gt;}</code></p>
+    </li>
+    <li><code>{o:first_base:&lt;method&gt;}</code></li>
+    <li><code>{o:second:&lt;method&gt;}</code></li>
+    <li><code>{o:result:&lt;method&gt;}</code><ul>
+      <li>For the 4 above: See <code>items</code> child vars, method is the same, but without the <code>i:</code></li>
+    </ul></li>
+    <li>List Var <code>{o:first}</code> , <code>{o:first_base}</code></li>
+    <li>List Var <code>{o:second}</code></li>
+    <li>List Var <code>{o:result}</code><ul>
+      <li>For the 4 above: See <code>items</code> child vars</li>
+    </ul></li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div>
+    <code>attributes</code><br>
+    <code>target_entity_attributes</code> / <code>target_entity_attrs</code> / <code>teas</code><br>
+    <code>hooked_entity_attributes</code> / <code>hooked_entity_attrs</code> / <code>heas</code>
+  </div></summary>
+  <div class="child_vars">
+    &emsp;If not in singleplayer, you will only see tracked ones
+    &emsp;Child Vars:<ul>
+    <li><code>{a:name}</code> , <code>{a:id}</code></li>
+    <li><code>{a:value}</code> , <code>{a:base_value}</code> , <code>{a:default_value}</code></li>
+    <li><code>{a:tracked}</code> (if the server sends it to the client)</li>
+    <li>List Var: <code>a:modifiers</code>. Child Vars: <ul>
+      <li><code>{am:name}</code> , <code>{am:id}</code></li>
+      <li><code>{am:value}</code></li>
+      <li><code>{am:op}</code> / <code>{am:operatopn}</code> (+ (addition), ☒ (multiply base), × (multiply total))</li>
+      <li><code>{am:op_name}</code> , <code>{am:operation_name}</code> (Addition, Multiplication Base, Multiplication Total)</li>
+    </ul></li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div>
+    <div style="display: flex">
+    <div style="margin-right: 8px">
+      <code>items</code><br>
+      <code>all_items</code><br>
+      <code>quipped_items</code><br>
+      <code>armor_items</code><br>
+      <code>inv_items</code><br>
+      <code>inv_items_unpacked</code><br>
+      <code>hotbar_items</code>
+    </div>
+    <div>
+      - Hotbar + Inventory. Stacks are combined<br>
+      - Hotbar + Inventory. Includes items from Shulker Boxes / similar<br>
+      - Hotbar + Inventory + Armor + Offhand<br>
+      - Armor + Mainhand + Offhand<br>
+      - Armor<br>
+      - Inventory<br>
+      - Hotbar
+    </div>
+    </div>
+  </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{i:id}</code> , <code>{i:item}</code> (Item name)</li>
+    <li><code>{i:name}</code> (Custom name of the item)</li>
+    <li><code>{i:count}</code> , <code>{i:max_count}</code></li>
+    <li><code>{i:dur}</code> / <code>{i:durability}</code> , <code>{i:max_dur}</code> , <code>{i:max_durability}</code></li>
+    <li><code>{i:dur_per}</code> , <code>{i:durability_percentage}</code></li>
+    <li><code>{i:dur_color}</code> , <code>{i:durability_color}</code> (See new color feature)</li>
+    <li><code>{i:unbreakable}</code> , <code>{i:repair_cost}</code> , <code>{i:hide_flags}</code></li>
+    <li><code>{i:rarity}</code> (The name of rarity, can also be used with the new color feature)</li>
+    <li><code>{i:armor_slot}</code> (which armor slot the item can go in)</li>
+    <li><code>{i:icon}</code> </li>
+    <li>List Var <code>i:enchants</code> (See <code>i:enchants</code> section above)</li>
+    <li>List Var <code>i:lore</code> with child var <code>{lore:line}</code></li>
+    <li>List Var <code>i:attributes</code> / <code>i:attrs</code> (See Item Attribute Modifiers child vars)</li>
+    <li>List Var <code>i:info_shown</code> and <code>i:info_hidden</code> with child <code>{ii:info}</code></li>
+    <li>List Var <code>i:can_destroy</code> and <code>i:can_place_on</code><ul>
+      <li>Children <code>{c:name}</code> , <code>{c:id}</code></li>
+    </ul></li>
+    <li>List Var <code>i:tags</code> with children <code>{t:name}</code> and <code>{t:id}</code></li>
+    <li>List Var <code>i:items</code> (items stored in stuff like Shulker Boxes and bundles). Same child vars.</li>
+    <li>List Var <code>i:items_compact</code> (items stored in stuff like Shulker Boxes and bundles, compacted). Same child vars.</li>
+    <li><code>i:enchant:&lt;id&gt;:&lt;method&gt;</code><ul>
+      <li>Ex: <code>i:enchant:sharpness:full</code></li>
+      <li>Methods:<ul>
+        <li><code>name</code> , <code>id</code></li>
+        <li><code>level</code> / <code>lvl</code> (like IV)</li>
+        <li><code>max_level</code> (max level the enchantment can be)</li>
+        <li><code>full</code> (like Sharpness IV)</li>
+        <li><code>num</code> / <code>number</code> (0 indexed)</li>
+        <li><code>max_num</code> , <code>max_number</code> (0 indexed)</li>
+        <li><code>rarity</code></li>
+      </ul></li>
+    </ul></li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div> <code>item:&lt;slot&gt;:enchants</code> </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{e:name}</code> , <code>{e:id}</code></li>
+    <li><code>{e:level}</code> / <code>{e:lvl}</code> (like IV)</li>
+    <li><code>{e:max_level}</code> (max level the enchantment can be)</li>
+    <li><code>{e:full}</code> (like Sharpness IV)</li>
+    <li><code>{e:num}</code> / <code>{e:number}</code> (0 indexed)</li>
+    <li><code>{e:max_num}</code> , <code>{e:max_number}</code> (0 indexed)</li>
+    <li><code>{e:rarity}</code></li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div> <code>item:&lt;slot&gt;:lore</code> </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{lore:line}</code></li>
+  </ul>
+  </div>
+</details>
+
+<details class="list" id="attribute_modifiers">
+  <summary><div>
+    <code>item:&lt;slot&gt;:attributes</code> / <code>item:&lt;slot&gt;:attrs</code><br>
+    attribute&apos;s <code>a:modifiers</code>
+  </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{am:slot}</code> (where the item has to be for the attr to apply)
+      Attribute Info</li>
+    <li><code>{am:attribute}</code> / <code>{am:attr}</code> (attribute name)</li>
+    <li><code>{am:attribute_id}</code> , <code>{am:attr_id}</code></li>
+    <li><code>{am:attribute_value}</code> , <code>{am:attr_value}</code></li>
+    <li><code>{am:default_value}</code> , <code>{am:tracked}</code>
+      Attribute Modifier Info</li>
+    <li><code>{am:modifier_name}</code> / <code>{am:mod_name}</code></li>
+    <li><code>{am:modifier_id}</code> / <code>{am:mod_id}</code></li>
+    <li><code>{am:mod_amount}</code> , <code>{am:amount}</code></li>
+    <li><code>{am:op}</code> , <code>{am:operation}</code> (+ (addition), &#x2612; (multiply base), &times; (multiply total))</li>
+    <li><code>{am:op_name}</code> , <code>{am:operation_name}</code> (Addition, Multiplication Base, Multiplication Total)</li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div> <code>item:&lt;slot&gt;:can_destroy</code> , <code>item:&lt;slot&gt;:can_place_on</code> </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{c:name}</code> , <code>{c:id}</code></li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div> <code>item:&lt;slot&gt;:info_shown</code> , <code>item:&lt;slot&gt;:info_hidden</code> </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{ii:info}</code></li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div> <code>teams</code> </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{t:name}</code> , <code>{t:id}</code></li>
+    <li><code>{t:color}</code> (see new color feature)</li>
+    <li><code>{t:friendly_fire}</code> , <code>{t:see_friendly_invis}</code> , <code>{t:collision}</code></li>
+    <li><code>{t:name_tag_visibility}</code> / <code>{t:name_tag}</code> , <code>{t:death_msg_visibility}</code> / <code>{t:death_msg}</code></li>
+    <li>List Var <code>t:members</code> with child <code>{m:member}</code> (members include offline players)</li>
+    <li>List Var <code>t:online_players</code> / <code>players</code> (See <code>players</code> child vars)</li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div> <code>objectives</code> </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{o:name}</code> , <code>{o:id}</code></li>
+    <li><code>{o:criteria}</code> / <code>{o:criterion}</code> (Singleplayer only)</li>
+    <li><code>{o:display_slot}</code></li>
+    <li>List Var <code>o:scores</code> (see below)</li>
+    <li>List Var <code>o:online_scores</code> (see below)</li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div>
+    <code>objective:&lt;objective_id&gt;:scores</code><br>
+    <code>objective:&lt;objective_id&gt;:online_scores</code><br>
+    objective's <code>o:scores</code> , <code>o:online_scores</code>
+  </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{os:name}</code> / <code>{os:holder}</code> , <code>{os:display}</code> / <code>{os:display_name}</code></li>
+    <li><code>{os:score}</code> / <code>{os:value}</code></li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div>
+    <code>scores</code><br>
+    <code>score:&lt;player&gt;</code>
+  </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{ss:name}</code> (objective name)</li>
+    <li><code>{ss:id}</code> (objective id)</li>
+    <li><code>{ss:criteria}</code> / <code>{ss:criterion}</code> (Singleplayer only)</li>
+    <li><code>{ss:display_slot}</code></li>
+    <li><code>{ss:score}</code> / <code>{ss:value}</code> (player&#39;s score for this objective)</li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div>
+    <code>bossbars</code>
+    <code>all_bossbars</code> (Singleplayer only)
+  </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{bb:name}</code> , <code>{bb:uuid}</code></li>
+    <li><code>{bb:id}</code> (Singpleplayer only, and only for command made bossbars),</li>
+    <li><code>{bb:percent}</code> / <code>{bb:per}</code> / <code>{bb:value}</code></li>
+    <li><code>{bb:darken_sky}</code> , <code>{bb:dragon_music}</code> , <code>{bb:thickens_fog}</code></li>
+    <li><code>{bb:style}</code> , <code>{bb:color}</code> , <code>{bb:text_color}</code></li>
+    <li><code>{bb:enabled}</code> / <code>{bb:visible}</code> (Singleplayer only)</li>
+    <li><code>{bb:icon}</code></li>
+    <li>List Var <code>bb:players</code> (See <code>players</code> child vars)<ul>
+      <li>A list of players that can see the bossbar, Singleplayer only</li>
+    </ul></li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div> <code>records</code> (Currently playing records) </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{r:name}</code> , <code>{r:id}</code></li>
+    <li><code>{r:elapsed}</code> , <code>{r:elapsed_per}</code> / <code>{r:elapsed_percentage}</code></li>
+    <li><code>{r:length}</code> , <code>{r:remaining}</code></li>
+    <li><code>{r:icon}</code></li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div> <code>profiler_timings</code></div> (numbers from the Profiler Chart)</summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{pt:name}</code> , <code>{pt:path}</code> , <code>&{pt:color}</code></li>
+    <li><code>{pt:per_of_parent}</code> / <code>{pt:percent_of_parent}</code></li>
+    <li><code>{pt:per_of_total}</code> / <code>{pt:percent_of_total}</code></li>
+    <li><code>{pt:entries}</code> (sub-entries). Same child vars.</li>
+  </ul>
+    &emsp;Related:
+    <ul>
+      <li><code>{refresh_profiler_timings}</code> (also available as a keybind) <ul>
+        <li>Refreshes timings from the profiler. Don't run often, or it'll flicker</li>
+      </ul></li>
+    </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div> <code>itag:&lt;item_tag&gt;</code> , <code>btag:&lt;block_tag&gt;</code> </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{t:name}</code> , <code>{t:id}</code> , <code>{t:icon}</code></li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div>
+    <code>mods</code> (List of mods, excluding libraries, child-mods, and &quot;non-mods&quot; like java)<br>
+    <code>all_root</code> (List of mods, excluding child-mods and &quot;non-mods&quot; like java)<br>
+    <code>all_mods</code> (List of mods, no exclusions)
+  </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{m:name}</code> , <code>{m:id}</code> , <code>{m:version}</code> , <code>{m:hash}</code></li>
+    <li><code>{m:summary}</code> , <code>{m:desc}</code> / <code>{m:description}</code></li>
+    <li><code>{m:icon}</code></li>
+    <li>If the mod is a library mod, client mod, etc:<ul>
+      <li><code>{m:library}</code> , <code>{m:client}</code> , <code>{m:deprecated}</code> , <code>{m:patchwork}</code> , <code>{m:from_modpack}</code> , <code>{m:minecraft}</code></li>
+    </ul>
+    </li>
+    <li>List Var <code>m:authors</code> with child var <code>{ma:author}</code></li>
+    <li>List Var <code>m:contributors</code> with child var <code>{mc:contributor}</code></li>
+    <li>List Var <code>m:credits</code> with child var <code>{mc:credit}</code></li>
+    <li>List Var <code>m:licenses</code> with child var <code>{ml:license}</code></li>
+    <li>List Var <code>m:children</code> same child vars</li>
+    <li>List Var <code>m:parent</code> same child vars (only 1 entry)</li>
+    <li><code>{m:parent:&lt;method&gt;}</code> (method is the same as child, but without the <code>m:</code>)</li>
+    <li>List Var <code>m:badges</code>. Child Vars: <ul>
+      <li><code>{mb:name}</code></li>
+      <li><code>{mb:outline_color}</code> , <code>{mb:fill_color}</code></li>
+      <li><code>{mb:icon}</code></li>
+    </ul></li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div>
+    <code>resource_packs</code> , <code>disabled_resource_packs</code><br>
+    <code>data_packs</code> / <code>datapacks</code> , <code>disabled_data_packs</code> / <code>disabled_datapacks</code>
+  </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{p:name}</code> , <code>{p:id}</code> , <code>{p:version}</code></li>
+    <li><code>{p:desc}</code> / <code>{p:description}</code></li>
+    <li><code>{p:compatible}</code> , <code>{p:always_enabled}</code> , <code>{p:pinned}</code></li>
+    <li><code>{p:icon}</code></li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div>
+    <code>chat_messages</code>
+  </div></summary>
+  <div class="child_vars">
+    &emsp;Child Vars:<ul>
+    <li><code>{cm:type}</code> (Normal, SinglePlayer, System, Chat Error, Not Secure)</li>
+    <li><code>{cm:text}</code> (the actual message)</li>
+    <li><code>{cm:time_ago}</code> (how many ticks ago the message was recieved)</li>
+    <li><code>{p:icon}</code></li>
+  </ul>
+  </div>
+</details>
+
+<details class="list">
+  <summary><div>
+    <code>loop[&lt;start&gt;,&lt;end&gt;,&lt;step&gt;]</code><br>
+    <code>loop[&lt;start&gt;,&lt;end&gt;&gt;]</code> (step = 1)<br>
+    <code>loop[&lt;end&gt;]</code> (start = 0, step = 1)
+  </div></summary>
+  <div class="child_vars">
+    <ul>
+      <li>start, end, and step allows <a href="#expressions">expressions</a></li>
+      <li>Example:<ul>
+        <li><code>loop[1, health, 2]</code></li>
+      </ul></li>
+      <li>Child Var: <code>{loop:value}</code></li>
+    </ul>
+  </ul>
+  </div>
+</details>
+
+<h3 id="new-variables">New Variables</h3>
+<ul>
+  <li><code>{is_pressed:&lt;keybind&gt;}</code> Ex: <code>{is_pressed:forward}</code></li>
+  <li><code>{toggle:&lt;name&gt;}</code> Ex: <code>{toggle:test}</code><ul>
+    <li>Set the keybind for the toggle in the new config screen.</li>
+  </ul></li>
+  <li><code>{toggle:&lt;name&gt;:last_pressed}</code> Milliseconds since it was last pressed</li>
+  <li><code>{gliding}</code> Flying using an elytra</li>
+  <li><code>{perspective}</code> F5 Camera perspective (first, front, back)</li>
+  <li><code>{hud_hidden}</code> If the hud is hidden via F1</li>
+  <li><code>{slime_chunk:&lt;seed&gt;}</code><ul>
+    <li>You should still use <code>{slime_chunk}</code> in singleplayer</li>
+  </ul></li>
+  <li><code>{difficulty}</code> - Peaceful/easy/normal/hard</li>
+  <li><code>{player_head}</code> - The player's face</li>
+  <li>Selected hotbar slot: <code>{hotbar_slot}</code> (1-9) and <code>{hotbar_index}</code> (0-8)</li>
+  <li>Shows the amount of a specific item you have as a icon: <code>{itemcount_icon:&lt;item_id&gt;}</code></li>
+  <li><code>{score}</code> The total amount of xp points you have gained since last death (what you see when you die)</li>
+  <li>Target Block and Target Fluid:<ul>
+    <li><code>{target_block_color}</code> / <code>{target_color}</code> / <code>{tbc}</code> (Map Color)</li>
+    <li><code>{target_fluid_color}</code> / <code>{tfc}</code></li>
+    <li><code>{target_block_icon}</code> / <code>{target_icon}</code> / <code>{tbicon}</code></li>
+    <li><code>{target_fluid_icon}</code> / <code>{tficon}</code></li>
+    <li><code>{target_block_luminance}</code> / <code>{target_luminance}</code> / <code>{tbl}</code></li>
+  </ul></li>
+  <li><details><summary>Information about the entity you last hit</summary><ul>
+    <li><code>{last_hit}</code> / <code>{lh}</code> (Pig, Player)</li>
+    <li><code>{last_hit_id}</code> / <code>{lhi}</code> (minecraft:pig, minecraft:player)</li>
+    <li><code>{last_hit_name}</code> / <code>{lhn}</code> (Pig, Notch)</li>
+    <li><code>{last_hit_uuid}</code> / <code>{lhu}</code> (b354c639-b534-48fa-b4c3-48192dba8dd3)</li>
+    <li><code>{last_hit_distance}</code> / <code>{lhd}</code> (Distance between you and the entity at the time you hit)</li>
+    <li><code>{last_hit_ago}</code> / <code>{lha}</code> Seconds since last hit</li>
+  </ul></details></li>
+  <li><details><summary>Information about the entity you are riding</summary><ul>
+    <li><code>{ve}</code> / <code>{vehicle}</code> (Pig, Player)</li>
+    <li><code>{vei}</code> / <code>{vehicle_id}</code> (minecraft:pig, minecraft:player)</li>
+    <li><code>{ven}</code> / <code>{vehicle_name}</code> (Pig, Notch, (Pig with a nametag &#39;Pet&#39;) Pet)</li>
+    <li><code>{veu}</code> / <code>{vehicle_uuid}</code> (b354c639-b534-48fa-b4c3-48192dba8dd3)</li>
+    <li><code>{veh}</code> / <code>{vehicle_health}</code> , <code>{vea}</code> / <code>{vehicle_armor}</code> , <code>{vemh}</code> / <code>{vehicle_max_health}</code></li>
+    <li><code>{vhj}</code> / <code>{horse_jump}</code> , <code>{vha}</code> / <code>{horse_armor}</code> (name of the armor)</li>
+  </ul></details></li>
+  <li><details><summary>Information about the villager you are looking at</summary><ul>
+    <li><code>{tvb}</code> / <code>{target_villager_biome}</code></li>
+    <li><code>{tvlw}</code> / <code>{target_villager_level_word}</code> , <code>{tvl}</code> / <code>{target_villager_level}</code></li>
+    <li><code>{tve}</code> / <code>{target_villager_xp}</code> , <code>{tven}</code> / <code>{target_villager_xp_needed}</code></li>
+    <li><code>{tveb}</code> / <code>{target_villager_xp_bar}</code></li>
+    <li>Don't forget about the List Var <a href="#villager_offers"><code>target_villager_offers</code> , <code>tvo</code> </a>!</li>
+  </ul></details></li>
+  <li><details><summary>How much redstone power a block is receiving</summary><ul>
+    <li>Total:<code>{target_block_power}</code>, <code>{target_power}</code>, <code>{tbp}</code></li>
+    <li>Total Strong:<code>{target_block_strong_power}</code>, <code>{target_strong_power}</code>, <code>{tbsp}</code></li>
+    <li><code>{target_block_power_north}</code>, <code>{target_power_north}</code>, <code>{tbpn}</code></li>
+    <li><code>{target_block_power_south}</code>, <code>{target_power_south}</code>, <code>{tbps}</code></li>
+    <li><code>{target_block_power_east}</code>, <code>{target_power_east}</code>, <code>{tbpe}</code></li>
+    <li><code>{target_block_power_west}</code>, <code>{target_power_west}</code>, <code>{tbpw}</code></li>
+    <li><code>{target_block_power_up}</code>, <code>{target_power_up}</code>, <code>{tbpu}</code></li>
+    <li><code>{target_block_power_down}</code>, <code>{target_power_down}</code>, <code>{tbpd}</code></li>
+    <li><code>{target_block_strong_power_north}</code>, <code>{target_strong_power_north}</code>, <code>{tbspn}</code></li>
+    <li><code>{target_block_strong_power_south}</code>, <code>{target_strong_power_south}</code>, <code>{tbsps}</code></li>
+    <li><code>{target_block_strong_power_east}</code>, <code>{target_strong_power_east}</code>, <code>{tbspe}</code></li>
+    <li><code>{target_block_strong_power_west}</code>, <code>{target_strong_power_west}</code>, <code>{tbspw}</code></li>
+    <li><code>{target_block_strong_power_up}</code>, <code>{target_strong_power_up}</code>, <code>{tbspu}</code></li>
+    <li><code>{target_block_strong_power_down}</code>, <code>{target_strong_power_down}</code>, <code>{tbspd}</code></li>
+  </ul></details></li>
+  <li>Added Hooked Entity yaw/pitch<ul>
+    <li><code>{hedy}</code> / <code>{hooked_entity_direction_yaw}</code></li>
+    <li><code>{hedp}</code> / <code>{hooked_entity_direction_pitch}</code></li>
+  </ul></li>
+  <li>Added <code>{unix_time}</code> (milliseconds since epoch)</li>
+  <li>Added plural variants to time variables<ul>
+    <li>People, including myself, kept adding an s to the end, so why not allow it</li>
+    <li><code>{seconds}</code> , <code>{minutes}</code> , <code>{hours}</code> , <code>{hours12}</code> , <code>{hours24}</code></li>
+  </ul></li>
+  <li><details><summary>Added individual real time variables, mainly useful for expressions</summary><ul>
+    <li><code>{realtime:&lt;format&gt;}</code> is still recommend for showing time on the hud</li>
+    <li><code>{real_year}</code> , <code>{real_month}</code> , <code>{real_day}</code></li>
+    <li><code>{real_day_of_week}</code> / <code>{real_dow}</code> , <code>{real_day_of_year}</code> / <code>{real_doy}</code></li>
+    <li><code>{real_hour}</code> / <code>{real_hour12}</code> , <code>{real_hour24}</code></li>
+    <li><code>{real_minute}</code> , <code>{real_second}</code> , <code>{real_ms}</code></li>
+    <li><code>{real_am}</code> , <code>{real_pm}</code></li>
+  </ul></details></li>
+  <li>Added Profile Variables<ul>
+    <li><code>{profile_name}</code> , <code>{profile_errors}</code> , <code>{profile_keybind}</code> , <code>{profile_in_cycle}</code></li>
+  </ul></li>
+  <li>Added World-Related Variables<ul>
+    <li><code>{world_height}</code> , <code>{min_y}</code> / <code>{world_min_y}</code> , <code>{max_y}</code> / <code>{world_max_y}</code></li>
+    <li><code>{coord_scale}</code> / <code>{world_coord_scale}</code></li>
+  </ul></li>
+  <li>Title and Actionbar Variables<ul>
+    <li><code>{title_msg}</code> / <code>{title}</code> , <code>{subtitle_msg}</code> / <code>{subtitle}</code> (not to be confused with audio subtitles)</li>
+    <li><code>{actionbar_msg}</code> / <code>{actionbar}</code></li>
+    <li><code>{title_remaining}</code> , <code>{actionbar_remaining}</code></li>
+  </ul></li>
+  <li>Player&#39;s Current Team<ul>
+    <li><code>{pteam:&lt;method&gt;}</code> / <code>{player_team:&lt;method&gt;}</code></li>
+    <li>Existing <code>{team}</code> (no method) now alias of <code>{pteam}</code> (no method) and <code>{player_team}</code> (no method)</li>
+    <li><details><summary>Methods:</summary><ul>
+      <li><code>name</code> , <code>id</code></li>
+      <li><code>color</code> (see new color feature)</li>
+      <li><code>friendly_fire</code> , <code>see_friendly_invis</code> , <code>collision</code></li>
+      <li><code>name_tag_visibility</code> / <code>name_tag</code> , <code>death_msg_visibility</code> / <code>death_msg</code></li>
+      <li>List Var <code>members</code> with child <code>{m:member}</code> (members include offline players)</li>
+      <li>List Var <code>online_players</code> / <code>players</code> (See <code>players</code> child vars)</li>
+    </ul></details></li>
+  </ul></li>
+  <li><details><summary>More methods for <code>{item:&lt;slot&gt;:&lt;method&gt;}</code></summary><ul>
+    <li><code>armor_slot</code> (which armor slot the item can go in)</li>
+    <li><code>unbreakable</code> , <code>repair_cost</code> , <code>hide_flags</code></li>
+    <li>List <code>attributes</code> / <code>attrs</code> (See Item Attribute Modifiers child vars)</li>
+    <li>List <code>info_shown</code> and <code>info_hidden</code> with child <code>{ii:info}</code></li>
+    <li>List <code>can_destroy</code> and <code>can_place_on</code><ul>
+      <li>Children <code>{c:name}</code> , <code>{c:id}</code></li>
+    </ul></li>
+    <li>List <code>tags</code> with children <code>{t:name}</code> and <code>{t:id}</code></li>
+    <li>List Var <code>items</code> (items stored in stuff like Shulker Boxes). Same child vars as <code>items</code>.</li>
+    <li>List Var <code>items_compact</code> (items stored in stuff like Shulker Boxes, compacted). Same child vars as <code>items</code>.</li>
+    <li><code>enchant:&lt;id&gt;:&lt;method&gt;</code><ul>
+      <li>Ex: <code>item:main:enchant:sharpness:full</code><ul>
+        <li>Methods:<ul>
+          <li><code>name</code> , <code>id</code></li>
+          <li><code>level</code> / <code>lvl</code> (like IV)</li>
+          <li><code>max_level</code> (max level the enchantment can be)</li>
+          <li><code>full</code> (like Sharpness IV)</li>
+          <li><code>num</code> / <code>number</code> (0 indexed)</li>
+          <li><code>max_num</code> , <code>max_number</code> (0 indexed)</li>
+          <li><code>rarity</code></li>
+        </ul></li>
+      </ul></li>
+    </ul></li>
+  </ul></details></li>
+  <li><details><summary>Get a block's property: <code>{target_block_property:&lt;property&gt;:&lt;method&gt;}</code> / <code>{tbprop:&lt;property&gt;:&lt;method&gt;}</code></summary><ul>
+    <li>Methods:<ul>
+      <li><code>{p:name}</code> , <code>{p:value}</code> , <code>{p:type}</code> , <code>{p:full_type}</code></li>
+    </ul></li>
+  </ul></details></li>
+  <li>Attribute Variables<ul>
+    <li>Yours: <code>{attribute:&lt;attr&gt;:&lt;method&gt;}</code></li>
+    <li><details><summary>Target Entity:</summary><ul>
+      <li><code>{target_entity_attribute:&lt;attr&gt;:&lt;method&gt;}</code></li>
+      <li><code>{target_entity_attr:&lt;attr&gt;:&lt;method&gt;}</code></li>
+      <li><code>{tea:&lt;attr&gt;:&lt;method&gt;}</code></li>
+    </ul></details></li>
+    <li><details><summary>Hooked Entity:</summary><ul>
+      <li><code>{hooked_entity_attribute:&lt;attr&gt;:&lt;method&gt;}</code></li>
+      <li><code>{hooked_entity_attr:&lt;attr&gt;:&lt;method&gt;}</code></li>
+      <li><code>{hea:&lt;attr&gt;:&lt;method&gt;}</code></li>
+    </ul></details></li>
+    <li><details><summary>Methods:</summary><ul>
+      <li><code>name</code> , <code>id</code></li>
+      <li><code>value</code> , <code>base_value</code> , <code>default_value</code></li>
+      <li><code>tracked</code> (if the server sends it to the client)</li>
+      <li><code>modifiers</code> (a list variable, see the attribute modifiers)</li>
+    </ul></details></li>
+  </ul></li>
+  <li><details><summary>Player Info <code>{player:&lt;player&gt;:&lt;method&gt;}</code></summary><ul>
+    <li>Methods:<ul>
+
+      <li><code>name</code> / <code>display_name</code> , <code>username</code></li>
+      <li><code>id</code> / <code>uuid</code></li>
+      <li><code>latency</code> , <code>list_score</code></li>
+      <li><code>gamemode</code> , <code>survival</code> , <code>creative</code> , <code>adventure</code> , <code>spectator</code></li>
+      <li><code>head</code> (icon)</li>
+      <li><code>team</code> , <code>team:&lt;team method&gt;}</code> (see Team Info<code>{team::&lt;team&gt;:&lt;method&gt;}</code>)</li>
+
+      <li><code>name</code> , <code>id</code></li>
+      <li><code>color</code> (see new color feature)</li>
+      <li><code>friendly_fire</code> , <code>see_friendly_invis</code> , <code>collision</code></li>
+      <li><code>name_tag_visibility</code> / <code>name_tag</code> , <code>death_msg_visibility</code> / <code>death_msg</code></li>
+      <li>List <code>members</code> with child <code>{member}</code> (members include offline players)</li>
+      <li>List <code>online_players</code> / <code>players</code> (See <code>players</code> child vars)</li>
+    </ul></li>
+  </ul></details></li>
+  <li><details><summary>Team Info <code>{team:&lt;team&gt;:&lt;method&gt;}</code></summary><ul>
+    <li>Methods:<ul>
+      <li><code>name</code> , <code>id</code></li>
+      <li><code>color</code> (see new color feature)</li>
+      <li><code>friendly_fire</code> , <code>see_friendly_invis</code> , <code>collision</code></li>
+      <li><code>name_tag_visibility</code> / <code>name_tag</code> , <code>death_msg_visibility</code> / <code>death_msg</code></li>
+      <li>List <code>members</code> with child <code>{member}</code> (members include offline players)</li>
+      <li>List <code>online_players</code> / <code>players</code> (See <code>players</code> child vars)</li>
+    </ul></li>
+  </ul></details></li>
+  <li><details><summary>Scoreboard Objective Info <code>{objective:&lt;objective_id&gt;:&lt;method&gt;}</code>:</summary><ul>
+    <li>Methods<ul>
+      <li><code>name</code> , <code>id</code></li>
+      <li><code>criteria</code> / <code>criterion</code> (Singleplayer only)</li>
+      <li><code>display_slot</code></li>
+      <li>List <code>scores</code> (See child variable section above)</li>
+      <li>List <code>online_scores</code> (See child variable section above)</li>
+    </ul></li>
+  </ul></details></li>
+  <li>Scoreboard Score <code>{score:&lt;player&gt;:&lt;objective_id&gt;}</code><ul>
+    <li>Gets the score the player has for that objective</li>
+  </ul></li>
+  <li><details><summary>Bossbar Info <code>{bossbar:&lt;name|uuid|id&gt;:&lt;method&gt;}</code></summary><ul>
+    <li>id singleplayer only, and only ones made by commands</li>
+    <li>Methods:<ul>
+      <li><code>name</code> , <code>uuid</code></li>
+      <li><code>id</code> (Singpleplayer only),</li>
+      <li><code>percent</code> / <code>per</code> / <code>value</code></li>
+      <li><code>darken_sky</code> , <code>dragon_music</code> , <code>thickens_fog</code></li>
+      <li><code>style</code> , <code>color</code> , <code>text_color</code></li>
+      <li><code>enabled</code> / <code>visible</code> (Singleplayer only)</li>
+      <li><code>icon</code></li>
+      <li>List <code>players</code> (See <code>players</code> child vars)<ul>
+        <li>A list of players that can see the bossbar, Singleplayer only</li>
+      </ul></li>
+    </ul></li>
+  </ul></details></li>
+  <li>Have Mod <code>{mod_loaded:&lt;modid&gt;}</code> </li>
+  <li><details><summary>Mod Info <code>{mod:&lt;modid&gt;:&lt;method&gt;}</code></summary><ul>
+    <li>Methods:<ul>
+      <li><code>name</code> , <code>id</code> , <code>version</code> , <code>hash</code></li>
+      <li><code>summary</code> , <code>desc</code> / <code>description</code></li>
+      <li><code>icon</code></li>
+      <li>If the mod is a library mod, client mod, etc <ul>
+        <li> <code>library</code>, <code>client</code>, <code>deprecated</code>, <code>patchwork</code>, <code>from_modpack</code>, <code>minecraft</code> </li>
+      </ul></li>
+      <li>List <code>authors</code> with child var <code>{ma:author}</code></li>
+      <li>List <code>contributors</code> with child var <code>{mc:contributor}</code></li>
+      <li>List <code>credits</code> with child var <code>{mc:credit}</code></li>
+      <li>List <code>licenses</code> with child var <code>{ml:license}</code></li>
+      <li>List <code>children</code>. See <code>mods</code> child vars</li>
+      <li>List <code>parent</code>. See <code>mods</code> child vars</li>
+      <li>List <code>badges</code>. See <code>m:badges</code> child vars</li>
+      <li><code>parent:&lt;method&gt;</code> Same methods as this</li>
+    </ul></li>
+  </ul></details></li>
+  <li>Resource Pack / Datapack Variables<ul>
+    <li><code>{resource_pack:&lt;id&gt;:&lt;method&gt;}</code></li>
+    <li><code>{data_pack:&lt;id&gt;:&lt;method&gt;}</code> / <code>{datapack:&lt;id&gt;:&lt;method&gt;}</code></li>
+    <li><details><summary>Methods:</summary><ul>
+      <li><code>name</code> , <code>id</code> , <code>version</code></li>
+      <li><code>desc</code> / <code>description</code></li>
+      <li><code>compatible</code> , <code>always_enabled</code> , <code>pinned</code></li>
+      <li><code>icon</code></li>
+    </ul></details></li>
+    <li>RP Version: <code>{rp_version}</code> / <code>{resource_pack_version}</code></li>
+    <li>DP Version: <code>{dp_version}</code> / <code>{data_pack_version}</code> / <code>{datapack_version}</code></li>
+  </ul></li>
+  <li><details><summary>Progress Bar <code class="hide_on_open">{bar:&lt;style&gt;, &lt;value&gt;, &lt;max_value&gt;}</code></summary><ul>
+    <li><code>{bar, &lt;value&gt;, &lt;max_value&gt;}</code></li>
+    <li><code class="hide_on_open">{bar:&lt;style&gt;, &lt;value&gt;, &lt;max_value&gt;}</code></li>
+    <li><code>{bar, &lt;value&gt;, &lt;max_value&gt;, &lt;flags&gt;}</code></li>
+    <li>Replace <code>bar</code> with <code>nb_bar</code> to remove the bar's background. Great for stacking</li>
+    <li><details><summary>Styles:</summary><ul>
+      <li><code>xp</code> / <code>experience</code> , <code>jump</code> / <code>horse</code></li>
+      <li><code>villager</code> / <code>villager_green</code> , <code>villager_white</code></li>
+      <li><code>pink</code> , <code>red</code> , <code>blue</code> , <code>green</code> , <code>yellow</code> , <code>purple</code> , <code>white</code></li>
+      <li><code>6</code> , <code>10</code> , <code>12</code> , <code>20</code> (notches)</li>
+      <li><code>pink6</code> , <code>red12</code>, etc</li>
+    </ul></details></li>
+    <li>Example:<ul>
+      <li><code>{bar:red20, y + 64, 384}</code></li>
+    </ul></li>
+  </ul></details></li>
+  <li><details><summary>Timer Variable <code class="hide_on_open">{timer[&lt;end&gt;, &lt;interval&gt;]}</code></summary><ul>
+    <li><code>{timer[&lt;end&gt;, &lt;interval&gt;]}</code></li>
+    <li><code>{timer[&lt;end&gt;]}</code> (interval = 1)</li>
+    <li>Interval is in seconds</li>
+    <li><code>end</code> and <code>interval</code> allows expressions</li>
+    <li>Example:<ul>
+      <li><code>{timer[100, 1/health]}</code></li>
+      <li>Counts to 100. counts faster if you have less health</li>
+    </ul></li>
+  </ul></details></li>
+  <li><code>{$&lt;expression&gt;}</code> allows you to display the results of calculations on the hud<ul>
+    <li><code>&lt;expression&gt;</code> is the same type as used in conditionals</li>
+    <li>To change the precision: <code>{$&lt;precision&gt;,&lt;expression&gt;}</code></li>
+    <li>Examples: <ul>
+      <li><code>{$ bx * 10}</code> &#x2B95; <code>50</code> (if player&#39;s x coord is 5)</li>
+      <li><code>{$2, bx * 10}</code> &#x2B95; <code>50.00</code> (if player&#39;s x coord is 5)</li>
+    </ul></li>
+  </ul></li>
+  <li>Get/Set Values<ul>
+    <li><code>{set:&lt;names&gt;, &lt;expression&gt;}</code><ul>
+      <li><code>&lt;expression&gt;</code> is the same type as used in conditionals and <code>{$&lt;expression&gt;}</code></li>
+      <li>Runs the expression on <strong>set</strong></li>
+    </ul></li>
+    <li><code>{set:&lt;name&gt;, &quot;stuff here&quot;}</code><ul>
+      <li><code>&quot;stuff here&quot;</code> the same as <code>{{&lt;condition&gt;, &quot;stuff here if true&quot;}}</code></li>
+      <li>Example: <code>{set:item_name, &quot;{item:main:name}&quot;}</code></li>
+    </ul></li>
+    <li><code>{get:&lt;name&gt;}</code></li>
+  </ul></li>
+  <li>Macros<ul>
+    <li><code>{setmacro:&lt;name&gt;, &lt;expression&gt;}</code><ul>
+      <li><code>&lt;expression&gt;</code> is the same type as used in conditionals and <code>{$&lt;expression&gt;}</code></li>
+      <li>Runs the expression on <strong>get</strong>, <i>not set</i></li>
+    </ul></li>
+    <li><code>{setmacro:&lt;name&gt;, &quot;stuff here&quot;}</code><ul>
+      <li><code>&quot;stuff here&quot;</code> the same as <code>{{&lt;condition&gt;, &quot;stuff here if true&quot;}}</code></li>
+      <li>Example: <code>{setmacro:coords, &quot;&amp;c{x} &amp;a{y} &amp;b{z}&quot;}</code></li>
+    </ul></li>
+    <li><code>{getmacro:&lt;name&gt;}</code></li>
+  </ul></li>
+  <li><code>{window_focused}</code> : If the minecraft window is focused or in the background</li>
+  <li><code>{refresh_profiler_timings}</code> (also available as a keybind) <ul>
+    <li>Refreshes timings from the profiler. Don't run often, or it'll flicker</li>
+  </ul></li>
+  <li><details><summary>Profiler Timing (a specific one) <code>{profiler_timing:&lt;path&gt;:&lt;method&gt;}</code></summary><ul>
+    <li>Methods:<ul>
+      <li><code>name</code> , <code>path</code> , <code>color</code></li>
+      <li><code>per_of_parent</code> / <code>percent_of_parent</code></li>
+      <li><code>per_of_total</code> / <code>percent_of_total</code></li>
+      <li>List <code>entries</code> (sub-entries). See <code>profiler_timings</code> for child vars</li>
+      <li><code>parent:&lt;method&gt;</code> Same methods as this</li>
+    </ul></li>
+  </ul></details></li>
+  <li>F3 Parity:<ul>
+    <li>
+      <details><summary>Client/Server Chunk Variables</summary><ul>
+        <li> <code>{ccw1}</code> / <code>{client_chunks_w1}</code> / <code>{client_chunks_cached}</code> </li>
+        <li> <code>{ccw2}</code> / <code>{client_chunks_w2}</code> / <code>{client_chunks_loaded}</code> </li>
+        <li> <code>{cce1}</code> / <code>{client_chunks_e1}</code> / <code>{client_entities_loaded}</code> </li>
+        <li> <code>{cce2}</code> / <code>{client_chunks_e2}</code> / <code>{client_entities_cached_sections}</code> </li>
+        <li> <code>{cce3}</code> / <code>{client_chunks_e3}</code> / <code>{client_entities_ticking_chunks}</code> </li>
+        <li> <code>{scw1}</code> / <code>{server_chunks_w1}</code> / <code>{server_chunks_loaded}</code> </li>
+        <li> <code>{sce1}</code> / <code>{server_chunks_e1}</code> / <code>{server_entities_registered}</code> </li>
+        <li> <code>{sce2}</code> / <code>{server_chunks_e2}</code> / <code>{server_entities_loaded}</code> </li>
+        <li> <code>{sce3}</code> / <code>{server_chunks_e3}</code> / <code>{server_entities_cached_sections}</code> </li>
+        <li> <code>{sce4}</code> / <code>{server_chunks_e4}</code> / <code>{server_entities_managed}</code> </li>
+        <li> <code>{sce5}</code> / <code>{server_chunks_e5}</code> / <code>{server_entities_tracked}</code> </li>
+        <li> <code>{sce6}</code> / <code>{server_chunks_e6}</code> / <code>{server_entities_loading}</code> </li>
+        <li> <code>{sce7}</code> / <code>{server_chunks_e7}</code> / <code>{server_entities_unloading}</code> </li>
+      </ul></details>
+    </li>
+    <li><details><summary>Tick related stuff</summary><ul>
+      <li>Minecraft added the ability to change and freeze the tick rate in a recent version</li>
+      <li><code>{ms_per_tick}</code> , <code>{max_tps}</code></li>
+      <li><code>{is_tick_sprinting}</code> / <code>{tick_sprinting}</code> (Singleplayer only for some reason)</li>
+      <li><code>{is_tick_frozen}</code> / <code>{tick_frozen}</code></li>
+      <li><code>{is_tick_stepping}</code> / <code>{tick_stepping}</code></li>
+    </ul></details></li>
+    <li><code>{gpu_vendor}</code> , <code>{gl_version}</code> , <code>{gpu_driver}</code>
+    </li>
+    <li><code>{memory_allocation_rate}</code></li>
+    <li>Fabric&#39;s <code>{active_renderer}</code></li>
+  </ul>
+  </li>
+  <li>Math constants:<ul>
+    <li><code>{e}</code> , <code>{pi}</code> / <code>{&pi;}</code> , <code>{tau}</code> / <code>{&tau;}</code> , <code>{phi}</code> / <code>{&phi;}</code> / <code>{golden_ratio}</code></li>
+  </ul>
+  </li>
+</ul>
+
+
+<h3 id="variable-changes"> Variable Changes </h3>
+<ul>
+  <li> <code>{itemcount:&lt;item_id&gt;}</code> now works with item tags (like <code>#stone</code>) number variable flags</li>
+  <li> <code>{tps}</code> and <code>{ms_ticks}</code> / <code>{ticks_ms}</code> are now estimated when on servers!!! </li>
+  <li> <code>{ms_ticks}</code> no longer bottoms out at 50ms in singleplayer </li>
+  <li> Improvements to <code>{space:#}</code> <ul>
+    <li> You can use the expression <code>{space:x + 5}</code> </li>
+    <li> You can now get the same with has elements would, like <ul>
+      <li> <code>{space:"Name: {name}"}</code> </li>
+    </ul></li>
+  </ul></li>
+  <li> Old record variables now show data for the closest playing record instead of the newest <ul>
+    <li> <code>{record_name}</code> , <code>{record_id}</code>, etc </li>
+  </ul></li>
+  <li> <code>{gpu}</code> now shows the same way as it does in F3 <ul>
+    <li> This is less desirable for NVIDIA gpus, but it was broken for AMD's </li>
+  </ul></li>
+  <li> Texture Icons <ul>
+    <li> <code>{icon:&lt;path&gt;}</code> / <code>{icon:&lt;path&gt; &lt;flags&gt;}</code> <ul>
+      <li>  Path can now end in <code>.png</code>. You don't need it, but it'll work now </li>
+    </ul></li>
+    <li> Changes to icons with u,v,w,h <ul>
+      <li>  No longer broken (and now will have proper docs because of this) </li>
+      <li> Old: <code>{icon:&lt;path&gt;,&lt;u&gt;,&lt;v&gt;,&lt;w&gt;,&lt;h&gt; &lt;flags&gt;}</code> </li>
+      <li> New: <code>{icon:&lt;path&gt; &lt;flags&gt;, &lt;u&gt;, &lt;v&gt;, &lt;w&gt;, &lt;h&gt;, &lt;width&gt;, &lt;height&gt;}</code> </li>
+      <li> New: <code>{icon:&lt;path&gt; &lt;flags&gt;, &lt;u&gt;, &lt;v&gt;, &lt;w&gt;, &lt;h&gt;, &lt;height&gt;}</code> <ul>
+        <li> All parts are optional </li>
+        <li> Examples: <ul>
+          <li> <code>{icon:&lt;path&gt;, 0, 0}</code> (w,h,width,height are default) </li>
+          <li> <code>{icon:&lt;path&gt;, 0, 0, 16, 16, 20}</code> (width is default) </li>
+        </ul></li>
+      </ul></li>
+      <li> Parts: <ul>
+        <li> <code>width</code>: how wide the icon renders </li>
+        <li> <code>height</code>: how tall the icon renders </li>
+        <li><img width="320" src="imgs/uvwh.png" alt="A visual explanation of u, v, w, and h" style="image-rendering: pixelated"> </li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+</ul>
+
+<h3 id="other-changes"> Other Changes </h3>
+<ul>
+  <li> Profiles will reload on resource reload </li>
+  <li> If the error screen is opened via the keybind, there's now a button that go to profiles (new config screen) </li>
+  <li> Better error resiliency. If an unexpected exception is thrown while reading profiles, it is now caught and properly put into the errors screen </li>
+  <li> CustomHud now have their own profiler entries </li>
+</ul>
+
+<h3 id="new-registry-system"> New Registry System </h3>
+<ul>
+  <li> Breaks old addon mods (the non-existent ones)</li>
+  <li> <code>CustomHudRegistry.registerElement("name", (flags, context) -> &lt;ELEMENT&gt;)</code>
+    <ul><li>Pass flags into elements that take flags, and wrap string variables in <code>Flags.wrap(&lt;ELEMENT&gt;, flags)</code></li></ul></li>
+  <li> <code>CustomHudRegistry.registerParser("id", (str, context) -> &lt;ELEMENT&gt;)</code> </li>
+  <li> <code>CustomHudRegistry.registerList("name", "default prefix", () -> &lt;LIST&gt;, &lt;ATTRIBUTER&gt;)</code> </li>
+  <li> <code>CustomHudRegistry.registerList("name", "default prefix", () -> &lt;LIST&gt;, &lt;ATTRIBUTER&gt;, &lt;ENABLED&gt;)</code> </li>
+  <li> Also <code>unregister()</code> and <code>has()</code> for all 3 kinds of registries </li>
+</ul>
+
+<h3 id="fixes"> Fixes </h3>
+<ul>
+  <li> If lines only contains conditionals (and now set/setmacro) that produces nothing, the lines are properly skipped again </li>
+  <li> Built-in-fonts now work again (also fixes enchanting table text) </li>
+  <li> No longer crashes when default font is replaced with a tff font </li>
+  <li> Removed sodium/iris variables so the mod no longer breaks when they make breaking changes
+    <ul><li> These will return as addon mods </li></ul>
+  </li>
+  <li> Fixes to icons and rich item icons </li>
+  <li> No longer crashes when using BooleanSupplierElement before minecraft's options are loaded </li>
+  <li> Fixed text positioning when line spacing is 0 </li>
+  <li> <code>{ var_name}</code> (whitespace before the name) now works</li>
+  <li> Fixed sections' x-offset being doubly applied</li>
+  <li> Numbers larger than 2147483647 without precision (aka whole numbers) now show correctly </li>
+</ul>
+</div>
+
+<div class="sidebar">
+  <h3>Table of Contents</h3>
+  <ul>
+    <li><a href="#new-config-screen">New Config Screen</a></li>
+    <li><a href="#new-language-features">New Language Features</a></li>
+    <li><a href="#new-colors-and-formatting">New Colors and Formatting</a></li>
+    <li><a href="#new-variable-flags">New Variable Flags</a></li>
+    <li><a href="#new-list-variables">New List Variables</a></li>
+    <li><a href="#new-themeing">New Theme Options</a></li>
+    <li><a href="#new-variables">New Variables</a></li>
+    <li><a href="#variable-changes">Variable Changes</a></li>
+    <li><a href="#other-changes">Other Changes</a></li>
+    <li><a href="#new-registry-system">New Registry System</a></li>
+    <li><a href="#fixes">Fixes</a></li>
+  </ul>
+</div>
+</body>
+</html>

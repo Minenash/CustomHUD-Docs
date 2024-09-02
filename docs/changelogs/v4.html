@@ -1234,12 +1234,18 @@
 <h3 id="new-registry-system"> New Registry System </h3>
 <ul>
   <li> Breaks old addon mods (the non-existent ones)</li>
-  <li> <code>CustomHudRegistry.registerElement("name", (flags, context) -> &lt;ELEMENT&gt;)</code>
-    <ul><li>Pass flags into elements that take flags, and wrap string variables in <code>Flags.wrap(&lt;ELEMENT&gt;, flags)</code></li></ul></li>
+  <li> <code>CustomHudRegistry.registerElement("name", (flags, context) -> &lt;ELEMENT&gt;)</code><ul>
+    <li>Pass flags into elements that take flags, and wrap string variables in <code>Flags.wrap(&lt;ELEMENT&gt;, flags)</code></li>
+    <li><code>context.enabled</code> now has <code>.set("name")</code> and <code>.set("name", value)</code></li>
+    </ul></li>
   <li> <code>CustomHudRegistry.registerParser("id", (str, context) -> &lt;ELEMENT&gt;)</code> </li>
   <li> <code>CustomHudRegistry.registerList("name", "default prefix", () -> &lt;LIST&gt;, &lt;ATTRIBUTER&gt;)</code> </li>
   <li> <code>CustomHudRegistry.registerList("name", "default prefix", () -> &lt;LIST&gt;, &lt;ATTRIBUTER&gt;, &lt;ENABLED&gt;)</code> </li>
   <li> Also <code>unregister()</code> and <code>has()</code> for all 3 kinds of registries </li>
+  <li> <code>CustomHudRegistry.registerComplexData(function)</code> now takes a <code>Consumer&lt;Enabled&gt;</code> instead of a <code>Runnable</code><ul>
+    <li> If you did <code>context.enable.set("name")</code> when registering the element, do <code>enabled.get("name")</code> here</li>
+  </ul></li>
+
 </ul>
 
 <h3 id="fixes"> Fixes </h3>

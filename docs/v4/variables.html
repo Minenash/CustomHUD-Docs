@@ -28,7 +28,7 @@
     <li><a href="references.html">References</a></li>
 </ul>
 
-<ul class="nav side_nav side_nav_v4">
+<ul class="nav side_nav side_nav_v4" style="margin-bottom: -77px">
     <li><a class="side_nav_header">Categories</a></li>
     <li><a href="#f3">ꜰʀᴏᴍ ꜰ<b class="small_num">3</b></a></li>
     <li><a href="#new" style="color: gold">✨ ɴᴇᴡ ✨</a></li>
@@ -50,7 +50,6 @@
     <li><a href="#fishing_rod">ꜰɪsʜɪɴɢ ʀᴏᴅ</a></li>
     <li><a href="#pc_utilization">ᴘᴄ ɪɴꜰᴏ, ᴜsᴀɢᴇ</a></li>
     <li><a href="#technical_misc">ᴛᴇᴄʜɴɪᴄᴀʟ ᴍɪsᴄ</a></li>
-    <li><a href="#sodium">ᴍᴏᴅs</a></li>
 </ul>
 
 <div id="top" class="content">
@@ -602,7 +601,7 @@
         <tr><td>Description</td><td>This is what the variable will produce</td></tr>
         <tr><td>Number Value</td><td>The variable's numerical value, used in <a href="conditionals.html">Conditionals</a>. If you aren't using Conditionals, you can ignore this column</td></tr>
         <tr><td>Boolean Values</td><td>The variable's true/false value, used in <a href="conditionals.html">Conditionals</a>. If you aren't using Conditionals, you can ignore this column</td></tr>
-        <tr><td>Flags</td><td>Flags allow you to customize the variable's output. Variables that support flags contain a link to what flags are available for it</td></tr>
+        <tr><td>Flags</td><td class="last_cell">Flags allow you to customize the variable's output. Variables that support flags contain a link to what flags are available for it</td></tr>
         </tbody>
     </table>
 
@@ -641,11 +640,11 @@
             <td class="rowspan_fix_right">if it can get the value<br>(aka you&#39;re in singleplayer)</td>
         </tr>
         <tr>
-            <td colspan="5" style="border-radius: 0 0 10px 0; background-color: #f4f5f7">
+            <td colspan="5" style="border-radius: 0 0 10px 10px; border-bottom: none; background-color: #f4f5f7">
                 <details>
                     <summary>Avg/Min/Max: FPS, Frame Time (ms), TPS, and Tick Time (ms)</summary>
                     <h3 style="text-align: left">Frame Time</h3>
-                    <table class="inner-table" style="margin-bottom: 32px">
+                    <table style="margin-bottom: 32px">
                         <thead>
                         <tr>
                             <th>Variable</th>
@@ -684,7 +683,7 @@
                         </tbody>
                     </table>
 
-                    <h3 style="text-align: left">FPS (Added in v3.3)</h3>
+                    <h3 style="text-align: left">FPS</h3>
                     <table style="margin-bottom: 32px">
                         <thead>
                         <tr>
@@ -724,7 +723,7 @@
                         </tbody>
                     </table>
 
-                    <h3 style="text-align: left">Tick Time (Singleplayer Only, Added in v3.2)</h3>
+                    <h3 style="text-align: left">Tick Time (Singleplayer Only)</h3> <!--TODO: Check-->
                     <table style="margin-bottom: 8px">
                         <thead>
                         <tr>
@@ -765,7 +764,7 @@
                         </tbody>
                     </table>
 
-                    <h3 style="text-align: left">TPS (Singleplayer Only, Added in v3.3)</h3>
+                    <h3 style="text-align: left">TPS (Singleplayer Only)</h3>
                     <table>
                         <thead>
                         <tr>
@@ -825,27 +824,24 @@
         <tbody>
         <tr>
             <td id="world_name">{world} / {world_name}</td>
-            <td>The name of the singleplayer world the player is in<br><b>- Singleplayer Only</b><br><b>[Added in v3.1]</b></td>
+            <td>The name of the singleplayer world the player is in<br><b>- Singleplayer Only</b></td>
             <td>the length of the name</td>
             <td>length of the name &gt; 0</td>
             <td><a href="references/variable_flags.html">String</a></td>
         </tr>
         <tr>
             <td id="server_name">{server_name}</td>
-            <td>The name of the server (as written in the server entry) the player is in<br><b>- Multiplayer Only</b><br><b>[Added in v3.1]</b></td>
+            <td>The name of the server (as written in the server entry) the player is in<br><b>- Multiplayer Only</b></td>
             <td>the length of the name</td>
             <td>length of the name &gt; 0</td>
             <td><a href="references/variable_flags.html">String</a></td>
         </tr>
         <tr>
-            <td id="address">{address}</td>
-            <td rowspan="2">The address (as written in the address field) of the server<br><b>- Multiplayer Only</b></td>
-            <td rowspan="2">length of the address</td>
-            <td rowspan="2">length of the address &gt; 0</td>
-            <td rowspan="2"><a href="references/variable_flags.html">String</a></td>
-        </tr>
-        <tr>
-            <td id="server_address" class="rowspan_fix_right">{server_address} / {ip}<br><b>[Added in v3.1]</b></td>
+            <td id="address">{address} / {ip}<br>{server_address}</td>
+            <td>The address (as written in the address field) of the server<br><b>- Multiplayer Only</b></td>
+            <td>length of the address</td>
+            <td>length of the address &gt; 0</td>
+            <td><a href="references/variable_flags.html">String</a></td>
         </tr>
         <tr>
             <td></td>
@@ -862,7 +858,7 @@
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         <tr>
-            <td id="latency">{latency}<br><b>[Added in v3.2]</b></td>
+            <td id="latency">{latency}</td>
             <td>The latency of your connection to the server</td>
             <td>the latency</td>
             <td>if greater than 0</td>
@@ -882,11 +878,12 @@
             <td><code>true</code></td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
+        <tr></tr>
         <tr>
-            <td colspan="5" style="border-radius: 0 0 10px 0; background-color: #f4f5f7">
+            <td colspan="5" style="border-radius: 0 0 10px 10px; border-bottom: none; background-color: #f4f5f7">
                 <details>
                     <summary>Min/Max/Avg Ping and Packet Size</summary>
-                    <h3 style="text-align: left">Ping (Added in v3.2)</h3>
+                    <h3 style="text-align: left">Ping</h3>
                     <table style="margin-bottom: 32px">
                         <thead>
                         <tr>
@@ -925,7 +922,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <h3 style="text-align: left">Packet Size (Multiplayer Only, Added in v3.2)</h3>
+                    <h3 style="text-align: left">Packet Size (Multiplayer Only)</h3>
                     <table style="margin-bottom: 8px">
                         <thead>
                         <tr>
@@ -966,6 +963,8 @@
                     </table>
                 </details>
             </td>
+        </tr>
+        <tr></tr>
 
 
         </tbody>
@@ -1013,7 +1012,7 @@
         </tr>
         <tr>
             <td id="space">{space:&lt;pixels&gt;}</td>
-            <td>Can be used to add space without spamming space<br><b>[Added in v3.1]</b></td>
+            <td>Can be used to add space without spamming space</td>
             <td>0</td>
             <td>false</td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
@@ -1034,7 +1033,7 @@
         </tr>
         <tr>
             <td id="reach">{reach} / {reach_distance}</td>
-            <td>How far the player can reach<br><b>[Added in v3.1]</b></td>
+            <td>How far the player can reach</td>
             <td>how far in blocks</td>
             <td>true</td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
@@ -1048,21 +1047,21 @@
         </tr>
         <tr>
             <td id="display_name">{name} / {display_name}</td>
-            <td>The name of the player as seen in chat and tab<br><b>[Added in v3.1]</b></td>
+            <td>The name of the player as seen in chat and tab<</td>
             <td>length of name</td>
             <td>length of name &gt; 0</td>
             <td><a href="references/variable_flags.html">String</a></td>
         </tr>
         <tr>
             <td id="username">{username}</td>
-            <td>The username of the player<br><b>[Added in v3.1]</b></td>
+            <td>The username of the player</td>
             <td>length of name</td>
             <td>length of name &gt; 0</td>
             <td><a href="references/variable_flags.html">String</a></td>
         </tr>
         <tr>
             <td id="uuid">{uuid}</td>
-            <td>The uuid of the player<br><b>[Added in v3.1]</b></td>
+            <td>The uuid of the player</td>
             <td>36</td>
             <td>true</td>
             <td><a href="references/variable_flags.html">String</a></td>
@@ -1098,26 +1097,26 @@
         <tr><td colspan="5"></td></tr>
         <tr>
             <td id="player_list_open">{tab_open} / {player_list_open}</td>
-            <td>Is the player list open?<br><b>[Added in v3.3]</b></td>
+            <td>Is the player list open?</td>
             <td>1&nbsp;(player list open)<br>0&nbsp;(not open)</td>
             <td><code>true</code>&nbsp;(player list open)<br><code>false</code>&nbsp;(not open)</td>
             <td>None</td>
         </tr>
         <tr>
             <td id="chat_open">{chat_open}</td>
-            <td>Is the chat open?<br><b>[Added in v3.3]</b></td>
+            <td>Is the chat open?</td>
             <td>1&nbsp;(chat open)<br>0&nbsp;(not open)</td>
             <td><code>true</code>&nbsp;(chat open)<br><code>false</code>&nbsp;(not open)</td>
             <td>None</td>
         </tr>
         <tr>
             <td id="screen_open">{screen_open}</td>
-            <td>Is there a screen open?<br><b>[Added in v3.3]</b></td>
+            <td>Is there a screen open?</td>
             <td>1&nbsp;(a screen is open)<br>0&nbsp;(no screen open)</td>
             <td><code>true</code>&nbsp;(a screen is open)<br><code>false</code>&nbsp;(no screen open)</td>
             <td>None</td>
         </tr>
-        <tr><td colspan="5">Gamemode Variables <b>[Added in v3.3]</b></td></tr>
+        <tr><td colspan="5">Gamemode Variables</td></tr>
         <tr>
             <td id="gamemode">{gamemode}</td>
             <td>Which gamemode the player is in:<br><i>survival, creative, adventure, spectator</i></td>
@@ -1128,8 +1127,8 @@
         <tr>
             <td id="survival">{survival}</td>
             <td>If the player is in survival mode</td>
-            <td rowspan="4">0&nbsp;(in gamemode)<br>1&nbsp;(not in gamemode)</td>
-            <td rowspan="4"><code>true</code>&nbsp;(in gamemode)<br><code>false</code>&nbsp;(not in gamemode)</td>
+            <td rowspan="4">0&nbsp;(in that gamemode)<br>1&nbsp;(not in that gamemode)</td>
+            <td rowspan="4"><code>true</code>&nbsp;(in that gamemode)<br><code>false</code>&nbsp;(not in that gamemode)</td>
             <td rowspan="4">None</td>
         </tr>
         <tr>
@@ -1426,7 +1425,7 @@
         <tr><td></td><td></td><td></td><td></td><td></td></tr>
         <tr>
             <td id="sprint_held">{sprint_held}</td>
-            <td>Is the player is holding the sprint key or if sprint is toggled?<br><b>[Added in v3.3]</b></td>
+            <td>Is the player is holding the sprint key or if sprint is toggled?</td>
             <td>1 (key down)<br>0 (key not down)</td>
             <td><code>true</code> (key down)<br><code>false</code> (key not down)</td>
             <td>None</td>
@@ -1454,7 +1453,7 @@
         </tr>
         <tr>
             <td id="flying">{flying}</td>
-            <td>Is the player flying?<br><b>[Added in v3.3]</b></td>
+            <td>Is the player flying?</td>
             <td>1 (flying)<br>0 (not flying)</td>
             <td><code>true</code> (flying)<br><code>false</code> (not flying)</td>
             <td>None</td>
@@ -1538,7 +1537,7 @@
         </tr>
         <tr>
             <td id="snowing">{snowing}</td>
-            <td>If it's snowing<br><b>[Added in v3.1]</b></td>
+            <td>If it's snowing</td>
             <td>1 (snowing)<br>0 (not snowing)</td>
             <td><code>true</code> (snowing)<br><code>false</code> (not snowing)</td>
             <td>None</td>
@@ -1555,12 +1554,12 @@
             <td>If the player is in a multiplayer server</td>
             <td>1 (in multiplayer)<br>0 (in singleplayer)</td>
             <td><code>true</code> (in multiplayer)<br><code>false</code> (in singleplayer)</td>
-            <td class="last_cell">None</td>
+            <td>None</td>
         </tr>
         <tr><td class="rowspan last_cell" colspan="5" style="background-color: #f4f5f7">
             <details>
                 <summary>Noise Router & Biome builder</summary>
-                <h3 style="text-align: left">Noise Router (Added in v3.3)</h3>
+                <h3 style="text-align: left">Noise Router</h3>
                 <table style="margin-bottom: 32px">
                     <thead>
                     <tr>
@@ -1620,7 +1619,7 @@
                     </tbody>
                 </table>
 
-                <h3 style="text-align: left">Biome Builder (Added in v3.3)</h3>
+                <h3 style="text-align: left">Biome Builder</h3>
                 <table style="margin-bottom: 32px">
                     <thead>
                     <tr>
@@ -1778,14 +1777,14 @@
         </tr>
         <tr>
             <td id="solar_time">{time} / {solar_time}</td>
-            <td>Time in ticks between 0 - 24000 (1 mc day)<br><b>[Added in v3.1]</b></td>
+            <td>Time in ticks between 0 - 24000 (1 mc day)</td>
             <td>the time in ticks</td>
             <td>if not exactly 0</td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         <tr>
             <td id="lunar_time">{lunar_time}</td>
-            <td>Time in ticks between 0 - 192000 (8 mc days)<br><b>[Added in v3.1]</b></td>
+            <td>Time in ticks between 0 - 192000 (8 mc days)</td>
             <td>the time in ticks</td>
             <td>if not exactly 0</td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
@@ -1908,7 +1907,7 @@
         <thead>
         <tr>
             <th>Variable</th>
-            <th>Description / Number Value</th>
+            <th>Description</th> <th>Number Value</th>
             <th>Boolean Value</th>
             <th>Flags</th>
         </tr>
@@ -1916,40 +1915,27 @@
         <tbody>
         <tr>
             <td id="streaming_sounds">{sounds} / {streaming_sounds}</td>
-            <td>The number of streaming sounds currently playing (like breaking/placing blocks)</td>
-            <td rowspan="5" class="rowspan"> if greater than 0</td>
-            <td rowspan="5" class="rowspan last_cell"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
+            <td colspan="2"> The number of streaming sounds currently playing (like breaking/placing blocks)</td>
+            <td rowspan="5"> if greater than 0</td>
+            <td rowspan="5"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         <tr>
             <td id="max_sounds">{max_sounds} / {max_streaming_sounds}</td>
-            <td class="rowspan_fix_right">The max amount of streaming sounds that can play at once</td>
+            <td colspan="2" class="rowspan_fix_right">The max amount of streaming sounds that can play at once</td>
         </tr>
         <tr>
             <td id="static_sounds">{static_sounds}</td>
-            <td class="rowspan_fix_right">The number of static sounds currently playing (ambient sounds)</td>
+            <td colspan="2" class="rowspan_fix_right">The number of static sounds currently playing (ambient sounds)</td>
         </tr>
         <tr>
             <td id="max_static_sounds">{max_static_sounds}</td>
-            <td class="rowspan_fix_right">The max amount of static sounds that can play at once</td>
+            <td colspan="2" class="rowspan_fix_right">The max amount of static sounds that can play at once</td>
         </tr>
         <tr>
             <td id="mood">{mood}</td>
-            <td class="rowspan_fix_right">How close the player is to the next mood ambience sound being played</td>
+            <td colspan="2" class="rowspan_fix_right">How close the player is to the next mood ambience sound being played</td>
         </tr>
-        </tbody>
-    </table>
-    <h4>Music and Record Variables Added in v3.3</h4>
-    <table>
-        <thead>
-        <tr>
-            <th>Variable</th>
-            <th>Description</th>
-            <th>Number Value</th>
-            <th>Boolean Value</th>
-            <th>Flags</th>
-        </tr>
-        </thead>
-        <tbody>
+        <tr><td colspan="5"></td></tr>
         <tr>
             <td id="music_id">{music_id}</td>
             <td>The ID of the background music</td>
@@ -2076,7 +2062,7 @@
         </tr>
         <tr>
             <td id="tbd">{tbd} / {target_distance} / {target_block_distance}</td>
-            <td>How many blocks away is<br>the block the player's looking at<br><b>[Added in v3.1]</b></td>
+            <td>How many blocks away is<br>the block the player's looking at</td>
             <td>distance in blocks</td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
@@ -2120,7 +2106,7 @@
         </tr>
         <tr>
             <td id="tfd">{tfd} / {target_fluid_distance}</td>
-            <td>How many blocks away is<br>the fluid the player's looking at<br><b>[Added in v3.1]</b></td>
+            <td>How many blocks away is<br>the fluid the player's looking at</td>
             <td>distance in blocks</td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
@@ -2146,13 +2132,13 @@
         </tr>
         <tr>
             <td id="target_entity_name">{ten} / {target_entity_name}</td>
-            <td>The name of the entity the player&#39;s looking at<br>(Ex: Notch, Fluffy)<br><b>[Added in v3.1]</b></td>
+            <td>The name of the entity the player&#39;s looking at<br>(Ex: Notch, Fluffy)</td>
             <td>length of output</td>
             <td><a href="references/variable_flags.html">String</a></td>
         </tr>
         <tr>
             <td id="target_entity_uuid">{teu} / {target_entity_uuid}</td>
-            <td>The uuid of the entity the player&#39;s looking at<br><b>[Added in v3.1]</b></td>
+            <td>The uuid of the entity the player&#39;s looking at</td>
             <td>length of output</td>
             <td><a href="references/variable_flags.html">String</a></td>
         </tr>
@@ -2176,14 +2162,14 @@
         </tr>
         <tr>
             <td id="ted">{ted} / {target_entity_distance}</td>
-            <td>How many blocks away is<br>the block the player's looking at<br><b>[Added in v3.1]</b></td>
+            <td>How many blocks away is<br>the block the player's looking at</td>
             <td>distance in blocks</td>
             <td class="last_cell"><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         </tbody>
     </table>
 
-    <h3 id="status_bars">Status Bars <b style="text-decoration: underline">[Added in v3.3]</b></h3>
+    <h3 id="status_bars">Status Bars</h3>
     <table class="second_left_cells">
         <thead>
         <tr>
@@ -2342,14 +2328,14 @@
         </tr>
         <tr>
             <td id="item_count" style="white-space: nowrap">{item:<a href="references/item_slots.html">&lt;slot&gt;</a>:count}</td>
-            <td>Show the amount of the item in <a href="references/item_slots.html">&lt;slot&gt;</a><br><b>[Added in v3.1]</b></td>
+            <td>Show the amount of the item in <a href="references/item_slots.html">&lt;slot&gt;</a></td>
             <td>the count</td>
             <td>if the durability is greater than 0</td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         <tr>
             <td id="item_max_count" style="white-space: nowrap">{item:<a href="references/item_slots.html">&lt;slot&gt;</a>:max_count}</td>
-            <td>Show the max stack size of the item in <a href="references/item_slots.html">&lt;slot&gt;</a><br><b>[Added in v3.1]</b></td>
+            <td>Show the max stack size of the item in <a href="references/item_slots.html">&lt;slot&gt;</a></td>
             <td>the maximum stack size</td>
             <td>if the item is stackable</td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
@@ -2359,21 +2345,21 @@
         </tr>
         <tr>
             <td id="slots_used">{slots_used}</td>
-            <td>The amount of slots in the player inventory with items in it<br><b>[Added in v3.3]</b></td>
+            <td>The amount of slots in the player inventory with items in it</td>
             <td>number of slots</td>
             <td>if there's at least 1 slot</td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         <tr>
             <td id="slots_empty">{slots_empty}</td>
-            <td>The amount of slots in the player inventory without items in it<br><b>[Added in v3.3]</b></td>
+            <td>The amount of slots in the player inventory without items in it</td>
             <td>number of slots</td>
             <td>if there's at least 1 slot</td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
         </tr>
         <tr>
             <td id="slots_per">{slots_per} / {slots_percentage}</td>
-            <td>The amount of slots in the player inventory with items in it as a percentage<br><b>[Added in v3.3]</b></td>
+            <td>The amount of slots in the player inventory with items in it as a percentage</td>
             <td>number of slots</td>
             <td>if there's at least 1 slot</td>
             <td><a href="references/variable_flags.html">Precision &amp; Scale</a></td>
@@ -2381,7 +2367,7 @@
         </tbody>
     </table>
 
-    <h3 id="fishing_rod">Fishing Rod <b style="text-decoration: underline">[Added in v3.1]</b></h3>
+    <h3 id="fishing_rod">Fishing Rod</h3>
     <table>
         <thead>
         <tr>
@@ -2685,94 +2671,6 @@
             <td>The Y coordinate of the highest block at the player’s X/Z coordinate that has a blocking-motion material and is not leaves. (reported by the server)</td>
             <td>the y coordinate</td>
             <td class="rowspan_fix_right"><code>false</code> if can&#39;t get info</td>
-        </tr>
-        </tbody>
-    </table>
-
-    <h3 id="sodium">Sodium (No Flags)<br><i style="font-size: 12px; font-style: italic; font-weight: normal;">Requires <a href="https://modrinth.com/mod/sodium">Sodium</a> to be installed</i></h3>
-    <table>
-        <thead>
-        <tr>
-            <th>Variable</th>
-            <th>Description</th>
-            <th>Number Value</th>
-            <th>Boolean Value</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td id="sodium_version">{sodium_version}</td>
-            <td>Sodium Version</td>
-            <td>length of output</td>
-            <td>length of output > 0</td>
-        </tr>
-        <tr>
-            <td id="sodium_chunk_arena_allocator">{sodium_chunk_arena_allocator}</td>
-            <td>Sodium Chunk Arena Memory Allocator</td>
-            <td>length of output</td>
-            <td>length of output > 0</td>
-        </tr>
-        <tr>
-            <td id="sodium_staging_buffers">{sodium_staging_buffers}</td>
-            <td>Sodium Staging Buffers</td>
-            <td>number of staging buffers</td>
-            <td>if greater than 0</td>
-        </tr>
-        <tr>
-            <td id="sodium_buffer_objects">{sodium_buffer_objects}</td>
-            <td>Sodium Device Buffer Objects</td>
-            <td>number of buffer objects</td>
-            <td>if greater than 0</td>
-        </tr>
-        <tr>
-            <td id="sodium_memory_used">{sodium_memory_used}</td>
-            <td>Sodium Device Memory Used</td>
-            <td>memory used</td>
-            <td>if greater than 0</td>
-        </tr>
-        <tr>
-            <td id="sodium_memory_allocated">{sodium_memory_allocated}</td>
-            <td>Sodium Device Memory Allocated</td>
-            <td>memory allocated</td>
-            <td>if greater than 0</td>
-        </tr>
-        </tbody>
-    </table>
-
-    <h3 id="iris">Iris (No Flags)<br><i style="font-size: 12px; font-weight: normal;">Requires <a href="https://modrinth.com/mod/iris">Iris</a> to be installed</i></h3>
-    <table>
-        <thead>
-        <tr>
-            <th>Variable</th>
-            <th>Description</th>
-            <th>Number Value</th>
-            <th>Boolean Value</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td id="iris_version">{iris_version}</td>
-            <td>Iris Version</td>
-            <td>length of output</td>
-            <td>length of output > 0</td>
-        </tr>
-        <tr>
-            <td id="iris_shaderpack">{iris_shaderpack}</td>
-            <td>Shaderpack file loaded</td>
-            <td>length of output</td>
-            <td>length of output > 0</td>
-        </tr>
-        <tr>
-            <td id="iris_shaderpack_profile">{iris_shaderpack_profile}</td>
-            <td>Shaderpack profile loaded</td>
-            <td>length of output</td>
-            <td>length of output > 0</td>
-        </tr>
-        <tr>
-            <td id="iris_shaderpack_changes">{iris_shaderpack_changes}</td>
-            <td>How many changes the user made to the profile</td>
-            <td>number of changes</td>
-            <td>number of changes > 0</td>
         </tr>
         </tbody>
     </table>

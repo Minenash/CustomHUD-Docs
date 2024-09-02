@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<head>
+    <meta charset=utf-8>
+    <title>Theming - CustomHud</title>
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name=viewport>
+    <meta content="The Home of Terrible Projects" name=description>
+    <link rel="icon" type="image/png" href="../../favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+    <style>html {background-color:#f4f5f7} body {display:none}</style>
+</head>
+<body>
+
+<ul class="nav" style="position: sticky; top: 0; z-index: 1;">
+    <li><a class="logo"><b>CustomHud Docs</b></a></li>
+    <li><div class="separator"></div></li>
+    <li><a href="../getting_started.html">Getting Started</a></li>
+    <li><a href="../variables.html">Variables</a></li>
+    <li><a href="../conditionals.html">Conditionals</a></li>
+    <li><a href="../references.html" class="active">References</a></li>
+</ul>
+
+<div class="version">Written for v3</div>
+
+<ul class="nav side_nav">
+    <li><a class="side_nav_header">General</a></li>
+    <li><a href="profile_sections.html">Profile Sections</a></li>
+    <li><a href="#top">Theming</a></li>
+    <li><a href="variable_flags.html">Variable Flags</a></li>
+    <li><a href="colors.html">Colors</a></li>
+    <li><a style="height:8px; width: 0"></a></li>
+    <li><a class="side_nav_header">Special Variables</a></li>
+    <li><a href="stats.html">Stats</a></li>
+    <li><a href="real_time.html">Real Time</a></li>
+    <li><a href="item_slots.html">Item Slots</a></li>
+    <li><a href="icons.html">Icons</a></li>
+    <li><a href="settings.html">MC Settings</a></li>
+</ul>
+
+<div id="top" class="content">
+    <br>
+
+    <h2>Theming</h2>
+    <p>
+        Theming allows you to customize the style of your profiles, like foreground and background color, font, scale,
+        text shadow, and line spacing
+    </p>
+    <h3>Profile Wide</h3>
+    <p>
+        Profile-Wide Theme Options have to be placed above any <a href="profile_sections.html">Section Headers</a><br>
+        <b>Syntax:</b> <code class="code_inline">==&lt;option&gt;:&lt;value&gt;==</code>
+    </p>
+    <h3>Local</h3>
+    <p>
+        Want to change the style only for a part of the profile? You can use the local variant for that.<br>
+        <b>Syntax:</b> <code class="code_inline">=&lt;option&gt;:&lt;value&gt;=</code>
+    </p>
+
+    <h3>Theme Options:</h3>
+    <table style="width: 77%">
+        <thead>
+        <tr> <th>Option</th> <th>Description</th> <th>Can use Local?</th> <th>Value Type</th> <th>Default Value</th> </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>ForegroundColor</td>
+            <td>Color of the text</td>
+            <td>-</td>
+            <td rowspan="2"><a href="#colors">Color<br><i>(See below)</i></a></td>
+            <td>#FFFFFFFF</td>
+        </tr>
+        <tr>
+            <td>BackgroundColor</td>
+            <td>Color of the background</td>
+            <td>-</td>
+            <td>#44000000</td>
+        </tr>
+        <tr>
+            <td>Scale</td>
+            <td>Scale of the hud</td>
+            <td>No</td>
+            <td>Decimal</td>
+            <td>1.0</td>
+        </tr>
+        <tr>
+            <td>LineSpacing</td>
+            <td>How much space there is between lines</td>
+            <td>-</td>
+            <td>Integer</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>TextShadow</td>
+            <td>Should the text have a shadow</td>
+            <td>-</td>
+            <td>true / false</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>Font</td>
+            <td>The font the text should be rendered in</td>
+            <td>v3.3+</td>
+            <td><a href="#fonts">Identifier<br><i>(See below)</i></a></td>
+            <td>minecraft:default</td>
+        </tr>
+        <tr>
+            <td>TargetRange</td>
+            <td>How far does the target block and fluid variables work.<br><b>v3.3:</b> and target entities</td>
+            <td>No</td>
+            <td>Integer</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>Crosshair</td>
+            <td>Which crosshair to use</td>
+            <td>No</td>
+            <td><a href="#crosshairs">Crosshair<br><i>(See below)</i></a></td>
+            <td class="last_cell">Normal</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div id="colors" style="display: flex">
+        <div style="flex: 45">
+            <h3>Named Colors <u>[Added in v3.1]</u></h3>
+            <p>In v3.1, you can now write the color's name instead of a hex color</p>
+            <div class="note" style="position: relative;">
+                <b>Background</b> (looking at the sky)<div style="position: absolute; right: 6px; top: 3px;"><code class="code_inline">No Background: none</code></div><br>
+                <img class="color_img" src="imgs/colors/background_colors.png" width="100%" alt="background color">
+                <br>
+                <b>Foreground</b> (looking at the sky)<br>
+                <img class="color_img" src="imgs/colors/foreground_colors.png" width="100%" alt="foreground color">
+            </div>
+        </div>
+        <div style="flex: 5"></div>
+        <div style="flex: 45">
+            <h3>Hex Colors</h3>
+            <p>Use this if you want a specific color and you have the <b>hex code</b> for it.</p>
+            <b>Default Transparency:</b>
+            <ul>
+                <li>Foreground: FF</li>
+                <li>Background (v3.0): FF
+                    <ul>
+                        <li>Use #44RRGGBB or #4RGB for the same transparency as the default</li>
+                    </ul>
+                </li>
+                <li>Background (v3.1): 44</li>
+            </ul>
+            <p style="line-height: 2em">
+
+            </p>
+            <table style="margin-bottom: 24px">
+                <thead>
+                <tr>
+                    <th>Syntax</th>
+                    <th colspan="2">Example</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><code>#AARRGGBB</code></td>
+                    <td>#77FF4040</td>
+                    <td>Coral Red (50% transparency)</td>
+                </tr>
+                <tr>
+                    <td><code>#RRGGBB</code></td>
+                    <td>#FF4040</td>
+                    <td>Coral Red (default transparency)</td>
+                </tr>
+                <tr>
+                    <td>#ARGB</td>
+                    <td>#BF50</td>
+                    <td>Orange-ish Red (75% Opacity)</td>
+                </tr><tr>
+                    <td>#RGB</td>
+                    <td>#F50</td>
+                    <td class="last_cell">Orange-ish Red (default transparency)</td>
+                </tr>
+
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                <tr>
+                    <th>Letters</th>
+                    <th>Meaning</th>
+                    <th>Range</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><code>AA or A</code></td>
+                    <td>Alpha (Translucency)</td>
+                    <td>00-FF or 0-F</td>
+                </tr>
+                <tr>
+                    <td><code>RR or R</code></td>
+                    <td>Red</td>
+                    <td>00-FF or 0-F</td>
+                </tr>
+                <tr>
+                    <td><code>GG or G</code></td>
+                    <td>Green</td>
+                    <td>00-FF or 0-F</td>
+                </tr>
+                <tr>
+                    <td><code>BB or B</code></td>
+                    <td>Blue</td>
+                    <td class="last_cell">00-FF or 0-F</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <br>
+    <h3 id="crosshairs">Crosshairs</h3>
+
+    <table class="left_cells" style="width: 77%">
+        <thead>
+        <tr> <th>Crosshair</th> <th>Description</th> <th>Image</th></tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Normal</td>
+            <td>Shows the normal vanilla crosshair, <b>unless</b> you have a custom crosshair mod enabled</td>
+            <td><img class="crosshair_img" alt="normal crosshair" src="imgs/crosshairs/normal.png"></td>
+        </tr>
+        <tr>
+            <td>Debug</td>
+            <td>Shows the 3-axis crosshair found in the F3 screen</td>
+            <td><img class="crosshair_img" alt="normal crosshair" src="imgs/crosshairs/debug.png" width="54"></td>
+        </tr>
+        <tr>
+            <td>Vanilla</td>
+            <td><b>[Added in v3.1]</b> Shows the normal vanilla crosshair, <b>even with</b> a custom crosshair mod enabled</td>
+            <td><img class="crosshair_img" alt="normal crosshair" src="imgs/crosshairs/vanilla.png" width="54"></td>
+        </tr>
+        <tr>
+            <td>None</td>
+            <td><b>[Added in v3.1]</b> Shows no crosshair at all</td>
+            <td class="last_cell"><img class="crosshair_img" alt="normal crosshair" src="imgs/crosshairs/none.png" width="54"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="fonts">Built-In Fonts</h3>
+    <p>
+        Minecraft has a few built-in fonts that I've slightly modified so that characters not in the font still works
+    </p>
+
+    <table>
+        <thead>
+        <tr> <th>Font</th> <th>Identifier</th> <th>Alphabet</th> </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Default</td>
+            <td>minecraft:default</td>
+            <td><img src="imgs/fonts/default.png" alt="The default font alphabet" width="100%"></td>
+        </tr>
+        <tr>
+            <td>Illager (Alphanumberic)</td>
+            <td>minecraft:illageralt</td>
+            <td><img src="imgs/fonts/illageralt.png" alt="The illageralt font alphabet" width="100%"></td>
+        </tr>
+        <tr>
+            <td>Illager (Alphabet Only)</td>
+            <td>minecraft:illageralt2</td>
+            <td><img src="imgs/fonts/illageralt2.png" alt="The illageralt2 font alphabet" width="100%"></td>
+        </tr>
+        <tr>
+            <td>Standard&nbsp;Galatic&nbsp;Alphabet<br><i>(Enchanting Table)</i></td>
+            <td>minecraft:alt</td>
+            <td><img src="imgs/fonts/alt.png" alt="The alt font alphabet" width="100%"></td>
+        </tr>
+        <tr>
+            <td>Uniform<br><i>(Force Unicode Font)</i></td>
+            <td>minecraft:uniform</td>
+            <td class="last_cell"><img src="imgs/fonts/uniform.png" alt="The uniform font alphabet" width="100%"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>

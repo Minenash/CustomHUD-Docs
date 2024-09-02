@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <meta charset=utf-8>
+    <title>First Text - Getting Started - CustomHud</title>
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name=viewport>
+    <meta content="The Home of Terrible Projects" name=description>
+    <link rel="icon" type="image/png" href="../../favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+    <style>html {background-color:#f4f5f7} body {display:none}</style>
+<!--    f4f5f7-->
+</head>
+<body>
+
+<ul class="nav" style="position: sticky; top: 0; z-index: 1;">
+    <li><a class="logo"><b>CustomHud Docs</b></a></li>
+    <li><div class="separator"></div></li>
+    <li><a href="../getting_started.html" class="active">Getting Started</a></li>
+    <li><a href="../variables.html">Variables</a></li>
+    <li><a href="../conditionals.html">Conditionals</a></li>
+    <li><a href="../references.html">References</a></li>
+</ul>
+
+<div class="version">Written for v3</div>
+
+<ul class="nav side_nav side_nav_getting_started">
+    <li><a class="side_nav_header">Parts</a></li>
+    <li><a href="../getting_started.html">1. Accessing Files</a></li>
+    <li><a href="#top">2. First Text</a></li>
+    <li><a href="part3.html">3. Variables</a></li>
+    <li><a href="part4.html">4. Variable Flags</a></li>
+    <li><a href="part5.html">5. Colors</a></li>
+    <li><a href="part6.html">6. Profile Sections</a></li>
+    <li><a href="part7.html">7. Theming</a></li>
+    <li><a href="part8.html">8. Conditionals</a></li>
+</ul>
+
+<a class="next" href="part3.html">Next →</a>
+<a class="prev" href="../getting_started.html">← Back</a>
+
+<div id="top" class="content">
+    <br>
+
+    <h2>2. Displaying Your First Text</h2>
+    <div class="note">
+        <b>Note:</b> The HUD will automatically update when the profile file is saved. Meaning that you can go
+        back into game to see the changes everytime you hit save!
+    </div>
+
+    <p> Text written in profiles are displayed verbatim on the hud. There are three exceptions: </p>
+    <ul>
+        <li><code>{<i>stuff</i>}</code> ( like <code>{fps}</code> )</li>
+        <li><code>&<i>character</i></code> ( like <code>&7</code> or <code>&b</code> )</li>
+        <li>Lines that have only ==<i>stuff</i>== and =<i>stuff</i>= </li>
+    </ul>
+
+    <h3>Instructions</h3>
+    <p>
+        We're going to be starting from scratch. You can either pick a profile that is blank, or delete the contents
+        of one. Let's go ahead write something!
+    </p>
+
+    <div style="display: flex">
+        <div style="flex: 45">
+            <h3>Profile File</h3>
+            <div class="code_block">
+                <b style="text-decoration: underline">profile1.txt</b><br>
+                <code>
+                    Hello World
+                </code>
+            </div>
+        </div>
+        <div style="flex: 5"></div>
+        <div style="flex: 45">
+            <h3>Result In-Game</h3>
+            <div class="result" style='background-image: url("imgs/part2.png")'></div>
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+</div>
+</body>

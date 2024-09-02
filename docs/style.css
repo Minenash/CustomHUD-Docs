@@ -30,7 +30,7 @@ body {
 }
 
 a {
-    color: #04905d;
+    color: #03734a;
     font-weight: bold;
     text-decoration: none;
 }
@@ -84,12 +84,13 @@ a:hover {
 }
 
 .version {
-    position: fixed;
+    position: sticky;
     color: white;
     font-size: 11px;
     top: 27px;
     left: 37px;
     z-index: 1;
+    height: 0;
 }
 
 .separator {
@@ -345,6 +346,25 @@ text {
     overflow-wrap: normal;
 
     resize: none;
+}
+
+.v4_wip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightskyblue;
+    padding: 8px 0 16px 0;
+    text-align: center;
+}
+
+.v4_wip a {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+.side_nav_v4 {
+    position: sticky;
+    top: 44px
 }
 
 

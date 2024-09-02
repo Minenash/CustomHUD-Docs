@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset=utf-8>
-    <title>Conditionals - CustomHud</title>
+    <title>References - CustomHud</title>
     <meta content="width=device-width,initial-scale=1,user-scalable=no" name=viewport>
     <meta content="The Home of Terrible Projects" name=description>
     <link rel="icon" type="image/png" href="../favicon.png"/>
@@ -9,8 +9,6 @@
     <style>html {background-color:#f4f5f7} body {display:none}</style>
 </head>
 <body>
-
-
 
 <ul class="nav" style="position: sticky; top: 0; z-index: 1;">
     <li><a class="logo"><b>CustomHud Docs</b></a></li>
@@ -21,7 +19,7 @@
     <li><a href="references.html">References</a></li>
 </ul>
 
-<div class="version">Written for v2.1.0</div>
+<div class="version">Written for v3</div>
 
 <ul class="nav side_nav">
     <li><a class="side_nav_header">General</a></li>
@@ -32,7 +30,8 @@
     <li><a style="height:8px; width: 0"></a></li>
     <li><a class="side_nav_header">Examples</a></li>
     <li><a href="#example_1">Nether Coords</a></li>
-    <li><a href="#example_2">Colored FPS</a></li>
+    <li><a href="#example_2">Looking At</a></li>
+    <li><a href="#example_3">Colored FPS</a></li>
 </ul>
 
 <div id="top" class="content">
@@ -41,13 +40,55 @@
     <p>
         Conditionals allow you to change what is displayed depending on the result of some variables.
     </p>
-    <p style="line-height: 2.25em">
-        <b>Syntax:</b> <code class="code_inline">{{<i>conditional</i>, <i>"what to display if true"</i>}}</code><br> <b style="margin-left: 39px">or</b>
-        <code class="code_inline">{{<i>conditional</i>, <i>"what to display if true"</i>, <i>"what to display if false"</i>}}</code><br>
-        <i>You can nest conditionals <b>one deep</b> by using <code class="code_inline">'</code> s instead of <code class="code_inline">"</code> s for the inner one</i>
+    <h3>Syntax</h3>
+    <p>
+       There are two versions of conditionals, multi-line and in-line. Multi-Line allows you to optionally display entire
+       sections of the config. This is good for stuff like showing what block you're looking at and its properties.
+        In-Line acts like a variable in the sense that you can put it anywhere. This is useful for changing a line depending
+        on something, or changing the color of something depending on its value.
     </p>
+    <div style="display: flex; font-size: 12px">
+        <div style="flex: 35;">
+            <h3>Multi-Line</h3>
+            <div class="note" style="width: 100%">
+                You can have multiple or zero <code class="code_inline">elseif</code> .
+                <code class="code_inline">else</code> is also optional.
+            </div>
+            <br>
+            <div class="code_block" style="height: 10em; width: 100%">
+                <code>
+                    <b>=if: cond_1=</b><br>
+                    <i>if cond_1 is true</i><br>
+                    <b>=elseif: cond_2=</b><br>
+                    <i>if cond_1 is false but cond_2 is true</i><br>
+                    <b>=else=</b><br>
+                    <i>if all if/elseif conditions are false</i><br>
+                    <b>=endif=</b>
+                </code>
+            </div>
+        </div>
+        <div style="flex: 5"></div>
+        <div style="flex: 55">
+            <h3>In-Line</h3>
+            <div class="note" style="width: 100%">
+                You can chain as many <code class="code_inline">cond, "<i>if cond is true</i>"</code> as you want.<br>You
+                can also put a conditional in a conditional one level deep by replacing the
+                <code class="code_inline">'</code> s instead of <code class="code_inline">"</code> s for the inner one
+            </div>
+            <br>
+            <div class="code_block" style="height: 8.25em; width: 100%">
+                <code>
+                    {{condition, "if condition is true"}}<br>
+                    {{condition, "if condition is true", "if condition is false"}}<br>
+                    {{cond_1, "if cond_1 is true", cond_2, "if cond_2 is true"}}<br>
+                    {{cond_1, "if cond_1 is true", cond_2, "if cond_2 is true", "if neither are true"}}
+                </code>
+            </div>
+        </div>
+    </div>
+    <br>
 
-    <h3 id="conditional_part">What do I put in the <i>conditional</i> spot?</h3>
+    <h3 id="conditional_part">What do I put in the <i>condition</i> (or <i>cond</i>) spot?</h3>
     <p>Basically anything that produces a true / false value. There's two main ways to do this:</p>
     <ul>
         <li>Variable's Boolean Value (the <i>Boolean Value</i> column in the <a href="variables.html">Variables</a> page)</li>
@@ -60,7 +101,7 @@
     <br>
     <div id="example_1" class="conditional_example_block">
         <details>
-            <summary><h4 style="display: inline">Example 1: Nether Coordinates</h4></summary>
+            <summary><h4 style="display: inline">Example 1: Nether Coordinates (In-Line)</h4></summary>
 
             <p>
                 <code class="code_inline">{nx}</code> and <code class="code_inline">{nz}</code> show the Nether equivalent coordinates
@@ -87,6 +128,42 @@
                 <li style="line-height: 2.25em"><code class="code_inline">{{nether, "", "Nether: &a{nx} {y} {nz}"}}</code></li>
                 <li>Note: The true section is just an empty "". If this is the only thing on the line in the profile file,
                     and you're not in the nether, then this line will be ignored instead of having a blank line</li>
+            </ul>
+        </details>
+    </div>
+    <br>
+    <div id="example_2" class="conditional_example_block">
+        <details>
+            <summary><h4 style="display: inline">Example 2: Looking at Block (Multi-Line)</h4></summary>
+            <p>
+                What if we want to show the property of the block that we're looking at?
+            </p>
+            <div class="code_block" style="height: 10em; width: 80%; background-color: #f4f5f7">
+                <code>
+                    =if: target_block=<br>
+                    &nLooking at: {tbx} {tby} {tbz}<br>
+                    <br>
+                    {target_block}<br>
+                    &7&o{target_block_id}<br>
+                    =endif=
+                </code>
+            </div>
+            <p>
+                Okay, let's break that down:
+            </p>
+            <ul style="line-height: 2.25em">
+                <li><code class="code_inline">target_block</code> is a variable, that according to the <i>Boolean Value</i> column in the
+                    <a href="variables.html">Variables</a> page, is true if you're looking at a block.
+                </li>
+                <li><code class="code_inline">{tbx} {tby} {tbz}"</code> are the coordinates of the block you're looking at</li>
+                <li><code class="code_inline">{target_block}</code> shows the block's name</li>
+                <li><code class="code_inline">{target_block_id}</code> shows the block's id</li>
+                <li><code class="code_inline">&n</code> underlines the line,
+                    <code class="code_inline">&7</code> changes the color to grey, and
+                    <code class="code_inline">&o</code> italicizes the line
+                    (see the <a href="references/colors.html">Color</a> page)
+                </li>
+
             </ul>
         </details>
     </div>
@@ -143,27 +220,28 @@
         </div>
     </div>
 
-    <div id="example_2" class="conditional_example_block">
+    <div id="example_3" class="conditional_example_block">
         <details>
-            <summary><h4 style="display: inline">Example 2: Colored FPS</h4></summary>
+            <summary><h4 style="display: inline">Example 3: Colored FPS</h4></summary>
+
             <p>
                 What if we want to change the color of our fps depending on its value?
             </p>
-            <ul><li><code class="code_inline">{{fps >= 60, "&a"}}{{fps < 60 & fps >= 30, "&e"}}{{fps < 30, "&c"}}{fps} fps</code></li></ul>
+            <ul><li><code class="code_inline">{{fps >= 60, "&a", fps >= 30, "&e", "&c"}}{fps} fps</code></li></ul>
             <p>
                 Okay, let's break that down:
             </p>
             <ul style="line-height: 2.25em">
                 <li>
-                    <code class="code_inline">{{fps >= 60, "&a"}}</code> checks if the fps is greater than or equal to 60
+                    <code class="code_inline">fps >= 60, "&a"</code> checks if the fps is greater than or equal to 60
                     <ul><li>If so, it puts the green color code <code class="code_inline">&a</code></li></ul>
                 </li>
                 <li>
-                    <code class="code_inline">{{fps < 60 & fps >= 30, "&e"}}</code> checks if the fps is between 30 and 60
+                    <code class="code_inline">fps >= 30, "&e"</code> if the fps wasn't 60 or more, checks if the fps is above or equal to 30
                     <ul><li>If so, it puts the yellow color code <code class="code_inline">&e</code></li></ul>
                 </li>
                 <li>
-                    <code class="code_inline">{{fps < 30, "&c"}}</code> checks if the fps is below 30
+                   If the fps wasn't greater than or equal to 60 and fps wasn't greater or equal to 30,
                     <ul><li>If so, it puts the red color code <code class="code_inline">&c</code></li></ul>
                 </li>
                 <li>

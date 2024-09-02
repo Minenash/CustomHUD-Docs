@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<head>
+    <meta charset=utf-8>
+    <title>Stats - CustomHud</title>
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name=viewport>
+    <meta content="The Home of Terrible Projects" name=description>
+    <link rel="icon" type="image/png" href="../../favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+    <style>html {background-color:#f4f5f7} body {display:none}</style>
+</head>
+<body>
+
+<ul class="nav" style="position: sticky; top: 0; z-index: 1;">
+    <li><a class="logo"><b>CustomHud Docs</b></a></li>
+    <li><div class="separator"></div></li>
+    <li><a href="../getting_started.html">Getting Started</a></li>
+    <li><a href="../variables.html">Variables</a></li>
+    <li><a href="../conditionals.html">Conditionals</a></li>
+    <li><a href="../references.html" class="active">References</a></li>
+</ul>
+
+<div class="version">Written for v3</div>
+
+<ul class="nav side_nav">
+    <li><a class="side_nav_header">General</a></li>
+    <li><a href="profile_sections.html">Profile Sections</a></li>
+    <li><a href="theming.html">Theming</a></li>
+    <li><a href="variable_flags.html">Variable Flags</a></li>
+    <li><a href="colors.html">Colors</a></li>
+    <li><a style="height:8px; width: 0"></a></li>
+    <li><a class="side_nav_header">Special Variables</a></li>
+    <li><a href="#top">Stats</a></li>
+    <li><a href="real_time.html">Real Time</a></li>
+    <li><a href="item_slots.html">Item Slots</a></li>
+    <li><a href="icons.html">Icons</a></li>
+    <li><a href="settings.html">MC Settings</a></li>
+</ul>
+
+<div id="top" class="content">
+    <br>
+
+    <h2>Statistics Variable</h2>
+
+    <h3>Formatters</h3>
+    <p>
+        When the stat variable uses the <code class="code_inline">-f</code> &nbsp;variable flag, it uses the formatter
+    </p>
+    <table style="width: 50%">
+        <thead>
+        <tr> <th>Formatter</th> <th>Effect</th> </tr>
+        </thead>
+        <tbody>
+        <tr class="left_cells"> <td>None</td> <td>Does nothing</td> </tr>
+        <tr class="left_cells"> <td>Time</td> <td>Turns the raw ticks into years, days, hours, minutes, and seconds</td> </tr>
+        <tr class="left_cells"> <td>Distance</td> <td>Turns the raw centimeters into kilometers, meters, and centimeters</td> </tr>
+        <tr class="left_cells"> <td>Divide by Ten</td> <td class="last_cell">Divides the stat by 10 (for damage stats)</td> </tr>
+        </tbody>
+    </table>
+
+    <h3>All Possible Statistics</h3>
+
+    <b>Syntax: <code class="code_inline">{stat:&lt;stat&gt;}</code></b>
+    <br><br>
+
+    <div style="display: flex">
+        <div style="flex: 1; margin: 0 12px 0 0">
+            <table>
+                <thead>
+                <tr> <th colspan="3" style="border-radius: 10px 10px 0 0;"><code class="code_inline">{stat:&lt;type&gt;:&lt;value&gt;}</code></th> </tr>
+                <tr> <th style="border-radius: 0">Type</th> <th>Value</th> <th style="border-radius: 0">Example</th> </tr>
+                </thead>
+                <tbody>
+                <tr> <td>mined</td>     <td>block_id</td>  <td>{stat:mined:stone}</td> </tr>
+                <tr> <td>crafted</td>   <td>item_id</td>   <td>{stat:crafted:oak_planks}</td> </tr>
+                <tr> <td>used</td>      <td>item_id</td>   <td>{stat:used:apple}</td> </tr>
+                <tr> <td>broken</td>    <td>item_id</td>   <td>{stat:broken:iron_pickaxe}</td> </tr>
+                <tr> <td>picked_up</td> <td>item_id</td>   <td>{stat:picked_up:stone}</td> </tr>
+                <tr> <td>dropped</td>   <td>item_id</td>   <td>{stat:dropped:diamonds}</td> </tr>
+                <tr> <td>killed</td>    <td>entity_id</td> <td>{stat:killed:cow}</td> </tr>
+                <tr> <td>killed_by</td> <td>entity_id</td> <td class="last_cell">{stat:killed_by:player}</td> </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="flex: 1; margin: 0 12px 0 0">
+            <table>
+                <thead>
+                <tr> <th>Miscellaneous</th> <th>Formatter</th> </tr>
+                </thead>
+                <tbody>
+                <tr> <td>leave_game</td>       <td>None</td> </tr>
+                <tr> <td>play_time</td>        <td>Time</td> </tr>
+                <tr> <td>total_world_time</td> <td>Time</td> </tr>
+                <tr> <td>time_since_death</td> <td>Time</td> </tr>
+                <tr> <td>time_since_rest</td>  <td>Time</td> </tr>
+                <tr> <td>drop</td>             <td>None</td> </tr>
+                <tr> <td>sneak_time</td>       <td>Time</td> </tr>
+                <tr> <td>jump</td>             <td class="last_cell">None</td> </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="flex: 1; margin: 0 12px 0 0">
+            <table>
+                <thead>
+                <tr> <th colspan="2" style="border-radius: 10px 10px 0 0;">Movement (Formatter: Distance)</th> </tr>
+                </thead>
+                <tbody>
+                <tr> <td>walk_one_cm</td>    <td>walk_under_water_one_cm</td> </tr>
+                <tr> <td>sprint_one_com</td> <td>walk_on_water_one_cm</td> </tr>
+                <tr> <td>swim_one_cm</td>    <td>boat_one_cm</td> </tr>
+                <tr> <td>fly_one_cm</td>     <td>minecart_one_cm</td> </tr>
+                <tr> <td>aviate_one_cm</td>  <td>pig_one_cm</td> </tr>
+                <tr> <td>fall_one_cm</td>    <td>strider_one_cm</td> </tr>
+                <tr> <td>---</td>            <td>horse_one_cm</td> </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th colspan="4">Entity Interactions / Combat</th>
+            <th>Formatter</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>target_hit</td>
+            <td>deaths</td>
+            <td>mob_kills</td>
+            <td>players_killed</td>
+            <td rowspan="2">None</td>
+        </tr>
+        <tr>
+            <td>animals_bred</td>
+            <td>fish_caught</td>
+            <td>talked_to_villager</td>
+            <td class="rowspan_fix_right">traded_with_villager</td>
+        </tr>
+        <tr>
+            <td>damage_dealt</td>
+            <td>damage_dealt_absorbed</td>
+            <td>damage_dealt_resisted</td>
+            <td>damage_taken</td>
+            <td rowspan="2" class="rowspan last_cell">Divide by Ten</td>
+        </tr>
+
+        <tr>
+            <td>damage_blocked_by_shield</td>
+            <td>damage_absorbed</td>
+            <td>damage_resisted</td>
+            <td class="rowspan_fix_right">---</td>
+        </tr>
+
+        </tbody>
+    </table>
+    <table>
+        <thead>
+        <tr>
+            <th colspan="6" style="border-radius: 10px 10px 0 0;">Block Interactions (Formatter: None)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>interact_with_furnace</td>
+            <td>interact_with_crafting_table</td>
+            <td>interact_with_brewingstand</td>
+            <td>interact_with_beacon</td>
+            <td>interact_with_blast_furnace</td>
+            <td>interact_with_smoker</td>
+        </tr>
+        <tr>
+            <td>interact_with_lectern</td>
+            <td>interact_with_campfire</td>
+            <td>interact_with_cartography_table</td>
+            <td>interact_with_loom</td>
+            <td>interact_with_stonecutter</td>
+            <td>interact_with_anvil</td>
+        </tr>
+        <tr>
+
+            <td>interact_with_grindstone</td>
+            <td>interact_with_smithing_table</td>
+            <td>inspect_dropper</td>
+            <td>inspect_hopper</td>
+            <td>inspect_dispenser</td>
+            <td>bell_rings</td>
+        </tr>
+        <tr>
+            <td>fill_cauldron</td>
+            <td>use_cauldron</td>
+            <td>clean_armor</td>
+            <td>clean_banner</td>
+            <td>clean_shulker_box</td>
+            <td>eat_cake_slice</td>
+        </tr>
+        <tr>
+            <td>play_record</td>
+            <td>play_noteblock</td>
+            <td>tune_noteblock</td>
+            <td>pot_flower</td>
+            <td>enchant_item</td>
+            <td>sleep_in_bed</td>
+        </tr>
+        <tr>
+            <td>trigger_trapped_chest</td>
+            <td>open_enderchest</td>
+            <td>open_chest</td>
+            <td>open_shulker_box</td>
+            <td>open_barrel</td>
+            <td class="last_cell">---</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>

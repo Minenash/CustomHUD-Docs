@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+    <meta charset=utf-8>
+    <title>Theming - Getting Started - CustomHud</title>
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name=viewport>
+    <meta content="The Home of Terrible Projects" name=description>
+    <link rel="icon" type="image/png" href="../../favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+    <style>html {background-color:#f4f5f7} body {display:none}</style>
+<!--    f4f5f7-->
+</head>
+<body>
+
+<ul class="nav" style="position: sticky; top: 0; z-index: 1;">
+    <li><a class="logo"><b>CustomHud Docs</b></a></li>
+    <li><div class="separator"></div></li>
+    <li><a href="../getting_started.html" class="active">Getting Started</a></li>
+    <li><a href="../variables.html">Variables</a></li>
+    <li><a href="../conditionals.html">Conditionals</a></li>
+    <li><a href="../references.html">References</a></li>
+</ul>
+
+<div class="version">Written for v3</div>
+
+<ul class="nav side_nav side_nav_getting_started">
+    <li><a class="side_nav_header">Parts</a></li>
+    <li><a href="../getting_started.html">1. Accessing Files</a></li>
+    <li><a href="part2.html">2. First Text</a></li>
+    <li><a href="part3.html">3. Variables</a></li>
+    <li><a href="part4.html">4. Variable Flags</a></li>
+    <li><a href="part5.html">5. Colors</a></li>
+    <li><a href="part6.html">6. Profile Sections</a></li>
+    <li><a href="#top">7. Theming</a></li>
+    <li><a href="part8.html">8. Conditionals</a></li>
+</ul>
+
+<a class="next" href="part3.html">Next →</a>
+<a class="prev" href="part5.html">← Back</a>
+
+<div id="top" class="content">
+    <br>
+
+    <h2>7. Theming</h2>
+    <p>
+        Theming allows you to customize the style of your profiles, like foreground and background color, font, scale, text shadow, and line spacing
+    </p>
+    <div class="note" style="width: 43%;">
+        <b>Reference:</b> <a href="../references/theming.html">All the Theme Options</a>
+    </div>
+
+    <h3>Instructions</h3>
+    <p>
+        Let's change the background color and make the text bigger, and make one of the lines use a different
+        background color for the last line.
+    </p>
+    <ul style="line-height: 2em">
+        <li>Remove the TopRight section. Why? Because the scale I use below is comically large</li>
+        <li>At the top of the profile <ul>
+            <li style="margin-bottom: 6px; margin-top: 2px;">Add <code class="code_inline">==BackgroundColor:#88880000==</code></li>
+            <li style="margin-bottom: 6px">Add <code class="code_inline">==Scale:1.5==</code></li>
+        </ul></li>
+        <li>Add <code class="code_inline">=BackgroundColor:#88008800=</code> before the last line on the TopLeft section <ul>
+            <li style="margin-top: 2px;">This one only works on v3.0.0 and above</li>
+        </ul></li>
+    </ul>
+
+    <div style="display: flex">
+        <div style="flex: 45">
+            <h3>Profile File</h3>
+            <div class="code_block">
+                <b style="text-decoration: underline">profile1.txt</b><br>
+                <code>
+                    ==BackgroundColor:#88880000== <br>
+                    ==Scale:1.5== <br>
+                    <br>
+                    ==Section:TopLeft== <br>
+                    fps: &a{fps} <br>
+                    xyz: &c{bx} &a{by} &b{bz} <br>
+                    =BackgroundColor:#88008800= <br>
+                    biome: &e{biome} <br>
+                </code>
+            </div>
+        </div>
+        <div style="flex: 5"></div>
+        <div style="flex: 45">
+            <h3>Result In-Game</h3>
+            <div class="result" style='background-image: url("imgs/part7.png")'></div>
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+</div>
+</body>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+    <meta charset=utf-8>
+    <title>Profile Sections - Getting Started - CustomHud</title>
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name=viewport>
+    <meta content="The Home of Terrible Projects" name=description>
+    <link rel="icon" type="image/png" href="../../favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+    <style>html {background-color:#f4f5f7} body {display:none}</style>
+<!--    f4f5f7-->
+</head>
+<body>
+
+<ul class="nav" style="position: sticky; top: 0; z-index: 1;">
+    <li><a class="logo"><b>CustomHud Docs</b></a></li>
+    <li><div class="separator"></div></li>
+    <li><a href="../getting_started.html" class="active">Getting Started</a></li>
+    <li><a href="../variables.html">Variables</a></li>
+    <li><a href="../conditionals.html">Conditionals</a></li>
+    <li><a href="../references.html">References</a></li>
+</ul>
+
+<div class="version">Written for v3</div>
+
+<ul class="nav side_nav side_nav_getting_started">
+    <li><a class="side_nav_header">Parts</a></li>
+    <li><a href="../getting_started.html">1. Accessing Files</a></li>
+    <li><a href="part2.html">2. First Text</a></li>
+    <li><a href="part3.html">3. Variables</a></li>
+    <li><a href="part4.html">4. Variable Flags</a></li>
+    <li><a href="part5.html">5. Colors</a></li>
+    <li><a href="#top">6. Profile Sections</a></li>
+    <li><a href="part7.html">7. Theming</a></li>
+    <li><a href="part8.html">8. Conditionals</a></li>
+</ul>
+
+<a class="next" href="part3.html">Next →</a>
+<a class="prev" href="part5.html">← Back</a>
+
+<div id="top" class="content">
+    <br>
+
+    <h2>6. Profile Sections</h2>
+    <p>
+        Currently the profile is only displaying info at the top right, but what if we want to put info in the other
+        corners? That's what Profile Sections are for!
+    </p>
+
+    <h3>Profile Section Options</h3>
+    <p>
+        Profile Section's x/y can be shifted, hidden when chat is open, or can be set to have the background a specific width
+    </p>
+    <div class="note" style="width: 43%;">
+        <b>Reference:</b> <a href="../references/profile_sections.html">All the Options for Profile Section</a>
+    </div>
+
+    <h3>Instructions</h3>
+    <p>
+        Let's add cpu, gpu, and ram usage percentages info to the TopRight corner.
+    </p>
+    <ul>
+        <li>Type <code class="code_inline">==Section:TopLeft==</code> above what we had in part 5.
+            <ul>
+                <li>This isn't strictly necessary, but it makes it more obvious what's going on</li>
+            </ul>
+        </li>
+        <li>Type <code class="code_inline">==Section:TopRight==</code> underneath what we had in part 5.</li>
+        <li>Add the cpu, gpu, and memory usage variable underneath</li>
+
+    </ul>
+
+    <div style="display: flex">
+        <div style="flex: 45">
+            <h3>Profile File</h3>
+            <div class="code_block">
+                <b style="text-decoration: underline">profile1.txt</b><br>
+                <code>
+                    ==Section:TopLeft== <br>
+                    fps: &a{fps} <br>
+                    xyz: &c{bx} &a{by} &b{bz} <br>
+                    biome: &e{biome} <br>
+                    <br>
+                    ==Section:TopRight==<br>
+                    &e{cpu}% &fcpu<br>
+                    &e{gpu}% &fgpu<br>
+                    &e{memory_used_percentage}% &fram
+                </code>
+            </div>
+        </div>
+        <div style="flex: 5"></div>
+        <div style="flex: 45">
+            <h3>Result In-Game</h3>
+            <div class="result" style='background-image: url("imgs/part6.png")'></div>
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+</div>
+</body>

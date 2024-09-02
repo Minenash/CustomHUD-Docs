@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<head>
+    <meta charset=utf-8>
+    <title>Variable Flags - CustomHud</title>
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name=viewport>
+    <meta content="The Home of Terrible Projects" name=description>
+    <link rel="icon" type="image/png" href="../../favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+    <style>html {background-color:#f4f5f7} body {display:none}</style>
+</head>
+<body>
+
+<ul class="nav" style="position: sticky; top: 0; z-index: 1;">
+    <li><a class="logo"><b>CustomHud Docs</b></a></li>
+    <li><div class="separator"></div></li>
+    <li><a href="../getting_started.html">Getting Started</a></li>
+    <li><a href="../variables.html">Variables</a></li>
+    <li><a href="../conditionals.html">Conditionals</a></li>
+    <li><a href="../references.html" class="active">References</a></li>
+</ul>
+
+<div class="version">Written for v3</div>
+
+<ul class="nav side_nav">
+    <li><a class="side_nav_header">General</a></li>
+    <li><a href="profile_sections.html">Profile Sections</a></li>
+    <li><a href="theming.html">Theming</a></li>
+    <li><a href="#top">Variable Flags</a></li>
+    <li><a href="colors.html">Colors</a></li>
+    <li><a style="height:8px; width: 0"></a></li>
+    <li><a class="side_nav_header">Special Variables</a></li>
+    <li><a href="stats.html">Stats</a></li>
+    <li><a href="real_time.html">Real Time</a></li>
+    <li><a href="item_slots.html">Item Slots</a></li>
+    <li><a href="icons.html">Icons</a></li>
+    <li><a href="settings.html">MC Settings</a></li>
+</ul>
+
+<div id="top" class="content">
+    <br>
+
+    <h2>Variable Flags</h2>
+
+    <b>Syntax: <code class="code_inline">{&lt;variable&gt; &lt;flags&gt;}</code></b>
+    <br>
+    <p>
+        Variable flags are added to the end of variables to change the output.
+    </p>
+
+    <h3 style="margin-bottom: 0">Flags</h3>
+    <i>Examples Underneath</i>
+    <br><br>
+    <div style="display: flex;">
+        <div style="flex: 1; margin: 0 12px 0 0">
+            <table style="margin-bottom: 32px">
+                <thead>
+                    <tr> <th colspan="2">String Flags</th> <th>Description</th> </tr>
+                </thead>
+                <tbody>
+                    <tr> <td>-﻿uc</td> <td>-﻿uppercase</td> <td>Makes the result uppercase</td> </tr>
+                    <tr> <td>-﻿lc</td> <td>-﻿lowercase</td> <td>Makes the result lowercase</td> </tr>
+                    <tr> <td>-﻿tc</td> <td>-﻿titlecase</td> <td>Capitalizes the first letter of each word, lowercases the rest</td> </tr>
+                    <tr> <td>-﻿sc</td> <td>-﻿smallcaps</td> <td>Turns all lowercase characters to small caps</td> </tr>
+                    <tr> <td>-﻿nd</td> <td>-﻿nodashes</td>  <td class="last_cell">Replaces dashes and underscores with spaces</td> </tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                <tr> <th colspan="2">Icon Flags</th> <th>Description</th> </tr>
+                </thead>
+                <tbody>
+                <tr> <td>-﻿dvc</td> <td>---</td> <td>Disable the vertical centering of the icon</td> </tr>
+                <tr>
+                    <td>-﻿w&lt;width&gt;</td>
+                    <td>-﻿width</td>
+                    <td>
+                        Changes how much space of the line the icon takes<br>
+                        <b>This does not change the display of the icon itself, use
+                            <code class="code_inline">-﻿s&nbsp;/&nbsp;-﻿scale</code> for that</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>-﻿sh&lt;x&gt;<br>-﻿sh&lt;x&gt;,﻿&lt;y&gt;</td>
+                    <td>-﻿shift</td>
+                    <td class="last_cell">Shifts the icon</td> </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="flex: 1; margin: 0 12px 0 0">
+            <table style="margin-bottom: 40px">
+                <thead>
+                    <tr> <th colspan="2">Number Flags</th> <th>Description</th> </tr>
+                </thead>
+                <tbody>
+                    <tr> <td>-﻿p&lt;precision&gt;</td> <td>-﻿precision</td> <td>How many digits after the period</td> </tr>
+                    <tr> <td>-﻿s&lt;scale&gt;</td>     <td>-﻿scale</td>     <td class="last_cell">How much to scale the value by</td> </tr>
+                </tbody>
+            </table>
+            <table style="margin-bottom: 32px">
+                <thead>
+                <tr> <th colspan="2">Stat Flag</th> <th>Description</th> </tr>
+                </thead>
+                <tbody>
+                <tr> <td>-﻿f</td>            <td>-﻿formatted</td>             <td class="last_cell">Uses the formatter for that stat used in the Statistics Screen</td> </tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                <tr> <th>Item Slot Flags</th> <th>Description</th> </tr>
+                </thead>
+                <tbody>
+                <tr> <td>-﻿rich</td>     <td>The next 3 flags combined</td> </tr>
+                <tr> <td>-﻿count</td>    <td>Shows the item's stack count</td> </tr>
+                <tr> <td>-﻿dur</td>      <td>Shows the item's durability</td> </tr>
+                <tr> <td>-﻿cooldown</td> <td class="last_cell">Shows the cooldown for that item</td> </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h3>Examples</h3>
+    <p>
+        Examples for Icon / Item Slot Icons can be found on the <a href="icons.html">Icons page</a>
+    </p>
+
+    <div style="display: flex">
+        <div style="flex: 45">
+            <h3>Profile File</h3>
+            <div class="code_block">
+                <b style="text-decoration: underline">profile1.txt</b><br>
+                <code>
+                    String Flags<br>
+                    &6Uppercase: &e{dimension -uc}<br>
+                    &6Lowercase: &e{dimension -lc}<br>
+                    &6Titlecase: &e{dimension -tc}<br>
+                    &6Titlecase w/ smallcaps: &e{dimension -tc -sc}<br>
+                    &6Titlecase w/ nodashes: &e{dimension -tc -nd}<br>
+                    <br>
+                    Precision Flag<br>
+                    &6Default:  &e{x}<br>
+                    &62 Points: &e{x -p2}<br>
+                    &60 Points: &e{x -p0}<br>
+                    <br>
+                    Scale Flag (walk_one_cm)<br>
+                    &6No Scale: &e{stat:walk_one_cm}<br>
+                    &6x1/100:   &e{stat:walk_one_cm -s1/100}<br>
+                    &6x0.001:    &e{stat:walk_one_cm -s0.001}<br>
+                    <br>
+                    Formatted (walk_one_cm)<br>
+                    &e{stat:walk_one_cm -f}
+                </code>
+            </div>
+        </div>
+        <div style="flex: 5"></div>
+        <div style="flex: 45">
+            <h3>Result In-Game</h3>
+            <div class="result" style='background-image: url("imgs/variable_flags.png")'></div>
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+
+</div>
+</body>

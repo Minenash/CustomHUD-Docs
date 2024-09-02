@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<head>
+    <meta charset=utf-8>
+    <title>Real Time - CustomHud</title>
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name=viewport>
+    <meta content="The Home of Terrible Projects" name=description>
+    <link rel="icon" type="image/png" href="../../favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+    <style>html {background-color:#f4f5f7} body {display:none}</style>
+</head>
+<body>
+
+<ul class="nav" style="position: sticky; top: 0; z-index: 1;">
+    <li><a class="logo"><b>CustomHud Docs</b></a></li>
+    <li><div class="separator"></div></li>
+    <li><a href="../getting_started.html">Getting Started</a></li>
+    <li><a href="../variables.html">Variables</a></li>
+    <li><a href="../conditionals.html">Conditionals</a></li>
+    <li><a href="../references.html" class="active">References</a></li>
+</ul>
+
+<div class="version">Written for v3</div>
+
+<ul class="nav side_nav">
+    <li><a class="side_nav_header">General</a></li>
+    <li><a href="profile_sections.html">Profile Sections</a></li>
+    <li><a href="theming.html">Theming</a></li>
+    <li><a href="variable_flags.html">Variable Flags</a></li>
+    <li><a href="colors.html">Colors</a></li>
+    <li><a style="height:8px; width: 0"></a></li>
+    <li><a class="side_nav_header">Special Variables</a></li>
+    <li><a href="stats.html">Stats</a></li>
+    <li><a href="#top">Real Time</a></li>
+    <li><a href="item_slots.html">Item Slots</a></li>
+    <li><a href="icons.html">Icons</a></li>
+    <li><a href="settings.html">MC Settings</a></li>
+</ul>
+
+
+<div id="top" class="content">
+    <br>
+
+    <h2>Real-Time Variable</h2>
+
+    <b>Syntax: <code class="code_inline">{real_time:&lt;time_format&gt;}</code></b>
+    <br><br>
+    <p>
+        <code class="code_inline">&lt;time_format&gt;</code> is made up of the symbols below. Non A-Z letters like spaces,&nbsp;
+        <code class="code_inline">:</code> ,&nbsp; <code class="code_inline">.</code> ,&nbsp; and <code class="code_inline">,</code> &nbsp;passes through to the output. If you
+        want to write text between the symbols below, surround the text with <code class="code_inline">'</code> s. If
+        you want to display an actual <code class="code_inline">'</code>&nbsp; write <code class="code_inline">''</code>.
+    </p>
+
+    <div class="note"><b>BUG:</b> In v3.0 - v3.2, spaces aren't allowed. To get arround this use multiple {real_time:}s. This was fixed in v3.3</div>
+
+    <h3 style="margin-bottom: 0">Symbols</h3>
+    <i>Examples Underneath</i>
+    <div style="display: flex;">
+        <div style="flex: 1; margin: 0 12px 0 0">
+            <h4 style="text-align: center">Time</h4>
+            <table>
+                <thead>
+                    <tr> <th>Letter</th> <th>Unit</th> <th>Display</th> </tr>
+                </thead>
+                <tbody>
+                <tr><td colspan="3">Double letters ensures it's always 2 numbers wide</td></tr>
+                    <tr> <td>H / HH</td> <td>Hour</td>        <td>0-23</td> </tr>
+                    <tr> <td>h / hh</td> <td>Hour</td>        <td>1-12</td> </tr>
+                    <tr> <td>k / kk</td> <td>Hour</td>        <td>1-24</td> </tr>
+                    <tr> <td>K / KK</td> <td>Hour</td>        <td>0-11</td> </tr>
+                    <tr> <td>m / mm</td> <td>Minute</td>      <td>0-59</td> </tr>
+                    <tr> <td>s / ss</td> <td>Second</td>      <td>0-59</td> </tr>
+                    <tr> <td>S / SSS</td> <td>Millisecond</td> <td>0-999</td> </tr>
+                    <tr> <td>a</td> <td>AM / PM</td>     <td>AM, PM</td> </tr>
+                    <tr> <td>z</td> <td>Timezone</td>    <td>Abbreviated Name</td> </tr>
+                    <tr> <td>zzzz</td> <td>Timezone</td> <td class="last_cell">Full Name</td> </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="flex: 1; margin: 0 12px 0 0">
+            <h4 style="text-align: center">Date</h4>
+            <table style="flex:1; margin: 0 6px 0 6px">
+                <thead>
+                    <tr> <th>Letter</th> <th>Unit</th> <th>Display</th> </tr>
+                </thead>
+                <tbody>
+                    <tr> <td>MMMM</td>   <td>Month</td>           <td>Full Name</td> </tr>
+                    <tr> <td>MMM</td>    <td>Month</td>           <td>Abbreviated Name</td> </tr>
+                    <tr> <td>M / MM</td> <td>Month</td>           <td>1-12</td> </tr>
+                    <tr> <td>d</td>      <td>Day in month</td>    <td>0-31</td> </tr>
+                    <tr> <td>yyyy</td>   <td>Year</td>            <td>4 digits</td> </tr>
+                    <tr> <td>yy</td>     <td>Year</td>            <td>Last 2 digits</td> </tr>
+                    <tr> <td>EEEE</td>   <td>Day of the week</td> <td>Full Name</td> </tr>
+                    <tr> <td>E / EE</td> <td>Day of the week</td> <td>Abbreviated Name</td> </tr>
+                    <tr> <td>u</td>      <td>Day of the week</td> <td class="last_cell">1-7</td> </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="flex: 1; margin: 0 12px 0 0">
+            <h4 style="text-align: center">Misc</h4>
+            <table style="flex:1; margin: 0 0 0 12px">
+                <thead>
+                    <tr> <th>Letter</th> <th>Description</th> </tr>
+                </thead>
+                <tbody>
+                    <tr> <td>G</td> <td>Era (BC / AD)</td> </tr>
+                    <tr> <td>w</td> <td>Week in year</td> </tr>
+                    <tr> <td>W</td> <td>Week in month</td> </tr>
+                    <tr> <td>D</td> <td>Day in year</td> </tr>
+                    <tr> <td>F</td> <td class="last_cell">Day of week in month<br>(2nd wednesdays: 2)</td> </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h3>Examples</h3>
+
+    <div style="display: flex">
+        <div style="flex: 45">
+            <h3>Profile File</h3>
+            <div class="code_block">
+                <b style="text-decoration: underline">profile1.txt</b><br>
+                <code>
+                    24h Time w/ Secs: {real_time:H:m:s} <br>
+                    12h Time w/ Secs: {real_time:h:m:s a} <br>
+                    24h Time w/ TimeZone: {real_time:H:m z} <br>
+                    With Words: {real_time:h 'o''clock', m 'minutes'} <br>
+                    <br>
+                    American Date: {real_time:E, MMM d, yyyy} <br>
+                    Non-American Number Date: {real_time:d M yyyy} <br>
+                </code>
+            </div>
+        </div>
+        <div style="flex: 5"></div>
+        <div style="flex: 45">
+            <h3>Result In-Game</h3>
+            <div class="result" style='background-image: url("imgs/real_time.png")'></div>
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+
+</div>
+</body>

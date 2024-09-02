@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<head>
+    <meta charset=utf-8>
+    <title>Icons - CustomHud</title>
+    <meta content="width=device-width,initial-scale=1,user-scalable=no" name=viewport>
+    <meta content="The Home of Terrible Projects" name=description>
+    <link rel="icon" type="image/png" href="../../favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+    <style>html {background-color:#f4f5f7} body {display:none}</style>
+</head>
+<body>
+
+<ul class="nav" style="position: sticky; top: 0; z-index: 1;">
+    <li><a class="logo"><b>CustomHud Docs</b></a></li>
+    <li><div class="separator"></div></li>
+    <li><a href="../getting_started.html">Getting Started</a></li>
+    <li><a href="../variables.html">Variables</a></li>
+    <li><a href="../conditionals.html">Conditionals</a></li>
+    <li><a href="../references.html" class="active">References</a></li>
+</ul>
+
+<div class="version">Written for v3</div>
+
+<ul class="nav side_nav">
+    <li><a class="side_nav_header">General</a></li>
+    <li><a href="profile_sections.html">Profile Sections</a></li>
+    <li><a href="theming.html">Theming</a></li>
+    <li><a href="variable_flags.html">Variable Flags</a></li>
+    <li><a href="colors.html">Colors</a></li>
+    <li><a style="height:8px; width: 0"></a></li>
+    <li><a class="side_nav_header">Special Variables</a></li>
+    <li><a href="stats.html">Stats</a></li>
+    <li><a href="real_time.html">Real Time</a></li>
+    <li><a href="item_slots.html">Item Slots</a></li>
+    <li><a href="#top">Icons</a></li>
+    <li><a href="settings.html">MC Settings</a></li>
+</ul>
+
+<div id="top" class="content">
+    <br>
+    <h2>Icons</h2>
+    <p>
+        Icons are non-text variables that display (usually a texture)
+    </p>
+
+    <div style="display: flex;">
+        <div style="flex: 1; margin: 0 12px 0 0">
+            <h4 style="text-align: center">Table of Contents</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>Section</th>
+                    <th>Variable</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><a href="#item_icon">Item Icon</a></td>
+                    <td>{icon:&lt;item_id&gt;}</td>
+                    <td>Shows the given item</td>
+                </tr>
+                <tr>
+                    <td><a href="#texture_icon">Texture Icon</a></td>
+                    <td>{icon:&lt;texture_path&gt;}<br>{﻿icon﻿:﻿&lt;﻿path﻿&gt;﻿,﻿&lt;﻿u﻿&gt;﻿,﻿&lt;﻿v﻿&gt;﻿,﻿&lt;﻿w﻿&gt;﻿,﻿&lt;﻿h﻿&gt;﻿}</td>
+                    <td>Shows the given texture</td>
+                </tr>
+                <tr>
+                    <td><a href="#item_slot_icon">Item Slot Icon</a></td>
+                    <td style="white-space: nowrap">{item:<a href="item_slots.html">&lt;slot&gt;</a>:icon}</td>
+                    <td>Show the item in <a href="item_slots.html">&lt;slot&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#gizmo">Gizmo</a></td>
+                    <td>{gizmo}</td>
+                    <td class="last_cell">Shows the F3 Crosshair/Gizmo</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="flex: 1; margin: 0 12px 0 0">
+            <h4 style="text-align: center">Flags</h4>
+            <table style="flex:1; margin: 0 6px 0 6px">
+                <thead>
+                <tr> <th colspan="2">Icon Flags</th> <th>Description</th> </tr>
+                </thead>
+                <tbody>
+                <tr> <td>-﻿dvc</td> <td>---</td> <td>Disable the vertical centering of the icon</td> </tr>
+                <tr> <td>-﻿s&lt;scale&gt;</td>     <td>-﻿scale</td>     <td>How much to scale the value by</td> </tr>
+                <tr>
+                    <td>-﻿w&lt;width&gt;</td>
+                    <td>-﻿width</td>
+                    <td>
+                        Changes how much space of the line the icon takes<br>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>-﻿sh&lt;x&gt;<br>-﻿sh&lt;x&gt;,﻿&lt;y&gt;</td>
+                    <td>-﻿shift</td>
+                    <td class="last_cell">Shifts the icon</td> </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <h3 id="item_icon">Item Icon: <code class="code_inline">{icon:&lt;item_id&gt;}</code></h3>
+    <p>
+        Shows the given item using its item-id like <code class="code_inline">minecraft:diamond_pickaxe</code>
+    </p>
+    <div style="display: flex">
+        <div style="flex: 45">
+            <h3>Profile File</h3>
+            <div class="code_block">
+                <b style="text-decoration: underline">profile1.txt</b><br>
+                <code>
+                    ==Scale: 2==
+                    <br>{icon:wooden_sword} {icon:iron_sword} {icon:golden_sword}
+                    <br>
+                    <br>{icon:diamond_sword -sh3,0} {icon:netherite_sword -sh3,0}
+                    <br>
+                    <br>{icon:ender_pearl -s1.75 -sh10,0}
+                </code>
+            </div>
+        </div>
+        <div style="flex: 5"></div>
+        <div style="flex: 45">
+            <h3>Result In-Game</h3>
+            <div class="result" style='background-image: url("imgs/icon_examples/item.png")'></div>
+        </div>
+    </div>
+    <br><br>
+
+<!--    <h3 id="texture_icon">Texture Icon: <code class="code_inline">{icon:&lt;texture_path&gt;}</code>, <code class="code_inline">{﻿icon﻿:﻿&lt;﻿path﻿&gt;﻿,﻿&lt;﻿u﻿&gt;﻿,﻿&lt;﻿v﻿&gt;﻿,﻿&lt;﻿w﻿&gt;﻿,﻿&lt;﻿h﻿&gt;﻿}</code></h3>-->
+<!--    <p>-->
+<!--        Shows the given texture like <code class="code_inline">block/glass</code> and optionally only part of the texture-->
+<!--        in cases where the texture file includes multiple things. You can also make a resource pack to use your own-->
+<!--        textures instead of just the one minecraft provides.-->
+<!--    </p>-->
+<!--    <div style="display: flex">-->
+<!--        <div style="flex: 45">-->
+<!--            <h3>Profile File</h3>-->
+<!--            <div class="code_block">-->
+<!--                <b style="text-decoration: underline">profile1.txt</b><br>-->
+<!--                <code>-->
+
+<!--                </code>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div style="flex: 5"></div>-->
+<!--        <div style="flex: 45">-->
+<!--            <h3>Result In-Game</h3>-->
+<!--            <div class="result" style='background-color: forestgreen'></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <br><br>-->
+
+    <h3 id="item_slot_icon">Item Slot Icon: <code class="code_inline">{item:<a href="item_slots.html">&lt;slot&gt;</a>:icon}</code></h3>
+    <p>
+        Show the item that is in <a href="item_slots.html">&lt;slot&gt;</a> like <code class="code_inline">hotbar.0</code>
+    </p>
+    <p>
+        This icon variable has a few extra flags that you can use to add additional information to the icon:
+    </p>
+    <table style="width: 45%">
+        <thead>
+        <tr> <th>Item Slot Flags</th> <th>Description</th> </tr>
+        </thead>
+        <tbody>
+        <tr> <td>-﻿rich</td>     <td>The next 3 flags combined</td> </tr>
+        <tr> <td>-﻿count</td>    <td>Shows the item's stack count</td> </tr>
+        <tr> <td>-﻿dur</td>      <td>Shows the item's durability</td> </tr>
+        <tr> <td>-﻿cooldown</td> <td class="last_cell">Shows the cooldown for that item</td> </tr>
+        </tbody>
+    </table>
+    <div style="display: flex">
+        <div style="flex: 45">
+            <h3>Profile File</h3>
+            <div class="code_block">
+                <b style="text-decoration: underline">profile1.txt</b><br>
+                <code>
+                    ==Scale: 2==
+                    <br>{item:mainhand:icon} {item:offhand:icon}
+                    <br>
+                    <br>{item:main:icon -dur} {item:off:icon -count}
+                </code>
+            </div>
+        </div>
+        <div style="flex: 5"></div>
+        <div style="flex: 45">
+            <h3>Result In-Game</h3>
+            <div class="result" style='background-image: url("imgs/icon_examples/item_slot.png")'></div>
+        </div>
+    </div>
+    <br><br>
+
+    <h3 id="gizmo">Gizmo: <code class="code_inline">{gizmo}</code></h3>
+    <p>
+        Shows the F3 Crosshair/Gizmo
+    </p>
+    <div style="display: flex">
+        <div style="flex: 45">
+            <h3>Profile File</h3>
+            <div class="code_block">
+                <b style="text-decoration: underline">profile1.txt</b><br>
+                <code>
+                    <b style="user-select: none; -webkit-user-select: none">1| </b><br><b style="user-select: none; -webkit-user-select: none">2| </b>Facing: |{gizmo}|
+                    <br><b style="user-select: none; -webkit-user-select: none">3| </b>
+                    <br><b style="user-select: none; -webkit-user-select: none">4| </b>&2Facing&f | {gizmo -s1.5 -sh0,3} | &e({yaw},{pitch })
+                    <br><b style="user-select: none; -webkit-user-select: none">5| </b>&a&nbsp;&nbsp;{facing_towards_pn_sign}{facing_towards_xz}&f&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &a{facing -tc}
+                    <br><b style="user-select: none; -webkit-user-select: none">6| </b>
+                </code>
+            </div>
+        </div>
+        <div style="flex: 5"></div>
+        <div style="flex: 45">
+            <h3>Result In-Game</h3>
+            <div class="result" style='background-image: url("imgs/icon_examples/gizmo.png")'></div>
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+
+</div>
+</body>

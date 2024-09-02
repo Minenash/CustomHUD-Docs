@@ -60,8 +60,9 @@ a:hover {
     text-decoration: none;
 }
 
-.nav li a:not(.active) {
-    padding-top: 6px;
+.nav li .active {
+    padding-top: 2px;
+    padding-bottom: 4px;
 }
 
 .nav li a.active {
@@ -69,9 +70,9 @@ a:hover {
     padding-right: 8px;
 }
 
-.nav li a:not(.side_nav_header):not(.logo):hover {
+.nav li a:not(.side_nav_header):not(.logo):not(.logo_v4):hover {
     border-bottom: solid 2px #04AA6D;
-    padding-bottom: 2px;
+    padding-bottom: 4px;
 }
 
 .active {
@@ -84,7 +85,7 @@ a:hover {
 }
 
 .version {
-    position: sticky;
+    position: absolute;
     color: white;
     font-size: 11px;
     top: 27px;
@@ -364,8 +365,11 @@ text {
 
 .side_nav_v4 {
     position: sticky;
-    top: 44px
+    top: 44px;
+    height: calc(100vh - 64px);
 }
+
+.logo_v4 {}
 
 
 

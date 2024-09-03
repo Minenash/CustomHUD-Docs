@@ -377,7 +377,8 @@
 
 <h3 id="new-list-variables">New List Variables</h3>
 <p>List variables will be shown without the <code>{}</code> around them, as they are intended to be used in the syntax laid out in <a href="#new-language-features">Language Features</a></p>
-<p>The <code>e:</code> and likewise can be changed with the <code>-pre:&lt;prefix&gt;</code> list flag.<br>Example: <code>{effects -pre:eff, &quot;{eff:name}&quot;}</code></p>
+<p>The <code>e:</code> and likewise can be changed with the <code>-pre:&lt;prefix&gt;</code> list flag.<br>Example: <code>{effects -pre:eff, &quot;{eff:icon}&quot;}</code></p>
+  <p>You can reverse the list using the <code>-r</code> / <code>-reverse</code> list flag.<br>Example: <code>{effects -r, &quot;{eff:icon}&quot;}</code></p>
 
 <details class="list">
   <summary><div>
@@ -541,14 +542,14 @@
     &emsp;Child Vars:<ul>
     <li><code>{i:id}</code> , <code>{i:item}</code> (Item name)</li>
     <li><code>{i:name}</code> (Custom name of the item)</li>
-    <li><code>{i:count}</code> , <code>{i:max_count}</code></li>
+    <li><code>{i:count}</code> , <code>{i:max_count}</code> , <code>{i:inv_count}</code></li>
     <li><code>{i:dur}</code> / <code>{i:durability}</code> , <code>{i:max_dur}</code> , <code>{i:max_durability}</code></li>
     <li><code>{i:dur_per}</code> , <code>{i:durability_percentage}</code></li>
     <li><code>{i:dur_color}</code> , <code>{i:durability_color}</code> (See new color feature)</li>
     <li><code>{i:unbreakable}</code> , <code>{i:repair_cost}</code> , <code>{i:hide_flags}</code></li>
     <li><code>{i:rarity}</code> (The name of rarity, can also be used with the new color feature)</li>
     <li><code>{i:armor_slot}</code> (which armor slot the item can go in)</li>
-    <li><code>{i:icon}</code> </li>
+    <li><code>{i:icon}</code> , <code>{i:inv_count_icon}</code></li>
     <li>List Var <code>i:enchants</code> (See <code>i:enchants</code> section above)</li>
     <li>List Var <code>i:lore</code> with child var <code>{lore:line}</code></li>
     <li>List Var <code>i:attributes</code> / <code>i:attrs</code> (See Item Attribute Modifiers child vars)</li>
@@ -942,6 +943,7 @@
   </ul></li>
   <li><details><summary>More methods for <code>{item:&lt;slot&gt;:&lt;method&gt;}</code></summary><ul>
     <li><code>armor_slot</code> (which armor slot the item can go in)</li>
+    <li><code>inv_count</code> , <code>inv_count_icon</code></li>
     <li><code>unbreakable</code> , <code>repair_cost</code> , <code>hide_flags</code></li>
     <li>List <code>attributes</code> / <code>attrs</code> (See Item Attribute Modifiers child vars)</li>
     <li>List <code>info_shown</code> and <code>info_hidden</code> with child <code>{ii:info}</code></li>

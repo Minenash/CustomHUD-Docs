@@ -427,6 +427,7 @@
     <li><code>{s:dir}</code> / <code>{s:direction}</code> , <code>{s:left}</code> , <code>{s:right}</code></li>
     <li><code>{s:dir_yaw}</code> / <code>{s:direction_yaw}</code>,<code>{s:dir_pitch}</code> , <code>{s:direction_pitch}</code></li>
     <li><code>{s:alpha}</code> (allows you to control the fade, see new color feature)</li>
+    <li>List Var <code>{s:sounds}</code> (1.21+, same child vars as this, excluding id/name) </li>
   </ul>
   </div>
 </details>
@@ -506,7 +507,8 @@
     <li><code>{a:value}</code> , <code>{a:base_value}</code> , <code>{a:default_value}</code></li>
     <li><code>{a:tracked}</code> (if the server sends it to the client)</li>
     <li>List Var: <code>a:modifiers</code>. Child Vars: <ul>
-      <li><code>{am:name}</code> , <code>{am:id}</code></li>
+      <li><code>{am:name}</code> (1.21+: alias of <code>{am:id}</code>)</li>
+      <li><code>{am:id}</code> (1.20.6-: UUID, 1.21+: Identifier)</li>
       <li><code>{am:value}</code></li>
       <li><code>{am:op}</code> / <code>{am:operatopn}</code> (+ (addition), ☒ (multiply base), × (multiply total))</li>
       <li><code>{am:op_name}</code> , <code>{am:operation_name}</code> (Addition, Multiplication Base, Multiplication Total)</li>
@@ -617,8 +619,8 @@
     <li><code>{am:attribute_value}</code> , <code>{am:attr_value}</code></li>
     <li><code>{am:default_value}</code> , <code>{am:tracked}</code>
       Attribute Modifier Info</li>
-    <li><code>{am:modifier_name}</code> / <code>{am:mod_name}</code></li>
-    <li><code>{am:modifier_id}</code> / <code>{am:mod_id}</code></li>
+    <li><code>{am:modifier_name}</code> / <code>{am:mod_name}</code> (1.21+: alias of <code>{am:modifier_id}</code>)</li>
+    <li><code>{am:modifier_id}</code> / <code>{am:mod_id}</code> (1.20.6-: UUID, 1.21+: Identifier)</li>
     <li><code>{am:mod_amount}</code> , <code>{am:amount}</code></li>
     <li><code>{am:op}</code> , <code>{am:operation}</code> (+ (addition), &#x2612; (multiply base), &times; (multiply total))</li>
     <li><code>{am:op_name}</code> , <code>{am:operation_name}</code> (Addition, Multiplication Base, Multiplication Total)</li>

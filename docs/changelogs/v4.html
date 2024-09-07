@@ -546,14 +546,13 @@
     <li><code>{i:dur}</code> / <code>{i:durability}</code> , <code>{i:max_dur}</code> , <code>{i:max_durability}</code></li>
     <li><code>{i:dur_per}</code> , <code>{i:durability_percentage}</code></li>
     <li><code>{i:dur_color}</code> , <code>{i:durability_color}</code> (See new color feature)</li>
-    <li><code>{i:unbreakable}</code> , <code>{i:repair_cost}</code> , <code>{i:hide_flags}</code></li>
+    <li><code>{i:unbreakable}</code> , <code>{i:repair_cost}</code></li>
     <li><code>{i:rarity}</code> (The name of rarity, can also be used with the new color feature)</li>
     <li><code>{i:armor_slot}</code> (which armor slot the item can go in)</li>
     <li><code>{i:icon}</code> , <code>{i:inv_count_icon}</code></li>
     <li>List Var <code>i:enchants</code> (See <code>i:enchants</code> section above)</li>
     <li>List Var <code>i:lore</code> with child var <code>{lore:line}</code></li>
     <li>List Var <code>i:attributes</code> / <code>i:attrs</code> (See Item Attribute Modifiers child vars)</li>
-    <li>List Var <code>i:info_shown</code> and <code>i:info_hidden</code> with child <code>{ii:info}</code></li>
     <li>List Var <code>i:can_destroy</code> and <code>i:can_place_on</code><ul>
       <li>Children <code>{c:name}</code> , <code>{c:id}</code></li>
     </ul></li>
@@ -572,6 +571,10 @@
         <li><code>rarity</code></li>
       </ul></li>
     </ul></li>
+    <li>1.20.4 Only: <ul>
+      <li><code>{i:hide_flags}</code></li>
+      <li>List Var <code>i:info_shown</code> and <code>i:info_hidden</code> with child <code>{ii:info}</code></li>
+    </ul></li>
   </ul>
   </div>
 </details>
@@ -586,7 +589,7 @@
     <li><code>{e:full}</code> (like Sharpness IV)</li>
     <li><code>{e:num}</code> / <code>{e:number}</code> (0 indexed)</li>
     <li><code>{e:max_num}</code> , <code>{e:max_number}</code> (0 indexed)</li>
-    <li><code>{e:rarity}</code></li>
+    <li><code>{e:rarity}</code> (1.20.4 only)</li>
   </ul>
   </div>
 </details>
@@ -944,11 +947,10 @@
   <li><details><summary>More methods for <code>{item:&lt;slot&gt;:&lt;method&gt;}</code></summary><ul>
     <li><code>armor_slot</code> (which armor slot the item can go in)</li>
     <li><code>inv_count</code> , <code>inv_count_icon</code></li>
-    <li><code>unbreakable</code> , <code>repair_cost</code> , <code>hide_flags</code></li>
+    <li><code>unbreakable</code> , <code>repair_cost</code></li>
     <li>List <code>attributes</code> / <code>attrs</code> (See Item Attribute Modifiers child vars)</li>
-    <li>List <code>info_shown</code> and <code>info_hidden</code> with child <code>{ii:info}</code></li>
     <li>List <code>can_destroy</code> and <code>can_place_on</code><ul>
-      <li>Children <code>{c:name}</code> , <code>{c:id}</code></li>
+      <li>Children <code>{c:name}</code> , <code>{c:id}</code> , <code>{c:icon}</code></li>
     </ul></li>
     <li>List <code>tags</code> with children <code>{t:name}</code> and <code>{t:id}</code></li>
     <li>List Var <code>items</code> (items stored in stuff like Shulker Boxes). Same child vars as <code>items</code>.</li>
@@ -958,13 +960,17 @@
         <li>Methods:<ul>
           <li><code>name</code> , <code>id</code></li>
           <li><code>level</code> / <code>lvl</code> (like IV)</li>
-          <li><code>max_level</code> (max level the enchantment can be)</li>
+          <li><code>max_level</code> / <code>max_lvl</code> (max level the enchantment can be)</li>
           <li><code>full</code> (like Sharpness IV)</li>
           <li><code>num</code> / <code>number</code> (0 indexed)</li>
           <li><code>max_num</code> , <code>max_number</code> (0 indexed)</li>
           <li><code>rarity</code></li>
         </ul></li>
       </ul></li>
+    </ul></li>
+    <li>1.20.4 Only: <ul>
+      <li><code>hide_flags</code></li>
+      <li>List <code>info_shown</code> and <code>info_hidden</code> with child <code>{ii:info}</code></li>
     </ul></li>
   </ul></details></li>
   <li><details><summary>Get a block's property: <code>{target_block_property:&lt;property&gt;:&lt;method&gt;}</code> / <code>{tbprop:&lt;property&gt;:&lt;method&gt;}</code></summary><ul>

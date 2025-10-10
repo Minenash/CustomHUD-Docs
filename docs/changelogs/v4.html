@@ -93,6 +93,59 @@
 <div>
 
 <h2 id="customhud-v4-changelog">CustomHud v4 Changelog</h2>
+
+<hr>
+<h3 id="v4.1">v4.1 Changelog</h3>
+<ul>
+  <li>Section offsets now support expressions <ul>
+    <li>Example: <code>==Section:TopLeft, x + 5, x + 3==</code></li>
+    <li>Don't ask why your hud's position would change on your x coords... but.</li>
+    <li>For real though, it's intended use are values created with get/set variables</li>
+  </ul></li>
+  <li>Added Event Variables! <ul>
+    <li><code>{on_join}</code> - Is true for the first frame after joining a world</li>
+    <li><code>{on_load}</code> - Is true for the first frame after the profile is (re)loaded</li>
+    <li>List var <code>on_chat_message</code> / <code>on_chat_msg</code> <ul>
+      <li>Contains chat message received between last frame and now.</li>
+      <li>Same child vars as <code>chat_messages</code></li>
+    </ul></li>
+  </ul></li>
+  <li>New icon variable: <code>{crosshair:&lt;texture_path&gt;}</code><ul>
+    <li>Acts just like <code>{icon:&lt;texture_path&gt;}</code>, but renders how the crosshair renders</li>
+  </ul></li>
+  <li>Variables related to the freezing (staying in powdered snow): <ul>
+    <li><code>{is_frozen}</code> , <code>{is_freezing}</code> , <code>{frozen_per}</code> / <code>{frozen_percentage}</code> , <code>{frozen_ticks}</code></li>
+  </ul></li>
+  <li>Is on fire: <code>{on_fire}</code></li>
+  <li>Attack Cooldown: <code>{attack_cooldown}</code></li>
+  <li>Added child variables for items related to cooldowns:<ul>
+    <li><code>{i:cooldown}</code> , <code>{i:max_cooldown}</code> , <code>{i:cooling_down}</code> , <code>{i:cooldown_percentage}</code> / <code>{i:cooldown_per}</code></li>
+  </ul></li>
+  <li>Facing variables:<ul>
+    <li>Added variables that display 8 directions instead of 4: <code>{facing8}</code> and <code>{facing8_short}</code><ul>
+      <li>north, northeast, east, southeast, south, southwest, west, northwest</li>
+    </ul></li>
+    <li><code>{facing}</code> and <code>{facing_short}</code> are now alias of <code>{facing4}</code> and <code>{facing4_short}</code></li>
+  </ul></li>
+  <li>Velocity Variables have been overhauled<ul>
+    <li><code>{velocity}</code> is now an alias of <code>{velocity_xyz}</code></li>
+    <li>You can now have any combination of XYZ (Ex: <code>{velocity_x}</code> and <code>{velocity_xy}</code>)</li>
+    <li>Adding _kph to the end still works (Ex: <code>{velocity_x_kph}</code>)</li>
+    <li>You can now also end it with _mph for miles per hour! (Ex: <code>{velocity_x_mph}</code>)</li>
+    <li>You can now set a "smoothing" value from 0-19<ul>
+      <li>A value below 0 will act as 0, and a value above 19 will act as 19. This also supports expressions!</li>
+      <li>Ex: <code>{velocity_xz[4]}</code>. This will compare the positions between now and 5 ticks ago to calculate the velocity)</li>
+      <li>Before, to make it more readable, it only updated every 5th render tick. However it's been a common request for
+          it to update every tick. In v4, <code>-freq#</code> / <code>-v#</code> was added, which limits how fast a
+          variable updates on the hud. Despite this sounding like it would be a good substitute for the old system, it
+          is not, as it loses the "smoothing" that updating the actual change in distance would have</li>
+
+    </ul></li>
+  </ul></li>
+</ul>
+
+<hr>
+
 <h3 id="new-config-screen">New Config Screen</h3>
 <ul>
   <li>Unlimited Profiles</li>

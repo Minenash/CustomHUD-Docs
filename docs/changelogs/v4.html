@@ -143,6 +143,23 @@
   </ul></li>
 </ul>
 
+  <b>Changes for 1.21.9+</b><br>
+  <ul>
+    <li>Resource / Datapack Related <ul>
+      <li>Pack formats are now 'major.minor' instead of a single number. The following changes reflect that:</li>
+      <li><code>{rp_version}</code> / <code>{resource_pack_version}</code> are now string variables. Ex: <code>88.0</code></li>
+      <li><code>{dp_version}</code> / <code>{datapack_version}</code> are also now string variables</li>
+      <li>Added <code>{rp_major}</code> / <code>{rp_major_version}</code> / <code>{resource_pack_major_version}</code></li>
+      <li>Added <code>{rp_minor}</code> / <code>{rp_minor_version}</code> / <code>{resource_pack_minor_version}</code></li>
+      <li>Added <code>{dp_major}</code> / <code>{dp_major_version}</code> / <code>{datapack_major_version}</code></li>
+      <li>Added <code>{dp_minor}</code> / <code>{dp_minor_version}</code> / <code>{datapack_minor_version}</code></li>
+      <li>Similar change to the resource pack and datapack list variables:<ul>
+        <li><code>{p:version}</code> has been replaced with <code>{p:min}</code> / <code>{p:min_version}</code> and <code>{p:max}</code> / <code>{p:max_version}</code></li>
+        <li>Added: <code>{p:min_major}</code> / <code>{p:min_version_major}</code> and <code>{p:max_major}</code> / <code>{p:max_version_major}</code></li>
+      </ul></li>
+    </ul></li>
+  </ul>
+
 <hr>
 
 <h3 id="new-config-screen">New Config Screen</h3>
